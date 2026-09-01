@@ -2,11 +2,22 @@ class_name DialogoManager
 extends Node2D
 
 signal dialogo_terminado(id_dialogo)
+signal evento_cinematica(nombre_evento)
 
 # Asegúrate de asignar estas referencias en el editor, o cambia las rutas si tus nodos se llaman distinto
 @export var texto_label: Control # Cambiado a Control para que acepte tanto Label como RichTextLabel
 @export var nombre_label: Label
 @export var retrato_sprite: Node
+
+## Minijuegos que se pueden lanzar desde el campo "evento" de una linea de
+## dialogos.json. Para agregar otro basta con una linea aqui: la escena solo
+## necesita tener la variable `nivel_a_cargar` y la señal `juego_completado`.
+## Ejemplo de uso en dialogos.json:  "evento": "minijuego_rompecabezas_nivel_1"
+const MINIJUEGOS := {
+	"minijuego_palabras_": "res://Scenes/PalabrasImpostoras.tscn",
+	"minijuego_rompecabezas_": "res://Scenes/Rompecabezas.tscn",
+	"minijuego_atlasbird_": "res://Scenes/Juegos/Atlas-Bird/Escenas/main-atlasbird.tscn",
+}
 
 var archivo_dialogos = "res://dialogos.json"
 var dialogos_cargados = {}
@@ -111,23 +122,45 @@ func _input(event):
 func avanzar_dialogo():
 	var linea_actual = dialogo_actual[indice_dialogo]
 	if linea_actual.has("evento"):
-		var evento = linea_actual["evento"]
-		if evento.begins_with("minijuego_palabras_"):
+		var evento: String = linea_actual["evento"]
+
+		for prefijo in MINIJUEGOS:
+			if evento.begins_with(prefijo):
+				# El indice avanza ANTES de abrir el minijuego: al terminar,
+				# _on_minijuego_terminado ya muestra la linea siguiente.
+				indice_dialogo += 1
+				if _lanzar_minijuego(MINIJUEGOS[prefijo], evento.replace(prefijo, "")):
+					return
+				# No se pudo abrir: seguimos el dialogo en vez de trabar el juego
+				_mostrar_linea_actual()
+				return
+
+		if evento.begins_with("cinematica_"):
 			hide()
-			var escena = load("res://Scenes/PalabrasImpostoras.tscn").instantiate()
-			escena.nivel_a_cargar = evento.replace("minijuego_palabras_", "")
-			escena.connect("juego_completado", Callable(self, "_on_minijuego_terminado").bind(escena))
-			
-			var canvas = CanvasLayer.new() # Añadir a un canvas layer para que quede encima
-			canvas.layer = 100
-			canvas.add_child(escena)
-			get_tree().current_scene.add_child(canvas)
-			
-			indice_dialogo += 1
-			return
-			
+			evento_cinematica.emit(evento)
+			return # No avanzamos indice todavia, la cinematica llamara a continuar_cinematica()
+
 	indice_dialogo += 1
 	_mostrar_linea_actual()
+
+
+## Abre un minijuego encima del nivel. Devuelve false si la escena no existe,
+## para no dejar al jugador con el dialogo cerrado y sin minijuego.
+func _lanzar_minijuego(ruta_escena: String, nivel: String) -> bool:
+	if not ResourceLoader.exists(ruta_escena):
+		push_error("El dialogo pide el minijuego '%s', que no existe." % ruta_escena)
+		return false
+
+	hide()
+	var escena = load(ruta_escena).instantiate()
+	escena.nivel_a_cargar = nivel
+	escena.connect("juego_completado", Callable(self, "_on_minijuego_terminado").bind(escena))
+
+	var canvas = CanvasLayer.new() # Anadir a un canvas layer para que quede encima
+	canvas.layer = 100
+	canvas.add_child(escena)
+	get_tree().current_scene.add_child(canvas)
+	return true
 
 func _on_minijuego_terminado(escena_instancia):
 	if escena_instancia:
@@ -135,5 +168,20 @@ func _on_minijuego_terminado(escena_instancia):
 		escena_instancia.queue_free()
 		if canvas is CanvasLayer:
 			canvas.queue_free()
+			
+	# Restaurar el estado en_dialogo por si algún sub-diálogo (como error) lo puso en false
+	if has_node("/root/Global"):
+		var GlobalNode = get_node("/root/Global")
+		GlobalNode.en_dialogo = true
+		
 	show()
+	_mostrar_linea_actual()
+
+func continuar_cinematica():
+	if has_node("/root/Global"):
+		var GlobalNode = get_node("/root/Global")
+		GlobalNode.en_dialogo = true
+		
+	show()
+	indice_dialogo += 1
 	_mostrar_linea_actual()

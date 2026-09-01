@@ -31,3 +31,14 @@ func _on_btn_palabras_pressed():
 
 func _on_btn_memorama_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Memorama.tscn")
+
+func _on_btn_atlas_bird_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Juegos/Atlas-Bird/Escenas/main-atlasbird.tscn")
+
+func _on_btn_topo_alux_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Topo_Alux.tscn")
+
+func _on_btn_rompecabezas_pressed():
+	# El rompecabezas detecta solo que viene del libro (y no de un diálogo) y
+	# muestra primero su selector de nivel, luego el de dificultad.
+	get_tree().change_scene_to_file("res://Scenes/Rompecabezas.tscn")

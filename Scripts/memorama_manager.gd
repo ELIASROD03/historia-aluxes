@@ -1,6 +1,9 @@
 extends Node2D
 
+const ESCENA_LIBRO := "res://Scenes/LibroHistoria.tscn"
+
 @onready var grid = $GridContainer
+@onready var btn_salir: Button = get_node_or_null("BtnSalir")
 var carta_scene = preload("res://Scenes/Carta.tscn")
 
 var pairs_to_play = 5 # Total de parejas en el tablero (12 cartas en total)
@@ -9,8 +12,26 @@ var second_card = null
 var can_click = true
 var matched_pairs = 0
 
+## true cuando se entró desde el Libro de Historia (esta escena ES la escena
+## actual) y false cuando alguien la instanció encima de otra cosa.
+var modo_libre: bool = false
+
 func _ready():
+	modo_libre = (get_parent() == get_tree().root)
+
+	# Salida propia de vuelta al libro. El MenuPausa que trae la escena sí deja
+	# salir, pero al menú principal: desde el libro eso saca al jugador de donde
+	# estaba en vez de devolverlo.
+	if btn_salir:
+		btn_salir.visible = modo_libre
+		if modo_libre:
+			btn_salir.pressed.connect(_salir)
+
 	load_and_setup_game()
+
+
+func _salir() -> void:
+	SceneTransition.change_scene(ESCENA_LIBRO)
 
 func load_and_setup_game():
 	var file = FileAccess.open("res://memorama_data.json", FileAccess.READ)

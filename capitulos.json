@@ -1,0 +1,69 @@
+{
+	"_instrucciones": {
+		"que_es_esto": "Tabla UNICA de capitulos. Antes estos datos estaban repartidos en iu_maquina.gd, tenoch_manager.gd y tenoch1520_manager.gd; ahora solo viven aqui.",
+		"agregar_capitulo": "Agrega un bloque al final del arreglo con el siguiente 'numero', crea su escena y listo. No hay que tocar ningun script.",
+		"numero": "Debe coincidir con Global.progreso_historia y con 'numero_capitulo' del nodo raiz de la escena.",
+		"anio": "Los 4 digitos que el jugador teclea en la maquina del tiempo para llegar a este capitulo.",
+		"escena": "El nivel al que se viaja. Si la ruta no existe el juego avisa en vez de dejar al jugador atorado en la pantalla negra.",
+		"dialogo_inicio": "Id de dialogos.json que se lanza al entrar al nivel (una sola vez).",
+		"dialogo_final": "Id de dialogos.json que, al terminar, da por completado el capitulo y avanza al siguiente.",
+		"OJO_anios": "Los anios de los capitulos 4 y 5 son una propuesta; ajustalos aqui a lo que pida tu temario."
+	},
+
+	"capitulos": [
+		{
+			"numero": 1,
+			"titulo": "Capítulo 1",
+			"subtitulo": "Alerta en Tenochtitlán: 1519",
+			"anio": "1519",
+			"escena": "res://Scenes/Tenoch.tscn",
+			"dialogo_inicio": "inicio_tenoch",
+			"dialogo_final": "dialogo_kaan"
+		},
+		{
+			"numero": 2,
+			"titulo": "Capítulo 2",
+			"subtitulo": "La Noche Triste: 1520",
+			"anio": "1520",
+			"escena": "res://Scenes/Tenoch1520.tscn",
+			"dialogo_inicio": "inicio_tenoch_1520",
+			"dialogo_final": "dialogo_kaan_1520"
+		},
+		{
+			"numero": 3,
+			"titulo": "Capítulo 3",
+			"subtitulo": "La caída de Tenochtitlán: 1521",
+			"anio": "1521",
+			"escena": "res://Scenes/CaidaTenochtitlan.tscn",
+			"dialogo_inicio": "inicio_cap3",
+			"dialogo_final": "final_cap3"
+		},
+		{
+			"numero": 4,
+			"titulo": "Capítulo 4",
+			"subtitulo": "Primeros años de virreinato: 1523",
+			"anio": "1523",
+			"escena": "res://Scenes/PrimerosAniosVirreinato.tscn",
+			"dialogo_inicio": "inicio_cap4",
+			"dialogo_final": "final_cap4"
+		},
+		{
+			"numero": 5,
+			"titulo": "Capítulo 5",
+			"subtitulo": "Reformas y organización: 1530",
+			"anio": "1530",
+			"escena": "res://Scenes/ReformasOrganizacion.tscn",
+			"dialogo_inicio": "inicio_cap5",
+			"dialogo_final": "final_cap5"
+		},
+		{
+			"numero": 6,
+			"titulo": "Capítulo 6",
+			"subtitulo": "Instauración del virreinato: 1535",
+			"anio": "1535",
+			"escena": "res://Scenes/InstauracionVirreinato.tscn",
+			"dialogo_inicio": "inicio_cap6",
+			"dialogo_final": "final_cap6"
+		}
+	]
+}

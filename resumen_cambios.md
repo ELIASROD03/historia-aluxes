@@ -1,169 +1,123 @@
-# Resumen de Desarrollo - Los Aluxes que cambiaron la Historia
+# Los Aluxes que cambiaron la Historia — Resumen técnico
 
-## ðŸ› ï¸� Cambios Realizados Hoy
+> Síntesis del historial de desarrollo. El log largo original (312 líneas) sigue en el historial de git.
+> Godot 4.6 · 640x360 lógicos · GL Compatibility · export Android
 
-1. **Contexto Inicial**:
-   - AnÃ¡lisis de la estructura de carpetas de Godot, `MenuPrincipal.tscn`, `Scripts` y el minijuego `Atlas-Bird`.
+## Arquitectura
 
-2. **Nueva Pantalla: "Seleccionar Personaje"**:
-   - Se creÃ³ la escena `CreacionPersonaje.tscn` y su controlador `creacion_personaje.gd`.
-   - Se vinculÃ³ exitosamente el botÃ³n **"Nueva partida"** del menÃº de laboratorio con esta nueva escena.
-   - La pantalla muestra un diseÃ±o recto (sin inclinaciÃ³n), un campo para ingresar nombre y una secciÃ³n de previsualizaciÃ³n.
+- **Autoloads** (`project.godot`): `Global` (`Scripts/global.gd`) y `SceneTransition`.
+  Usar siempre `SceneTransition.change_scene(ruta)` en vez de `change_scene_to_file`, para conservar el fundido.
+- **Guardado**: un solo archivo maestro `Saves/partidas.json` con todas las partidas anidadas.
+  Máximo 5 slots, id por timestamp (`save_AAMMDD_HHMMSS`). No generar `.json` sueltos por partida.
+- **Diálogos**: `dialogos.json` + `dialogo_manager.gd`. Una línea con `"evento"` puede lanzar un
+  minijuego o una cinemática. Soporta BBCode (`[color=red]`) y `{nombre_jugador}` / `{anio_objetivo}`.
+- **Bloqueo narrativo**: `Global.en_dialogo` congela al jugador, a los NPCs y a los controles táctiles.
 
-3. **Selector DinÃ¡mico y Sprites**:
-   - Se construyÃ³ un arreglo dinÃ¡mico para la navegaciÃ³n de avatares con botones de izquierda y derecha (`<`, `>`).
-   - Se aÃ±adiÃ³ el **Personaje 1** y **Personaje 2** procedentes de la carpeta `Images/Personajes/Personajes_Principales/`.
-   - Se codificÃ³ la importaciÃ³n automÃ¡tica de los frames `000` a `003` de la animaciÃ³n **Idle** (respiraciÃ³n).
-   - Se arreglÃ³ el problema visual de los pixeles borrosos aplicando `texture_filter = 1` (Nearest) en el Sprite de la interfaz.
+## Datos en JSON (se editan sin tocar código)
 
-4. **Fuentes e Interfaz**:
-   - Se probÃ³ una fuente *Pixel Art* (`PressStart2P-Regular.ttf`) cambiando los tamaÃ±os de la interfaz a la mitad. 
-   - A peticiÃ³n, se descartÃ³ el tema global y se devolvieron los valores de fuentes masivas y legibles de la configuraciÃ³n de Godot original.
+| Archivo | Qué define |
+|---|---|
+| `capitulos.json` | Tabla ÚNICA de los 6 capítulos: título, subtítulo, año, escena, diálogos |
+| `dialogos.json` | Toda la narrativa (43 entradas) |
+| `palabras.json` | Textos de Palabras Impostoras (`nivel_<cap>_<1..5>`) |
+| `rompecabezas.json` | Niveles del rompecabezas y las dificultades |
+| `burbujas.json`, `memorama_data.json` | Burbujas de mundo y memorama |
+| `atlasbird.json` | Atlas-Bird: cronómetro, vidas, curva de dificultad, pesos de objetos y avisos |
 
-5. **ExplicaciÃ³n TÃ©cnica**:
-   - Se explicÃ³ el sistema modular para armar avatares en 2D.
-   - Se resolviÃ³ la duda de por quÃ© Godot crea los archivos `.png.import` automÃ¡ticamente para serializar metadatos.
+## Historia: 6 capítulos
 
-## ðŸš€ Nuevas Implementaciones (Ãšltima SesiÃ³n)
+1519 Tenochtitlán · 1520 Noche Triste · 1521 Caída · 1523 Primeros años · 1530 Reformas · 1535 Virreinato
 
-6. **CinemÃ¡tica del PrÃ³logo**:
-   - Se creÃ³ la escena `Prologo.tscn` como la nueva escena principal del juego (`main_scene`).
-   - Muestra una secuencia de imÃ¡genes tipo novela visual (`Casa`, `Escritorio`, `Pasadizo`, `Laboratorio`) con narraciÃ³n en la parte inferior.
-   - Cuenta con transiciones suaves de texto, avance manual (clic/espacio) y un botÃ³n de "Saltar".
+- Todo sale de `capitulos.json`. **Agregar un capítulo = una entrada nueva + su escena. Cero código.**
+- `Scripts/capitulo_manager.gd` es el manager ÚNICO de todos los niveles (antes había uno casi
+  idéntico por capítulo). Lo único que se configura por escena es `numero_capitulo` en el nodo raíz.
+- `Capitulo1Intro.tscn` **no es del capítulo 1**: es la pantalla negra genérica de todos, tanto para
+  entrar como para el "¡COMPLETADO!". Los textos se dejan con `Global.preparar_entrada_capitulo()`.
+- Escenas: `Tenoch`, `Tenoch1520`, `CaidaTenochtitlan`, `PrimerosAniosVirreinato`,
+  `ReformasOrganizacion`, `InstauracionVirreinato`. Las 4 últimas son copias de Tenoch, sin ambientar.
 
-7. **ReestructuraciÃ³n del MenÃº Principal**:
-   - Se organizÃ³ el botÃ³n "Gran libro de historia" en `MenuPrincipal.tscn` para abrir un nuevo submenÃº anidado (`VBox_menu_libro`).
-   - Se moviÃ³ la opciÃ³n de volver a "Ver PrÃ³logo" dentro de este nuevo menÃº, junto con un botÃ³n de retroceso ("Volver").
-   - Se aplicaron animaciones (Tween) para que la navegaciÃ³n sea igual de dinÃ¡mica.
+## Minijuegos
 
-8. **Mejoras en CreaciÃ³n de Personaje**:
-   - Se mejorÃ³ la previsualizaciÃ³n del avatar: ahora carga los 8 sprites de la carpeta `rotations` para crear una animaciÃ³n continua de giro de 360Â°.
-   - **ValidaciÃ³n de nombre:** Se implementÃ³ una alerta en pantalla (`AcceptDialog`) que bloquea el avance si el jugador intenta empezar sin haber escrito su nombre.
+Contrato: la escena expone `nivel_a_cargar` (String) y la señal `juego_completado`. Se registra en la
+constante `MINIJUEGOS` de `dialogo_manager.gd` y ya se puede lanzar desde `dialogos.json` con
+`"evento": "minijuego_<clave>_<nivel>"`.
 
-9. **IntroducciÃ³n al CapÃ­tulo 1**:
-   - Se diseÃ±Ã³ la escena transitoria `Capitulo1Intro.tscn`.
-   - Al empezar la aventura desde la selecciÃ³n de personaje, el jugador es llevado a esta pantalla, que muestra el tÃ­tulo "CapÃ­tulo 1" en dorado con sombra negra y el subtÃ­tulo "Alerta en TenochtitlÃ¡n: 1519".
-   - Contiene temporalmente un botÃ³n para regresar al menÃº principal.
+- **Rompecabezas** (`Scenes/Rompecabezas.tscn`): las piezas con forma real se generan por geometría
+  (`Polygon2D` con UV mapeado), no son imágenes recortadas. Cada borde interno se calcula una vez y
+  lo comparten las dos piezas vecinas, por eso siempre embonan exacto.
+  Dificultad Relajado 3x3 / Desafiante 4x4 sobre fondo difuminado (shader propio), reloj de 100 s.
+  **Imágenes: 900x600 px (3:2)** en `Images/img-rompecabezas/niv_N.jpg`.
+- **Palabras Impostoras**: 6 capítulos × 5 textos, con 3 palabras impostoras cada uno. El NPC elige
+  variante al azar según el capítulo del nivel (`zona_dialogo.gd`), no según el progreso global.
+- **Atlas-Bird** (`Scenes/Juegos/Atlas-Bird/`): persecución estilo Flappy rehecha para 640x360 (la
+  versión vieja estaba dimensionada para ~1152x648 y encima referenciaba 5 texturas ya borradas).
+  Control seleccionable en el inspector del nodo `atlas` (`modo_control`): **TAP** (el clásico de
+  Flappy, es el default) o **MANTENER**. El cronómetro de 90 s
+  **no es un límite de tiempo, es la distancia a Balaam**: llegar a 0 es GANAR, el turbo resta
+  segundos y el hechizo de Balaam los suma. 3 vidas, escudo que absorbe un choque, objetos en el
+  hueco de las columnas (fáciles al centro, difíciles pegados al borde). Cada ~20 s Balaam invierte
+  los controles o suma tiempo: primero se corta la generación de columnas y sale el cuadro de Atlas
+  3 s para que dé tiempo de leer, y hasta entonces se aplica el efecto. Velocidad, intervalo y hueco
+  interpolan por tiempo de juego real, así se acelera solo.
+  Se lanza como `final_cap6` (evento `minijuego_atlasbird_final`) y desde el Libro de Historia.
+  El HUD **no está en código**: `HUD/Vidas` (corazones), `HUD/Cronometro` (reloj + número) y
+  `HUD/Escudo` son nodos; escalar o mover el padre mueve todo el grupo junto y el script solo los
+  prende y apaga. Igual el modo de control: está en el inspector, no en `atlasbird.json`, a
+  propósito, para poder probar TAP y MANTENER sin editar el JSON.
+  Ojo: hay dos carpetas `Atlas-Bird`; la buena es `Scenes/Juegos/Atlas-Bird/`. De la otra ya solo
+  queda `assets/Bosque.png`, que es el fondo que usa el minijuego.
+- **Topo Alux** (`Scenes/Topo_Alux.tscn`): golpea al Kaan verdadero y esquiva los señuelos, 15 aciertos.
+  Estaba **huérfana**: ninguna escena ni diálogo la abría, y no tenía salida (`ganar_juego()` solo
+  hacía un `print`). Ahora entra por el Libro de Historia y lleva `BtnSalir` siempre visible, porque
+  si no el libro era un callejón sin salida.
+  Antes de la primera partida sale el panel `PanelComoJugar`, con `kaan.png` y `Kaan_Señuelo.png` uno
+  al lado del otro para que se vea la diferencia. Se recuerda en
+  `Global.eventos_completados["topo_tutorial_visto"]`, así que solo sale una vez; borrando esa clave
+  vuelve a aparecer.
+- **Salida desde el Libro de Historia**: los 5 minijuegos del libro tienen una salida propia de vuelta
+  a `LibroHistoria.tscn`, siempre gobernada por `modo_libre = (get_parent() == get_tree().root)`.
+  Abierto desde un diálogo el botón se oculta: ahí quien cierra el minijuego es el diálogo al recibir
+  `juego_completado`, y un botón de salir permitiría saltarse contenido de la historia.
+  Ojo con el `MenuPausa`: Memorama lo instancia y su "Ir al Menú" va al **menú principal**, no al
+  libro; por eso Memorama lleva además su propio `BtnSalir`.
+- Los dos primeros, abiertos desde el Libro de Historia, muestran primero un selector (nivel / capítulo) y
+  botones de salida propios. Abiertos desde un diálogo van directo y el diálogo los cierra.
+- Al ganar muestran su mensaje 3 segundos antes de devolver el control, para que dé tiempo de verlo.
 
-10. **Redimensionamiento para ResoluciÃ³n 640x360 (Pixel Art)**:
-	- Se ajustaron los tamaÃ±os de fuente (usando mÃºltiplos de 8 como 8, 12, 16) en las interfaces para adaptarse a la nueva resoluciÃ³n base.
-	- `MenuPrincipal.tscn`: ReducciÃ³n de tÃ­tulos, botones principales y submenÃºs.
-	- `CreacionPersonaje.tscn`: Textos, inputs de nombre y botones reducidos. Escala de la previsualizaciÃ³n del avatar ajustada de `(4, 4)` a `(2, 2)`.
-	- `Prologo.tscn` y `Capitulo1Intro.tscn`: Textos narrativos, tÃ­tulos y botones de continuar/saltar redimensionados a tamaÃ±os mÃ¡s adecuados.
+## Trampas conocidas (leer antes de tocar UI o input)
 
-## ðŸ—¡ï¸� Desarrollo Escena TenochtitlÃ¡n y Sistemas Core (SesiÃ³n Actual)
+1. **Nada de `z_index` negativo en los minijuegos.** El `Fondo` es un TextureRect opaco a pantalla
+   completa con z_index 0: un -1 esconde el nodo detrás de él. Para ordenar, usar `move_child()`.
+2. **`LimitesCamara` es un `ReferenceRect`, o sea un Control con `mouse_filter = STOP`**, y cubre casi
+   todo el nivel. Se come los clicks antes de que lleguen a `_unhandled_input`. Un minijuego que se
+   abra encima de un nivel necesita su propia capa de captura (ver `CapturaInput` en Rompecabezas).
+   Sondear con `get_global_mouse_position()` en `_process` no sufre este problema.
+3. **Nunca dejar una pantalla sin salida.** Este error se ha colado varias veces: pantalla negra sin
+   botón, minijuego cuya señal nadie escucha en modo libre, escena destino inexistente. Si una
+   pantalla puede quedarse quieta, validar el destino con `ResourceLoader.exists()` y dar un botón.
+4. **Eventos de un solo uso**: registrarlos en `Global.eventos_completados` al lanzarlos, o se repiten
+   al recargar la partida.
+5. **Pixel art**: cámara con zoom `(1,1)` exacto y pixel snapping APAGADO; cualquier zoom fraccional
+   provoca temblores. Como `stretch/mode = canvas_items`, el 2D se rasteriza a la resolución real de
+   la ventana: por eso las imágenes deben tener ~3x los píxeles lógicos para verse nítidas a 1080p.
+6. **Imágenes que no son pixel art**: filtro `LINEAR` (ver `filtro_pixel_art` en `rompecabezas.gd`),
+   si no se ven dentadas al reducirlas.
+7. Al copiar una escena a mano, quitarle el `uid` del encabezado o Godot reclama UID duplicado.
 
-11. **ConfiguraciÃ³n de la Escena Tenoch**:
-	- Se configurÃ³ la escena `Tenoch.tscn` aÃ±adiendo `ParallaxBackgrounds` para el VolcÃ¡n y el Templo con `motion_scale` mÃ­nimos (0.02 y 0.05) para dar la ilusiÃ³n de lejanÃ­a.
-	- Se corrigiÃ³ el encuadre de la cÃ¡mara en `Player` ajustando el `zoom` a `(1, 1)` para que encaje exactamente con la resoluciÃ³n de 640x360 del proyecto.
+## Pendientes
 
-12. **Sistema Global y Persistencia de Datos**:
-	- Se programÃ³ el script `global.gd` y se registrÃ³ como un *AutoLoad* en `project.godot`.
-	- Ahora el juego almacena en la memoria global quÃ© personaje se eligiÃ³ y transfiere sus rutas de texturas (`ruta_spritesheet` y `ruta_walk`) de forma segura a cualquier nivel.
-
-13. **Sistemas de AnimaciÃ³n Inteligente (Spritesheets)**:
-	- **SelecciÃ³n de personaje:** Se cambiÃ³ `creacion_personaje.gd` para leer spritesheets en tiras enteras (ej. 576x64), cortÃ¡ndolas en tiempo real con `AtlasTexture` (9 fotogramas).
-	- **Script Reusable (`respirador.gd`)**: Se diseÃ±Ã³ un script que, al ponÃ©rselo a cualquier `Sprite2D`, calcula matemÃ¡ticamente el nÃºmero de fotogramas basÃ¡ndose en la resoluciÃ³n de la textura. Esto reparÃ³ el fallo del soldado (384x64px -> 6 fotogramas) para que no se viera entrecortado.
-	- **Player State Machine BÃ¡sica:** `player.gd` ahora alterna inteligentemente entre texturas de estar quieto y caminar segÃºn los controles, revirtiendo la imagen al detenerse.
-
-14. **Motor de DiÃ¡logos por JSON**:
-	- Se implementÃ³ un archivo externo estructurado `dialogos.json` que actÃºa como base de datos para la narrativa, permitiendo crear plÃ¡ticas complejas con personaje, texto y retrato sin tocar el cÃ³digo.
-	- Se escribiÃ³ `dialogo_manager.gd` que lee y procesa el JSON al vuelo.
-	- **Correcciones UI:** 
-		- Se resolviÃ³ el difuminado y deformaciÃ³n metiendo el cuadro de diÃ¡logo dentro de un `CanvasLayer`, volviÃ©ndolo inmune a la cÃ¡mara y dejÃ¡ndolo fijo a la pantalla.
-		- Se habilitÃ³ *Autowrap* nativo para contener los textos.
-		- Se arreglÃ³ el tamaÃ±o monstruoso de la alerta en la creaciÃ³n de personajes (`AcceptDialog`) forzÃ¡ndole cortes de lÃ­nea y lÃ­mites estrictos (200x100px).
-
-15. **Interacciones, Colisiones y MecÃ¡nicas RPG**:
-	- Se escribiÃ³ `zona_dialogo.gd` para conectarse a nodos `Area2D`. Al colisionar con el Player, lanza automÃ¡ticamente el diÃ¡logo asignado (ej. "dialogo_soldado") y se desactiva sola.
-	- **Bloqueo RPG:** Se introdujo una bandera de estado en el `Global` (`en_dialogo`). Mientras estÃ© activa, se deshabilitan las fÃ­sicas horizontales y los saltos del jugador, regresÃ¡ndolo a su animaciÃ³n Idle para darle enfoque exclusivo a la lectura de diÃ¡logos.
-	- TransiciÃ³n automÃ¡tica: Se agregÃ³ un timer de 4 segundos a `Capitulo1Intro.tscn` para saltar orgÃ¡nicamente al gameplay.
-
-16. **Mejoras EstÃ©ticas y Formato DinÃ¡mico**:
-	- **Textos de DiÃ¡logo Avanzados:** Se migrÃ³ el motor de lectura a un nodo `RichTextLabel` con la propiedad `BBCode Enabled`. Esto permitiÃ³ que el archivo `dialogos.json` ahora incorpore etiquetas de formato como `[color=red]`.
-	- IntegraciÃ³n exitosa de la trama narrativa del Alux Kaan alterando la memoria histÃ³rica (monopatÃ­n espacial, pizza con piÃ±a).
-	- **TamaÃ±o dinÃ¡mico por cÃ³digo:** Se programÃ³ un *override* interno (`add_theme_font_size_override`) en `creacion_personaje.gd` para el cuadro `AcceptDialog`, controlando de forma forzada que el tamaÃ±o de su tipografÃ­a se mantenga en 12 puntos y no distorsione el Pixel Art.
-
-17. **Nueva Escena del Gran Libro de Historia**:
-	- Se creÃ³ la escena independiente `LibroHistoria.tscn` como nueva interfaz visual para el libro.
-	- Se incluyÃ³ un fondo color hueso (`ColorRect`) y una imagen a pantalla completa (`libroHistoria.png`).
-	- Se limpiÃ³ el `MenuPrincipal.tscn` eliminando el submenÃº anidado (`VBox_menu_libro`) y se configurÃ³ el botÃ³n para hacer una transiciÃ³n directa a esta nueva escena.
-	- Se programÃ³ `libro_historia.gd` con conexiÃ³n dinÃ¡mica a un botÃ³n personalizado (`exit_book_btn`) y soporte para la tecla **Esc**, garantizando un retorno seguro al menÃº principal.
-
-18. **Correcciones UI en MenÃº Principal**:
-	- Se modificaron todos los botones para utilizar `StyleBoxTexture` con la imagen `fondo_botones2.png`.
-	- Se configuraron los mÃ¡rgenes internos (`content_margin`) y de textura (`texture_margin` tipo NinePatch) para evitar deformaciones y asegurar que la imagen abarque dinÃ¡micamente todo el espacio de los botones.
-	- Se aÃ±adieron variaciones de opacidad y color a los estados `hover`, `pressed` y `focus` para dar interactividad.
-	- Se unificÃ³ el color de la fuente de todos los botones al cÃ³digo `#3e2723` (cafÃ© oscuro) para un mejor contraste.
-
-## ðŸŒŠ Otros Sistemas y Cambios Recientes (ActualizaciÃ³n)
-
-19. **Gestor AutomÃ¡tico de Nivel (`tenoch_manager.gd`)**:
-	- Se aÃ±adiÃ³ un gestor para la escena de TenochtitlÃ¡n que busca de forma autÃ³noma el `CuadroDialogo` y autoejecuta la lÃ­nea inicial de `"inicio_tenoch"` para iniciar la narrativa directamente al abrir el nivel.
-
-20. **Sistemas de Agua y RepeticiÃ³n de Entorno**:
-	- Se integrÃ³ el script `water_repeater.gd` que permite clonar horizontalmente animaciones base (como agua o entorno) basÃ¡ndose en una distancia configurada, cubriendo el escenario dinÃ¡micamente.
-	- Se integraron ejemplos de shaders (`boujie_water_shader`) para renderizados acuÃ¡ticos o distorsiones visuales.
-
-21. **Escenas de Minijuegos e Interfaces Secundarias**:
-	- El proyecto cuenta con la base para el minijuego **Atlas-Bird** (clon estilo Flappy Bird), una escena de rompecabezas (`SlidePuzzle`) y la interfaz de la mÃ¡quina del tiempo o laboratorio principal (`IU_Maquina.tscn`).
-
-22. **Scripts Individuales de los Aluxes (`alux_1.gd`, `alux_2.gd`, `alux_3.gd`)**:
-	- Cada Alux (Kaan, Chaac, etc.) cuenta con su propio script heredando de `CharacterBody2D` y escena independiente, con lÃ³gica propia para animar su movimiento (idle, correr izquierda/derecha) separados del jugador principal.
-
-23. **EliminaciÃ³n Permanente de la MecÃ¡nica de Salto**:
-	- Se removiÃ³ por completo toda la lÃ³gica de salto (entradas del teclado y la constante `JUMP_VELOCITY`) dentro de `player.gd`, asÃ­ como de los scripts de los Aluxes (`alux_1.gd`, `alux_2.gd`, `alux_3.gd`). 
-	- El jugador y los NPC ahora se desplazan exclusivamente de forma horizontal, ajustÃ¡ndose a la estructura narrativa y mecÃ¡nicas actuales del entorno.
-
-24. **LÃ­mites DinÃ¡micos de la CÃ¡mara (Camera2D)**:
-	- Se eliminaron los lÃ­mites fijos en la `Camera2D` dentro de `Player.tscn` para evitar bloqueos en niveles extensos.
-	- Se implementÃ³ un sistema dinÃ¡mico usando un nodo visual `ReferenceRect` por nivel. 
-	- Se actualizÃ³ el `Laboratorio.tscn` aÃ±adiÃ©ndole el nodo `LimitesCamara` y se creÃ³ el script `laboratorio_manager.gd` para leer esos lÃ­mites e inyectarlos en la cÃ¡mara, resolviendo el problema de la visibilidad del fondo gris en los bordes del mapa.
-
-25. **Corrección Definitiva del Sistema de Animación y Autoload (Global)**:
-	- Se detectó un fallo crítico en Godot 4 donde el Autoload `Global` no era reconocido debido a su ruta UID interna en `project.godot`. Se reemplazó por su ruta explícita (`res://Scripts/global.gd`), forzando su carga al inicio.
-	- **Scripts reescritos desde cero:** `player.gd`, `respirador.gd` y `dialogo_manager.gd` fueron recodificados para ser 100% estables y a prueba de errores de ruta.
-	- Se garantizó que el jugador (Player) congele completamente su movimiento (`velocity.x = 0.0`) cuando se abre el cuadro de diálogo leyendo la variable `Global.en_dialogo` de forma segura.
-	- **Animaciones automáticas:** Se programó a `player.gd` para que consulte el `Global` y cargue las animaciones del personaje elegido en el menú. Si esto falla, cuenta con un sistema 'Plan B' para cargar al Personaje 1 de forma estática, garantizando que el modelo nunca se quede invisible o sin animaciones.
-
-26. **Mejoras de Cámara y Ajuste de Pantalla (Scaling)**:
-	- Se aplicó el sistema de límites dinámicos de cámara a la escena de Tenochtitlán (`tenoch_manager.gd`), permitiendo controlar hasta dónde se desplaza la cámara añadiendo un nodo `ReferenceRect` llamado `LimitesCamara` en el editor.
-	- Se forzó el parámetro `window/stretch/aspect="keep"` en `project.godot` para preservar la relación de aspecto 16:9 intacta.
-	- Se identificó que el reescalado visual del viewport se activa correctamente en modos Fullscreen y Maximized, pero queda fijado por el editor en modo Windowed estricto para proteger la resolución de desarrollo (720p).
-
-27. **Controles Táctiles y UI**:
-	- Creación de la escena `ControlesTactiles.tscn` y su script `controles_tactiles.gd`.
-	- Sistema dinámico que oculta los controles táctiles automáticamente cuando la variable global `en_dialogo` está activa.
-
-28. **Compañero Atlas (`atlas.gd`)**:
-	- Se configuró el script de comportamiento para Atlas como un `CharacterBody2D`.
-	- Implementación de mecánicas de seguimiento al jugador (`follow_distance`) y activación de diálogos automática al entrar a su área.
-	- Exclusión de colisiones con otros NPCs para evitar bloqueos durante la navegación.
-
-29. **Nuevos Diálogos y Actualización del Manager**:
-	- Modificación de `dialogo_manager.gd` para mejorar la estabilidad y emitir señales (`dialogo_terminado`) esenciales para el flujo del juego.
-	- Inserción de nuevos bloques en `dialogos.json`, como `error_maquina`, `encuentro_atlas` e `inicio_tenoch`, expandiendo la narrativa del viaje en el tiempo y las interacciones con el alux Kaan.
-
-30. **Ajustes al Robot Atlas y Diálogos**:
-	- Se modificó `atlas.gd` para eliminar la lógica y variables relacionadas con la animación de caminar (`tex_walk`, `hframes_walk`), permitiendo que Atlas use exclusivamente su animación de reposo (`tex_idle`).
-	- Se corrigió la lógica de dirección visual (`flip_h`) de Atlas al seguir al jugador, para adaptarse a su *spritesheet* original que mira hacia la izquierda por defecto.
-	- Se actualizó masivamente el archivo `dialogos.json` para añadir el retrato de Atlas (`res://Images/Personajes/Atlas/atlas_cara.png`) a todas las intervenciones de "Atlas" y "Atlas (Auricular)", corrigiendo además un diálogo que poseía la imagen equivocada.
-
-31. **Sistema Global de Transiciones de Escena (Fade In/Out)**:
-	- Se creó el script `scene_transition.gd` y se registró como *Autoload* en `project.godot` para que siempre esté disponible por encima de cualquier escena.
-	- El sistema dibuja un `ColorRect` negro animado usando `Tween` para oscurecer la pantalla ("Fade Out"), cambiar de escena en segundo plano y luego aclararse ("Fade In").
-	- Se reemplazaron los cambios bruscos (`get_tree().change_scene_to_file`) por llamadas a `SceneTransition.change_scene()` en `capitulo1_intro.gd` y en los botones **Guardar** y **Volver** de `creacion_personaje.gd`.
-
-32. **Implementación Completa: Minijuego "Palabras Impostoras"**:
-	- Se rediseñó la UI para utilizar un `HFlowContainer`, permitiendo texto dinámico y word-wrap natural.
-	- Se integró el sistema de eventos en `dialogo_manager.gd` para invocar el minijuego automáticamente cuando el archivo `dialogos.json` contenga la etiqueta `"evento": "minijuego_palabras_nivel_1"`.
-	- La lógica fue reestructurada: El jugador busca la alteración moviendo un "Detector de la Verdad" (`detector.png`) que parpadea y "pita" más rápido conforme se acerca a la palabra impostora. Al encontrarla y sostenerla, despliega un menú interactivo (`ColorRect`) con tres cartas para corregir la historia.
-	- **Condición de victoria:** Se añadió la comprobación dinámica en el botón "Analizar con Atlas" que, en caso de fallar, invoca al sistema principal `CuadroDialogo` para mostrar el diálogo `"error_palabras"`.
-
-33. **Mejoras en el "Libro de Historia"**:
-	- Se ajustó el `TextureRect` del libro usando `stretch_mode = 5` (Keep Aspect Centered) y se le programó una animación de "zoom elástico" (`Tween.TRANS_BACK`) al abrir el libro, dándole una entrada mucho más interactiva y llamativa.
-	- **Sección Minijuegos:** Se insertó un `VBoxContainer` con botones tipo texto (`flat = true`) que funcionan como menú de accesos directos rápidos para cargar `PalabrasImpostoras.tscn` y `Memorama.tscn` directamente desde el libro.
-
-34. **Bugfix del Mouse en Menú de Pausa**:
-	- Se parcheó un problema de diseño donde, al pausar desde un minijuego que esconde el ratón, el cursor permanecía invisible, atrapando al jugador.
-	- `menu_pausa.gd` ahora captura el modo actual del cursor (`Input.get_mouse_mode()`) en una variable `mouse_mode_previo`, fuerza al cursor a ser visible para usar el menú, y restaura su estado anterior exactamente como estaba al reanudar el juego.
+- **Faltan los diálogos `final_capN` de los capítulos 2 a 5.** Sin el diálogo final un capítulo no se
+  puede completar: el jugador entra al nivel pero la historia nunca avanza. Es lo más urgente.
+  El de capítulo 6 ya existe (`final_cap6`, lanza Atlas-Bird desde la zona `ZonaFinalCap6` que se
+  agregó al final del mapa, en x=2700).
+- Las 4 escenas nuevas son copias de Tenoch: falta ambientarlas (tilesets, NPCs, recorrido).
+- **Retrato del jugador roto en todos los diálogos**: apuntan a
+  `Personajes_Principales/Personaje1/personaje.png`, que ya no existe (la carpeta ahora es
+  `personaje1` en minúscula, con `respirando.png` y `caminando.png`). Reponer ese archivo arregla
+  los 43 diálogos de una sola vez.
+- Los NPCs de los capítulos 3 a 6 (Guerrero mexica, Cronista, Escribano, Pregonero) van sin retrato
+  porque todavía no hay arte.
+- Los años de los capítulos 4 y 5 (1523 y 1530) fueron una propuesta: ajustarlos en `capitulos.json`
+  a lo que pida el temario. 1521 y 1535 sí son fechas históricas firmes.
+- El orden "Primeros años de virreinato" (cap 4) antes de "Instauración del virreinato" (cap 6) es
+  cronológicamente raro; si fue un cruce, se corrige moviendo bloques en `capitulos.json`.

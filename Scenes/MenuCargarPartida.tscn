@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bsnn76mar8t71"]
+
+[ext_resource type="Script" uid="uid://citi1vi34h1vj" path="res://Scripts/menu_cargar.gd" id="1_scpt"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="2_emr3y"]
+
+[node name="MenuCargarPartida" type="Control" unique_id=2040320868]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_scpt")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=966889412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.101961, 0.901961)
+
+[node name="Titulo" type="Label" parent="." unique_id=693546431]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 328.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("2_emr3y")
+theme_override_font_sizes/font_size = 24
+text = "Partidas Guardadas"
+
+[node name="BtnVolver" type="Button" parent="." unique_id=1633113509]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 24.0
+offset_right = 592.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("2_emr3y")
+text = "Volver al Menú"
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=707500690]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 608.0
+offset_bottom = 336.0
+
+[node name="ListaPartidas" type="VBoxContainer" parent="Scroll" unique_id=1379033825]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10

@@ -1,0 +1,90 @@
+{
+	"_instrucciones": {
+		"como_agregar_un_nivel": "Copia cualquier bloque 'nivel_X' de abajo, cambiale el nombre y apunta 'imagen' a tu PNG.",
+		"imagen": "Ruta res:// de UNA sola imagen. El juego la corta solo con forma de rompecabezas.",
+		"tamano_recomendado": "840x560 px (proporcion 3:2). Todas del mismo tamano.",
+		"piezas": "El numero de piezas YA NO se pone por nivel: lo elige el jugador al empezar, en '_dificultades'.",
+		"segundos": "Tiempo limite para armarlo. Pon 0 si quieres ese nivel sin reloj.",
+		"mostrar_guia": "true = se ve la imagen tenue en el tablero como pista. false = tablero vacio (mas dificil).",
+		"pistas_maximas": "Cuantas veces puede el jugador pedir que se coloque una pieza sola. Pon 0 para quitar el boton."
+	},
+
+	"_dificultades": {
+		"relajado": {
+			"nombre": "Relajado",
+			"filas": 3,
+			"columnas": 3
+		},
+		"desafiante": {
+			"nombre": "Desafiante",
+			"filas": 4,
+			"columnas": 4
+		}
+	},
+
+	"nivel_1": {
+		"titulo": "El Templo Mayor",
+		"imagen": "res://Images/img-rompecabezas/niv_1.jpg",
+		"segundos": 100,
+		"mostrar_guia": true,
+		"opacidad_guia": 0.25,
+		"pistas_maximas": 3,
+		"texto_victoria": "¡Armaste el recuerdo!",
+		"texto_derrota": "¡Se acabó el tiempo!"
+	},
+
+	"nivel_2": {
+		"titulo": "La noche triste",
+		"imagen": "res://Images/img-rompecabezas/niv_2.jpg",
+		"segundos": 100,
+		"mostrar_guia": true,
+		"opacidad_guia": 0.18,
+		"pistas_maximas": 3,
+		"texto_victoria": "¡Lo lograste!",
+		"texto_derrota": "¡Se acabó el tiempo!"
+	},
+
+	"nivel_3": {
+		"titulo": "La caida de Tenochtitlan",
+		"imagen": "res://Images/img-rompecabezas/niv_3.jpg",
+		"segundos": 100,
+		"mostrar_guia": false,
+		"opacidad_guia": 0.0,
+		"pistas_maximas": 5,
+		"texto_victoria": "¡Recuerdo restaurado!",
+		"texto_derrota": "¡Se acabó el tiempo!"
+	},
+	
+	"nivel_4": {
+		"titulo": "Primero años de virreinato",
+		"imagen": "res://Images/img-rompecabezas/niv_4.jpg",
+		"segundos": 100,
+		"mostrar_guia": false,
+		"opacidad_guia": 0.0,
+		"pistas_maximas": 5,
+		"texto_victoria": "¡Recuerdo restaurado!",
+		"texto_derrota": "¡Se acabó el tiempo!"
+	},
+	
+	"nivel_5": {
+		"titulo": "Reformas y organizacion del virreinato",
+		"imagen": "res://Images/img-rompecabezas/niv_5.jpg",
+		"segundos": 100,
+		"mostrar_guia": false,
+		"opacidad_guia": 0.0,
+		"pistas_maximas": 5,
+		"texto_victoria": "¡Recuerdo restaurado!",
+		"texto_derrota": "¡Se acabó el tiempo!"
+	},
+	
+	"nivel_6": {
+		"titulo": "Asentamiento del virreinato",
+		"imagen": "res://Images/img-rompecabezas/niv_6.jpg",
+		"segundos": 100,
+		"mostrar_guia": false,
+		"opacidad_guia": 0.0,
+		"pistas_maximas": 5,
+		"texto_victoria": "¡Recuerdo restaurado!",
+		"texto_derrota": "¡Se acabó el tiempo!"
+	}
+}

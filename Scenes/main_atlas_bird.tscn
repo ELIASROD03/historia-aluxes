@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c2oh7gq2ba7s7"]
+
+[ext_resource type="Texture2D" uid="uid://bywm1s6wlkl5t" path="res://Scenes/Atlas-Bird/assets/Bosque.png" id="1_08bkq"]
+
+[node name="Main-atlasBird" type="Node" unique_id=1061334499]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1814186383]
+position = Vector2(320, 180.00002)
+scale = Vector2(0.40000004, 0.40909094)
+texture = ExtResource("1_08bkq")

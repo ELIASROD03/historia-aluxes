@@ -22,9 +22,9 @@ El minijuego utiliza el sonido como la pista principal para que el jugador local
 1.  Cada palabra impostora oculta posee un área de detección basada en coordenadas bidimensionales en la pantalla.
 2.  El sistema calcula constantemente la distancia entre la posición actual del detector (cursor) y el centro de la palabra impostora más cercana.
 3.  **Comportamiento del Audio:** 
-    *   **Distancia Lejana:** Emitirá un "bip" aislado y pausado (cada 1.5 segundos).
-    *   **Aproximación:** Conforme el detector se acerque a los límites de la palabra, el intervalo entre los pitidos disminuirá de forma progresiva.
-    *   **Contacto Directo:** Al posicionarse exactamente encima de la palabra impostora, el sonido se transformará en un pitido rápido, agudo y continuo.
+	*   **Distancia Lejana:** Emitirá un "bip" aislado y pausado (cada 1.5 segundos).
+	*   **Aproximación:** Conforme el detector se acerque a los límites de la palabra, el intervalo entre los pitidos disminuirá de forma progresiva.
+	*   **Contacto Directo:** Al posicionarse exactamente encima de la palabra impostora, el sonido se transformará en un pitido rápido, agudo y continuo.
 
 ---
 

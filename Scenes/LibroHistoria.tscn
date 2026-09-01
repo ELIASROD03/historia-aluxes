@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cborpd6ktj571" path="res://Scripts/libro_historia.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://d2phavblowh4w" path="res://Images/Tilesets/libroHistoria.png" id="2_img"]
-[ext_resource type="FontFile" uid="uid://bt5yjar8a2sq6" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="3_2vse5"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="3_2vse5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp4hd"]
 bg_color = Color(0.86464995, 0.49340576, 0.14019802, 1)
@@ -51,11 +51,11 @@ text = "SALIR"
 
 [node name="ContenedorMinijuegos" type="VBoxContainer" parent="." unique_id=436927258]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 30.0
-offset_right = 270.0
-offset_bottom = 105.0
-theme_override_constants/separation = 10
+offset_left = 120.0
+offset_top = 18.0
+offset_right = 284.0
+offset_bottom = 224.0
+theme_override_constants/separation = 8
 
 [node name="Titulo" type="Label" parent="ContenedorMinijuegos" unique_id=1045839378]
 layout_mode = 2
@@ -66,21 +66,52 @@ horizontal_alignment = 1
 
 [node name="BtnPalabras" type="Button" parent="ContenedorMinijuegos" unique_id=1756605141]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.8, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("3_2vse5")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Palabras Impostoras"
 flat = true
 
 [node name="BtnMemorama" type="Button" parent="ContenedorMinijuegos" unique_id=384174216]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.8, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("3_2vse5")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Memorama"
+flat = true
+
+[node name="BtnRompecabezas" type="Button" parent="ContenedorMinijuegos" unique_id=436492907]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_2vse5")
+theme_override_font_sizes/font_size = 14
+text = "Rompecabezas"
+flat = true
+
+[node name="BtnAtlasBird" type="Button" parent="ContenedorMinijuegos" unique_id=1083963926]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_2vse5")
+theme_override_font_sizes/font_size = 14
+text = "Atlas-Bird"
+flat = true
+
+[node name="BtnTopoAlux" type="Button" parent="ContenedorMinijuegos" unique_id=1736969205]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_2vse5")
+theme_override_font_sizes/font_size = 14
+text = "Topo Alux"
 flat = true
 
 [connection signal="pressed" from="ContenedorMinijuegos/BtnPalabras" to="." method="_on_btn_palabras_pressed"]
 [connection signal="pressed" from="ContenedorMinijuegos/BtnMemorama" to="." method="_on_btn_memorama_pressed"]
+[connection signal="pressed" from="ContenedorMinijuegos/BtnRompecabezas" to="." method="_on_btn_rompecabezas_pressed"]
+[connection signal="pressed" from="ContenedorMinijuegos/BtnAtlasBird" to="." method="_on_btn_atlas_bird_pressed"]
+[connection signal="pressed" from="ContenedorMinijuegos/BtnTopoAlux" to="." method="_on_btn_topo_alux_pressed"]

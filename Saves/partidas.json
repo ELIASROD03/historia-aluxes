@@ -1,0 +1,39 @@
+{
+	"save_1": {
+		"anio_objetivo_actual": "1519",
+		"conoce_atlas": false,
+		"escena_actual": "res://Scenes/Laboratorio.tscn",
+		"eventos_completados": {
+			"topo_tutorial_visto": true
+		},
+		"nombre_jugador": "Jugador",
+		"personaje_seleccionado": "Personaje1",
+		"posicion_x": 0.0,
+		"posicion_y": 0.0,
+		"progreso_historia": 1,
+		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje1/respirando.png",
+		"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje1/caminando.png",
+		"tiempo_juego": 57.3803343333234
+	},
+	"save_20260831_163906": {
+		"anio_objetivo_actual": "1520",
+		"conoce_atlas": true,
+		"escena_actual": "res://Scenes/Laboratorio.tscn",
+		"eventos_completados": {
+			"atlas_conocido": true,
+			"capitulo_1_completado": true,
+			"dialogo_kaan_cap1": true,
+			"dialogo_soldado_cap1": true,
+			"encuentro_cortes_moctezuma_cap1": true,
+			"inicio_tenoch": true
+		},
+		"nombre_jugador": "Elias",
+		"personaje_seleccionado": "Personaje4",
+		"posicion_x": 167.500030517578,
+		"posicion_y": 211.675079345703,
+		"progreso_historia": 2.0,
+		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje4/respirando.png",
+		"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje4/caminando.png",
+		"tiempo_juego": 123.671394939432
+	}
+}

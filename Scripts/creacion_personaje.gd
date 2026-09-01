@@ -5,20 +5,16 @@ extends Control
 @onready var btn_izq = $PanelVistaPrevia/HBoxSeleccion/BtnIzq
 @onready var btn_der = $PanelVistaPrevia/HBoxSeleccion/BtnDer
 
-# Lista de personajes disponibles (ahora solo tenemos 1, pero listo para agregar más)
-var personajes = [
-	{
-		"id": "Personaje1",
-		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/Personaje1/respirando/untitled(7).png",
-		"ruta_walk": "res://Images/Personajes/Personajes_Principales/Personaje1/walk.png"
-	},
-	{
-		"id": "Personaje2",
-		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/Personaje2/respirando/untitled(7).png",
-		"ruta_walk": ""
-	}
-]
+var personajes = []
 var indice_personaje_actual = 0
+
+func _init() -> void:
+	for i in range(1, 7):
+		personajes.append({
+			"id": "Personaje" + str(i),
+			"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje%d/respirando.png" % i,
+			"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje%d/caminando.png" % i
+		})
 
 func _ready() -> void:
 	if btn_izq: btn_izq.pressed.connect(_on_btn_izq_pressed)
@@ -89,13 +85,28 @@ func _on_guardar_btn_pressed() -> void:
 	
 	if has_node("/root/Global"):
 		var Global = get_node("/root/Global")
-		Global.nombre_jugador = nombre_ingresado
-		Global.personaje_seleccionado = personajes[indice_personaje_actual]["id"]
-		Global.ruta_spritesheet = personajes[indice_personaje_actual]["ruta_spritesheet"]
-		Global.ruta_walk = personajes[indice_personaje_actual].get("ruta_walk", "")
+		var creado_exitosamente = Global.iniciar_nueva_partida(
+			nombre_ingresado,
+			personajes[indice_personaje_actual]["id"],
+			personajes[indice_personaje_actual]["ruta_spritesheet"],
+			personajes[indice_personaje_actual].get("ruta_walk", "")
+		)
+		
+		if not creado_exitosamente:
+			var alert = AcceptDialog.new()
+			alert.title = "Límite Alcanzado"
+			alert.dialog_text = "Ya tienes 5 partidas guardadas.\nPor favor, ve al menú Continuar y borra\nuna partida antes de crear una nueva."
+			
+			var label = alert.get_label()
+			if label:
+				label.add_theme_font_size_override("font_size", 12)
+				
+			add_child(alert)
+			alert.popup_centered(Vector2i(250, 100))
+			return
 		
 	print("Personaje seleccionado: ", datos_personaje)
-	SceneTransition.change_scene("res://Scenes/Capitulo1Intro.tscn")
+	SceneTransition.change_scene("res://Scenes/Laboratorio.tscn")
 
 func _on_volver_btn_pressed() -> void:
 	SceneTransition.change_scene("res://Scenes/MenuPrincipal.tscn")

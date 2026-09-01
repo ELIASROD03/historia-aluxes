@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bd3nybvsaakvl"]
+
+[ext_resource type="Script" uid="uid://c13ookm56j5y0" path="res://Scripts/canoa_movil.gd" id="1_gscov"]
+[ext_resource type="Texture2D" uid="uid://3ifsf146sa4k" path="res://Images/Personajes/Npc_level1/canoa.png" id="2_bwf3i"]
+[ext_resource type="Texture2D" uid="uid://c1cy72ixm2rgx" path="res://Images/Personajes/Npc_level1/hombre_canoa_spritesheet.png" id="3_a3dmr"]
+
+[node name="CanoaNpc" type="Node2D" unique_id=148347510]
+script = ExtResource("1_gscov")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=702514482]
+position = Vector2(2, 26)
+texture = ExtResource("2_bwf3i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=461294994]
+position = Vector2(2, 10)
+texture = ExtResource("3_a3dmr")
+hframes = 9
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=950295543]
+position = Vector2(-54, -14)
+rect = Rect2(-10, -10, 130, 66)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

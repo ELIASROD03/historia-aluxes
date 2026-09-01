@@ -1,23 +1,295 @@
 {
-  "nivel_1": {
-	"historia": "En el año 1519, los conquistadores llegaron cabalgando sobre un majestuoso {zona_1} .\n\nPara celebrar la alianza, intercambiaron valiosos obsequios, entregando como muestra de paz una {zona_2} .",
+  "nivel_1_1": {
+	"historia": "Nuestro capitán Hernán Cortés llegó cabalgando sobre un majestuoso {zona_1} .\n\nPara celebrar la alianza con el emperador Moctezuma, intercambiamos valiosos obsequios, entregándole unas {zona_2} .\n\nEl emperador se mostró tan asombrado por nuestra presencia que nos ofreció hospedaje en el gran {zona_3} de la ciudad.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "monopatín espacial",
 		"correcta": "Caballo",
 		"opciones": [
-		  {"texto": "Caballo", "img": "res://icon.svg"},
-		  {"texto": "León", "img": "res://icon.svg"},
-		  {"texto": "Carreta", "img": "res://icon.svg"}
+		  {
+			"texto": "Caballo",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "León",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Carreta",
+			"img": "res://icon.svg"
+		  }
 		]
 	  },
 	  "zona_2": {
-		"texto_original": "rebanada de pizza de piña",
+		"texto_original": "rebanadas de pizza de piña",
 		"correcta": "Cuentas de Vidrio",
 		"opciones": [
-		  {"texto": "Cuentas de Vidrio", "img": "res://icon.svg"},
-		  {"texto": "Monedas de Oro", "img": "res://icon.svg"},
-		  {"texto": "Espadas de Hierro", "img": "res://icon.svg"}
+		  {
+			"texto": "Cuentas de Vidrio",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Monedas de Oro",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Espadas de Hierro",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "hotel de cinco estrellas",
+		"correcta": "Palacio",
+		"opciones": [
+		  {
+			"texto": "Palacio",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Mercado",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Barco",
+			"img": "res://icon.svg"
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_1_2": {
+	"historia": "Hoy fuimos a inspeccionar el inmenso mercado de Tlatelolco, donde los indios vendían montones de {zona_1} .\n\nMe quedé helado al ver sus cultivos flotantes, las llamadas {zona_2} , donde siembran sus alimentos en medio del agua.\n\nIncluso nos invitaron a beber de su brebaje sagrado, una bebida oscura que llaman {zona_3} y reservan para sus nobles.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "consolas de videojuegos",
+		"correcta": "Algodón y Plumas",
+		"opciones": [
+		  {
+			"texto": "Algodón y Plumas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Joyas de Diamante",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Ropa de Seda",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "piscinas inflables",
+		"correcta": "Chinampas",
+		"opciones": [
+		  {
+			"texto": "Chinampas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Jardines Colgantes",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Invernaderos",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "bebida energética",
+		"correcta": "Cacao",
+		"opciones": [
+		  {
+			"texto": "Cacao",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Café",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Vino",
+			"img": "res://icon.svg"
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_1_3": {
+	"historia": "Vi de cerca a los guerreros locales. Se protegen el pecho con un escudo circular muy curioso que llaman {zona_1} .\n\nPara el combate no usan espadas de acero como las nuestras, sino un madero con filos de obsidiana llamado {zona_2} .\n\nSus batallones lucen muy fieros, en especial esos soldados vestidos con plumas de {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "campo de fuerza láser",
+		"correcta": "Chimalli",
+		"opciones": [
+		  {
+			"texto": "Chimalli",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Casco de Acero",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Chaleco de Cuero",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "sable de luz",
+		"correcta": "Macuahuitl",
+		"opciones": [
+		  {
+			"texto": "Macuahuitl",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Lanza de Hierro",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Hacha de Bronce",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "robot cyborg",
+		"correcta": "Águila",
+		"opciones": [
+		  {
+			"texto": "Águila",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Dragón",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Lobo",
+			"img": "res://icon.svg"
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_1_4": {
+	"historia": "En el centro de esta colosal ciudad se alza el {zona_1} , un lugar imponente que me pone los pelos de punta.\n\nLos sacerdotes hacen sus ofrendas sagradas pidiéndole lluvia a su ídolo {zona_2} .\n\nDicen que todas sus creencias giran en torno al dios serpiente emplumada, al que adoran como {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "centro comercial gigante",
+		"correcta": "Templo Mayor",
+		"opciones": [
+		  {
+			"texto": "Templo Mayor",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Coliseo",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Castillo",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "bombero con manguera",
+		"correcta": "Tláloc",
+		"opciones": [
+		  {
+			"texto": "Tláloc",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Zeus",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Thor",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "helicóptero volador",
+		"correcta": "Quetzalcóatl",
+		"opciones": [
+		  {
+			"texto": "Quetzalcóatl",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Anubis",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Apolo",
+			"img": "res://icon.svg"
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_1_5": {
+	"historia": "Me cuesta creer que esta magnífica ciudad entera fue construida en medio del inmenso {zona_1} .\n\nPara llegar hasta aquí, tuvimos que marchar por las largas {zona_2} de piedra que conectan con la orilla.\n\nA nuestro alrededor hay cientos de pequeños botes, que ellos llaman {zona_3} , moviéndose deprisa por los canales de agua.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "estacionamiento asfaltado",
+		"correcta": "Lago",
+		"opciones": [
+		  {
+			"texto": "Lago",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Desierto",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Valle",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "autopistas de asfalto",
+		"correcta": "Calzadas",
+		"opciones": [
+		  {
+			"texto": "Calzadas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Murallas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Puentes Colgantes",
+			"img": "res://icon.svg"
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "motos acuáticas",
+		"correcta": "Canoas",
+		"opciones": [
+		  {
+			"texto": "Canoas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Carabelas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Galeones",
+			"img": "res://icon.svg"
+		  }
 		]
 	  }
 	}
@@ -29,18 +301,1511 @@
 		"texto_original": "teléfonos celulares",
 		"correcta": "Caracolas",
 		"opciones": [
-		  {"texto": "Caracolas", "img": "res://icon.svg"},
-		  {"texto": "Tambores", "img": "res://icon.svg"},
-		  {"texto": "Antenas", "img": "res://icon.svg"}
+		  {
+			"texto": "Caracolas",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Tambores",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Antenas",
+			"img": "res://icon.svg"
+		  }
 		]
 	  },
 	  "zona_2": {
 		"texto_original": "sushi",
 		"correcta": "Maíz",
 		"opciones": [
-		  {"texto": "Maíz", "img": "res://icon.svg"},
-		  {"texto": "Trigo", "img": "res://icon.svg"},
-		  {"texto": "Arroz", "img": "res://icon.svg"}
+		  {
+			"texto": "Maíz",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Trigo",
+			"img": "res://icon.svg"
+		  },
+		  {
+			"texto": "Arroz",
+			"img": "res://icon.svg"
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_2_1": {
+	"historia": "Aquella noche salimos en silencio por la calzada de {zona_1} , cargando en hombros unos {zona_2} para cruzar los canales.\n\nLlovía tanto que nadie nos vio al principio.\n\nEn la huida perdimos casi todo el {zona_3} que habíamos juntado en el palacio.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "escaleras eléctricas",
+		"correcta": "Tacuba",
+		"opciones": [
+		  {
+			"texto": "Tacuba",
+			"img": ""
+		  },
+		  {
+			"texto": "Iztapalapa",
+			"img": ""
+		  },
+		  {
+			"texto": "Tepeyac",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "trampolines inflables",
+		"correcta": "puentes de madera",
+		"opciones": [
+		  {
+			"texto": "puentes de madera",
+			"img": ""
+		  },
+		  {
+			"texto": "escudos de plumas",
+			"img": ""
+		  },
+		  {
+			"texto": "sacos de maíz",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "saldo del celular",
+		"correcta": "tesoro de oro",
+		"opciones": [
+		  {
+			"texto": "tesoro de oro",
+			"img": ""
+		  },
+		  {
+			"texto": "ganado vacuno",
+			"img": ""
+		  },
+		  {
+			"texto": "correo real",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_2_2": {
+	"historia": "Todo empezó cuando el capitán {zona_1} atacó a los mexicas mientras celebraban la fiesta de {zona_2} .\n\nLa matanza ocurrió en el patio del {zona_3} , y desde entonces la ciudad entera se levantó contra nosotros.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un youtuber famoso",
+		"correcta": "Pedro de Alvarado",
+		"opciones": [
+		  {
+			"texto": "Pedro de Alvarado",
+			"img": ""
+		  },
+		  {
+			"texto": "Bernal Díaz",
+			"img": ""
+		  },
+		  {
+			"texto": "Vasco de Quiroga",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "el viernes de ofertas",
+		"correcta": "Tóxcatl",
+		"opciones": [
+		  {
+			"texto": "Tóxcatl",
+			"img": ""
+		  },
+		  {
+			"texto": "la vendimia",
+			"img": ""
+		  },
+		  {
+			"texto": "el carnaval",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "estadio de futbol",
+		"correcta": "Templo Mayor",
+		"opciones": [
+		  {
+			"texto": "Templo Mayor",
+			"img": ""
+		  },
+		  {
+			"texto": "puerto de Veracruz",
+			"img": ""
+		  },
+		  {
+			"texto": "convento de monjas",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_2_3": {
+	"historia": "Tras la muerte de Moctezuma, los mexicas nombraron tlatoani a {zona_1} .\n\nPero al poco tiempo se extendió una enfermedad traída por nosotros, la {zona_2} , que mató a muchísima gente.\n\nEl nuevo tlatoani murió por ella en apenas {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un influencer",
+		"correcta": "Cuitláhuac",
+		"opciones": [
+		  {
+			"texto": "Cuitláhuac",
+			"img": ""
+		  },
+		  {
+			"texto": "Nezahualcóyotl",
+			"img": ""
+		  },
+		  {
+			"texto": "Xicoténcatl",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "alergia al polen",
+		"correcta": "viruela",
+		"opciones": [
+		  {
+			"texto": "viruela",
+			"img": ""
+		  },
+		  {
+			"texto": "gripe de temporada",
+			"img": ""
+		  },
+		  {
+			"texto": "insolación",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "dos siglos",
+		"correcta": "ochenta días",
+		"opciones": [
+		  {
+			"texto": "ochenta días",
+			"img": ""
+		  },
+		  {
+			"texto": "una semana",
+			"img": ""
+		  },
+		  {
+			"texto": "diez años",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_2_4": {
+	"historia": "Huimos de madrugada, aprovechando la {zona_1} que cubría el lago.\n\nUna mujer que sacaba agua nos descubrió y dio la {zona_2} a toda la ciudad.\n\nLos sobrevivientes buscamos refugio en {zona_3} , donde teníamos aliados.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "señal de wifi",
+		"correcta": "lluvia",
+		"opciones": [
+		  {
+			"texto": "lluvia",
+			"img": ""
+		  },
+		  {
+			"texto": "nieve",
+			"img": ""
+		  },
+		  {
+			"texto": "arena del desierto",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "videollamada",
+		"correcta": "alarma",
+		"opciones": [
+		  {
+			"texto": "alarma",
+			"img": ""
+		  },
+		  {
+			"texto": "propina",
+			"img": ""
+		  },
+		  {
+			"texto": "bienvenida",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "la estación espacial",
+		"correcta": "Tlaxcala",
+		"opciones": [
+		  {
+			"texto": "Tlaxcala",
+			"img": ""
+		  },
+		  {
+			"texto": "Sevilla",
+			"img": ""
+		  },
+		  {
+			"texto": "La Habana",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_2_5": {
+	"historia": "Ya fuera de la ciudad nos alcanzaron en la llanura de {zona_1} y tuvimos que pelear otra vez.\n\nNos salvaron los {zona_2} , que los mexicas nunca habían visto en batalla.\n\nSin la ayuda de nuestros aliados {zona_3} no habríamos sobrevivido.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un centro comercial",
+		"correcta": "Otumba",
+		"opciones": [
+		  {
+			"texto": "Otumba",
+			"img": ""
+		  },
+		  {
+			"texto": "Cholula",
+			"img": ""
+		  },
+		  {
+			"texto": "Zempoala",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "tanques de guerra",
+		"correcta": "caballos",
+		"opciones": [
+		  {
+			"texto": "caballos",
+			"img": ""
+		  },
+		  {
+			"texto": "elefantes",
+			"img": ""
+		  },
+		  {
+			"texto": "barcos de vapor",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "robots",
+		"correcta": "tlaxcaltecas",
+		"opciones": [
+		  {
+			"texto": "tlaxcaltecas",
+			"img": ""
+		  },
+		  {
+			"texto": "mayas",
+			"img": ""
+		  },
+		  {
+			"texto": "incas",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_3_1": {
+	"historia": "El sitio de la ciudad duró {zona_1} , de mayo a agosto.\n\nCortés mandó construir {zona_2} para dominar el agua y cortar las calzadas.\n\nAsí controlamos por completo el lago de {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "tres minutos",
+		"correcta": "casi tres meses",
+		"opciones": [
+		  {
+			"texto": "casi tres meses",
+			"img": ""
+		  },
+		  {
+			"texto": "veinte años",
+			"img": ""
+		  },
+		  {
+			"texto": "una tarde",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "submarinos nucleares",
+		"correcta": "bergantines",
+		"opciones": [
+		  {
+			"texto": "bergantines",
+			"img": ""
+		  },
+		  {
+			"texto": "globos aerostaticos",
+			"img": ""
+		  },
+		  {
+			"texto": "trenes de vapor",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "Cancún",
+		"correcta": "Texcoco",
+		"opciones": [
+		  {
+			"texto": "Texcoco",
+			"img": ""
+		  },
+		  {
+			"texto": "Pátzcuaro",
+			"img": ""
+		  },
+		  {
+			"texto": "Chapala",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_3_2": {
+	"historia": "El último tlatoani que defendió la ciudad fue {zona_1} .\n\nResistió hasta el {zona_2} de 1521, cuando fue capturado.\n\nLa batalla final se dio en el mercado de {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un capitán de futbol",
+		"correcta": "Cuauhtémoc",
+		"opciones": [
+		  {
+			"texto": "Cuauhtémoc",
+			"img": ""
+		  },
+		  {
+			"texto": "Moctezuma",
+			"img": ""
+		  },
+		  {
+			"texto": "Cuitláhuac",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "31 de diciembre",
+		"correcta": "13 de agosto",
+		"opciones": [
+		  {
+			"texto": "13 de agosto",
+			"img": ""
+		  },
+		  {
+			"texto": "5 de mayo",
+			"img": ""
+		  },
+		  {
+			"texto": "16 de septiembre",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "una plaza comercial",
+		"correcta": "Tlatelolco",
+		"opciones": [
+		  {
+			"texto": "Tlatelolco",
+			"img": ""
+		  },
+		  {
+			"texto": "Sevilla",
+			"img": ""
+		  },
+		  {
+			"texto": "Acapulco",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_3_3": {
+	"historia": "Dentro de la ciudad sitiada la gente moría de {zona_1} , porque ya no entraba comida.\n\nAdemás seguía la epidemia de {zona_2} que había llegado el año anterior.\n\nY bebían agua salada del lago porque cortamos el acueducto de {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "aburrimiento",
+		"correcta": "hambre",
+		"opciones": [
+		  {
+			"texto": "hambre",
+			"img": ""
+		  },
+		  {
+			"texto": "frío polar",
+			"img": ""
+		  },
+		  {
+			"texto": "sueño",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "dolor de muelas",
+		"correcta": "viruela",
+		"opciones": [
+		  {
+			"texto": "viruela",
+			"img": ""
+		  },
+		  {
+			"texto": "mareo",
+			"img": ""
+		  },
+		  {
+			"texto": "tos leve",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "una fábrica",
+		"correcta": "Chapultepec",
+		"opciones": [
+		  {
+			"texto": "Chapultepec",
+			"img": ""
+		  },
+		  {
+			"texto": "Xochimilco",
+			"img": ""
+		  },
+		  {
+			"texto": "Toluca",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_3_4": {
+	"historia": "Cortés no venció solo: lo acompañaban miles de guerreros {zona_1} que odiaban a los mexicas.\n\nTambién sumó pueblos que pagaban {zona_2} a Tenochtitlán y querían liberarse.\n\nPor eso decimos que fue una guerra entre {zona_3} , no solo contra España.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "marcianos",
+		"correcta": "tlaxcaltecas",
+		"opciones": [
+		  {
+			"texto": "tlaxcaltecas",
+			"img": ""
+		  },
+		  {
+			"texto": "vikingos",
+			"img": ""
+		  },
+		  {
+			"texto": "romanos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "suscripción mensual",
+		"correcta": "tributo",
+		"opciones": [
+		  {
+			"texto": "tributo",
+			"img": ""
+		  },
+		  {
+			"texto": "boletos de avión",
+			"img": ""
+		  },
+		  {
+			"texto": "impuestos de gasolina",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "equipos de futbol",
+		"correcta": "pueblos indígenas",
+		"opciones": [
+		  {
+			"texto": "pueblos indígenas",
+			"img": ""
+		  },
+		  {
+			"texto": "planetas",
+			"img": ""
+		  },
+		  {
+			"texto": "empresas",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_3_5": {
+	"historia": "Cuando la ciudad cayó, los templos fueron {zona_1} y sus piedras se usaron para construir de nuevo.\n\nLos canales y {zona_2} quedaron destruidos tras el sitio.\n\nSobre esas ruinas empezaría a levantarse la {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "pintados de neón",
+		"correcta": "derribados",
+		"opciones": [
+		  {
+			"texto": "derribados",
+			"img": ""
+		  },
+		  {
+			"texto": "reparados",
+			"img": ""
+		  },
+		  {
+			"texto": "fotografiados",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "las autopistas",
+		"correcta": "las calzadas",
+		"opciones": [
+		  {
+			"texto": "las calzadas",
+			"img": ""
+		  },
+		  {
+			"texto": "los aeropuertos",
+			"img": ""
+		  },
+		  {
+			"texto": "los rascacielos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "estación de metro",
+		"correcta": "Ciudad de México",
+		"opciones": [
+		  {
+			"texto": "Ciudad de México",
+			"img": ""
+		  },
+		  {
+			"texto": "ciudad de Roma",
+			"img": ""
+		  },
+		  {
+			"texto": "isla de Cuba",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_4_1": {
+	"historia": "Estamos trazando la nueva ciudad justo encima de las ruinas de {zona_1} .\n\nEl encargado de medir las calles con cuerdas fue el maestro {zona_2} .\n\nTodo se ordena alrededor de la {zona_3} , como manda la costumbre española.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un parque de diversiones",
+		"correcta": "Tenochtitlán",
+		"opciones": [
+		  {
+			"texto": "Tenochtitlán",
+			"img": ""
+		  },
+		  {
+			"texto": "Veracruz",
+			"img": ""
+		  },
+		  {
+			"texto": "Mérida",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "un robot medidor",
+		"correcta": "Alonso García Bravo",
+		"opciones": [
+		  {
+			"texto": "Alonso García Bravo",
+			"img": ""
+		  },
+		  {
+			"texto": "Cristobal Colón",
+			"img": ""
+		  },
+		  {
+			"texto": "Fray Juan",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "alberca olímpica",
+		"correcta": "plaza mayor",
+		"opciones": [
+		  {
+			"texto": "plaza mayor",
+			"img": ""
+		  },
+		  {
+			"texto": "estación de tren",
+			"img": ""
+		  },
+		  {
+			"texto": "pista de patinaje",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_4_2": {
+	"historia": "El año pasado llegaron {zona_1} frailes franciscanos para enseñar la religión cristiana.\n\nA ese trabajo se le llama {zona_2} .\n\nEstán levantando {zona_3} por todos los pueblos para reunir a la gente.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "mil millones de",
+		"correcta": "doce",
+		"opciones": [
+		  {
+			"texto": "doce",
+			"img": ""
+		  },
+		  {
+			"texto": "dos",
+			"img": ""
+		  },
+		  {
+			"texto": "quinientos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "una aplicación educativa",
+		"correcta": "evangelización",
+		"opciones": [
+		  {
+			"texto": "evangelización",
+			"img": ""
+		  },
+		  {
+			"texto": "vacunación",
+			"img": ""
+		  },
+		  {
+			"texto": "urbanización",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "cines",
+		"correcta": "conventos",
+		"opciones": [
+		  {
+			"texto": "conventos",
+			"img": ""
+		  },
+		  {
+			"texto": "fábricas",
+			"img": ""
+		  },
+		  {
+			"texto": "hoteles",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_4_3": {
+	"historia": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la {zona_1} .\n\nA cambio de protegerlos y enseñarles la fe, ellos recibían {zona_2} y trabajo.\n\nMuchos frailes protestaron porque era un {zona_3} muy duró para los indígenas.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "garantía extendida",
+		"correcta": "encomienda",
+		"opciones": [
+		  {
+			"texto": "encomienda",
+			"img": ""
+		  },
+		  {
+			"texto": "beca escolar",
+			"img": ""
+		  },
+		  {
+			"texto": "herencia",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "puntos de recompensa",
+		"correcta": "tributo",
+		"opciones": [
+		  {
+			"texto": "tributo",
+			"img": ""
+		  },
+		  {
+			"texto": "vacaciones",
+			"img": ""
+		  },
+		  {
+			"texto": "diplomas",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "videojuego",
+		"correcta": "abuso",
+		"opciones": [
+		  {
+			"texto": "abuso",
+			"img": ""
+		  },
+		  {
+			"texto": "premio",
+			"img": ""
+		  },
+		  {
+			"texto": "concierto",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_4_4": {
+	"historia": "Trajimos de Europa cultivos nuevos como el {zona_1} y la caña de azúcar.\n\nTambién llegaron animales que aquí no existían, como las vacas y los {zona_2} .\n\nDel encuentro entre ambos mundos nació el {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "chicle de menta",
+		"correcta": "trigo",
+		"opciones": [
+		  {
+			"texto": "trigo",
+			"img": ""
+		  },
+		  {
+			"texto": "cacao",
+			"img": ""
+		  },
+		  {
+			"texto": "maíz",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "dinosaurios",
+		"correcta": "cerdos",
+		"opciones": [
+		  {
+			"texto": "cerdos",
+			"img": ""
+		  },
+		  {
+			"texto": "canguros",
+			"img": ""
+		  },
+		  {
+			"texto": "pingüinos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "wifi gratuito",
+		"correcta": "mestizaje",
+		"opciones": [
+		  {
+			"texto": "mestizaje",
+			"img": ""
+		  },
+		  {
+			"texto": "aislamiento",
+			"img": ""
+		  },
+		  {
+			"texto": "olvido",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_4_5": {
+	"historia": "Por ahora gobierna {zona_1} , porque todavía no hay virrey.\n\nCada ciudad se administra con un {zona_2} formado por vecinos importantes.\n\nTodo lo que sale hacia España se embarca en el puerto de {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "una inteligencia artificial",
+		"correcta": "Hernán Cortés",
+		"opciones": [
+		  {
+			"texto": "Hernán Cortés",
+			"img": ""
+		  },
+		  {
+			"texto": "Antonio de Mendoza",
+			"img": ""
+		  },
+		  {
+			"texto": "Vasco de Quiroga",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "grupo de chat",
+		"correcta": "cabildo",
+		"opciones": [
+		  {
+			"texto": "cabildo",
+			"img": ""
+		  },
+		  {
+			"texto": "sindicato",
+			"img": ""
+		  },
+		  {
+			"texto": "club deportivo",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "aeropuerto internaciónal",
+		"correcta": "Veracruz",
+		"opciones": [
+		  {
+			"texto": "Veracruz",
+			"img": ""
+		  },
+		  {
+			"texto": "Guadalajara",
+			"img": ""
+		  },
+		  {
+			"texto": "Puebla",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_5_1": {
+	"historia": "Ha llegado la {zona_1} para poner orden, porque la primera gobernó muy mal.\n\nLa preside el obispo {zona_2} , hombre de buena fama.\n\nSu tarea es organizar el {zona_3} y hacer que se cumplan las leyes.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "nave espacial",
+		"correcta": "Segunda Audiencia",
+		"opciones": [
+		  {
+			"texto": "Segunda Audiencia",
+			"img": ""
+		  },
+		  {
+			"texto": "Santa Inquisición",
+			"img": ""
+		  },
+		  {
+			"texto": "Primera Cruzada",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "un robot juez",
+		"correcta": "Ramírez de Fuenleal",
+		"opciones": [
+		  {
+			"texto": "Ramírez de Fuenleal",
+			"img": ""
+		  },
+		  {
+			"texto": "Hernán Cortés",
+			"img": ""
+		  },
+		  {
+			"texto": "Pedro de Alvarado",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "videojuego",
+		"correcta": "territorio",
+		"opciones": [
+		  {
+			"texto": "territorio",
+			"img": ""
+		  },
+		  {
+			"texto": "estadio",
+			"img": ""
+		  },
+		  {
+			"texto": "supermercado",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_5_2": {
+	"historia": "El oidor {zona_1} fundó pueblos-hospital donde los indígenas aprenden oficios.\n\nSu obra más conocida está en {zona_2} .\n\nLa gente lo quiere tanto que le dice {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un streamer",
+		"correcta": "Vasco de Quiroga",
+		"opciones": [
+		  {
+			"texto": "Vasco de Quiroga",
+			"img": ""
+		  },
+		  {
+			"texto": "Bernal Díaz",
+			"img": ""
+		  },
+		  {
+			"texto": "Juan Pablos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "Marte",
+		"correcta": "Michoacán",
+		"opciones": [
+		  {
+			"texto": "Michoacán",
+			"img": ""
+		  },
+		  {
+			"texto": "Groenlandia",
+			"img": ""
+		  },
+		  {
+			"texto": "Filipinas",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "el algoritmo",
+		"correcta": "Tata Vasco",
+		"opciones": [
+		  {
+			"texto": "Tata Vasco",
+			"img": ""
+		  },
+		  {
+			"texto": "el emperador",
+			"img": ""
+		  },
+		  {
+			"texto": "el capataz",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_5_3": {
+	"historia": "El rey ha firmado nuevas {zona_1} para proteger a los indígenas de los abusos.\n\nEntre otras cosas prohíben la {zona_2} de los naturales.\n\nMuchos encomenderos están {zona_3} porque pierden privilegios.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "contraseñas",
+		"correcta": "leyes",
+		"opciones": [
+		  {
+			"texto": "leyes",
+			"img": ""
+		  },
+		  {
+			"texto": "canciones",
+			"img": ""
+		  },
+		  {
+			"texto": "recetas",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "descarga ilegal",
+		"correcta": "esclavitud",
+		"opciones": [
+		  {
+			"texto": "esclavitud",
+			"img": ""
+		  },
+		  {
+			"texto": "pesca",
+			"img": ""
+		  },
+		  {
+			"texto": "lectura",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "suscritos",
+		"correcta": "furiosos",
+		"opciones": [
+		  {
+			"texto": "furiosos",
+			"img": ""
+		  },
+		  {
+			"texto": "dormidos",
+			"img": ""
+		  },
+		  {
+			"texto": "premiados",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_5_4": {
+	"historia": "La Iglesia se organiza en {zona_1} , cada uno con su obispo.\n\nPara sostenerse cobra un impuesto llamado {zona_2} .\n\nEn la plaza mayor se empieza a construir la {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "canales de streaming",
+		"correcta": "obispados",
+		"opciones": [
+		  {
+			"texto": "obispados",
+			"img": ""
+		  },
+		  {
+			"texto": "supermercados",
+			"img": ""
+		  },
+		  {
+			"texto": "aeropuertos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "mensualidad de gimnasio",
+		"correcta": "diezmo",
+		"opciones": [
+		  {
+			"texto": "diezmo",
+			"img": ""
+		  },
+		  {
+			"texto": "boleto de cine",
+			"img": ""
+		  },
+		  {
+			"texto": "peaje",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "torre de control",
+		"correcta": "catedral",
+		"opciones": [
+		  {
+			"texto": "catedral",
+			"img": ""
+		  },
+		  {
+			"texto": "fábrica de autos",
+			"img": ""
+		  },
+		  {
+			"texto": "plaza de toros",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_5_5": {
+	"historia": "Cada villa elige su {zona_1} , que se encarga del gobierno local.\n\nLos encargados de impartir justicia son los {zona_2} .\n\nPara las obras públicas se organiza el trabajo por turnos, llamado {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "consola de videojuegos",
+		"correcta": "cabildo",
+		"opciones": [
+		  {
+			"texto": "cabildo",
+			"img": ""
+		  },
+		  {
+			"texto": "banco central",
+			"img": ""
+		  },
+		  {
+			"texto": "restaurante",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "árbitros de futbol",
+		"correcta": "alcaldes",
+		"opciones": [
+		  {
+			"texto": "alcaldes",
+			"img": ""
+		  },
+		  {
+			"texto": "astronautas",
+			"img": ""
+		  },
+		  {
+			"texto": "cocineros",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "horario flexible",
+		"correcta": "repartimiento",
+		"opciones": [
+		  {
+			"texto": "repartimiento",
+			"img": ""
+		  },
+		  {
+			"texto": "recreo",
+			"img": ""
+		  },
+		  {
+			"texto": "torneo",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_6_1": {
+	"historia": "Ha llegado {zona_1} , nombrado primer virrey de estas tierras.\n\nEl territorio se llamará oficialmente {zona_2} .\n\nÉl no manda por su cuenta: gobierna en nombre del {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "un robot mayordomo",
+		"correcta": "Antonio de Mendoza",
+		"opciones": [
+		  {
+			"texto": "Antonio de Mendoza",
+			"img": ""
+		  },
+		  {
+			"texto": "Hernán Cortés",
+			"img": ""
+		  },
+		  {
+			"texto": "Cuauhtémoc",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "Ciudad Gótica",
+		"correcta": "Nueva España",
+		"opciones": [
+		  {
+			"texto": "Nueva España",
+			"img": ""
+		  },
+		  {
+			"texto": "Nueva Zelanda",
+			"img": ""
+		  },
+		  {
+			"texto": "Antigua Roma",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "director técnico",
+		"correcta": "rey de España",
+		"opciones": [
+		  {
+			"texto": "rey de España",
+			"img": ""
+		  },
+		  {
+			"texto": "alcalde de Veracruz",
+			"img": ""
+		  },
+		  {
+			"texto": "capitán del barco",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_6_2": {
+	"historia": "Este mismo año se funda la {zona_1} para acuñar dinero aquí mismo.\n\nLas primeras monedas se hacen de {zona_2} .\n\nEl metal viene de las {zona_3} descubiertas en el norte.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "tienda de aplicaciónes",
+		"correcta": "Casa de Moneda",
+		"opciones": [
+		  {
+			"texto": "Casa de Moneda",
+			"img": ""
+		  },
+		  {
+			"texto": "estación de bomberos",
+			"img": ""
+		  },
+		  {
+			"texto": "escuela de baile",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "plástico reciclado",
+		"correcta": "plata",
+		"opciones": [
+		  {
+			"texto": "plata",
+			"img": ""
+		  },
+		  {
+			"texto": "chocolate",
+			"img": ""
+		  },
+		  {
+			"texto": "papel",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "granjas de pollos",
+		"correcta": "minas",
+		"opciones": [
+		  {
+			"texto": "minas",
+			"img": ""
+		  },
+		  {
+			"texto": "playas",
+			"img": ""
+		  },
+		  {
+			"texto": "bibliotecas",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_6_3": {
+	"historia": "Pronto tendremos la primera {zona_1} de todo el continente americano.\n\nCon ella se podrán hacer muchos {zona_2} iguales sin copiarlos a mano.\n\nEl impresor que la trae se llama {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "antena de televisión",
+		"correcta": "imprenta",
+		"opciones": [
+		  {
+			"texto": "imprenta",
+			"img": ""
+		  },
+		  {
+			"texto": "montaña rusa",
+			"img": ""
+		  },
+		  {
+			"texto": "cafetería",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "videos",
+		"correcta": "libros",
+		"opciones": [
+		  {
+			"texto": "libros",
+			"img": ""
+		  },
+		  {
+			"texto": "tacos",
+			"img": ""
+		  },
+		  {
+			"texto": "zapatos",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "un algoritmo",
+		"correcta": "Juan Pablos",
+		"opciones": [
+		  {
+			"texto": "Juan Pablos",
+			"img": ""
+		  },
+		  {
+			"texto": "Pedro de Alvarado",
+			"img": ""
+		  },
+		  {
+			"texto": "Moctezuma",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_6_4": {
+	"historia": "Se planea fundar la Real y Pontificia {zona_1} para que se estudie aquí.\n\nLas clases se darán en {zona_2} , como en Europa.\n\nAsí los {zona_3} ya no tendrán que cruzar el mar para aprender.",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "agencia de viajes",
+		"correcta": "Universidad",
+		"opciones": [
+		  {
+			"texto": "Universidad",
+			"img": ""
+		  },
+		  {
+			"texto": "heladería",
+			"img": ""
+		  },
+		  {
+			"texto": "fábrica",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "emojis",
+		"correcta": "latín",
+		"opciones": [
+		  {
+			"texto": "latín",
+			"img": ""
+		  },
+		  {
+			"texto": "clave morse",
+			"img": ""
+		  },
+		  {
+			"texto": "lenguaje de programación",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "robots",
+		"correcta": "estudiantes",
+		"opciones": [
+		  {
+			"texto": "estudiantes",
+			"img": ""
+		  },
+		  {
+			"texto": "peces",
+			"img": ""
+		  },
+		  {
+			"texto": "trenes",
+			"img": ""
+		  }
+		]
+	  }
+	}
+  },
+  "nivel_6_5": {
+	"historia": "El virrey gobierna acompañado por la {zona_1} , que se encarga de la justicia.\n\nSus decisiones deben respetar las órdenes que llegan del {zona_2} .\n\nEste sistema de gobierno durará casi {zona_3} .",
+	"zonas": {
+	  "zona_1": {
+		"texto_original": "liga de videojuegos",
+		"correcta": "Real Audiencia",
+		"opciones": [
+		  {
+			"texto": "Real Audiencia",
+			"img": ""
+		  },
+		  {
+			"texto": "empresa de mudanzas",
+			"img": ""
+		  },
+		  {
+			"texto": "orquesta",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_2": {
+		"texto_original": "centro comercial",
+		"correcta": "rey",
+		"opciones": [
+		  {
+			"texto": "rey",
+			"img": ""
+		  },
+		  {
+			"texto": "vecino de enfrente",
+			"img": ""
+		  },
+		  {
+			"texto": "capitán pirata",
+			"img": ""
+		  }
+		]
+	  },
+	  "zona_3": {
+		"texto_original": "tres días",
+		"correcta": "trescientos años",
+		"opciones": [
+		  {
+			"texto": "trescientos años",
+			"img": ""
+		  },
+		  {
+			"texto": "un mes",
+			"img": ""
+		  },
+		  {
+			"texto": "diez mil años",
+			"img": ""
+		  }
 		]
 	  }
 	}

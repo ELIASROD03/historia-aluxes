@@ -14,20 +14,18 @@ var digitos: Array[int] = [0, 0, 0, 0]
 @export var boton_confirmar: Button
 
 func _ready():
-	# Determinar el año y el nivel destino dependiendo del progreso de la historia
-	match Global.progreso_historia:
-		1:
-			anio_objetivo = "1519" # O el año que necesites para Tenochtitlán
-			escena_destino = "res://Scenes/Tenoch.tscn"
-		2:
-			anio_objetivo = "1810"
-			escena_destino = "res://Scenes/Independencia.tscn" # Ejemplo
-		_:
-			anio_objetivo = "0000"
-			escena_destino = "res://Scenes/MenuPrincipal.tscn"
+	# El año y el nivel destino salen de capitulos.json (ver Global). Antes esto
+	# era un match escrito a mano que solo cubria los capitulos 1 y 2.
+	var cap := Global.capitulo_actual()
+	if cap.is_empty():
+		push_warning("No hay capitulo %d en capitulos.json." % Global.progreso_historia)
+		anio_objetivo = "0000"
+		escena_destino = ""
+	else:
+		anio_objetivo = str(cap.get("anio", "0000"))
+		escena_destino = str(cap.get("escena", ""))
 
-	if has_node("/root/Global"):
-		get_node("/root/Global").set("anio_objetivo_actual", anio_objetivo)
+	Global.anio_objetivo_actual = anio_objetivo
 
 	# Inicializar la interfaz con ceros
 	actualizar_labels()
@@ -96,8 +94,16 @@ func _on_confirmar_pressed():
 	
 	if anio_ingresado == anio_objetivo:
 		print("¡Código Correcto! Viajando al año: ", anio_objetivo)
-		# Cambiamos a la escena destino (el nivel que toca jugar)
-		get_tree().change_scene_to_file(escena_destino)
+
+		# Los textos de la pantalla negra los arma Global con la tabla de capitulos.
+		# Si el capitulo no tiene escena, avisamos en vez de mandar al jugador a
+		# una pantalla negra de la que no podria salir.
+		if Global.preparar_entrada_capitulo(Global.progreso_historia):
+			SceneTransition.change_scene(Global.ESCENA_TRANSICION)
+		else:
+			var cuadro_error = get_node_or_null("CuadroDialogo")
+			if cuadro_error and cuadro_error.has_method("iniciar_dialogo") and not cuadro_error.visible:
+				cuadro_error.iniciar_dialogo("error_maquina")
 	else:
 		print("Código Incorrecto. Has puesto: ", anio_ingresado)
 		# Mostrar el cuadro de diálogo con el mensaje dinámico

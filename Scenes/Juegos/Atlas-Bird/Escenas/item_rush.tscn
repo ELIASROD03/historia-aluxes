@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d3m6ycx1vmuwk"]
+
+[ext_resource type="Script" uid="uid://druvcv1yllijf" path="res://Scenes/Juegos/Atlas-Bird/Scrips/item_rush.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://cj4tqyudo36sv" path="res://assets/Elementos-Rush/obj_juegoRush5.png" id="2_turbo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0pfn"]
+height = 42.0
+
+[node name="ItemRush" type="Area2D" unique_id=885634287 groups=["moviles_ab", "objetos_ab"]]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_item")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=436165416]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_turbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=935515240]
+shape = SubResource("CapsuleShape2D_s0pfn")

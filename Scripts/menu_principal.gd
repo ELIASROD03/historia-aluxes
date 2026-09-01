@@ -26,9 +26,14 @@ func _ready() -> void:
 	texto_derecha.set_meta("rot_original", rot_texto_original)
 	
 	# Conectar el botón de Nueva Partida
-	var btn_nueva_partida = VBox_menu_laboratorio.get_node("Volver_comenzar_btn")
+	var btn_nueva_partida = VBox_menu_laboratorio.get_node_or_null("Volver_comenzar_btn")
 	if btn_nueva_partida:
 		btn_nueva_partida.pressed.connect(_on_nueva_partida_pressed)
+		
+	# Conectar el botón de Continuar
+	var btn_continuar = VBox_menu_laboratorio.get_node_or_null("Continuar_btn")
+	if btn_continuar:
+		btn_continuar.pressed.connect(_on_continuar_pressed)
 
 
 # --- FUNCIONES DE ANIMACIÓN (ESTILO PERSONA 5) ---
@@ -98,6 +103,9 @@ func _on_memorama_conceptual_btn_pressed() -> void:
 
 func _on_nueva_partida_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/CreacionPersonaje.tscn")
+
+func _on_continuar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MenuCargarPartida.tscn")
 
 func _on_book_history_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/LibroHistoria.tscn")

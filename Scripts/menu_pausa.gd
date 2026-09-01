@@ -50,13 +50,80 @@ func _on_btn_ir_menu_pressed():
 	alternar_pausa()
 	get_tree().change_scene_to_file("res://Scenes/MenuPrincipal.tscn")
 
+func _mostrar_animacion_guardando() -> void:
+	# Contenedor principal con fondo
+	var panel = PanelContainer.new()
+	panel.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+	# Ajustamos la posición para el pixel art
+	panel.position = Vector2(-130, -40)
+	
+	# Usamos la textura oficial de los botones
+	var estilo = StyleBoxTexture.new()
+	estilo.texture = load("res://Images/Fondos/fondo_botones2.png")
+	estilo.texture_margin_left = 6
+	estilo.texture_margin_top = 6
+	estilo.texture_margin_right = 6
+	estilo.texture_margin_bottom = 6
+	panel.add_theme_stylebox_override("panel", estilo)
+	
+	# HBox para poner el icono a la izquierda y el texto a la derecha
+	var hbox = HBoxContainer.new()
+	hbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	hbox.add_theme_constant_override("separation", 6)
+	panel.add_child(hbox)
+	
+	# Nodo del icono
+	var icono = TextureRect.new()
+	# ¡AQUÍ PONES TU TEXTURA OFICIAL LUEGO! Por ahora uso un placeholder
+	icono.texture = load("res://icon.svg") 
+	icono.custom_minimum_size = Vector2(16, 16)
+	icono.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icono.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	hbox.add_child(icono)
+	
+	# Etiqueta de texto
+	var label = Label.new()
+	label.text = "Guardando..."
+	label.add_theme_color_override("font_color", Color("#3e2723")) # Color café oscuro
+	label.add_theme_font_size_override("font_size", 12)
+	hbox.add_child(label)
+	
+	# Si ya hay una notificación anterior, la borramos
+	var viejo = get_node_or_null("AnimGuardando")
+	if viejo: viejo.queue_free()
+	
+	panel.name = "AnimGuardando"
+	add_child(panel)
+	
+	# Animación vinculada al panel (si el panel se borra, el tween se detiene)
+	var tween = create_tween().bind_node(panel)
+	tween.tween_property(panel, "modulate:a", 1.0, 0.3)
+	
+	# A la mitad de la animación, cambiamos el texto
+	tween.tween_callback(func():
+		if is_instance_valid(label):
+			label.text = "Guardado"
+			# Si consigues un segundo icono para "Éxito", puedes cambiarlo aquí:
+			# icono.texture = load("res://Ruta/Al/Icono_Check_Verde.png")
+	).set_delay(1.0)
+	
+	# Desaparecer suavemente
+	tween.tween_property(panel, "modulate:a", 0.0, 1.0).set_delay(1.5)
+	tween.tween_callback(panel.queue_free)
+
 func _on_btn_guardar_pressed():
-	print("Partida guardada.")
-	# Puedes agregar aquí la lógica para guardar si tienes un sistema en Global:
-	# if has_node("/root/Global") and get_node("/root/Global").has_method("guardar_partida"):
-	# 	get_node("/root/Global").guardar_partida()
+	if has_node("/root/Global"):
+		get_node("/root/Global").guardar_partida()
+		_mostrar_animacion_guardando()
+		print("Partida guardada.")
 
 func _on_btn_guardar_salir_pressed():
-	_on_btn_guardar_pressed()
+	if has_node("/root/Global"):
+		get_node("/root/Global").guardar_partida()
+	
+	# Usar SceneTransition si existe
+	if has_node("/root/SceneTransition"):
+		get_node("/root/SceneTransition").change_scene("res://Scenes/MenuPrincipal.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/MenuPrincipal.tscn")
 	alternar_pausa()
-	get_tree().change_scene_to_file("res://Scenes/MenuPrincipal.tscn")

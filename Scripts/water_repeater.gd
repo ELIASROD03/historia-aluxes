@@ -1,7 +1,7 @@
 class_name WaterRepeater
 extends Node2D
 
-@export var repeat_count: int = 20
+@export var repeat_count: int = 80 # Aumentado de 20 a 80 para cubrir más distancia
 @export var tile_width: float = 64.0
 
 func _ready() -> void:
@@ -18,10 +18,10 @@ func _ready() -> void:
 			
 	# Crear duplicados para cubrir el mapa
 	for i in range(1, repeat_count):
-		var duplicate = base_sprite.duplicate()
-		duplicate.position.x = base_sprite.position.x + (i * tile_width)
-		add_child(duplicate)
+		var sprite_duplicate = base_sprite.duplicate()
+		sprite_duplicate.position.x = base_sprite.position.x + (i * tile_width)
+		add_child(sprite_duplicate)
 		
 		# Asegurar que se reproduzca
-		if duplicate is AnimatedSprite2D:
-			duplicate.play()
+		if sprite_duplicate is AnimatedSprite2D:
+			sprite_duplicate.play()

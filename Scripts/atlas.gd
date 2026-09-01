@@ -14,42 +14,98 @@ var zona_activada: bool = false
 
 @onready var sprite = $Sprite2D if has_node("Sprite2D") else null
 
+## Clave con la que se recuerda el encuentro. Se guarda ademas en
+## Global.conoce_atlas, que es lo que viaja en el archivo de partida.
+const CLAVE_CONOCIDO := "atlas_conocido"
+
+
 func _ready():
-	# Buscar al jugador en la escena actual
-	player = get_tree().current_scene.find_child("Player", true, false)
-	cuadro_dialogo = get_tree().current_scene.find_child("CuadroDialogo", true, false)
-	
+	_resolver_referencias()
+
 	# Ignorar colisiones con el jugador y cualquier otro NPC (CharacterBody2D)
-	var personajes = get_tree().current_scene.find_children("*", "CharacterBody2D", true, false)
-	for p in personajes:
-		if p != self:
-			add_collision_exception_with(p)
-	
+	var raiz := _raiz_escena()
+	if raiz:
+		for p in raiz.find_children("*", "CharacterBody2D", true, false):
+			if p != self:
+				add_collision_exception_with(p)
+
 	if cuadro_dialogo:
 		# Conectamos la señal que agregamos en dialogo_manager.gd
 		cuadro_dialogo.dialogo_terminado.connect(_on_dialogo_terminado)
-		
-	var area = $Area2D if has_node("Area2D") else null
+
+	var area = get_node_or_null("Area2D")
 	if area:
 		area.body_entered.connect(_on_body_entered)
 
-	# Si ya conocemos a Atlas de una escena anterior, lo seguimos inmediatamente y quitamos el diálogo
-	if has_node("/root/Global") and get_node("/root/Global").get("conoce_atlas") == true:
-		following = true
-		if area:
-			area.queue_free()
+	if ya_conocido():
+		_activar_modo_acompaniante()
+
+
+## Raiz del nivel. Se prefiere `owner` sobre get_tree().current_scene porque
+## durante el _ready de una escena recien cargada current_scene todavia puede
+## apuntar a la anterior (o ser null), y entonces no se encontraba al Player:
+## Atlas se quedaba plantado en su sitio original sin decir nada.
+func _raiz_escena() -> Node:
+	if owner:
+		return owner
+	if get_tree() and get_tree().current_scene:
+		return get_tree().current_scene
+	return get_parent()
+
+
+func _resolver_referencias() -> void:
+	var raiz := _raiz_escena()
+	if raiz == null:
+		return
+	player = raiz.find_child("Player", true, false)
+	cuadro_dialogo = raiz.find_child("CuadroDialogo", true, false)
+
+
+## ¿El jugador ya se topo con Atlas alguna vez en esta partida?
+func ya_conocido() -> bool:
+	return Global.conoce_atlas or Global.eventos_completados.get(CLAVE_CONOCIDO, false)
+
+
+## Deja a Atlas como acompañante: pegado al jugador y sin saludo pendiente.
+func _activar_modo_acompaniante() -> void:
+	following = true
+	zona_activada = true
+	var area = get_node_or_null("Area2D")
+	if area:
+		area.queue_free()   # sin area no puede volver a lanzar el saludo
+	# Diferido para que el Player ya haya aplicado su posicion guardada (la fija
+	# en su propio _ready, que corre despues del de Atlas)
+	call_deferred("_teletransportar_al_jugador")
+
+
+func _teletransportar_al_jugador():
+	if player == null:
+		_resolver_referencias()   # segundo intento: puede que antes no estuviera listo
+	if player:
+		# Lo colocamos a 40 píxeles detrás o al lado del jugador, y un poco más arriba si es necesario
+		global_position = Vector2(player.global_position.x - 40, player.global_position.y - 10)
+
 
 func _on_body_entered(body: Node2D):
 	if not zona_activada and (body.name == "Player" or body is Player):
 		if cuadro_dialogo and cuadro_dialogo.has_method("iniciar_dialogo") and not cuadro_dialogo.visible:
 			zona_activada = true
 			cuadro_dialogo.iniciar_dialogo(id_dialogo)
+			# Se marca AL EMPEZAR, no al terminar: si el jugador se sale, guarda o
+			# cambia de escena a media platica, el encuentro ya cuenta y Atlas no
+			# vuelve a saludarlo como si fuera la primera vez.
+			_marcar_conocido()
+
 
 func _on_dialogo_terminado(id: String):
 	if id == id_dialogo:
-		following = true
-		if has_node("/root/Global"):
-			get_node("/root/Global").set("conoce_atlas", true)
+		_marcar_conocido()
+
+
+func _marcar_conocido() -> void:
+	following = true
+	Global.conoce_atlas = true
+	Global.eventos_completados[CLAVE_CONOCIDO] = true
 
 func _set_texture(new_tex: Texture2D, frames: int) -> void:
 	if sprite and sprite.texture != new_tex:

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://daw8fjruou06x"]
 
 [ext_resource type="Script" uid="uid://b73slh0o3426m" path="res://Scripts/intro_studio.gd" id="1_script"]
-[ext_resource type="FontFile" uid="uid://bt5yjar8a2sq6" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_font"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="2_47you"]
+[ext_resource type="FontFile" uid="uid://r4wklnwb4eel" path="res://fonts/Gorditas-Bold.ttf" id="3_mxw5b"]
 
 [node name="IntroStudio" type="Control" unique_id=921514956]
 layout_mode = 3
@@ -28,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_font")
+theme_override_fonts/font = ExtResource("2_47you")
 theme_override_font_sizes/font_size = 24
 text = "UADY studios presenta"
 horizontal_alignment = 1
@@ -43,7 +44,7 @@ offset_left = 20.0
 offset_right = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_font")
+theme_override_fonts/font = ExtResource("3_mxw5b")
 theme_override_font_sizes/font_size = 24
 text = "Los aluxes que cambiaron la historia"
 horizontal_alignment = 1

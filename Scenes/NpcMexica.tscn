@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://de4fvgv7nirdq"]
+
+[ext_resource type="Script" uid="uid://der8vxb03qypg" path="res://Scripts/npc_caminante.gd" id="1_npc_script"]
+[ext_resource type="Texture2D" uid="uid://d214egdh3frpd" path="res://Images/Personajes/Npc_level1/Npc_interaccion/Mexica1.png" id="2_tex_idle"]
+[ext_resource type="Texture2D" uid="uid://dkirufn7q1o51" path="res://Images/Personajes/Npc_level1/Npc_interaccion/Mexica1Walk.png" id="3_tex_walk"]
+[ext_resource type="PackedScene" uid="uid://df75qvofx1bn8" path="res://Scenes/BurbujaMundo.tscn" id="4_burbuja"]
+
+[node name="NpcMexica" type="CharacterBody2D" unique_id=636619784]
+script = ExtResource("1_npc_script")
+textura_idle = ExtResource("2_tex_idle")
+textura_caminar = ExtResource("3_tex_walk")
+hframes_walk = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1011005925]
+texture = ExtResource("2_tex_idle")
+hframes = 9
+
+[node name="BurbujaMundo" parent="." unique_id=1968625122 instance=ExtResource("4_burbuja")]
+position = Vector2(0, -32)
+id_dialogo = "pista_alux_1"

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://df75qvofx1bn8"]
+
+[ext_resource type="Script" uid="uid://dsleyvy0p7t4b" path="res://Scripts/burbuja_mundo.gd" id="1_tbi7q"]
+[ext_resource type="Texture2D" uid="uid://cwpud5miua8mo" path="res://assets/burbujaDialogo.png" id="2_nj3u2"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="3_tbi7q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ox8lv"]
+radius = 200.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ox8lv"]
+content_margin_left = 10.0
+content_margin_top = 27.0
+content_margin_right = 10.0
+content_margin_bottom = 27.0
+texture = ExtResource("2_nj3u2")
+texture_margin_left = 8.0
+texture_margin_top = 22.0
+texture_margin_right = 8.0
+texture_margin_bottom = 22.0
+
+[node name="BurbujaMundo" type="Area2D" unique_id=98275284]
+script = ExtResource("1_tbi7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83823058]
+shape = SubResource("CircleShape2D_ox8lv")
+
+[node name="CapaIndependiente" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="ContenedorVisual" type="Node2D" parent="CapaIndependiente"]
+
+[node name="FondoBurbuja" type="PanelContainer" parent="CapaIndependiente/ContenedorVisual" unique_id=1053759420]
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ox8lv")
+
+[node name="Texto" type="RichTextLabel" parent="CapaIndependiente/ContenedorVisual/FondoBurbuja" unique_id=157297724]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_tbi7q")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+fit_content = true
+
+[node name="LabelInteraccion" type="Label" parent="CapaIndependiente/ContenedorVisual" unique_id=-1153374643]
+visible = false
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "Hablar"
+horizontal_alignment = 1
+
+[node name="TimerOcultar" type="Timer" parent="." unique_id=2100347081]
+
+[connection signal="timeout" from="TimerOcultar" to="." method="_on_timer_ocultar_timeout"]

@@ -1,30 +1,25 @@
-[gd_scene format=3 uid="uid://xm6ec2mn5hdo"]
+[gd_scene load_steps=5 format=3 uid="uid://xm6ec2mn5hdo"]
 
-[ext_resource type="Script" uid="uid://bkx857knrwx7o" path="res://Scenes/Juegos/Atlas-Bird/Scrips/atlas.gd" id="1_fawhn"]
-[ext_resource type="Texture2D" uid="uid://dgeb1qk1xwfi" path="res://Images/Personajes/Alux1/CHAAC.png" id="1_gl04f"]
+[ext_resource type="Script" uid="uid://bkx857knrwx7o" path="res://Scenes/Juegos/Atlas-Bird/Scrips/atlas.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://2hpdf65tke0h" path="res://Images/Personajes/Atlas/atlas_flotando.png" id="2_vuelo"]
+[ext_resource type="Script" uid="uid://duri671rphb05" path="res://Scripts/respirador.gd" id="3_resp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fawhn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_gl04f")
-}],
-"loop": true,
-"name": &"Volar",
-"speed": 5.0
-}]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atlas"]
+radius = 11.0
+height = 28.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76vdm"]
-radius = 16.0
-height = 48.0
+[node name="atlas" type="CharacterBody2D" groups=["atlas_ab"]]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_script")
 
-[node name="atlas" type="CharacterBody2D" unique_id=190503176]
-script = ExtResource("1_fawhn")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1159695003]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
-sprite_frames = SubResource("SpriteFrames_fawhn")
-animation = &"Volar"
+texture = ExtResource("2_vuelo")
+hframes = 9
+script = ExtResource("3_resp")
+fps = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502330404]
-shape = SubResource("CapsuleShape2D_76vdm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_atlas")

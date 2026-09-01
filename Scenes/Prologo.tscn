@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b18307qwhiiww"]
 
 [ext_resource type="Script" uid="uid://b2sttat12m5ja" path="res://Scripts/prologo.gd" id="1_script"]
-[ext_resource type="FontFile" uid="uid://bt5yjar8a2sq6" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_1s3n6"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="2_1s3n6"]
 
 [node name="Prologo" type="Control" unique_id=2030450704]
 layout_mode = 3

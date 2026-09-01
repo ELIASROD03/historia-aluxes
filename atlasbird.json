@@ -1,0 +1,62 @@
+{
+	"_instrucciones": {
+		"que_es_esto": "Ajustes del minijuego Atlas-Bird (Scenes/Juegos/Atlas-Bird). Se puede editar sin abrir Godot: el minijuego lee este archivo al arrancar y si falta usa estos mismos valores por defecto.",
+		"cronometro": "tiempo_inicial son los segundos que faltan para alcanzar a Balaam. Llegar a 0 es GANAR. El turbo resta segundos y el castigo de Balaam los suma.",
+		"lo_que_NO_esta_aqui": "El modo de control (TAP o MANTENER) y el tamaño y la posición del cronómetro, los corazones y el escudo NO se tocan en este archivo: son nodos de main-atlasbird.tscn y se ajustan en el editor. Cronómetro = HUD/Cronometro, corazones = HUD/Vidas, escudo = HUD/Escudo; escalar o mover el nodo padre mueve todo el grupo junto.",
+		"rampa": "Todo lo de 'pipes' interpola de _inicial a _final durante 'segundos_rampa' de juego real, asi el minijuego se acelera solo.",
+		"probabilidad_dificil": "En 0 los objetos salen SIEMPRE justo en el centro del hueco, en la misma x que la columna. Subirlo (0.4 por ejemplo) devuelve la variante dificil, en la que ese porcentaje de objetos aparece pegado a uno de los dos tubos.",
+		"pesos_de_objetos": "Son las casillas de una bolsa. 'peso_nada' son casillas vacias: subirlo hace que salgan menos objetos en general, sin favorecer a ninguno. Con 3/6/3/2 de 14, sin escudo encima sale uno cada ~6 s, el corazon cada ~11 s y el turbo cada ~11 s. Si el jugador ya trae escudo o esta a tope de vidas, esa casilla sale vacia en vez de repartirse entre los demas, para que agarrar un escudo no dispare los turbos."
+	},
+
+	"tiempo_inicial": 90.0,
+	"vidas_iniciales": 3,
+	"vidas_maximas": 3,
+	"invulnerabilidad": 1.2,
+
+	"atlas": {
+		"gravedad": 950.0,
+		"impulso_tap": -290.0,
+		"empuje": 1700.0,
+		"velocidad_max_caida": 300.0,
+		"velocidad_max_subida": 300.0,
+		"inclinacion_base": 10.0,
+		"inclinacion_min": -10.0,
+		"inclinacion_max": 34.0
+	},
+
+	"pipes": {
+		"velocidad_inicial": 110.0,
+		"velocidad_final": 215.0,
+		"intervalo_inicial": 2.2,
+		"intervalo_final": 1.0,
+		"hueco_inicial": 118.0,
+		"hueco_final": 92.0,
+		"segundos_rampa": 75.0
+	},
+
+	"objetos": {
+		"probabilidad": 0.55,
+		"probabilidad_dificil": 0.0,
+		"turbo_segundos": 5.0,
+		"peso_turbo": 3,
+		"peso_escudo": 6,
+		"peso_vida": 3,
+		"peso_nada": 2
+	},
+
+	"eventos_balaam": {
+		"primer_evento": 20.0,
+		"intervalo_min": 18.0,
+		"intervalo_max": 25.0,
+		"duracion_aviso": 3.0,
+		"duracion_inversion": 8.0,
+		"segundos_castigo": 10.0
+	},
+
+	"avisos": {
+		"invertir": "¡Cuidado! Balaam hechizó los controles: ahora funcionan al revés.",
+		"invertir_fin": "¡Ya pasó! Los controles volvieron a la normalidad.",
+		"tiempo": "¡Balaam se nos adelantó! Nos costara 10 segundos más alcanzarlo.",
+		"turbo": "¡Turbo! Le recortamos distancia a Balaam."
+	}
+}

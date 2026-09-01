@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcj3ns6q44213" path="res://Images/Fondos/btn_pausa.png" id="2_pausa"]
 [ext_resource type="Texture2D" uid="uid://dayfrik2t3vqb" path="res://Images/Fondos/marco_titulo.png" id="3_marco"]
 [ext_resource type="Texture2D" uid="uid://bvw1jnxuwx46h" path="res://Images/Fondos/fondo_botones2.png" id="4_boton"]
-[ext_resource type="FontFile" uid="uid://bt5yjar8a2sq6" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="5_avlgm"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="5_avlgm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4iu3v"]
 load_path = "res://.godot/imported/fondo_botones2.png-cabb96cd9cc6a71f4b3379bc336c71a8.ctex"
@@ -93,8 +93,8 @@ offset_top = 2.5
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_avlgm")
 theme_override_font_sizes/font_size = 16
 text = "Reanudar"
@@ -115,8 +115,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("5_avlgm")
 theme_override_font_sizes/font_size = 16
 text = "Ir al Menú"
@@ -137,8 +138,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("5_avlgm")
 theme_override_font_sizes/font_size = 16
 text = "Guardar"
@@ -160,8 +162,9 @@ anchor_bottom = 1.0
 offset_right = -8.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("5_avlgm")
 theme_override_font_sizes/font_size = 16
 text = "Guardar y Salir"

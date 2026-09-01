@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ky1tw1jmimif"]
 
 [ext_resource type="Script" uid="uid://ypag13524djw" path="res://Scripts/capitulo1_intro.gd" id="1_script"]
-[ext_resource type="FontFile" uid="uid://bt5yjar8a2sq6" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_uf7l0"]
+[ext_resource type="FontFile" uid="uid://r4wklnwb4eel" path="res://fonts/Gorditas-Bold.ttf" id="2_uf7l0"]
 
 [node name="Capitulo1Intro" type="Control" unique_id=822305388]
 layout_mode = 3

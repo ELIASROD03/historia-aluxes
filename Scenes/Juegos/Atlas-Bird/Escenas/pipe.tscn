@@ -1,44 +1,39 @@
-[gd_scene format=3 uid="uid://pfw6tepkqall"]
+[gd_scene load_steps=5 format=3 uid="uid://pfw6tepkqall"]
 
-[ext_resource type="Script" uid="uid://dmkqasv524mhq" path="res://Scenes/Juegos/Atlas-Bird/Scrips/pipe.gd" id="1_5gidv"]
-[ext_resource type="Texture2D" uid="uid://dec5vb0wrjs3x" path="res://Scenes/Juegos/Atlas-Bird/assets/Imagen2.png" id="2_mujrm"]
+[ext_resource type="Script" uid="uid://dmkqasv524mhq" path="res://Scenes/Juegos/Atlas-Bird/Scrips/pipe.gd" id="1_pipe"]
+[ext_resource type="Texture2D" uid="uid://dec5vb0wrjs3x" path="res://Scenes/Juegos/Atlas-Bird/assets/Imagen2.png" id="2_columna"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sdh1"]
-size = Vector2(89, 419.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arriba"]
+size = Vector2(46, 324.70588)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hul24"]
-size = Vector2(89, 362)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abajo"]
+size = Vector2(46, 324.70588)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_haatr"]
-size = Vector2(13, 156)
+[node name="pipe" type="Area2D" groups=["moviles_ab", "tuberias_ab"]]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_pipe")
 
-[node name="pipe" type="Area2D" unique_id=1347157031 groups=["tuberias"]]
-script = ExtResource("1_5gidv")
+[node name="Arriba" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, -41.352943)
+scale = Vector2(0.5411765, 0.5411765)
+texture = ExtResource("2_columna")
+region_enabled = true
+region_rect = Rect2(0, 0, 85, 600)
 
-[node name="upper" type="Sprite2D" parent="." unique_id=1130840062]
-position = Vector2(0, 103.999985)
-scale = Vector2(1, 2.0728154)
-texture = ExtResource("2_mujrm")
-offset = Vector2(0, -100)
+[node name="Abajo" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, 401.35294)
+scale = Vector2(0.5411765, 0.5411765)
+texture = ExtResource("2_columna")
+region_enabled = true
+region_rect = Rect2(0, 40, 85, 600)
 
-[node name="lower" type="Sprite2D" parent="." unique_id=1216900984]
-position = Vector2(0, -211.11163)
-scale = Vector2(1, 1.7621359)
-texture = ExtResource("2_mujrm")
-offset = Vector2(0, 380)
+[node name="ColArriba" type="CollisionShape2D" parent="."]
+position = Vector2(0, -41.352943)
+shape = SubResource("RectangleShape2D_arriba")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=210301845]
-position = Vector2(3.5, -101.625)
-shape = SubResource("RectangleShape2D_4sdh1")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1840784788]
-position = Vector2(3.5, 459)
-shape = SubResource("RectangleShape2D_hul24")
-
-[node name="PuntoArea" type="Area2D" parent="." unique_id=616891070]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PuntoArea" unique_id=149841733]
-position = Vector2(56, 195)
-shape = SubResource("RectangleShape2D_haatr")
-
-[connection signal="body_entered" from="PuntoArea" to="." method="_on_punto_area_body_entered"]
+[node name="ColAbajo" type="CollisionShape2D" parent="."]
+position = Vector2(0, 401.35294)
+shape = SubResource("RectangleShape2D_abajo")

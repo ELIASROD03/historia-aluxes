@@ -1,71 +1,284 @@
 [gd_scene format=3 uid="uid://inphrd0d8re"]
 
-[ext_resource type="Script" uid="uid://bjqyo33urf1wg" path="res://Scenes/Juegos/Atlas-Bird/Scrips/main_atlasbird.gd" id="1_1hyjx"]
-[ext_resource type="Texture2D" uid="uid://bl1rfc2aic7on" path="res://Images/Fondos/Solo_Bosque.png" id="1_g5vgb"]
-[ext_resource type="PackedScene" uid="uid://xm6ec2mn5hdo" path="res://Scenes/Juegos/Atlas-Bird/Escenas/atlas.tscn" id="2_1hyjx"]
-[ext_resource type="PackedScene" uid="uid://pfw6tepkqall" path="res://Scenes/Juegos/Atlas-Bird/Escenas/pipe.tscn" id="2_2rdpv"]
-[ext_resource type="PackedScene" uid="uid://dkjwlvh28ly4f" path="res://Scenes/Juegos/Atlas-Bird/Escenas/graund.tscn" id="3_2rdpv"]
-[ext_resource type="Texture2D" uid="uid://crdorhnls0un6" path="res://Images/Fondos/Tap.png" id="6_06ynt"]
-[ext_resource type="Texture2D" uid="uid://dd1mxg77mudp7" path="res://Images/Fondos/presionar.png" id="7_4e3ix"]
-[ext_resource type="Texture2D" uid="uid://cawswh1j14rfa" path="res://Images/Fondos/GanasteImagen.png" id="8_4e3ix"]
+[ext_resource type="Script" uid="uid://bjqyo33urf1wg" path="res://Scenes/Juegos/Atlas-Bird/Scrips/main_atlasbird.gd" id="1_main"]
+[ext_resource type="Texture2D" uid="uid://bywm1s6wlkl5t" path="res://Scenes/Atlas-Bird/assets/Bosque.png" id="2_bosque"]
+[ext_resource type="PackedScene" uid="uid://xm6ec2mn5hdo" path="res://Scenes/Juegos/Atlas-Bird/Escenas/atlas.tscn" id="3_atlas"]
+[ext_resource type="PackedScene" uid="uid://pfw6tepkqall" path="res://Scenes/Juegos/Atlas-Bird/Escenas/pipe.tscn" id="4_pipe"]
+[ext_resource type="PackedScene" uid="uid://d3m6ycx1vmuwk" path="res://Scenes/Juegos/Atlas-Bird/Escenas/item_rush.tscn" id="5_item"]
+[ext_resource type="Texture2D" uid="uid://brphm0cskon44" path="res://Images/Personajes/balaam/balaam.png" id="6_balaam"]
+[ext_resource type="Texture2D" uid="uid://cum5uw4wj0a6h" path="res://assets/Elementos-Rush/obj_juegoRush1.png" id="7_vida"]
+[ext_resource type="Texture2D" uid="uid://d3sxgiwrhfb3d" path="res://assets/Elementos-Rush/obj_juegoRush3.png" id="8_escudo"]
+[ext_resource type="Texture2D" uid="uid://cqfci4380pm3d" path="res://Cronometro.png" id="9_cronometro"]
+[ext_resource type="Texture2D" uid="uid://m0qvynah6lh1" path="res://assets/cuadro de dialogo.png" id="10_cuadro"]
+[ext_resource type="Texture2D" uid="uid://d3yvyf88ytwgp" path="res://Images/Personajes/Atlas/atlas_cara.png" id="11_cara"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="12_amaranth"]
+[ext_resource type="Theme" uid="uid://c4px541wcm46l" path="res://Themes/boton_menu.tres" id="13_tema"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_06ynt"]
-load_path = "res://.godot/imported/btn_menuprincipal.png-8c08c10bbeccb422b382cb46fc85ab1d.ctex"
+[node name="MainAtlasbird" type="Node2D" unique_id=249214248 groups=["mundo_ab"]]
+script = ExtResource("1_main")
+pipe_scene = ExtResource("4_pipe")
+item_scene = ExtResource("5_item")
 
-[node name="MainAtlasbird" type="Node2D" unique_id=1011836247 groups=["mundo"]]
-script = ExtResource("1_1hyjx")
-pipe_scene = ExtResource("2_2rdpv")
+[node name="Fondo" type="Node2D" parent="." unique_id=186512764]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1341002735]
-position = Vector2(576, 257.59998)
-scale = Vector2(0.72, 0.78397536)
-texture = ExtResource("1_g5vgb")
+[node name="Bosque1" type="Sprite2D" parent="Fondo" unique_id=79924921]
+scale = Vector2(0.4090909, 0.4090909)
+texture = ExtResource("2_bosque")
+centered = false
 
-[node name="atlas" parent="." unique_id=190503176 groups=["jugador"] instance=ExtResource("2_1hyjx")]
-position = Vector2(200, 324)
+[node name="Bosque2" type="Sprite2D" parent="Fondo" unique_id=1495320001]
+position = Vector2(654.5455, 0)
+scale = Vector2(0.4090909, 0.4090909)
+texture = ExtResource("2_bosque")
+centered = false
 
-[node name="Ground" parent="." unique_id=1244767498 instance=ExtResource("3_2rdpv")]
-z_index = 1
+[node name="Balaam" type="Sprite2D" parent="." unique_id=1642963530]
+position = Vector2(566, 150)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_balaam")
 
-[node name="LabelPuntos" type="Label" parent="." unique_id=1204054922]
-top_level = true
-z_index = 1
-offset_left = 1053.0
-offset_top = 527.0
-offset_right = 1125.0
-offset_bottom = 618.0
-theme_override_font_sizes/font_size = 66
+[node name="Contenedor" type="Node2D" parent="." unique_id=781120267]
+
+[node name="atlas" parent="." unique_id=336277650 instance=ExtResource("3_atlas")]
+position = Vector2(110, 180)
+
+[node name="CapturaInput" type="Control" parent="." unique_id=1559329337]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="HUD" type="Node2D" parent="." unique_id=2087257309]
+
+[node name="Vidas" type="Node2D" parent="HUD" unique_id=134560017]
+position = Vector2(10, 10)
+scale = Vector2(2, 2)
+
+[node name="Vida1" type="Sprite2D" parent="HUD/Vidas" unique_id=449263073]
+position = Vector2(14, 14)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_vida")
+
+[node name="Vida2" type="Sprite2D" parent="HUD/Vidas" unique_id=421065498]
+position = Vector2(36, 14)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_vida")
+
+[node name="Vida3" type="Sprite2D" parent="HUD/Vidas" unique_id=1394663303]
+position = Vector2(58, 14)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_vida")
+
+[node name="Escudo" type="Sprite2D" parent="HUD" unique_id=949341842]
+position = Vector2(183, 36)
+texture = ExtResource("8_escudo")
+
+[node name="Cronometro" type="Node2D" parent="HUD" unique_id=789970461]
+position = Vector2(588, 48.000004)
+scale = Vector2(1.25, 1.25)
+
+[node name="Reloj" type="Sprite2D" parent="HUD/Cronometro" unique_id=469822657]
+texture = ExtResource("9_cronometro")
+
+[node name="LabelTiempo" type="Label" parent="HUD/Cronometro" unique_id=575294836]
+offset_left = -32.8
+offset_top = -9.600003
+offset_right = 31.2
+offset_bottom = 10.399997
+theme_override_colors/font_color = Color(0.243137, 0.152941, 0.137255, 1)
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 14
+text = "90"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pipetimer" type="Timer" parent="." unique_id=2004494711]
-wait_time = 1.5
-
-[node name="Tap" type="Sprite2D" parent="." unique_id=526351050]
-self_modulate = Color(1, 1, 1, 0.6745098)
-position = Vector2(587, 303)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_06ynt")
-
-[node name="Presionar" type="Sprite2D" parent="." unique_id=1382468878]
-self_modulate = Color(1, 1, 1, 0.6745098)
-position = Vector2(582, 429)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_4e3ix")
-
-[node name="Button" type="Button" parent="." unique_id=421282953]
+[node name="MensajeFlotante" type="Label" parent="." unique_id=238407894]
 visible = false
-offset_left = 430.0
-offset_top = 329.0
-offset_right = 1809.0
-offset_bottom = 1237.0
-scale = Vector2(0.23, 0.18)
-theme_override_font_sizes/font_size = 35
-icon = SubResource("CompressedTexture2D_06ynt")
+offset_left = 150.0
+offset_top = 78.0
+offset_right = 490.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="GanasteImagen" type="Sprite2D" parent="." unique_id=68692800]
+[node name="Aviso" type="Node2D" parent="." unique_id=455234294]
 visible = false
-z_index = 1
-position = Vector2(580, 131)
-scale = Vector2(1, 0.91290325)
-texture = ExtResource("8_4e3ix")
+
+[node name="Cuadro" type="Sprite2D" parent="Aviso" unique_id=1102559213]
+position = Vector2(320, 293)
+scale = Vector2(2.6, 1.55)
+texture = ExtResource("10_cuadro")
+
+[node name="Retrato" type="Sprite2D" parent="Aviso" unique_id=499249927]
+position = Vector2(196, 293)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("11_cara")
+
+[node name="Texto" type="Label" parent="Aviso" unique_id=860472068]
+offset_left = 228.0
+offset_top = 254.0
+offset_right = 470.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0.243137, 0.152941, 0.137255, 1)
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 12
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PanelInicio" type="Node2D" parent="." unique_id=210181707]
+
+[node name="Velo" type="ColorRect" parent="PanelInicio" unique_id=2055738042]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Titulo" type="Label" parent="PanelInicio" unique_id=140666444]
+offset_top = 62.0
+offset_right = 640.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 24
+text = "¡Alcanza a Balaam!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instrucciones" type="Label" parent="PanelInicio" unique_id=178293000]
+offset_left = 90.0
+offset_top = 108.0
+offset_right = 550.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 12
+text = "Toca la pantalla para que Atlas aletee. Esquiva las columnas, junta corazones, escudos y turbos, y aguanta 90 segundos para llegar a balaam."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnSalirInicio" type="Button" parent="PanelInicio" unique_id=300704698]
+offset_left = 12.0
+offset_top = 300.0
+offset_right = 96.0
+offset_bottom = 336.0
+theme = ExtResource("13_tema")
+text = "Salir"
+
+[node name="BtnJugar" type="Button" parent="PanelInicio" unique_id=300704697]
+offset_left = 268.0
+offset_top = 208.0
+offset_right = 372.0
+offset_bottom = 250.0
+theme = ExtResource("13_tema")
+text = "Jugar"
+
+[node name="PanelDerrota" type="Node2D" parent="." unique_id=58622176]
+visible = false
+
+[node name="Velo" type="ColorRect" parent="PanelDerrota" unique_id=1020689736]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Titulo" type="Label" parent="PanelDerrota" unique_id=710569794]
+offset_top = 84.0
+offset_right = 640.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 24
+text = "Balaam se escapó"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="PanelDerrota" unique_id=1695285321]
+offset_left = 90.0
+offset_top = 128.0
+offset_right = 550.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 12
+text = "Te quedaste sin vidas. ¿Lo intentamos otra vez?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnReintentar" type="Button" parent="PanelDerrota" unique_id=517932152]
+offset_left = 168.0
+offset_top = 200.0
+offset_right = 308.0
+offset_bottom = 242.0
+theme = ExtResource("13_tema")
+text = "Reintentar"
+
+[node name="BtnSalir" type="Button" parent="PanelDerrota" unique_id=214457865]
+offset_left = 332.0
+offset_top = 200.0
+offset_right = 452.0
+offset_bottom = 242.0
+theme = ExtResource("13_tema")
+text = "Salir"
+
+[node name="PanelVictoria" type="Node2D" parent="." unique_id=577263664]
+visible = false
+
+[node name="Velo" type="ColorRect" parent="PanelVictoria" unique_id=273559671]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="Titulo" type="Label" parent="PanelVictoria" unique_id=1289128878]
+offset_top = 84.0
+offset_right = 640.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 24
+text = "¡Alcanzaste a Balaam!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="PanelVictoria" unique_id=1034869983]
+offset_left = 90.0
+offset_top = 128.0
+offset_right = 550.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.08, 0.06, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("12_amaranth")
+theme_override_font_sizes/font_size = 12
+text = "Le diste alcance antes de que cruzara el portal."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnContinuar" type="Button" parent="PanelVictoria" unique_id=1726882678]
+offset_left = 258.0
+offset_top = 200.0
+offset_right = 382.0
+offset_bottom = 242.0
+theme = ExtResource("13_tema")
+text = "Continuar"
+
+[node name="TimerPipes" type="Timer" parent="." unique_id=2062731144]
+wait_time = 2.2
+
+[node name="TimerEventos" type="Timer" parent="." unique_id=783501789]
+one_shot = true
