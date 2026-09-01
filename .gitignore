@@ -6,3 +6,6 @@
 *.apk
 *.aab
 *.idsig
+
+# Guia del proyecto para Claude Code, no forma parte del juego
+CLAUDE.md
