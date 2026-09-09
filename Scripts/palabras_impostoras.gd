@@ -214,9 +214,21 @@ func actualizar_texto():
 		for p in palabras:
 			if p == "": continue
 			
-			if p.begins_with("{") and p.ends_with("}"):
-				var zona_id = p.replace("{", "").replace("}", "")
+			# La marca puede venir pegada a signos de puntuación ("{zona_1}.",
+			# "¿{zona_2}?", "({zona_3})"), así que se busca dentro de la palabra en
+			# vez de exigir que la palabra entera sea la marca. Si no, el texto se
+			# imprimiría tal cual: "{zona_1}.".
+			var abre = p.find("{")
+			var cierra = p.find("}", abre + 1)
+			
+			if abre != -1 and cierra != -1:
+				var zona_id = p.substr(abre + 1, cierra - abre - 1)
 				if not datos_impostoras.has(zona_id): continue
+				
+				# Lo que va pegado antes y después de la marca viaja en la misma
+				# etiqueta para que la puntuación no quede separada de la palabra.
+				var prefijo = p.substr(0, abre)
+				var sufijo = p.substr(cierra + 1)
 				
 				var label = Label.new()
 				label.name = zona_id
@@ -228,7 +240,7 @@ func actualizar_texto():
 					txt = datos_impostoras[zona_id]["reemplazo_actual"]
 					color_fuente = Color("1f9fb4ff") # Ámbar
 					
-				label.text = txt + " "
+				label.text = prefijo + txt + sufijo + " "
 				label.add_theme_font_override("font", font_normal)
 				label.add_theme_font_size_override("font_size", 14)
 				label.add_theme_color_override("font_color", color_fuente)

@@ -1,6 +1,6 @@
 {
   "nivel_1_1": {
-	"historia": "Nuestro capitán Hernán Cortés llegó cabalgando sobre un majestuoso {zona_1} .\n\nPara celebrar la alianza con el emperador Moctezuma, intercambiamos valiosos obsequios, entregándole unas {zona_2} .\n\nEl emperador se mostró tan asombrado por nuestra presencia que nos ofreció hospedaje en el gran {zona_3} de la ciudad.",
+	"historia": "Nuestro capitán Hernán Cortés llegó cabalgando sobre un majestuoso {zona_1}.\n\nPara celebrar la alianza con el emperador Moctezuma, intercambiamos valiosos obsequios, entregándole unas {zona_2}.\n\nEl emperador se mostró tan asombrado por nuestra presencia que nos ofreció hospedaje en el gran {zona_3} de la ciudad.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "monopatín espacial",
@@ -59,7 +59,7 @@
 	}
   },
   "nivel_1_2": {
-	"historia": "Hoy fuimos a inspeccionar el inmenso mercado de Tlatelolco, donde los indios vendían montones de {zona_1} .\n\nMe quedé helado al ver sus cultivos flotantes, las llamadas {zona_2} , donde siembran sus alimentos en medio del agua.\n\nIncluso nos invitaron a beber de su brebaje sagrado, una bebida oscura que llaman {zona_3} y reservan para sus nobles.",
+	"historia": "Hoy fuimos a inspeccionar el inmenso mercado de Tlatelolco, donde los indios vendían montones de {zona_1}.\n\nMe quedé helado al ver sus cultivos flotantes, las llamadas {zona_2}, donde siembran sus alimentos en medio del agua.\n\nIncluso nos invitaron a beber de su brebaje sagrado, una bebida oscura que llaman {zona_3} y reservan para sus nobles.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "consolas de videojuegos",
@@ -118,7 +118,7 @@
 	}
   },
   "nivel_1_3": {
-	"historia": "Vi de cerca a los guerreros locales. Se protegen el pecho con un escudo circular muy curioso que llaman {zona_1} .\n\nPara el combate no usan espadas de acero como las nuestras, sino un madero con filos de obsidiana llamado {zona_2} .\n\nSus batallones lucen muy fieros, en especial esos soldados vestidos con plumas de {zona_3} .",
+	"historia": "Vi de cerca a los guerreros locales. Se protegen el pecho con un escudo circular muy curioso que llaman {zona_1}.\n\nPara el combate no usan espadas de acero como las nuestras, sino un madero con filos de obsidiana llamado {zona_2}.\n\nSus batallones lucen muy fieros, en especial esos soldados vestidos con plumas de {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "campo de fuerza láser",
@@ -177,7 +177,7 @@
 	}
   },
   "nivel_1_4": {
-	"historia": "En el centro de esta colosal ciudad se alza el {zona_1} , un lugar imponente que me pone los pelos de punta.\n\nLos sacerdotes hacen sus ofrendas sagradas pidiéndole lluvia a su ídolo {zona_2} .\n\nDicen que todas sus creencias giran en torno al dios serpiente emplumada, al que adoran como {zona_3} .",
+	"historia": "En el centro de esta colosal ciudad se alza el {zona_1}, un lugar imponente que me pone los pelos de punta.\n\nLos sacerdotes hacen sus ofrendas sagradas pidiéndole lluvia a su ídolo {zona_2}.\n\nDicen que todas sus creencias giran en torno al dios serpiente emplumada, al que adoran como {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "centro comercial gigante",
@@ -236,7 +236,7 @@
 	}
   },
   "nivel_1_5": {
-	"historia": "Me cuesta creer que esta magnífica ciudad entera fue construida en medio del inmenso {zona_1} .\n\nPara llegar hasta aquí, tuvimos que marchar por las largas {zona_2} de piedra que conectan con la orilla.\n\nA nuestro alrededor hay cientos de pequeños botes, que ellos llaman {zona_3} , moviéndose deprisa por los canales de agua.",
+	"historia": "Me cuesta creer que esta magnífica ciudad entera fue construida en medio del inmenso {zona_1}.\n\nPara llegar hasta aquí, tuvimos que marchar por las largas {zona_2} de piedra que conectan con la orilla.\n\nA nuestro alrededor hay cientos de pequeños botes, que ellos llaman {zona_3}, moviéndose deprisa por los canales de agua.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "estacionamiento asfaltado",
@@ -336,7 +336,7 @@
 	}
   },
   "nivel_2_1": {
-	"historia": "Aquella noche salimos en silencio por la calzada de {zona_1} , cargando en hombros unos {zona_2} para cruzar los canales.\n\nLlovía tanto que nadie nos vio al principio.\n\nEn la huida perdimos casi todo el {zona_3} que habíamos juntado en el palacio.",
+	"historia": "Aquella noche salimos en silencio por la calzada de {zona_1}, cargando en hombros unos {zona_2} para cruzar los canales.\n\nLlovía tanto que nadie nos vio al principio.\n\nEn la huida perdimos casi todo el {zona_3} que habíamos juntado en el palacio.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "escaleras eléctricas",
@@ -395,7 +395,7 @@
 	}
   },
   "nivel_2_2": {
-	"historia": "Todo empezó cuando el capitán {zona_1} atacó a los mexicas mientras celebraban la fiesta de {zona_2} .\n\nLa matanza ocurrió en el patio del {zona_3} , y desde entonces la ciudad entera se levantó contra nosotros.",
+	"historia": "Todo empezó cuando el capitán {zona_1} atacó a los mexicas mientras celebraban la fiesta de {zona_2}.\n\nLa matanza ocurrió en el patio del {zona_3}, y desde entonces la ciudad entera se levantó contra nosotros.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un youtuber famoso",
@@ -454,7 +454,7 @@
 	}
   },
   "nivel_2_3": {
-	"historia": "Tras la muerte de Moctezuma, los mexicas nombraron tlatoani a {zona_1} .\n\nPero al poco tiempo se extendió una enfermedad traída por nosotros, la {zona_2} , que mató a muchísima gente.\n\nEl nuevo tlatoani murió por ella en apenas {zona_3} .",
+	"historia": "Tras la muerte de Moctezuma, los mexicas nombraron tlatoani a {zona_1}.\n\nPero al poco tiempo se extendió una enfermedad traída por nosotros, la {zona_2}, que mató a muchísima gente.\n\nEl nuevo tlatoani murió por ella en apenas {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un influencer",
@@ -513,7 +513,7 @@
 	}
   },
   "nivel_2_4": {
-	"historia": "Huimos de madrugada, aprovechando la {zona_1} que cubría el lago.\n\nUna mujer que sacaba agua nos descubrió y dio la {zona_2} a toda la ciudad.\n\nLos sobrevivientes buscamos refugio en {zona_3} , donde teníamos aliados.",
+	"historia": "Huimos de madrugada, aprovechando la {zona_1} que cubría el lago.\n\nUna mujer que sacaba agua nos descubrió y dio la {zona_2} a toda la ciudad.\n\nLos sobrevivientes buscamos refugio en {zona_3}, donde teníamos aliados.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "señal de wifi",
@@ -572,7 +572,7 @@
 	}
   },
   "nivel_2_5": {
-	"historia": "Ya fuera de la ciudad nos alcanzaron en la llanura de {zona_1} y tuvimos que pelear otra vez.\n\nNos salvaron los {zona_2} , que los mexicas nunca habían visto en batalla.\n\nSin la ayuda de nuestros aliados {zona_3} no habríamos sobrevivido.",
+	"historia": "Ya fuera de la ciudad nos alcanzaron en la llanura de {zona_1} y tuvimos que pelear otra vez.\n\nNos salvaron los {zona_2}, que los mexicas nunca habían visto en batalla.\n\nSin la ayuda de nuestros aliados {zona_3} no habríamos sobrevivido.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un centro comercial",
@@ -631,7 +631,7 @@
 	}
   },
   "nivel_3_1": {
-	"historia": "El sitio de la ciudad duró {zona_1} , de mayo a agosto.\n\nCortés mandó construir {zona_2} para dominar el agua y cortar las calzadas.\n\nAsí controlamos por completo el lago de {zona_3} .",
+	"historia": "El sitio de la ciudad duró {zona_1}, de mayo a agosto.\n\nCortés mandó construir {zona_2} para dominar el agua y cortar las calzadas.\n\nAsí controlamos por completo el lago de {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "tres minutos",
@@ -690,7 +690,7 @@
 	}
   },
   "nivel_3_2": {
-	"historia": "El último tlatoani que defendió la ciudad fue {zona_1} .\n\nResistió hasta el {zona_2} de 1521, cuando fue capturado.\n\nLa batalla final se dio en el mercado de {zona_3} .",
+	"historia": "El último tlatoani que defendió la ciudad fue {zona_1}.\n\nResistió hasta el {zona_2} de 1521, cuando fue capturado.\n\nLa batalla final se dio en el mercado de {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un capitán de futbol",
@@ -749,7 +749,7 @@
 	}
   },
   "nivel_3_3": {
-	"historia": "Dentro de la ciudad sitiada la gente moría de {zona_1} , porque ya no entraba comida.\n\nAdemás seguía la epidemia de {zona_2} que había llegado el año anterior.\n\nY bebían agua salada del lago porque cortamos el acueducto de {zona_3} .",
+	"historia": "Dentro de la ciudad sitiada la gente moría de {zona_1}, porque ya no entraba comida.\n\nAdemás seguía la epidemia de {zona_2} que había llegado el año anterior.\n\nY bebían agua salada del lago porque cortamos el acueducto de {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "aburrimiento",
@@ -808,7 +808,7 @@
 	}
   },
   "nivel_3_4": {
-	"historia": "Cortés no venció solo: lo acompañaban miles de guerreros {zona_1} que odiaban a los mexicas.\n\nTambién sumó pueblos que pagaban {zona_2} a Tenochtitlán y querían liberarse.\n\nPor eso decimos que fue una guerra entre {zona_3} , no solo contra España.",
+	"historia": "Cortés no venció solo: lo acompañaban miles de guerreros {zona_1} que odiaban a los mexicas.\n\nTambién sumó pueblos que pagaban {zona_2} a Tenochtitlán y querían liberarse.\n\nPor eso decimos que fue una guerra entre {zona_3}, no solo contra España.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "marcianos",
@@ -867,7 +867,7 @@
 	}
   },
   "nivel_3_5": {
-	"historia": "Cuando la ciudad cayó, los templos fueron {zona_1} y sus piedras se usaron para construir de nuevo.\n\nLos canales y {zona_2} quedaron destruidos tras el sitio.\n\nSobre esas ruinas empezaría a levantarse la {zona_3} .",
+	"historia": "Cuando la ciudad cayó, los templos fueron {zona_1} y sus piedras se usaron para construir de nuevo.\n\nLos canales y {zona_2} quedaron destruidos tras el sitio.\n\nSobre esas ruinas empezaría a levantarse la {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "pintados de neón",
@@ -926,7 +926,7 @@
 	}
   },
   "nivel_4_1": {
-	"historia": "Estamos trazando la nueva ciudad justo encima de las ruinas de {zona_1} .\n\nEl encargado de medir las calles con cuerdas fue el maestro {zona_2} .\n\nTodo se ordena alrededor de la {zona_3} , como manda la costumbre española.",
+	"historia": "Estamos trazando la nueva ciudad justo encima de las ruinas de {zona_1}.\n\nEl encargado de medir las calles con cuerdas fue el maestro {zona_2}.\n\nTodo se ordena alrededor de la {zona_3}, como manda la costumbre española.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un parque de diversiones",
@@ -985,7 +985,7 @@
 	}
   },
   "nivel_4_2": {
-	"historia": "El año pasado llegaron {zona_1} frailes franciscanos para enseñar la religión cristiana.\n\nA ese trabajo se le llama {zona_2} .\n\nEstán levantando {zona_3} por todos los pueblos para reunir a la gente.",
+	"historia": "El año pasado llegaron {zona_1} frailes franciscanos para enseñar la religión cristiana.\n\nA ese trabajo se le llama {zona_2}.\n\nEstán levantando {zona_3} por todos los pueblos para reunir a la gente.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "mil millones de",
@@ -1044,7 +1044,7 @@
 	}
   },
   "nivel_4_3": {
-	"historia": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la {zona_1} .\n\nA cambio de protegerlos y enseñarles la fe, ellos recibían {zona_2} y trabajo.\n\nMuchos frailes protestaron porque era un {zona_3} muy duró para los indígenas.",
+	"historia": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la {zona_1}.\n\nA cambio de protegerlos y enseñarles la fe, ellos recibían {zona_2} y trabajo.\n\nMuchos frailes protestaron porque era un {zona_3} muy duró para los indígenas.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "garantía extendida",
@@ -1103,7 +1103,7 @@
 	}
   },
   "nivel_4_4": {
-	"historia": "Trajimos de Europa cultivos nuevos como el {zona_1} y la caña de azúcar.\n\nTambién llegaron animales que aquí no existían, como las vacas y los {zona_2} .\n\nDel encuentro entre ambos mundos nació el {zona_3} .",
+	"historia": "Trajimos de Europa cultivos nuevos como el {zona_1} y la caña de azúcar.\n\nTambién llegaron animales que aquí no existían, como las vacas y los {zona_2}.\n\nDel encuentro entre ambos mundos nació el {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "chicle de menta",
@@ -1162,7 +1162,7 @@
 	}
   },
   "nivel_4_5": {
-	"historia": "Por ahora gobierna {zona_1} , porque todavía no hay virrey.\n\nCada ciudad se administra con un {zona_2} formado por vecinos importantes.\n\nTodo lo que sale hacia España se embarca en el puerto de {zona_3} .",
+	"historia": "Por ahora gobierna {zona_1}, porque todavía no hay virrey.\n\nCada ciudad se administra con un {zona_2} formado por vecinos importantes.\n\nTodo lo que sale hacia España se embarca en el puerto de {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "una inteligencia artificial",
@@ -1221,7 +1221,7 @@
 	}
   },
   "nivel_5_1": {
-	"historia": "Ha llegado la {zona_1} para poner orden, porque la primera gobernó muy mal.\n\nLa preside el obispo {zona_2} , hombre de buena fama.\n\nSu tarea es organizar el {zona_3} y hacer que se cumplan las leyes.",
+	"historia": "Ha llegado la {zona_1} para poner orden, porque la primera gobernó muy mal.\n\nLa preside el obispo {zona_2}, hombre de buena fama.\n\nSu tarea es organizar el {zona_3} y hacer que se cumplan las leyes.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "nave espacial",
@@ -1280,7 +1280,7 @@
 	}
   },
   "nivel_5_2": {
-	"historia": "El oidor {zona_1} fundó pueblos-hospital donde los indígenas aprenden oficios.\n\nSu obra más conocida está en {zona_2} .\n\nLa gente lo quiere tanto que le dice {zona_3} .",
+	"historia": "El oidor {zona_1} fundó pueblos-hospital donde los indígenas aprenden oficios.\n\nSu obra más conocida está en {zona_2}.\n\nLa gente lo quiere tanto que le dice {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un streamer",
@@ -1398,7 +1398,7 @@
 	}
   },
   "nivel_5_4": {
-	"historia": "La Iglesia se organiza en {zona_1} , cada uno con su obispo.\n\nPara sostenerse cobra un impuesto llamado {zona_2} .\n\nEn la plaza mayor se empieza a construir la {zona_3} .",
+	"historia": "La Iglesia se organiza en {zona_1}, cada uno con su obispo.\n\nPara sostenerse cobra un impuesto llamado {zona_2}.\n\nEn la plaza mayor se empieza a construir la {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "canales de streaming",
@@ -1457,7 +1457,7 @@
 	}
   },
   "nivel_5_5": {
-	"historia": "Cada villa elige su {zona_1} , que se encarga del gobierno local.\n\nLos encargados de impartir justicia son los {zona_2} .\n\nPara las obras públicas se organiza el trabajo por turnos, llamado {zona_3} .",
+	"historia": "Cada villa elige su {zona_1}, que se encarga del gobierno local.\n\nLos encargados de impartir justicia son los {zona_2}.\n\nPara las obras públicas se organiza el trabajo por turnos, llamado {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "consola de videojuegos",
@@ -1516,7 +1516,7 @@
 	}
   },
   "nivel_6_1": {
-	"historia": "Ha llegado {zona_1} , nombrado primer virrey de estas tierras.\n\nEl territorio se llamará oficialmente {zona_2} .\n\nÉl no manda por su cuenta: gobierna en nombre del {zona_3} .",
+	"historia": "Ha llegado {zona_1}, nombrado primer virrey de estas tierras.\n\nEl territorio se llamará oficialmente {zona_2}.\n\nÉl no manda por su cuenta: gobierna en nombre del {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "un robot mayordomo",
@@ -1575,7 +1575,7 @@
 	}
   },
   "nivel_6_2": {
-	"historia": "Este mismo año se funda la {zona_1} para acuñar dinero aquí mismo.\n\nLas primeras monedas se hacen de {zona_2} .\n\nEl metal viene de las {zona_3} descubiertas en el norte.",
+	"historia": "Este mismo año se funda la {zona_1} para acuñar dinero aquí mismo.\n\nLas primeras monedas se hacen de {zona_2}.\n\nEl metal viene de las {zona_3} descubiertas en el norte.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "tienda de aplicaciónes",
@@ -1634,7 +1634,7 @@
 	}
   },
   "nivel_6_3": {
-	"historia": "Pronto tendremos la primera {zona_1} de todo el continente americano.\n\nCon ella se podrán hacer muchos {zona_2} iguales sin copiarlos a mano.\n\nEl impresor que la trae se llama {zona_3} .",
+	"historia": "Pronto tendremos la primera {zona_1} de todo el continente americano.\n\nCon ella se podrán hacer muchos {zona_2} iguales sin copiarlos a mano.\n\nEl impresor que la trae se llama {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "antena de televisión",
@@ -1693,7 +1693,7 @@
 	}
   },
   "nivel_6_4": {
-	"historia": "Se planea fundar la Real y Pontificia {zona_1} para que se estudie aquí.\n\nLas clases se darán en {zona_2} , como en Europa.\n\nAsí los {zona_3} ya no tendrán que cruzar el mar para aprender.",
+	"historia": "Se planea fundar la Real y Pontificia {zona_1} para que se estudie aquí.\n\nLas clases se darán en {zona_2}, como en Europa.\n\nAsí los {zona_3} ya no tendrán que cruzar el mar para aprender.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "agencia de viajes",
@@ -1752,7 +1752,7 @@
 	}
   },
   "nivel_6_5": {
-	"historia": "El virrey gobierna acompañado por la {zona_1} , que se encarga de la justicia.\n\nSus decisiones deben respetar las órdenes que llegan del {zona_2} .\n\nEste sistema de gobierno durará casi {zona_3} .",
+	"historia": "El virrey gobierna acompañado por la {zona_1}, que se encarga de la justicia.\n\nSus decisiones deben respetar las órdenes que llegan del {zona_2}.\n\nEste sistema de gobierno durará casi {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "liga de videojuegos",
