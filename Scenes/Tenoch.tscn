@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ck161kd57ecvg"]
 
-[ext_resource type="Script" path="res://Scripts/capitulo_manager.gd" id="1_p5fs4"]
+[ext_resource type="Script" uid="uid://cijembagd3h8l" path="res://Scripts/capitulo_manager.gd" id="1_p5fs4"]
 [ext_resource type="Texture2D" uid="uid://dgkkc66xcln2d" path="res://Images/Fondos/untitled(3).png" id="1_ydfdj"]
 [ext_resource type="Texture2D" uid="uid://7o621w6aukx8" path="res://Images/Tilesets/templo.png" id="2_myvof"]
 [ext_resource type="Texture2D" uid="uid://b2f3ra2jm614d" path="res://Images/Tilesets/Decor.png" id="2_ydfdj"]
@@ -3212,7 +3212,6 @@ size = Vector2(18, 56)
 
 [node name="Node2D" type="Node2D" unique_id=997363154]
 script = ExtResource("1_p5fs4")
-numero_capitulo = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=61171444]
 
@@ -3293,7 +3292,7 @@ tiempo_visible = 4.0
 requiere_interaccion = true
 
 [node name="Player" parent="." unique_id=1370197270 instance=ExtResource("9_kprco")]
-position = Vector2(647.99994, 192)
+position = Vector2(32, 200)
 
 [node name="Atlas" parent="." unique_id=751094602 instance=ExtResource("atlas_scene")]
 position = Vector2(72, 200)

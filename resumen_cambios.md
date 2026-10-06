@@ -36,7 +36,23 @@ OCULTA — ahí cierra el diálogo al recibir `juego_completado`, y un salir dej
 Ojo: el "Ir al Menú" del `MenuPausa` que instancia Memorama va al menú principal, no al libro.
 
 - **Rompecabezas**: piezas por geometría (`Polygon2D` con UV), no recortes; cada borde se calcula una
-  vez y lo comparten las dos vecinas. Imágenes **900x600 (3:2)** en `Images/img-rompecabezas/niv_N.jpg`.
+  vez y lo comparten las dos vecinas. El tablero (`area_tablero`, 369x246) está al tope de lo que
+  cabe: **ensancharlo se lo quita a las columnas laterales**, que es donde esperan las piezas sueltas,
+  y se encimarían unas con otras. Las pestañas de las piezas del montón siempre invaden ~20 px del
+  tablero; es así desde siempre y no se nota porque la guía va muy tenue. Imágenes **900x600 (3:2)** en
+  `Images/img-rompecabezas/nivelN/nivN_1..3.jpg`. **Las imágenes NO se listan en `rompecabezas.json`**:
+  se buscan por esa convención con `ResourceLoader.exists()` (no con `DirAccess`, que en el export no
+  ve los originales), así que agregar una es copiar el archivo y abrir Godot una vez. Un nivel sin
+  imágenes sale en la lista como "(pronto)" y deshabilitado, no desaparece.
+  Qué imagen toca: desde un diálogo, la primera sin jugar (1, 2, 3...) y ya jugadas todas, una al
+  azar; desde el Libro, la elige el jugador en `PanelImagenes`. Las dos cuentas van **separadas**
+  (`eventos_completados["rompecabezas_<archivo>_historia" | "..._libro"]`) para que practicar en el
+  libro no gaste la rotación de la historia. Se marca AL LANZAR (invariante de `eventos_completados`),
+  por eso `Reiniciar` pasa `variante_actual`: si no, cada reinicio quemaría otra imagen.
+  ⚠️ El pergamino de los botones tiene los bordes transparentes, así que lo pintado es más angosto
+  que el botón y un título largo se sale del dibujo aunque "quepa": `_ajustar_texto_boton()` le baja
+  la letra hasta `ANCHO_UTIL_BOTON`. Las miniaturas no usan ese pergamino (lo taparían entero): llevan
+  un `StyleBoxFlat` propio.
 - **Palabras Impostoras**: la variante la elige `zona_dialogo.gd` por el capítulo del NIVEL, no por el
   progreso global.
 - **Atlas-Bird** (`Scenes/Juegos/Atlas-Bird/`): el reloj de 90 s no es un límite, es la distancia a
@@ -78,6 +94,14 @@ Ojo: el "Ir al Menú" del `MenuPausa` que instancia Memorama va al menú princip
 9. **UIDs**: al copiar una escena a mano, quitarle el `uid` del encabezado o Godot reclama duplicado. Y
    si editas un `.tscn` por fuera con el editor abierto, puede reasignarle uno nuevo y romper a quien la
    referencie: revisar el encabezado después.
+
+## Ventana y export
+
+Base 640x360 con `stretch/mode = canvas_items` y aspecto `keep` (el de fábrica, por eso no aparece en
+`project.godot`). `window_width/height_override = 1280x720` NO es solo del editor: también abre así el
+juego exportado en escritorio. Al maximizar escala todo parejo (x2.75 a 1920x1080) sin deformar, con
+franjas negras solo si la pantalla no es 16:9. ⚠️ El único preset de export es Android; para probar
+todo esto fuera del editor hay que agregar uno de Windows.
 
 ## Cómo verificar sin poder jugar
 

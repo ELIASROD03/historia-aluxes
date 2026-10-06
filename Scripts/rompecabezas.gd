@@ -7,11 +7,19 @@ extends Control
 ## elige dificultad -> se cortan las piezas y arranca el reloj -> gana si arma
 ## todo, pierde si se le acaba el tiempo.
 ##
-## Las piezas NO son archivos aparte: el script toma UNA sola imagen (la del nivel,
-## definida en res://rompecabezas.json) y la corta generando la forma clasica de
-## rompecabezas (pestanas y huecos) con geometria, no con shader. Cada pieza es un
-## Polygon2D cuyo contorno lleva las pestanas y cuyo UV apunta al pedazo correcto
-## de la imagen original.
+## Las piezas NO son archivos aparte: el script toma UNA sola imagen y la corta
+## generando la forma clasica de rompecabezas (pestanas y huecos) con geometria,
+## no con shader. Cada pieza es un Polygon2D cuyo contorno lleva las pestanas y
+## cuyo UV apunta al pedazo correcto de la imagen original.
+##
+## Cada nivel tiene VARIAS imagenes (normalmente 3). No se listan en el JSON: se
+## buscan por convencion en res://Images/img-rompecabezas/nivelN/nivN_V.jpg, asi
+## que agregar una imagen nueva es solo meter el archivo en su carpeta. Cual sale:
+##   - Lanzado por un dialogo (historia): la primera que no se haya jugado, en
+##     orden 1, 2, 3...; ya jugadas todas, una al azar.
+##   - Entrando desde el Libro de Historia: la elige el jugador en PanelImagenes.
+## Los dos ambitos llevan cuentas separadas (ver AMBITO_HISTORIA / AMBITO_LIBRO),
+## para que practicar en el libro no gaste la rotacion de la historia.
 ##
 ## Los bordes internos se generan UNA vez y las dos piezas vecinas comparten
 ## exactamente la misma lista de puntos (una al derecho y otra al reves), por eso
@@ -23,6 +31,27 @@ signal juego_perdido
 const RUTA_CONFIG := "res://rompecabezas.json"
 const IMAGEN_FALLBACK := "res://icon.svg"
 const SEGUNDOS_POR_DEFECTO := 100.0
+
+## Donde viven las imagenes. Dentro va una carpeta por nivel: "nivel1", "nivel2"...
+const CARPETA_IMAGENES := "res://Images/img-rompecabezas"
+## Se prueban en este orden para cada numero, y se queda con la primera que exista.
+const EXTENSIONES_IMAGEN := ["jpg", "png", "jpeg", "webp"]
+## Hasta cuantas imagenes se buscan por nivel. Con 3 es lo normal; sobra margen
+## por si algun nivel lleva mas.
+const MAX_VARIANTES := 9
+
+## Las dos cuentas de "ya jugada", separadas a proposito: lo que el jugador arma
+## en el Libro de Historia no adelanta la rotacion de la historia.
+const AMBITO_HISTORIA := "historia"
+const AMBITO_LIBRO := "libro"
+
+## El rotulo de las miniaturas va sobre un marco oscuro, no sobre pergamino: el
+## color_texto_normal (cafe) ahi no se leeria.
+const COLOR_TEXTO_TARJETA := Color(1.0, 0.97, 0.90, 1.0)
+
+## Ancho que de verdad se ve pintado dentro de un boton de 250 px de la rejilla
+## de niveles (ver _ajustar_texto_boton).
+const ANCHO_UTIL_BOTON := 190.0
 
 ## Cuánto se queda en pantalla el rompecabezas ya armado, con su mensaje, antes
 ## de devolver el control al diálogo.
@@ -43,10 +72,16 @@ const DIFICULTADES_POR_DEFECTO := {
 @export_group("Zonas en pantalla")
 ## Area maxima donde se arma la imagen. La imagen se ajusta dentro conservando
 ## su proporcion y se centra. Va debajo del titulo y arriba de los botones.
-@export var area_tablero := Rect2(160, 72, 320, 226)
+##
+## Con imagenes 3:2 esto da un tablero de 369x246, que es practicamente lo mas
+## grande que cabe: lo que le quites de ancho a las columnas de los lados se lo
+## quitas al sitio donde esperan las piezas sueltas, y empiezan a encimarse unas
+## con otras. El tope de alto son los 640x360 del juego menos el titulo (arriba)
+## y la fila de botones (abajo).
+@export var area_tablero := Rect2(135, 70, 370, 246)
 ## Columnas laterales donde aparecen revueltas las piezas al empezar.
-@export var area_piezas_izq := Rect2(6, 76, 148, 214)
-@export var area_piezas_der := Rect2(486, 76, 148, 214)
+@export var area_piezas_izq := Rect2(4, 74, 127, 238)
+@export var area_piezas_der := Rect2(509, 74, 127, 238)
 
 @export_group("Ajustes de juego")
 ## Que tan cerca (en pixeles) debe soltarse una pieza de su lugar para que se acomode sola.
@@ -96,6 +131,10 @@ const DIFICULTADES_POR_DEFECTO := {
 @onready var panel_niveles: Control = $PanelNiveles
 @onready var grid_niveles: GridContainer = $PanelNiveles/GridNiveles
 @onready var btn_volver_libro: Button = $PanelNiveles/BtnVolverLibro
+@onready var panel_imagenes: Control = $PanelImagenes
+@onready var fila_imagenes: HBoxContainer = $PanelImagenes/FilaImagenes
+@onready var label_nivel_imagenes: Label = $PanelImagenes/LabelNivel
+@onready var btn_volver_niveles_img: Button = $PanelImagenes/BtnVolverNiveles
 
 ## true cuando el minijuego corre solo (se entro desde el Libro de Historia) y
 ## false cuando lo abre un dialogo dentro de un nivel. En modo libre el jugador
@@ -107,6 +146,13 @@ var modo_libre: bool = false
 var config: Dictionary = {}
 var datos_nivel: Dictionary = {}
 var textura: Texture2D
+## Rutas de las imagenes del nivel actual, en orden (la 1 primero).
+var imagenes_nivel: Array = []
+## Cual de esas imagenes se esta armando. -1 = el nivel no tiene ninguna.
+var variante_actual: int = -1
+## id_nivel -> Array de rutas. Buscar las imagenes toca disco, y la pantalla de
+## niveles pregunta por todas cada vez que se abre.
+var _cache_imagenes: Dictionary = {}
 var filas: int = 3
 var columnas: int = 3
 var pistas_restantes: int = 3
@@ -148,7 +194,8 @@ func _ready() -> void:
 	btn_desafiante.pressed.connect(_elegir_dificultad.bind("desafiante"))
 	captura_input.gui_input.connect(_on_captura_gui_input)
 	btn_salir.pressed.connect(_mostrar_niveles)
-	btn_volver_niveles.pressed.connect(_mostrar_niveles)
+	btn_volver_niveles.pressed.connect(_on_volver_desde_dificultad)
+	btn_volver_niveles_img.pressed.connect(_mostrar_niveles)
 	btn_volver_libro.pressed.connect(_on_volver_libro_pressed)
 
 	_cargar_config()
@@ -191,11 +238,34 @@ func _cargar_config() -> void:
 
 ## Deja el nivel listo y muestra la pantalla de dificultad. Todavia no corta las
 ## piezas: cuantas van depende de lo que elija el jugador.
-func preparar_nivel(id_nivel: String) -> void:
+##
+## `variante` es el indice (base 0) de la imagen del nivel que se va a armar.
+## Dejalo en -1 para que se elija solo: en modo libre la primera, y en la historia
+## la que toque segun la rotacion.
+func preparar_nivel(id_nivel: String, variante: int = -1) -> void:
 	nivel_a_cargar = id_nivel
 	datos_nivel = config.get(id_nivel, {})
 	if datos_nivel.is_empty():
 		push_warning("El nivel '%s' no existe en rompecabezas.json." % id_nivel)
+
+	imagenes_nivel = _imagenes_de(id_nivel)
+	if imagenes_nivel.is_empty():
+		variante_actual = -1
+	elif variante >= 0:
+		variante_actual = clampi(variante, 0, imagenes_nivel.size() - 1)
+	elif modo_libre:
+		variante_actual = 0
+	else:
+		variante_actual = _variante_para_historia(imagenes_nivel)
+
+	# Se marca AL LANZAR, no al ganar (igual que el resto de eventos_completados):
+	# si el jugador recarga a media escena o pierde, la historia pasa a la imagen
+	# siguiente en vez de plantarle la misma otra vez.
+	if variante_actual >= 0:
+		_marcar_jugada(
+			imagenes_nivel[variante_actual],
+			AMBITO_LIBRO if modo_libre else AMBITO_HISTORIA
+		)
 
 	_limpiar_piezas()
 	terminado = false
@@ -203,12 +273,12 @@ func preparar_nivel(id_nivel: String) -> void:
 	pieza_activa = null
 	mensaje_victoria.hide()
 
-	label_titulo.text = str(datos_nivel.get("titulo", ""))
+	label_titulo.text = _titulo_nivel()
 	pistas_restantes = int(datos_nivel.get("pistas_maximas", 3))
 	segundos_totales = float(datos_nivel.get("segundos", SEGUNDOS_POR_DEFECTO))
 	tiempo_restante = segundos_totales
 
-	textura = _cargar_textura(str(datos_nivel.get("imagen", IMAGEN_FALLBACK)))
+	textura = _cargar_textura(_ruta_imagen_actual())
 	# Rejilla provisional: el tablero mide lo mismo sin importar cuantas piezas sean
 	_calcular_tablero()
 	_dibujar_marco_tablero()
@@ -223,6 +293,106 @@ func preparar_nivel(id_nivel: String) -> void:
 	guia.modulate = Color(1, 1, 1, 0.8)
 
 	_mostrar_seleccion()
+
+
+## ── Imagenes del nivel y rotacion ─────────────────────────────────────────────
+
+## Devuelve las rutas de las imagenes de un nivel, en orden (la "1" primero).
+##
+## No hace falta listarlas en rompecabezas.json: se buscan por convencion en
+## res://Images/img-rompecabezas/nivelN/nivN_V.jpg, donde N es el numero del nivel
+## ("nivel_2" -> carpeta "nivel2", prefijo "niv2_"). Por eso agregar una imagen es
+## solo copiar el archivo a su carpeta (y abrir Godot una vez, para que la importe).
+##
+## Se puede saltar la convencion poniendo en el nivel "imagenes" (lista de rutas
+## res://), "carpeta" o "prefijo". Un hueco en la numeracion no rompe nada: las
+## que existan se toman en orden.
+func _imagenes_de(id_nivel: String) -> Array:
+	if _cache_imagenes.has(id_nivel):
+		return _cache_imagenes[id_nivel]
+
+	var datos: Dictionary = config.get(id_nivel, {})
+	var numero := _numero_de_nivel(id_nivel)
+	var rutas: Array = []
+
+	# 1) Lista escrita a mano en el JSON, si la hay.
+	for ruta in datos.get("imagenes", []):
+		if ResourceLoader.exists(str(ruta)):
+			rutas.append(str(ruta))
+
+	# 2) Convencion: carpeta del nivel + prefijo numerado.
+	if rutas.is_empty():
+		var carpeta := str(datos.get("carpeta", "%s/nivel%d" % [CARPETA_IMAGENES, numero]))
+		var prefijo := str(datos.get("prefijo", "niv%d_" % numero))
+		for v in range(1, MAX_VARIANTES + 1):
+			for ext in EXTENSIONES_IMAGEN:
+				var ruta := "%s/%s%d.%s" % [carpeta, prefijo, v, ext]
+				if ResourceLoader.exists(ruta):
+					rutas.append(ruta)
+					break   # una sola extension por numero
+
+	# 3) Formato viejo, una imagen por nivel. Se conserva por si quedo algun JSON
+	#    a la antigua.
+	if rutas.is_empty() and ResourceLoader.exists(str(datos.get("imagen", ""))):
+		rutas.append(str(datos["imagen"]))
+
+	if rutas.is_empty():
+		push_warning("El nivel '%s' no tiene imagenes; se esperaban en %s/nivel%d/." % [
+			id_nivel, CARPETA_IMAGENES, numero
+		])
+
+	_cache_imagenes[id_nivel] = rutas
+	return rutas
+
+
+## "nivel_12" -> 12. Es lo que amarra el nivel del JSON con su carpeta.
+func _numero_de_nivel(id_nivel: String) -> int:
+	var digitos := ""
+	for i in range(id_nivel.length() - 1, -1, -1):
+		if not id_nivel[i].is_valid_int():
+			break
+		digitos = id_nivel[i] + digitos
+	return int(digitos) if digitos != "" else 0
+
+
+func _ruta_imagen_actual() -> String:
+	if variante_actual >= 0 and variante_actual < imagenes_nivel.size():
+		return str(imagenes_nivel[variante_actual])
+	return IMAGEN_FALLBACK
+
+
+func _titulo_nivel() -> String:
+	var titulo := str(datos_nivel.get("titulo", ""))
+	# En el libro sirve saber cual de las imagenes se esta armando; en la historia
+	# el numero no le dice nada al jugador.
+	if modo_libre and variante_actual >= 0 and imagenes_nivel.size() > 1:
+		return "%s  %d/%d" % [titulo, variante_actual + 1, imagenes_nivel.size()]
+	return titulo
+
+
+## La rotacion que pide la historia: la primera imagen sin jugar, en orden. Ya
+## jugadas todas, una al azar (asi rejugar un capitulo no siempre repite la misma).
+func _variante_para_historia(rutas: Array) -> int:
+	for i in rutas.size():
+		if not _ya_jugada(str(rutas[i]), AMBITO_HISTORIA):
+			return i
+	return randi() % rutas.size()
+
+
+## Se guarda con el nombre del archivo, no con su posicion, para que renumerar o
+## agregar imagenes no reviva ni tache las que no son.
+func _clave_jugada(ruta: String, ambito: String) -> String:
+	return "rompecabezas_%s_%s" % [ruta.get_file().get_basename(), ambito]
+
+
+func _ya_jugada(ruta: String, ambito: String) -> bool:
+	return bool(Global.eventos_completados.get(_clave_jugada(ruta, ambito), false))
+
+
+## Nota: esto solo toca el diccionario en memoria; queda en disco en el siguiente
+## Global.guardar_partida(), igual que el resto de eventos_completados.
+func _marcar_jugada(ruta: String, ambito: String) -> void:
+	Global.eventos_completados[_clave_jugada(ruta, ambito)] = true
 
 
 func _cargar_textura(ruta: String) -> Texture2D:
@@ -270,6 +440,143 @@ func _dibujar_marco_tablero() -> void:
 ## Arma la lista de niveles leyendo rompecabezas.json, asi agregar un nivel nuevo
 ## no obliga a tocar la escena: aparece solo.
 func _mostrar_niveles() -> void:
+	_volver_a_un_menu()
+	panel_imagenes.hide()
+
+	_vaciar(grid_niveles)
+	for clave in config.keys():
+		if clave.begins_with("_"):   # "_instrucciones" y "_dificultades" no son niveles
+			continue
+		var datos: Dictionary = config[clave]
+		grid_niveles.add_child(
+			_crear_boton_nivel(clave, str(datos.get("titulo", clave)), _imagenes_de(clave).size())
+		)
+
+	panel_niveles.show()
+
+
+func _crear_boton_nivel(clave: String, titulo: String, total_imagenes: int) -> Button:
+	var boton := Button.new()
+	boton.text = titulo
+	boton.clip_text = true          # que un titulo largo no deforme la rejilla
+	boton.custom_minimum_size = Vector2(250, 34)
+	_estilo_de_boton(boton, 12)
+	if total_imagenes <= 0:
+		# Nivel declarado en el JSON pero todavia sin imagenes en su carpeta. Se deja
+		# a la vista para que se sepa que viene, pero sin poder entrar (no se conecta
+		# 'pressed': un boton disabled tampoco lo emitiria).
+		boton.text = "%s (pronto)" % titulo
+		boton.disabled = true
+		boton.modulate.a = 0.55
+	else:
+		boton.pressed.connect(_elegir_nivel.bind(clave))
+	_ajustar_texto_boton(boton, ANCHO_UTIL_BOTON, 12, 9)
+	return boton
+
+
+func _elegir_nivel(clave: String) -> void:
+	panel_niveles.hide()
+	# Con una sola imagen no hay nada que elegir: directo a la dificultad.
+	if _imagenes_de(clave).size() > 1:
+		_mostrar_imagenes(clave)
+	else:
+		preparar_nivel(clave, 0)
+
+
+func _on_volver_libro_pressed() -> void:
+	SceneTransition.change_scene("res://Scenes/LibroHistoria.tscn")
+
+
+# -- Pantalla de imagenes (solo en modo libre) --------------------------------
+
+## Las imagenes del nivel como miniaturas, para que el jugador escoja cual armar.
+## Esta pantalla NO aparece cuando el rompecabezas lo lanza un dialogo: ahi la
+## imagen la decide la rotacion (ver _variante_para_historia).
+func _mostrar_imagenes(clave: String) -> void:
+	nivel_a_cargar = clave
+	_volver_a_un_menu()
+	panel_niveles.hide()
+
+	var datos: Dictionary = config.get(clave, {})
+	label_nivel_imagenes.text = str(datos.get("titulo", clave))
+
+	_vaciar(fila_imagenes)
+	var rutas := _imagenes_de(clave)
+	for i in rutas.size():
+		fila_imagenes.add_child(_crear_tarjeta_imagen(clave, i, str(rutas[i])))
+
+	panel_imagenes.show()
+
+
+## Una tarjeta = un Button del tamano de la miniatura, con la imagen dentro y su
+## numero debajo. Los hijos llevan mouse_filter IGNORE para que el clic siempre
+## acabe en el boton y no en la imagen.
+##
+## No usa el estilo de pergamino del resto de los botones: ese es una tira ancha
+## y baja, y aqui la miniatura lo taparia entero. Va un marco propio, que ademas
+## deja ver cual esta señalada.
+func _crear_tarjeta_imagen(clave: String, indice: int, ruta: String) -> Button:
+	const TAM_MINIATURA := Vector2(150, 100)
+	const MARGEN := 6.0
+	const ALTO_ETIQUETA := 20.0
+
+	var jugada := _ya_jugada(ruta, AMBITO_LIBRO)
+
+	var boton := Button.new()
+	boton.custom_minimum_size = TAM_MINIATURA + Vector2(MARGEN * 2.0, MARGEN + ALTO_ETIQUETA + 2.0)
+	boton.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	boton.tooltip_text = "Imagen %d" % (indice + 1)
+	boton.add_theme_stylebox_override("normal", _marco_tarjeta(false))
+	boton.add_theme_stylebox_override("disabled", _marco_tarjeta(false))
+	boton.add_theme_stylebox_override("hover", _marco_tarjeta(true))
+	boton.add_theme_stylebox_override("pressed", _marco_tarjeta(true))
+	boton.pressed.connect(_elegir_imagen.bind(clave, indice))
+
+	var miniatura := TextureRect.new()
+	miniatura.texture = _cargar_textura(ruta)
+	miniatura.texture_filter = _filtro()
+	miniatura.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	miniatura.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	miniatura.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	miniatura.position = Vector2(MARGEN, MARGEN)
+	miniatura.size = TAM_MINIATURA
+	# La ya jugada se ve un poco apagada, para distinguirla de un vistazo.
+	miniatura.modulate = Color(0.72, 0.68, 0.62) if jugada else Color.WHITE
+	boton.add_child(miniatura)
+
+	var etiqueta := Label.new()
+	etiqueta.text = "Imagen %d - jugada" % (indice + 1) if jugada else "Imagen %d" % (indice + 1)
+	etiqueta.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	etiqueta.position = Vector2(MARGEN, MARGEN + TAM_MINIATURA.y)
+	etiqueta.size = Vector2(TAM_MINIATURA.x, ALTO_ETIQUETA)
+	etiqueta.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	etiqueta.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	etiqueta.add_theme_font_override("font", btn_reiniciar.get_theme_font("font"))
+	etiqueta.add_theme_font_size_override("font_size", 11)
+	etiqueta.add_theme_color_override("font_color", color_victoria if jugada else COLOR_TEXTO_TARJETA)
+	boton.add_child(etiqueta)
+
+	return boton
+
+
+func _marco_tarjeta(resaltado: bool) -> StyleBoxFlat:
+	var marco := StyleBoxFlat.new()
+	marco.bg_color = Color(0.16, 0.10, 0.08, 0.72)
+	marco.set_border_width_all(2)
+	marco.border_color = color_victoria if resaltado else Color(0.47, 0.33, 0.23, 1.0)
+	marco.set_corner_radius_all(3)
+	return marco
+
+
+func _elegir_imagen(clave: String, indice: int) -> void:
+	panel_imagenes.hide()
+	preparar_nivel(clave, indice)
+
+
+# -- Utilidades de los menus --------------------------------------------------
+
+## Estado comun de cualquier pantalla de menu: sin piezas, sin reloj y sin HUD.
+func _volver_a_un_menu() -> void:
 	_limpiar_piezas()
 	terminado = false
 	jugando = false
@@ -285,41 +592,41 @@ func _mostrar_niveles() -> void:
 	btn_reiniciar.hide()
 	btn_salir.hide()
 
-	for hijo in grid_niveles.get_children():
+
+## queue_free() no saca al nodo del arbol hasta el final del cuadro, asi que sin el
+## remove_child el contenedor acomodaria por un instante los viejos y los nuevos.
+func _vaciar(contenedor: Node) -> void:
+	for hijo in contenedor.get_children():
+		contenedor.remove_child(hijo)
 		hijo.queue_free()
 
-	for clave in config.keys():
-		if clave.begins_with("_"):   # "_instrucciones" y "_dificultades" no son niveles
-			continue
-		var datos: Dictionary = config[clave]
-		grid_niveles.add_child(_crear_boton_nivel(clave, str(datos.get("titulo", clave))))
 
-	panel_niveles.show()
+## El pergamino de los botones (fondo_botones2.png) trae los bordes rasgados y
+## transparentes, asi que la parte pintada es mas angosta que el boton: un texto
+## que "cabe" en los 250 px igual se sale del dibujo. Se le baja la letra hasta
+## que entre en lo que de verdad se ve, y si ni con la mas chica cabe, se recorta
+## con puntos suspensivos en vez de invadir la pantalla.
+func _ajustar_texto_boton(boton: Button, ancho_util: float, tam_max: int, tam_min: int) -> void:
+	boton.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	var fuente := boton.get_theme_font("font")
+	if fuente == null:
+		return
+	for tam in range(tam_max, tam_min - 1, -1):
+		if fuente.get_string_size(boton.text, HORIZONTAL_ALIGNMENT_LEFT, -1, tam).x <= ancho_util:
+			boton.add_theme_font_size_override("font_size", tam)
+			return
+	boton.add_theme_font_size_override("font_size", tam_min)
 
 
-func _crear_boton_nivel(clave: String, titulo: String) -> Button:
-	var boton := Button.new()
-	boton.text = titulo
-	boton.clip_text = true          # que un titulo largo no deforme la rejilla
-	boton.custom_minimum_size = Vector2(250, 34)
-	# Se copia el estilo de un boton que ya trae la escena, para no repetir recursos
+## Copia la fuente y el estilo de un boton que ya trae la escena, para no repetir
+## recursos en los botones que se crean por codigo.
+func _estilo_de_boton(boton: Button, tam_fuente: int) -> void:
 	boton.add_theme_font_override("font", btn_reiniciar.get_theme_font("font"))
-	boton.add_theme_font_size_override("font_size", 12)
+	boton.add_theme_font_size_override("font_size", tam_fuente)
 	boton.add_theme_color_override("font_color", color_texto_normal)
 	var estilo := btn_reiniciar.get_theme_stylebox("normal")
 	for estado in ["normal", "hover", "pressed", "disabled"]:
 		boton.add_theme_stylebox_override(estado, estilo)
-	boton.pressed.connect(_elegir_nivel.bind(clave))
-	return boton
-
-
-func _elegir_nivel(clave: String) -> void:
-	panel_niveles.hide()
-	preparar_nivel(clave)
-
-
-func _on_volver_libro_pressed() -> void:
-	SceneTransition.change_scene("res://Scenes/LibroHistoria.tscn")
 
 
 # ── Pantalla de dificultad ────────────────────────────────────────────────────
@@ -333,6 +640,7 @@ func _mostrar_seleccion() -> void:
 	lbl_relajado.text = "%d piezas" % (rel["filas"] * rel["columnas"])
 	lbl_desafiante.text = "%d piezas" % (des["filas"] * des["columnas"])
 
+	panel_imagenes.hide()
 	panel_seleccion.show()
 	# El HUD del juego no pinta nada mientras se elige
 	label_progreso.hide()
@@ -342,6 +650,7 @@ func _mostrar_seleccion() -> void:
 	btn_salir.hide()
 	# Solo en modo libre se puede regresar a escoger otro nivel
 	btn_volver_niveles.visible = modo_libre
+	btn_volver_niveles.text = "< Imagenes" if imagenes_nivel.size() > 1 else "< Niveles"
 
 
 ## Lee una dificultad del JSON, rellenando con DIFICULTADES_POR_DEFECTO lo que falte.
@@ -769,5 +1078,15 @@ func _on_pista_pressed() -> void:
 
 
 ## Reiniciar regresa a la pantalla de dificultad, por si el jugador quiere cambiarla.
+## Se le pasa variante_actual a proposito: sin eso, reiniciar en la historia gastaria
+## otra imagen de la rotacion en vez de repetir la que estaba armando.
 func _on_reiniciar_pressed() -> void:
-	preparar_nivel(nivel_a_cargar)
+	preparar_nivel(nivel_a_cargar, variante_actual)
+
+
+## "< Imagenes" / "< Niveles" de la pantalla de dificultad.
+func _on_volver_desde_dificultad() -> void:
+	if imagenes_nivel.size() > 1:
+		_mostrar_imagenes(nivel_a_cargar)
+	else:
+		_mostrar_niveles()

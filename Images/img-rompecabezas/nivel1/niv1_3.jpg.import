@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvnao76rj7eag"
-path="res://.godot/imported/niv_5.jpg-d19cce5ea0f659f692d712d760ffcf59.ctex"
+uid="uid://blx1i3stnbgk2"
+path="res://.godot/imported/niv1_3.jpg-cdb48c3dce14e1117d666bf657327990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/img-rompecabezas/niv_5.jpg"
-dest_files=["res://.godot/imported/niv_5.jpg-d19cce5ea0f659f692d712d760ffcf59.ctex"]
+source_file="res://Images/img-rompecabezas/nivel1/niv1_3.jpg"
+dest_files=["res://.godot/imported/niv1_3.jpg-cdb48c3dce14e1117d666bf657327990.ctex"]
 
 [params]
 

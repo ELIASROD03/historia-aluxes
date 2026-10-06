@@ -4,7 +4,7 @@
 		"conoce_atlas": false,
 		"escena_actual": "res://Scenes/Laboratorio.tscn",
 		"eventos_completados": {
-			"topo_tutorial_visto": true
+
 		},
 		"nombre_jugador": "Jugador",
 		"personaje_seleccionado": "Personaje1",
@@ -13,7 +13,7 @@
 		"progreso_historia": 1,
 		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje1/respirando.png",
 		"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje1/caminando.png",
-		"tiempo_juego": 57.3803343333234
+		"tiempo_juego": 42.4391859999985
 	},
 	"save_20260831_163906": {
 		"anio_objetivo_actual": "1520",
@@ -35,5 +35,37 @@
 		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje4/respirando.png",
 		"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje4/caminando.png",
 		"tiempo_juego": 123.671394939432
+	},
+	"save_20260902_112329": {
+		"anio_objetivo_actual": "1519",
+		"conoce_atlas": false,
+		"escena_actual": "res://Scenes/Laboratorio.tscn",
+		"eventos_completados": {
+
+		},
+		"nombre_jugador": "Elias",
+		"personaje_seleccionado": "Personaje2",
+		"posicion_x": 0.0,
+		"posicion_y": 0.0,
+		"progreso_historia": 1.0,
+		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje2/respirando.png",
+		"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje2/caminando.png",
+		"tiempo_juego": 0.0
+	},
+	"save_20260902_112421": {
+		"anio_objetivo_actual": "1519",
+		"conoce_atlas": false,
+		"escena_actual": "res://Scenes/Laboratorio.tscn",
+		"eventos_completados": {
+
+		},
+		"nombre_jugador": "Andy",
+		"personaje_seleccionado": "Personaje1",
+		"posicion_x": 0.0,
+		"posicion_y": 0.0,
+		"progreso_historia": 1.0,
+		"ruta_spritesheet": "res://Images/Personajes/Personajes_Principales/personaje1/respirando.png",
+		"ruta_walk": "res://Images/Personajes/Personajes_Principales/personaje1/caminando.png",
+		"tiempo_juego": 0.0
 	}
 }

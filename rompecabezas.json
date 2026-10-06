@@ -1,8 +1,11 @@
 {
 	"_instrucciones": {
-		"como_agregar_un_nivel": "Copia cualquier bloque 'nivel_X' de abajo, cambiale el nombre y apunta 'imagen' a tu PNG.",
-		"imagen": "Ruta res:// de UNA sola imagen. El juego la corta solo con forma de rompecabezas.",
-		"tamano_recomendado": "840x560 px (proporcion 3:2). Todas del mismo tamano.",
+		"como_agregar_un_nivel": "Copia cualquier bloque 'nivel_X' de abajo y cambiale el nombre. El numero del nombre es lo que amarra el nivel con su carpeta de imagenes.",
+		"imagenes": "NO se listan aqui: el juego las busca solo en res://Images/img-rompecabezas/nivelN/nivN_1.jpg, nivN_2.jpg, nivN_3.jpg... Basta con meter los archivos en la carpeta y abrir Godot una vez para que los importe.",
+		"cuantas_imagenes": "Las que quieras (hasta 9). Con 3 es lo normal. Se pueden usar .jpg, .png, .jpeg o .webp.",
+		"que_imagen_sale": "En la HISTORIA salen en orden: la 1, luego la 2, luego la 3, y ya jugadas todas sale una al azar. En el Libro de Historia las elige el jugador a mano.",
+		"tamano_recomendado": "900x600 px (proporcion 3:2). Todas del mismo tamano.",
+		"carpeta_y_prefijo": "Solo si no quieres seguir esa convencion: pon 'carpeta' y/o 'prefijo' en el nivel, o directamente una lista 'imagenes' con rutas res:// completas.",
 		"piezas": "El numero de piezas YA NO se pone por nivel: lo elige el jugador al empezar, en '_dificultades'.",
 		"segundos": "Tiempo limite para armarlo. Pon 0 si quieres ese nivel sin reloj.",
 		"mostrar_guia": "true = se ve la imagen tenue en el tablero como pista. false = tablero vacio (mas dificil).",
@@ -24,7 +27,6 @@
 
 	"nivel_1": {
 		"titulo": "El Templo Mayor",
-		"imagen": "res://Images/img-rompecabezas/niv_1.jpg",
 		"segundos": 100,
 		"mostrar_guia": true,
 		"opacidad_guia": 0.25,
@@ -35,7 +37,6 @@
 
 	"nivel_2": {
 		"titulo": "La noche triste",
-		"imagen": "res://Images/img-rompecabezas/niv_2.jpg",
 		"segundos": 100,
 		"mostrar_guia": true,
 		"opacidad_guia": 0.18,
@@ -46,7 +47,6 @@
 
 	"nivel_3": {
 		"titulo": "La caida de Tenochtitlan",
-		"imagen": "res://Images/img-rompecabezas/niv_3.jpg",
 		"segundos": 100,
 		"mostrar_guia": false,
 		"opacidad_guia": 0.0,
@@ -54,10 +54,9 @@
 		"texto_victoria": "¡Recuerdo restaurado!",
 		"texto_derrota": "¡Se acabó el tiempo!"
 	},
-	
+
 	"nivel_4": {
-		"titulo": "Primero años de virreinato",
-		"imagen": "res://Images/img-rompecabezas/niv_4.jpg",
+		"titulo": "Primeros años de virreinato",
 		"segundos": 100,
 		"mostrar_guia": false,
 		"opacidad_guia": 0.0,
@@ -65,10 +64,9 @@
 		"texto_victoria": "¡Recuerdo restaurado!",
 		"texto_derrota": "¡Se acabó el tiempo!"
 	},
-	
+
 	"nivel_5": {
 		"titulo": "Reformas y organizacion del virreinato",
-		"imagen": "res://Images/img-rompecabezas/niv_5.jpg",
 		"segundos": 100,
 		"mostrar_guia": false,
 		"opacidad_guia": 0.0,
@@ -76,10 +74,9 @@
 		"texto_victoria": "¡Recuerdo restaurado!",
 		"texto_derrota": "¡Se acabó el tiempo!"
 	},
-	
+
 	"nivel_6": {
 		"titulo": "Asentamiento del virreinato",
-		"imagen": "res://Images/img-rompecabezas/niv_6.jpg",
 		"segundos": 100,
 		"mostrar_guia": false,
 		"opacidad_guia": 0.0,
