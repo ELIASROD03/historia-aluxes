@@ -1,5 +1,7 @@
 extends Control
 
+const PANEL_CONFIGURACION = preload("res://Scenes/PanelConfiguracion.tscn")
+
 # 1. Creamos referencias a los contenedores y al texto gigante
 @onready var VBox_Sub_Comenzar = $VBox_Sub_Comenzar
 @onready var texto_derecha = $texto_derecha
@@ -90,7 +92,13 @@ func _on_lab_btn_pressed() -> void:
 func _on_configuracion_btn_pressed() -> void:
 	VBox_Sub_Comenzar.hide()
 	VBox_menu_laboratorio.hide()
-	
+
+	var panel = PANEL_CONFIGURACION.instantiate()
+	add_child(panel)
+	# Configuracion_btn es de toggle: al cerrar se suelta para que no se quede
+	# pintado como presionado.
+	panel.cerrado.connect(func(): $VBox_Principal/Configuracion_btn.button_pressed = false)
+
 	#_animar_vibracion(texto_derecha)
 	#_animar_entrada_texto("Configuracíon")
 

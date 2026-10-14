@@ -72,5 +72,11 @@ func terminar_capitulo() -> void:
 	if Global.progreso_historia == numero_capitulo:
 		Global.avanzar_capitulo()
 
-	Global.preparar_capitulo_completado(numero_capitulo)
+	# Normalmente se regresa al laboratorio; el último capítulo lleva al epílogo
+	# ("escena_al_terminar" en capitulos.json).
+	var destino := str(datos_capitulo.get("escena_al_terminar", Global.ESCENA_LABORATORIO))
+	if not ResourceLoader.exists(destino):
+		push_error("escena_al_terminar del capitulo %d no existe: '%s'." % [numero_capitulo, destino])
+		destino = Global.ESCENA_LABORATORIO
+	Global.preparar_capitulo_completado(numero_capitulo, destino)
 	SceneTransition.change_scene(Global.ESCENA_TRANSICION)

@@ -111,9 +111,16 @@ var tiempo_juego: float = 0.0
 var eventos_completados: Dictionary = {}
 var slot_actual: String = "save_1"
 
-const RUTA_MAESTRA = "res://Saves/partidas.json"
+# user:// y no res://: en el APK res:// es de solo lectura y no se podría guardar.
+# (En Windows queda en %APPDATA%/Godot/app_userdata/<nombre del proyecto>/.)
+const RUTA_MAESTRA = "user://partidas.json"
+# Donde se guardaba antes. Solo se lee para migrar las partidas de prueba al
+# correr desde el editor; en un export no debe usarse (iría empaquetado en el APK).
+const RUTA_MAESTRA_ANTIGUA = "res://Saves/partidas.json"
 
 func _cargar_archivo_maestro() -> Dictionary:
+	if not FileAccess.file_exists(RUTA_MAESTRA):
+		_migrar_guardado_antiguo()
 	if not FileAccess.file_exists(RUTA_MAESTRA):
 		return {}
 	var file = FileAccess.open(RUTA_MAESTRA, FileAccess.READ)
@@ -127,9 +134,17 @@ func _cargar_archivo_maestro() -> Dictionary:
 				return data
 	return {}
 
+func _migrar_guardado_antiguo() -> void:
+	if not OS.has_feature("editor") or not FileAccess.file_exists(RUTA_MAESTRA_ANTIGUA):
+		return
+	var texto := FileAccess.get_file_as_string(RUTA_MAESTRA_ANTIGUA)
+	var file = FileAccess.open(RUTA_MAESTRA, FileAccess.WRITE)
+	if file:
+		file.store_string(texto)
+		file.close()
+		print("Partidas migradas de ", RUTA_MAESTRA_ANTIGUA, " a ", RUTA_MAESTRA)
+
 func _guardar_archivo_maestro(data: Dictionary) -> void:
-	if not DirAccess.dir_exists_absolute("res://Saves"):
-		DirAccess.make_dir_absolute("res://Saves")
 	var file = FileAccess.open(RUTA_MAESTRA, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(data, "\t"))

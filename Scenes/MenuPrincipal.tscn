@@ -54,6 +54,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wvohi")
+metadata/_edit_horizontal_guides_ = [624.0]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1042177720]
 layout_mode = 1

@@ -2,5 +2,605 @@
   "merch1_saludo": "¡Cacao fresco! ¡Recién traído del sur!",
   "merch2_oferta": "¡Acércate, forastero! Las mejores pieles de Tenochtitlán.",
   "pista_alux_1": "¡Qué raro! Un guardia muy pequeño me quitó mi fruta y salió corriendo hacia el muelle de las canoas.",
-  "pista_alux_2": "Ten cuidado adelante. Ese soldado bajito se está riendo a carcajadas escondido entre las canoas."
+  "pista_alux_2": "Ten cuidado adelante. Ese soldado bajito se está riendo a carcajadas escondido entre las canoas.",
+  "npc_bergantin_cap3": {
+	"frases": [
+	  "¿Ves esos barcos en el lago? Se llaman bergantines. Los armamos en Texcoco y los botamos al lago.",
+      "Con ellos cortamos el paso a las canoas que llevaban comida a la ciudad."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Cómo trajeron barcos hasta el lago?",
+		"contesta": [
+          "Las piezas se hicieron en Tlaxcala y se armaron en Texcoco. ¡Son trece bergantines!"
+		]
+	  },
+	  {
+		"texto": "¿Por qué cortar el paso a las canoas?",
+		"contesta": [
+          "Sin comida ni agua, la ciudad no podrá resistir mucho tiempo."
+		]
+	  },
+	  {
+		"texto": "Adiós.",
+		"contesta": [
+          "Ten cuidado en la calzada."
+		]
+	  }
+	]
+  },
+  "npc_tlaxcalteca_cap3": {
+	"frases": [
+	  "Soy de Tlaxcala. Mi pueblo lleva años en guerra con los mexicas: por eso nos aliamos con los españoles.",
+      "Sin miles de guerreros indígenas aliados, Cortés nunca habría rodeado la ciudad."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Por qué pelean contra los mexicas?",
+		"contesta": [
+          "Los mexicas nos tenían rodeados y querían que les pagáramos tributo. Nunca nos rendimos."
+		]
+	  },
+	  {
+		"texto": "¿Cuántos son ustedes?",
+		"contesta": [
+          "¡Miles y miles! Somos muchos más que los españoles."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Que te vaya bien."
+		]
+	  }
+	]
+  },
+  "npc_mujer_cap3": {
+	"frases": [
+	  "Los extranjeros rompieron el acueducto de Chapultepec. Ya casi no hay agua dulce en la ciudad.",
+      "Y antes llegó una enfermedad nueva, la viruela. Muchos enfermaron... hasta nuestro tlatoani Cuitláhuac."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es la viruela?",
+		"contesta": [
+          "Una enfermedad que llegó con los extranjeros. Aquí nadie la conocía y muchos enfermaron."
+		]
+	  },
+	  {
+		"texto": "¿No pueden tomar agua del lago?",
+		"contesta": [
+          "Aquí el lago es salado. Por eso el acueducto era tan importante."
+		]
+	  },
+	  {
+		"texto": "Lo siento mucho.",
+		"contesta": [
+          "Gracias. Ojalá esto termine pronto."
+		]
+	  }
+	]
+  },
+  "npc_anciano_cap3": {
+	"frases": [
+	  "Ahora nos guía Cuauhtémoc, el último tlatoani. Es joven y muy valiente.",
+      "Los nuestros se han replegado aquí, a Tlatelolco. Aquí resistiremos hasta el final."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué significa Cuauhtémoc?",
+		"contesta": [
+          "Quiere decir 'águila que desciende'."
+		]
+	  },
+	  {
+		"texto": "¿Qué es Tlatelolco?",
+		"contesta": [
+          "La ciudad hermana de Tenochtitlán. Aquí está el mercado más grande de todos."
+		]
+	  },
+	  {
+		"texto": "Gracias, abuelo.",
+		"contesta": [
+          "Cuídate mucho."
+		]
+	  }
+	]
+  },
+  "npc_guerrero_cap3": {
+	"frases": [
+	  "¡No sé qué nos pasa! De pronto siento que podría cargar una canoa yo solo.",
+      "Desde que un niño vestido de rojo anda por el templo, el cielo truena aunque no llueva."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Un niño de rojo? ¿Cómo era?",
+		"contesta": [
+		  "Bajito, con un collar grande y la cara pintada. ¡Y muy enojón: le gritó a una nube!",
+          "Anda por el templo de Tlatelolco."
+		]
+	  },
+	  {
+		"texto": "¿Por qué tienen tanta fuerza?",
+		"contesta": [
+          "¡No lo sé! Desde que llegó ese niño, nos sentimos como si fuéramos de piedra."
+		]
+	  },
+	  {
+		"texto": "Gracias, me tengo que ir.",
+		"contesta": [
+          "¡Cuídate de los truenos!"
+		]
+	  }
+	]
+  },
+  "npc_trabajador_cap4": {
+	"frases": [
+	  "Cargamos las piedras de los templos para levantar las casas de los españoles.",
+      "Muchos estamos aquí por la encomienda: nuestros pueblos deben dar tributo y trabajo a un español."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es la encomienda?",
+		"contesta": [
+		  "El rey 'encomienda' un pueblo a un español: le damos tributo y trabajo...",
+          "...y él debería cuidarnos y enseñarnos su religión. Pero muchos solo nos hacen trabajar."
+		]
+	  },
+	  {
+		"texto": "¿Por qué usan las piedras del templo?",
+		"contesta": [
+          "Los españoles construyen su ciudad encima de la nuestra, con nuestras propias piedras."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Ve con cuidado: aquí hay mucha piedra suelta."
+		]
+	  }
+	]
+  },
+  "npc_alarife_cap4": {
+	"frases": [
+	  "Soy alarife: con estas cuerdas trazo las calles de la ciudad nueva.",
+      "Calles rectas, en cuadrícula, alrededor de una gran plaza. Así se hacen las ciudades nuevas."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un alarife?",
+		"contesta": [
+          "Un maestro de obras: mido los terrenos y digo dónde va cada calle y cada casa."
+		]
+	  },
+	  {
+		"texto": "¿Por qué en cuadrícula?",
+		"contesta": [
+          "Así es más fácil repartir los terrenos y caminar por la ciudad. ¡Todo queda en orden!"
+		]
+	  },
+	  {
+		"texto": "Adiós.",
+		"contesta": [
+          "¡No pises mis cuerdas!"
+		]
+	  }
+	]
+  },
+  "npc_fraile_cap4": {
+	"frases": [
+	  "Este año llegamos tres frailes franciscanos desde Flandes. Yo soy Pedro de Gante.",
+      "Estoy aprendiendo náhuatl para poder enseñar en la lengua de este pueblo."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un fraile?",
+		"contesta": [
+          "Un religioso que vive en comunidad. Los franciscanos hacemos voto de pobreza."
+		]
+	  },
+	  {
+		"texto": "¿Por qué aprende náhuatl?",
+		"contesta": [
+          "Para hablar con la gente en su propia lengua. Así podremos enseñar en escuelas."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Que te vaya bien, pequeño viajero."
+		]
+	  }
+	]
+  },
+  "npc_tianguis_cap4": {
+	"frases": [
+	  "El tianguis sigue abierto, como siempre: maíz, frijol, chile, cacao...",
+      "Y ahora también llegan cosas que trajeron los españoles: trigo, cerdos, gallinas y caballos."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un tianguis?",
+		"contesta": [
+          "Es el mercado, en náhuatl. Aquí cambiamos y vendemos de todo."
+		]
+	  },
+	  {
+		"texto": "¿Con qué se paga?",
+		"contesta": [
+          "Con granos de cacao, mantas de algodón... ¡y ahora algunos ya usan monedas españolas!"
+		]
+	  },
+	  {
+		"texto": "Adiós.",
+		"contesta": [
+          "¡Vuelve pronto!"
+		]
+	  }
+	]
+  },
+  "npc_cortes_cap4": {
+	"frases": [
+	  "El rey me ha nombrado gobernador y capitán general de la Nueva España.",
+      "Desde aquí repartiré tierras y pueblos entre mis hombres."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué pasó con Cuauhtémoc?",
+		"contesta": [
+          "Sigue siendo mi prisionero. Los mexicas aún lo respetan, así que lo mantengo cerca."
+		]
+	  },
+	  {
+		"texto": "¿Por qué construir sobre Tenochtitlán?",
+		"contesta": [
+          "Esta ciudad era el corazón del imperio mexica. Si gobernamos desde aquí, todos lo sabrán."
+		]
+	  },
+	  {
+		"texto": "Con permiso.",
+		"contesta": [
+          "Anda, no estorbes."
+		]
+	  }
+	]
+  },
+  "npc_soldado_cap4": {
+	"frases": [
+	  "Raro, muy raro... Hace rato vi a un niño vestido de rojo en la milpa, a la orilla del bosque.",
+      "Se reía solo y les hablaba a las nubes. ¡Y las nubes le hacían caso!"
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Un niño de rojo? ¿Dónde?",
+		"contesta": [
+          "En la milpa, a la orilla del bosque. Sigue esta calle hasta el final."
+		]
+	  },
+	  {
+		"texto": "¿Las nubes le hacían caso?",
+		"contesta": [
+          "¡Te lo juro! Levantaba las manos y el cielo se ponía negro... pero no llovía."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Ten cuidado: ese niño da miedo."
+		]
+	  }
+	]
+  },
+  "npc_oidor_cap5": {
+	"frases": [
+	  "Soy oidor de la Segunda Audiencia: un juez enviado por el rey.",
+      "La Primera Audiencia, la de Nuño de Guzmán, cometió muchos abusos. Venimos a corregirlos."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es una Audiencia?",
+		"contesta": [
+          "Un tribunal: juzgamos los pleitos y gobernamos en nombre del rey mientras no haya virrey."
+		]
+	  },
+	  {
+		"texto": "¿Qué abusos hubo?",
+		"contesta": [
+          "Nuño de Guzmán cobraba tributos de más y maltrataba a los pueblos indígenas. El rey se enteró."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Que tengas buen día."
+		]
+	  }
+	]
+  },
+  "npc_zumarraga_cap5": {
+	"frases": [
+	  "Soy fray Juan de Zumárraga, el primer obispo de México. Me nombraron protector de los indios.",
+      "Este año el rey prohibió esclavizar a los indígenas. ¡Hay que vigilar que se cumpla!"
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un obispo?",
+		"contesta": [
+          "El encargado de la Iglesia en una región. Soy el primero que hay en México."
+		]
+	  },
+	  {
+		"texto": "¿Qué hace un protector de los indios?",
+		"contesta": [
+          "Escucho sus quejas y las llevo ante las autoridades y ante el rey."
+		]
+	  },
+	  {
+		"texto": "Adiós.",
+		"contesta": [
+          "Que te vaya bien."
+		]
+	  }
+	]
+  },
+  "npc_vecino_cap5": {
+	"frases": [
+	  "¿Supieron? Hernán Cortés regresó de España con el título de Marqués del Valle de Oaxaca.",
+      "Tiene muchas tierras... pero ya no gobierna. Ahora mandan los jueces de la Audiencia."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un marqués?",
+		"contesta": [
+          "Un título de nobleza. El rey se lo dio a Cortés, con muchas tierras y pueblos en Oaxaca."
+		]
+	  },
+	  {
+		"texto": "¿Y por qué ya no gobierna?",
+		"contesta": [
+          "El rey prefiere que gobiernen sus jueces y funcionarios, no los conquistadores."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "¡Cuídate!"
+		]
+	  }
+	]
+  },
+  "npc_gobernador_cap5": {
+	"frases": [
+	  "Los pueblos indígenas tenemos nuestro propio cabildo, con gobernador y alcaldes.",
+      "Cobramos el tributo y cuidamos el orden de nuestra gente, bajo las autoridades españolas."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un cabildo?",
+		"contesta": [
+          "Es el gobierno de un pueblo: nos reunimos a decidir y a resolver problemas."
+		]
+	  },
+	  {
+		"texto": "¿Los españoles los dejan gobernar?",
+		"contesta": [
+          "Sí, pero vigilan. Muchos gobernadores somos descendientes de los antiguos señores."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Que te vaya bien."
+		]
+	  }
+	]
+  },
+  "npc_alumno_cap5": {
+	"frases": [
+	  "¡Estudio en la escuela de San José de los Naturales! Fray Pedro de Gante nos enseña a leer y escribir.",
+      "También carpintería y canto... ¡pero yo desafino!"
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué aprendes en la escuela?",
+		"contesta": [
+          "¡A leer y escribir en náhuatl y en castellano! Luego les enseño a otros niños."
+		]
+	  },
+	  {
+		"texto": "¿Te gusta cantar?",
+		"contesta": [
+          "¡Mucho! Aunque fray Pedro dice que canto como guajolote."
+		]
+	  },
+	  {
+		"texto": "¡Adiós!",
+		"contesta": [
+          "¡Adiós!"
+		]
+	  }
+	]
+  },
+  "npc_vendedora_cap5": {
+	"frases": [
+	  "¿Un niño raro, con la cara pintada? No, por aquí no ha pasado nadie así.",
+      "Lo único raro fue que hace rato sentí un viento fresco, como de cenote... y luego nada."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Un viento de cenote?",
+		"contesta": [
+          "Sí, fresco y húmedo, como el que sale de las cuevas. Y olía a monte."
+		]
+	  },
+	  {
+		"texto": "¿Qué vende?",
+		"contesta": [
+          "Tortillas, tamales y atole. ¿Quieres uno?"
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "¡Que te vaya bien!"
+		]
+	  }
+	]
+  },
+  "npc_virrey_cap6": {
+	"frases": [
+	  "Soy Antonio de Mendoza, virrey de la Nueva España. El rey me envió a gobernar en su nombre.",
+      "Mi tarea es poner orden, cuidar la justicia y que el reino funcione."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué quiere decir \"virrey\"?",
+		"contesta": [
+          "El que hace las veces del rey. El rey está en España, muy lejos, así que yo lo represento aquí."
+		]
+	  },
+	  {
+		"texto": "¿Qué va a hacer primero?",
+		"contesta": [
+          "Ordenar el gobierno, cuidar las cuentas del reino y abrir una Casa de Moneda."
+		]
+	  },
+	  {
+		"texto": "Bienvenido, señor virrey.",
+		"contesta": [
+          "Gracias. ¡Qué ciudad tan grande y hermosa!"
+		]
+	  }
+	]
+  },
+  "npc_escolta_cap6": {
+	"frases": [
+	  "¡Abran paso! ¡Abran paso al señor virrey!",
+      "Venimos desde Veracruz: un camino largo, con fiestas en cada pueblo."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿De dónde viene el virrey?",
+		"contesta": [
+          "De España. Cruzó el mar en barco y desembarcó en Veracruz."
+		]
+	  },
+	  {
+		"texto": "¿Por qué tantas fiestas?",
+		"contesta": [
+          "Es la primera vez que llega un virrey. ¡Todos quieren verlo!"
+		]
+	  },
+	  {
+		"texto": "Ya me quito.",
+		"contesta": [
+          "¡Gracias!"
+		]
+	  }
+	]
+  },
+  "npc_noble_cap6": {
+	"frases": [
+	  "Los señores indígenas también venimos a recibir al virrey.",
+      "Muchos seguimos gobernando nuestros pueblos, ahora bajo las leyes del virreinato."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Ustedes conservan sus tierras?",
+		"contesta": [
+          "Algunas sí. Pero hay que defenderlas con papeles ante la Audiencia."
+		]
+	  },
+	  {
+		"texto": "¿Usted habla español?",
+		"contesta": [
+          "Un poco. Mis hijos lo aprenden con los frailes; yo prefiero el náhuatl."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Que te vaya bien."
+		]
+	  }
+	]
+  },
+  "npc_acunador_cap6": {
+	"frases": [
+	  "¡Este año el rey ordenó abrir aquí una Casa de Moneda!",
+      "Pronto haremos monedas de plata en la Nueva España: ¡las primeras de América!"
+	],
+	"respuestas": [
+	  {
+		"texto": "¿De dónde sacan la plata?",
+		"contesta": [
+          "De las minas. Y se están buscando muchas más hacia el norte."
+		]
+	  },
+	  {
+		"texto": "¿Antes no había monedas?",
+		"contesta": [
+          "Se usaba cacao, mantas y polvo de oro. ¡Con monedas será más fácil comerciar!"
+		]
+	  },
+	  {
+		"texto": "Adiós.",
+		"contesta": [
+          "¡Cuida tus monedas!"
+		]
+	  }
+	]
+  },
+  "npc_quiroga_cap6": {
+	"frases": [
+	  "Soy Vasco de Quiroga, oidor de la Audiencia.",
+      "Fundé un pueblo-hospital en Santa Fe: ahí los indígenas viven, trabajan y se cuidan juntos."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Qué es un pueblo-hospital?",
+		"contesta": [
+          "Un lugar que recibe a enfermos, huérfanos y viajeros. Todos aprenden un oficio y comparten lo que cosechan."
+		]
+	  },
+	  {
+		"texto": "¿Por qué lo hizo?",
+		"contesta": [
+          "Quería un lugar justo para los indígenas, lejos de los abusos."
+		]
+	  },
+	  {
+		"texto": "Gracias.",
+		"contesta": [
+          "Que te vaya bien."
+		]
+	  }
+	]
+  },
+  "npc_nina_cap6": {
+	"frases": [
+      "¡Mira, mira! ¡Ahí va el virrey en su caballo!"
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Viste a un niño con aretes y pelo largo?",
+		"contesta": [
+		  "¡Sí! Estaba sentado debajo de la ceiba, al final de la calle, con los ojos cerrados.",
+          "Le hablé y no me contestó... ¡pero sonrió!"
+		]
+	  },
+	  {
+		"texto": "¿Ya habías visto un caballo?",
+		"contesta": [
+          "¡Sí! Pero nunca uno con tantos listones."
+		]
+	  },
+	  {
+		"texto": "¡Adiós!",
+		"contesta": [
+          "¡Adiós!"
+		]
+	  }
+	]
+  }
 }

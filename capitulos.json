@@ -7,6 +7,8 @@
 		"escena": "El nivel al que se viaja. Si la ruta no existe el juego avisa en vez de dejar al jugador atorado en la pantalla negra.",
 		"dialogo_inicio": "Id de dialogos.json que se lanza al entrar al nivel (una sola vez).",
 		"dialogo_final": "Id de dialogos.json que, al terminar, da por completado el capitulo y avanza al siguiente.",
+		"escena_al_terminar": "Opcional. A donde lleva la pantalla de 'COMPLETADO' al acabar el capitulo. Si falta, al laboratorio. El ultimo capitulo lleva al epilogo.",
+		"dialogo_laboratorio": "Opcional. Id de dialogos.json que se lanza en Laboratorio.tscn (una sola vez) cuando el jugador va a viajar a ESTE capitulo: lo que pasa en el laboratorio antes del viaje.",
 		"OJO_anios": "Los anios de los capitulos 4 y 5 son una propuesta; ajustalos aqui a lo que pida tu temario."
 	},
 
@@ -27,7 +29,8 @@
 			"anio": "1520",
 			"escena": "res://Scenes/Tenoch1520.tscn",
 			"dialogo_inicio": "inicio_tenoch_1520",
-			"dialogo_final": "dialogo_kaan_1520"
+			"dialogo_final": "dialogo_kaan_1520",
+			"dialogo_laboratorio": "dialogo_laboratorio_1520"
 		},
 		{
 			"numero": 3,
@@ -36,7 +39,8 @@
 			"anio": "1521",
 			"escena": "res://Scenes/CaidaTenochtitlan.tscn",
 			"dialogo_inicio": "inicio_cap3",
-			"dialogo_final": "final_cap3"
+			"dialogo_final": "final_cap3",
+			"dialogo_laboratorio": "laboratorio_cap3"
 		},
 		{
 			"numero": 4,
@@ -45,7 +49,8 @@
 			"anio": "1523",
 			"escena": "res://Scenes/PrimerosAniosVirreinato.tscn",
 			"dialogo_inicio": "inicio_cap4",
-			"dialogo_final": "final_cap4"
+			"dialogo_final": "final_cap4",
+			"dialogo_laboratorio": "laboratorio_cap4"
 		},
 		{
 			"numero": 5,
@@ -54,7 +59,8 @@
 			"anio": "1530",
 			"escena": "res://Scenes/ReformasOrganizacion.tscn",
 			"dialogo_inicio": "inicio_cap5",
-			"dialogo_final": "final_cap5"
+			"dialogo_final": "final_cap5",
+			"dialogo_laboratorio": "laboratorio_cap5"
 		},
 		{
 			"numero": 6,
@@ -63,7 +69,9 @@
 			"anio": "1535",
 			"escena": "res://Scenes/InstauracionVirreinato.tscn",
 			"dialogo_inicio": "inicio_cap6",
-			"dialogo_final": "final_cap6"
+			"dialogo_final": "final_cap6",
+			"dialogo_laboratorio": "laboratorio_cap6",
+			"escena_al_terminar": "res://Scenes/Epilogo.tscn"
 		}
 	]
 }

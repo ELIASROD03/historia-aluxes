@@ -1,0 +1,403 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/panel_configuracion.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="2_fuente"]
+[ext_resource type="Texture2D" uid="uid://bvw1jnxuwx46h" path="res://Images/Fondos/fondo_botones2.png" id="3_pergamino"]
+
+[sub_resource type="Theme" id="Theme_cfg"]
+default_font = ExtResource("2_fuente")
+default_font_size = 13
+Button/colors/font_color = Color(0.243137, 0.152941, 0.137255, 1)
+Button/colors/font_disabled_color = Color(0.243137, 0.152941, 0.137255, 0.45)
+Button/colors/font_focus_color = Color(0.243137, 0.152941, 0.137255, 1)
+Button/colors/font_hover_color = Color(0.243137, 0.152941, 0.137255, 1)
+Button/colors/font_hover_pressed_color = Color(0.243137, 0.152941, 0.137255, 1)
+Button/colors/font_pressed_color = Color(0.243137, 0.152941, 0.137255, 1)
+Label/colors/font_color = Color(0.243137, 0.152941, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_marco"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+bg_color = Color(0.96, 0.9, 0.76, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.243137, 0.152941, 0.137255, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_normal"]
+content_margin_left = 15.0
+content_margin_top = 12.0
+content_margin_right = 15.0
+content_margin_bottom = 12.0
+texture = ExtResource("3_pergamino")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hover"]
+content_margin_left = 15.0
+content_margin_top = 12.0
+content_margin_right = 15.0
+content_margin_bottom = 12.0
+texture = ExtResource("3_pergamino")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pressed"]
+content_margin_left = 15.0
+content_margin_top = 12.0
+content_margin_right = 15.0
+content_margin_bottom = 12.0
+texture = ExtResource("3_pergamino")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_disabled"]
+content_margin_left = 15.0
+content_margin_top = 12.0
+content_margin_right = 15.0
+content_margin_bottom = 12.0
+texture = ExtResource("3_pergamino")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1, 1, 1, 0.5)
+
+[node name="PanelConfiguracion" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cfg")
+script = ExtResource("1_script")
+
+[node name="Velo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Marco" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -148.0
+offset_right = 270.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_marco")
+
+[node name="VBox" type="VBoxContainer" parent="Marco"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Titulo" type="Label" parent="Marco/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Configuración"
+horizontal_alignment = 1
+
+[node name="Columnas" type="HBoxContainer" parent="Marco/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="ColIzquierda" type="VBoxContainer" parent="Marco/VBox/Columnas"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="TituloSonido" type="Label" parent="Marco/VBox/Columnas/ColIzquierda"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Sonido"
+
+[node name="GridSonido" type="GridContainer" parent="Marco/VBox/Columnas/ColIzquierda"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="LblGeneral" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+layout_mode = 2
+text = "General"
+
+[node name="SliderGeneral" type="HSlider" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+
+[node name="ValorGeneral" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="LblMusica" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+layout_mode = 2
+text = "Música"
+
+[node name="SliderMusica" type="HSlider" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+
+[node name="ValorMusica" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="LblEfectos" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+layout_mode = 2
+text = "Efectos"
+
+[node name="SliderEfectos" type="HSlider" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+
+[node name="ValorEfectos" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/GridSonido"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="SeccionPantalla" type="VBoxContainer" parent="Marco/VBox/Columnas/ColIzquierda"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TituloPantalla" type="Label" parent="Marco/VBox/Columnas/ColIzquierda/SeccionPantalla"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Pantalla"
+
+[node name="ChkPantallaCompleta" type="CheckButton" parent="Marco/VBox/Columnas/ColIzquierda/SeccionPantalla"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pantalla completa"
+
+[node name="ColDerecha" type="VBoxContainer" parent="Marco/VBox/Columnas"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="TituloControles" type="Label" parent="Marco/VBox/Columnas/ColDerecha"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Controles táctiles"
+
+[node name="FilaModo" type="HBoxContainer" parent="Marco/VBox/Columnas/ColDerecha"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LblModo" type="Label" parent="Marco/VBox/Columnas/ColDerecha/FilaModo"]
+layout_mode = 2
+text = "Mostrar"
+
+[node name="OptModo" type="OptionButton" parent="Marco/VBox/Columnas/ColDerecha/FilaModo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
+
+[node name="GridControles" type="GridContainer" parent="Marco/VBox/Columnas/ColDerecha"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="LblTamano" type="Label" parent="Marco/VBox/Columnas/ColDerecha/GridControles"]
+layout_mode = 2
+text = "Tamaño"
+
+[node name="SliderTamano" type="HSlider" parent="Marco/VBox/Columnas/ColDerecha/GridControles"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.9
+max_value = 1.8
+step = 0.05
+value = 1.3
+
+[node name="ValorTamano" type="Label" parent="Marco/VBox/Columnas/ColDerecha/GridControles"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="LblOpacidad" type="Label" parent="Marco/VBox/Columnas/ColDerecha/GridControles"]
+layout_mode = 2
+text = "Opacidad"
+
+[node name="SliderOpacidad" type="HSlider" parent="Marco/VBox/Columnas/ColDerecha/GridControles"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.25
+max_value = 1.0
+step = 0.05
+value = 0.75
+
+[node name="ValorOpacidad" type="Label" parent="Marco/VBox/Columnas/ColDerecha/GridControles"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "75%"
+horizontal_alignment = 2
+
+[node name="SeccionPartidas" type="VBoxContainer" parent="Marco/VBox/Columnas/ColDerecha"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TituloPartidas" type="Label" parent="Marco/VBox/Columnas/ColDerecha/SeccionPartidas"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Partidas guardadas"
+
+[node name="LblPartidas" type="Label" parent="Marco/VBox/Columnas/ColDerecha/SeccionPartidas"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No hay partidas guardadas."
+
+[node name="BtnBorrar" type="Button" parent="Marco/VBox/Columnas/ColDerecha/SeccionPartidas"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_disabled")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
+text = "Borrar todas"
+
+[node name="BtnVolver" type="Button" parent="Marco/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
+text = "Volver"
+
+[node name="Confirmacion" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VeloConfirmacion" type="ColorRect" parent="Confirmacion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="MarcoConfirmacion" type="PanelContainer" parent="Confirmacion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -60.0
+offset_right = 150.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_marco")
+
+[node name="VBox" type="VBoxContainer" parent="Confirmacion/MarcoConfirmacion"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LblConfirmacion" type="Label" parent="Confirmacion/MarcoConfirmacion/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "¿Borrar las partidas guardadas?
+Esto no se puede deshacer."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Botones" type="HBoxContainer" parent="Confirmacion/MarcoConfirmacion/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="BtnCancelar" type="Button" parent="Confirmacion/MarcoConfirmacion/VBox/Botones"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
+text = "Cancelar"
+
+[node name="BtnConfirmar" type="Button" parent="Confirmacion/MarcoConfirmacion/VBox/Botones"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
+text = "Sí, borrar"

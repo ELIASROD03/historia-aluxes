@@ -17,6 +17,10 @@ const MINIJUEGOS := {
 	"minijuego_palabras_": "res://Scenes/PalabrasImpostoras.tscn",
 	"minijuego_rompecabezas_": "res://Scenes/Rompecabezas.tscn",
 	"minijuego_atlasbird_": "res://Scenes/Juegos/Atlas-Bird/Escenas/main-atlasbird.tscn",
+	# Solo se abre desde el diálogo final_cap3; NO está en el Libro de Historia.
+	"minijuego_fuercitas_": "res://Scenes/Fuercitas.tscn",
+	# Whac-A-Alux: cierra la persecución de Kaan (dialogo_kaan_1520, cap 2).
+	"minijuego_topo_": "res://Scenes/Topo_Alux.tscn",
 }
 
 var archivo_dialogos = "res://dialogos.json"

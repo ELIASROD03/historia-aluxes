@@ -5,32 +5,57 @@
 
 ## Invariantes
 
-- **Autoloads**: `Global` (`Scripts/global.gd`) y `SceneTransition`. Cambiar de escena SIEMPRE con
+- **Autoloads**: `Global` (`Scripts/global.gd`), `SceneTransition` y `Configuracion`. Cambiar de escena SIEMPRE con
   `SceneTransition.change_scene(ruta)`, nunca `change_scene_to_file`, o se pierde el fundido.
-- **Guardado**: un único `Saves/partidas.json` con todas las partidas anidadas (máx. 5, id por
-  timestamp). No generar `.json` sueltos por partida.
+- **Guardado**: un único `user://partidas.json` con todas las partidas anidadas (máx. 5, id por
+  timestamp). No generar `.json` sueltos por partida. NUNCA en `res://`: en el APK es de solo
+  lectura. El viejo `Saves/partidas.json` solo se migra al correr desde el editor y está excluido
+  del export.
+- **Configuración** (autoload `Configuracion`): preferencias del dispositivo en `user://config.cfg`
+  (volumen, pantalla completa, controles táctiles), aparte de las partidas. El panel
+  `PanelConfiguracion.tscn` se abre desde el menú principal y desde la pausa (ahí sin "Borrar
+  partidas"). Sonidos nuevos: `bus = "Musica"` o `"Efectos"` para que obedezcan su volumen.
 - **`Global.en_dialogo`** congela jugador, NPCs y controles táctiles.
 - **`Global.eventos_completados`**: contenido de un solo uso. Marcarlo AL LANZAR, no al terminar, o se
   repite si el jugador recarga a media escena.
 - **Capítulos**: todo sale de `capitulos.json`; `capitulo_manager.gd` es el manager único de los 6
   niveles y lo único por escena es `numero_capitulo`. `Capitulo1Intro.tscn` es la pantalla negra
-  genérica de TODOS los capítulos, no la del 1.
+  genérica de TODOS los capítulos, no la del 1. Campos opcionales: `dialogo_laboratorio` (lo que pasa
+  en `Laboratorio.tscn` antes de viajar a ese capítulo, una sola vez) y `escena_al_terminar` (a dónde
+  lleva el "¡COMPLETADO!"; si falta, al laboratorio; el cap 6 lleva a `Epilogo.tscn`).
+  Los años (1519, 1520, 1521, 1523, 1530, 1535) se quedan: son los que se teclean en la máquina.
+- **Historia de los caps 3-6** (GDD): cap 3 y 4 el alux es **Chaac** (Kaan ya está en la celda desde
+  el 2), cap 5 **Balaam** nunca aparece (solo visita la celda), cap 6 se encuentra a Balaam bajo la
+  ceiba y huye → Atlas-Bird → epílogo. La "actividad 4" del GDD (interrogar NPC y "¡Te atrapé!") se
+  cambió por solo explorar y hablar con los NPC.
 
 ## Contenido en JSON (se edita sin abrir Godot)
 
 | Archivo | Qué define |
 |---|---|
-| `capitulos.json` | Los 6 capítulos: título, año, escena, diálogo inicial y final |
+| `capitulos.json` | Los 6 capítulos: título, año, escena, diálogos inicial / final / del laboratorio, a dónde ir al terminar |
 | `dialogos.json` | Toda la narrativa |
 | `palabras.json`, `rompecabezas.json`, `burbujas.json`, `memorama_data.json` | Sus minijuegos |
 | `atlasbird.json` | Atlas-Bird: reloj, vidas, curva de dificultad, pesos de objetos, avisos |
+
+**NPC: burbuja vs. cuadro de diálogo.** La gente del nivel habla en burbuja (`burbujas.json`);
+el cuadro grande (`dialogos.json`) es solo para aluxes, cierres de capítulo y quien lanza un
+minijuego (Palabras impostoras: el `evento` solo existe en el cuadro). Un id de `burbujas.json`
+puede ser un texto, una lista de textos, o `{"frases": [...], "respuestas": [{"texto", "contesta"}]}`:
+tras las frases se abre `SelectorRespuestas.tscn` (aparte del cuadro de diálogo por la trampa 1).
+
+**Greybox (caps 3-6).** `Scripts/greybox/`: `Bloque` (rectángulo con nombre), `NpcProvisional`
+(sprite o silueta; `id_burbuja`/`id_dialogo` arman su zona solos; apoya los PIES visibles en el
+origen) y `CinematicaProvisional` (atiende cualquier `cinematica_*` sin cinemática real con un
+letrero; si el texto empieza con "[", p. ej. "[ MINIJUEGO PENDIENTE ]", ese es el encabezado).
+El diálogo del laboratorio sale de `dialogo_laboratorio` en `capitulos.json`.
 
 ## Minijuegos
 
 **Contrato**: la escena expone `nivel_a_cargar` (String) y la señal `juego_completado`; se registra en
 `MINIJUEGOS` de `dialogo_manager.gd` y ya se lanza con `"evento": "minijuego_<clave>_<nivel>"`.
 
-**Patrón `modo_libre`** (los 5 lo usan): `modo_libre = (get_parent() == get_tree().root)`. En true se
+**Patrón `modo_libre`** (todos lo usan): `modo_libre = (get_parent() == get_tree().root)`. En true se
 entró desde el Libro y hay botón de salir de vuelta a él; en false lo abrió un diálogo y el botón se
 OCULTA — ahí cierra el diálogo al recibir `juego_completado`, y un salir dejaría saltarse contenido.
 Ojo: el "Ir al Menú" del `MenuPausa` que instancia Memorama va al menú principal, no al libro.
@@ -65,6 +90,17 @@ Ojo: el "Ir al Menú" del `MenuPausa` que instancia Memorama va al menú princip
   sigue siendo `Scenes/Atlas-Bird/assets/Bosque.png`: no borres esa carpeta "por duplicada".
 - **Topo Alux**: ficha "Cómo jugar" recordada en `eventos_completados["topo_tutorial_visto"]`; su
   botón desaparece cuando sale el primer topo (ver trampa 2). Reloj de 45 s, al agotarse se pierde.
+  Se lanza desde `dialogo_kaan_1520` (final del cap 2) con `minijuego_topo_cap2`. Encima de un nivel
+  le suelta el mouse al `LimitesCamara` mientras dura (trampa 3) y se lo devuelve al salir.
+- **Rompecabezas sin imágenes desde un diálogo** (nivel 5): se cierra solo y el diálogo sigue, en
+  vez de tronar sin textura. Por eso el cap 5 ya trae el evento aunque no haya imágenes.
+- **Fuercitas** (`Scenes/Fuercitas.tscn`, cap 3, Atlas vs Chaac): **NO está en el Libro** a propósito,
+  solo se abre desde `final_cap3`. Picar empuja; el botón "Contar un chisme" (secretos que contó Kaan en
+  `laboratorio_cap3`) desconcentra a Chaac. Cada derrota le quita 20 % de fuerza. Solo escucha el clic
+  de mouse (el toque llega convertido): escuchar también el toque contaría doble.
+- **Epílogo** (`Scenes/Epilogo.tscn`): viñetas provisionales que describen el dibujo; cambian con
+  `"evento": "cinematica_vineta_N"` en el diálogo `epilogo`. Al final marca
+  `eventos_completados["juego_terminado"]` y ofrece volver al menú.
 
 ## Trampas (leer antes de tocar UI o input)
 
@@ -112,13 +148,4 @@ sí. ⚠️ El proyecto vive en OneDrive y ha revertido archivos a media sesión
 
 ## Pendientes
 
-- **Faltan `final_cap2` … `final_cap5`.** Sin diálogo final el capítulo no se completa: el jugador
-  entra pero la historia nunca avanza. Es lo más urgente. El `final_cap6` ya existe y lanza Atlas-Bird
-  desde `ZonaFinalCap6` (x=2700 de `InstauracionVirreinato`).
-- **Retrato del jugador roto en todos los diálogos**: apuntan a
-  `Personajes_Principales/Personaje1/personaje.png`, que ya no existe (la carpeta ahora es `personaje1`
-  en minúscula, con `respirando.png` y `caminando.png`). Reponerlo lo arregla todo de una vez.
-- **Memorama no maneja la victoria**: al juntar las parejas solo hace un `print`.
-- Las 4 escenas de los capítulos 3 a 6 son copias de Tenoch sin ambientar, y sus NPCs van sin retrato.
-- Años de los capítulos 4 y 5 (1523, 1530): eran propuesta, ajustarlos al temario (1521 y 1535 sí son
-  firmes). Y cap 4 "Primeros años" antes de cap 6 "Instauración" es cronológicamente raro.
+Viven en **`PENDIENTES.md`** (lista única, organizada por tema).

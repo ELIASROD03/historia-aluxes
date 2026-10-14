@@ -3478,7 +3478,7 @@ script = ExtResource("12_j584p")
 
 [node name="Area2D" type="Area2D" parent="KaanDisfraz" unique_id=1282026540]
 script = ExtResource("14_005f6")
-id_dialogo = "dialogo_kaan"
+id_dialogo = "dialogo_kaan_1520"
 requiere_interaccion = true
 texto_interaccion = "Hablar"
 

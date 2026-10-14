@@ -202,6 +202,14 @@ func _ready() -> void:
 
 	if modo_libre:
 		_mostrar_niveles()
+	elif _imagenes_de(nivel_a_cargar).is_empty():
+		# Un diálogo pidió un nivel que todavía no tiene imágenes (p. ej. el 5): en
+		# vez de tronar sin textura y dejar al jugador atorado, se cierra solo y el
+		# diálogo sigue. En cuanto se copien imágenes a img-rompecabezas/nivelN/,
+		# el mismo evento del diálogo ya abre el rompecabezas sin tocar nada más.
+		push_warning("El rompecabezas '%s' no tiene imágenes todavía: se salta." % nivel_a_cargar)
+		hide()
+		juego_completado.emit.call_deferred()
 	else:
 		preparar_nivel(nivel_a_cargar)
 

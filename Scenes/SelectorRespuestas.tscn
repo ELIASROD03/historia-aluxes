@@ -1,0 +1,66 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/selector_respuestas.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ca3dtt6m5wx58" path="res://assets/rostro_Personaje.png" id="2_rostro"]
+[ext_resource type="Texture2D" uid="uid://m0qvynah6lh1" path="res://assets/cuadro de dialogo.png" id="3_cuadro"]
+[ext_resource type="FontFile" uid="uid://cxa8un76pysku" path="res://fonts/Amaranth-Bold.ttf" id="4_fuente"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_boton"]
+
+[node name="SelectorRespuestas" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_script")
+
+[node name="Caja" type="Node2D" parent="."]
+position = Vector2(216, 232)
+
+[node name="RostroPersonaje" type="Sprite2D" parent="Caja"]
+position = Vector2(64, 64)
+scale = Vector2(2, 2)
+texture = ExtResource("2_rostro")
+
+[node name="CuadroDeDialogo" type="Sprite2D" parent="Caja"]
+position = Vector2(273, 63)
+scale = Vector2(2.46875, 2)
+texture = ExtResource("3_cuadro")
+
+[node name="nombre_label" type="Label" parent="Caja"]
+offset_left = 29.0
+offset_top = 88.0
+offset_right = 99.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fuente")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retrato" type="Sprite2D" parent="Caja"]
+position = Vector2(64, 58)
+
+[node name="Opciones" type="VBoxContainer" parent="Caja"]
+offset_left = 151.0
+offset_top = 25.0
+offset_right = 396.0
+offset_bottom = 106.0
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="BotonModelo" type="Button" parent="Caja/Opciones"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.55, 0.2, 0.05, 1)
+theme_override_colors/font_focus_color = Color(0.55, 0.2, 0.05, 1)
+theme_override_colors/font_pressed_color = Color(0.55, 0.2, 0.05, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.55, 0.2, 0.05, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5)
+theme_override_fonts/font = ExtResource("4_fuente")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_boton")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_boton")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_boton")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_boton")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_boton")
+text = "  Opción"
+alignment = 0
+autowrap_mode = 3

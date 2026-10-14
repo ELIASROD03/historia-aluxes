@@ -47,8 +47,22 @@ const ScriptTopo = preload("res://Scripts/topo_entidad.gd")
 @onready var panel_derrota: Node2D = get_node_or_null("PanelDerrota")
 
 
+## LimitesCamara del nivel de abajo, si hubo que soltarle el mouse (ver _ready).
+var _limites_nivel: Control = null
+
+
 func _ready():
 	modo_libre = (get_parent() == get_tree().root)
+
+	# Abierto encima de un nivel: el LimitesCamara del nivel es un ReferenceRect que
+	# se come los clics antes de que lleguen a los topos (trampa 3). Se le suelta el
+	# mouse mientras dure el minijuego y se le devuelve al salir.
+	if not modo_libre:
+		var limites = get_tree().current_scene.find_child("LimitesCamara", true, false)
+		if limites is Control and limites.mouse_filter != Control.MOUSE_FILTER_IGNORE:
+			_limites_nivel = limites
+			_limites_nivel.set_meta("mouse_filter_original", limites.mouse_filter)
+			_limites_nivel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	# El orden importa: antes los agujeros y el timer se creaban DESPUÉS de la
 	# rama que llama a _iniciar_juego(), así que si no había cuadro de diálogo
@@ -94,6 +108,11 @@ func _ready():
 		panel_como_jugar.show()
 	else:
 		_arrancar_presentacion()
+
+
+func _exit_tree() -> void:
+	if is_instance_valid(_limites_nivel):
+		_limites_nivel.mouse_filter = _limites_nivel.get_meta("mouse_filter_original")
 
 
 ## Los agujeros se ponen en la escena (nodo "Agujeros"); si faltan, se inventan

@@ -35,6 +35,7 @@ func _ready():
 	
 	# 3. Preparar el nodo de Sonido
 	audio_hit = AudioStreamPlayer.new()
+	audio_hit.bus = "Efectos"
 	add_child(audio_hit)
 	
 	# 4. Efecto de aparición (Tween)

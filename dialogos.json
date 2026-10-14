@@ -197,163 +197,227 @@
 	}
   ],
   "inicio_cap3": [
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Atlas... la ciudad está destruida. ¿Qué pasó aquí?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Estamos en el 13 de agosto de 1521. Después de casi tres meses de sitio, Tenochtitlán ha caído.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "La Memoria de este día está hecha pedazos. Reconstrúyela conmigo para poder avanzar.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_rompecabezas_nivel_3"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Reconstruida. Ahora podemos recorrer lo que queda de la gran ciudad.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Y qué pasó con el tlatoani?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Cuauhtémoc fue el último. Defendió Tenochtitlán hasta el final y fue capturado ese mismo día.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Atlas... hay humo por todos lados y la ciudad está rodeada de barcos.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Estamos en 1521. Hernán Cortés y miles de aliados indígenas tienen sitiada Tenochtitlán desde mayo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Pero mis sensores marcan algo raro: los mexicas resisten con una fuerza que no aparece en los libros. Esto huele a Chaac.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Primero, la Memoria de este momento está rota. Ayúdame a reconstruirla.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_rompecabezas_nivel_3"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Listo! Ahora falta su transcripción. Alguien en la calzada está contando mal la historia: corrígela.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Y de paso buscamos a Chaac. Kaan dijo que siempre anda donde hay tormenta...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Habla con la gente. Seguro alguien ha visto algo extraño.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "inicio_cap4": [
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Esto ya no parece Tenochtitlán... ¡están construyendo encima de las ruinas!",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Estamos en 1523. Sobre la ciudad mexica empieza a levantarse la Ciudad de México.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Ordena los fragmentos de esta Memoria y verás cómo fue cambiando el paisaje.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_rompecabezas_nivel_4"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "¡Excelente! Así se veían los primeros años de la Nueva España.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Y quién mandaba aquí en esos años?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Todavía no había virrey. Gobernaban Hernán Cortés y las primeras Audiencias, y empezaron a llegar los frailes.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Esto es Tenochtitlán? ¡Están construyendo encima de las ruinas!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Estamos en 1523. Hernán Cortés decidió levantar la nueva Ciudad de México justo sobre la antigua capital mexica.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Cortés gobierna como capitán general, en nombre del rey de España. Todavía no hay virrey.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "La Memoria de este momento está rota. Reconstruyámosla.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_rompecabezas_nivel_4"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Bien! Ahora la transcripción: un cronista anda escribiendo cómo se construye la ciudad. Revisa que no tenga errores.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Y con los ojos bien abiertos. Chaac debe andar cerca.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		}
+	],
   "inicio_cap5": [
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Hay mucha gente con papeles y libros. ¿Esto es una oficina?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Algo así. Estamos en 1530 y la Segunda Audiencia llegó a poner orden en la Nueva España.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Kaan revolvió los documentos de esta Memoria. Acomódalos para que podamos leerla.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_rompecabezas_nivel_5"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "¡Ordenado! Ahora sí se entiende cómo se organizó el territorio.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Y qué cambió con esas reformas?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Se hicieron leyes para proteger a los indígenas, se fundaron pueblos y el gobierno se repartió en audiencias y cabildos.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Hay mucha gente con papeles y sellos. ¿Esto es una oficina?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Algo así. Estamos en 1530. La Nueva España ya tiene leyes, jueces y oficinas de gobierno.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "El rey mandó una nueva Audiencia, la Segunda, para poner orden después de muchos abusos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Revisemos la Memoria de este momento.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_rompecabezas_nivel_5"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "La Memoria está en orden. Ahora busca al escribano de la Audiencia: su transcripción tiene errores.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Y a Balaam. Tiene que andar por aquí.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mis sensores marcan una anomalía, pero no logro ubicarla. Pregúntale a la gente.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "inicio_cap6": [
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Mira ese desfile, Atlas! ¿Quién es ese señor tan importante?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Es Antonio de Mendoza, el primer virrey de la Nueva España. Estamos en 1535.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Esta es la última Memoria que Kaan rompió. Ármala y habremos terminado nuestro viaje.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_rompecabezas_nivel_6"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "¡Lo lograste! La línea del tiempo quedó completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Y qué hacía exactamente un virrey?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Gobernaba en nombre del rey de España. Con él quedó instaurado el virreinato de la Nueva España, que duró casi 300 años.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Mira ese desfile, Atlas! ¡Cuánta gente!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Estamos en 1535. Llegó Antonio de Mendoza, el primer virrey de la Nueva España.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Con él se instaura formalmente el virreinato: un gobierno que representa directamente al rey de España.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Gracias al poder de Kaan y Chaac, la máquina nos trajo justo a donde está Balaam. Pero primero, la Memoria.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_rompecabezas_nivel_6"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Memoria restaurada! Falta la transcripción: escucha al pregonero de la plaza.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Y luego, a buscar a Balaam. Kaan dijo que le gusta meditar debajo de una ceiba...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		}
+	],
   "final_cap6": [
-	{
-	  "personaje": "Atlas",
-	  "texto": "¡{nombre_jugador}, mira hacia arriba! Ese alux que va volando es Balaam, y se lleva la última Memoria hacia el portal.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡No puede escaparse con ella! ¿Puedes alcanzarlo, Atlas?"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "Voy tras él. Guíame entre las columnas del templo: cada golpe nos frena y Balaam se aleja.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_atlasbird_final"
-	},
-	{
-	  "personaje": "Atlas",
-	  "texto": "¡Le di alcance! La última Memoria está a salvo y la línea del tiempo quedó completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Lo logramos, Atlas. Ya podemos volver a casa."
-	}
-  ],
+		{
+			"personaje": "Balaam",
+			"texto": "...",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Balaam! Por fin te encontramos.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "¿Cómo...? Yo atenué la conexión con mis hermanos para que nadie pudiera seguirme.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Kaan y Chaac nos prestaron su poder. Están muy preocupados por ti.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Esos dos... siempre tan tercos. Me alegra que estén bien.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Balaam, por favor, ven con nosotros. Y si puedes... ayúdame a encontrar a mi papá.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Todavía no. Estoy muy cerca de cumplir lo que me propuse.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Si de verdad quieres atraparme y recuperar a tu padre... tendrás que esforzarte. ¡Alcánzame!",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
+			"evento": "cinematica_huida_balaam"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Se va volando por sus portales! {nombre_jugador}, sube: modo armadura activado. ¡Vamos tras él!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_atlasbird_final"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Está bien, está bien. Ya no huiré más. Lo hicieron muy bien.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Dónde estamos? Cruzamos tantos portales que ya no sé ni en qué año estamos...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Mira a tu alrededor. Este es el lugar.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
+			"evento": "cinematica_bosque_casita"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Este bosque... ¡es el que está detrás de mi casa! Pero mucho más antiguo... y hay una casita de madera.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "{nombre_jugador}... ¿hueles eso?",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Frijol con puerco! ¡Así cocina mi papá!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		}
+	],
   "dialogo_soldado_cap1_1": [
 	{
 	  "personaje": "Soldado",
@@ -1175,1363 +1239,2003 @@
 	}
   ],
   "dialogo_soldado_cap3_1": [
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Venimos a que la historia se cuente como fue de verdad.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "El sitio de la ciudad duró [color=red]tres minutos[/color] , de mayo a agosto."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Cortés mandó construir [color=red]submarinos nucleares[/color] para dominar el agua y cortar las calzadas."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Así controlamos por completo el lago de [color=red]Cancún[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]tres minutos[/color]? ¿[color=red]submarinos nucleares[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_3_1"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "El sitio de la ciudad duró casi tres meses , de mayo a agosto."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Cortés mandó construir bergantines para dominar el agua y cortar las calzadas."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Así controlamos por completo el lago de Texcoco ."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "El recuerdo quedó limpio. Kaan está perdiendo fuerza.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Venimos a que la historia se cuente como fue de verdad.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "El sitio de la ciudad duró [color=red]tres minutos[/color] , de mayo a agosto."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Cortés mandó construir [color=red]submarinos nucleares[/color] para dominar el agua y cortar las calzadas."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Así controlamos por completo el lago de [color=red]Cancún[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]tres minutos[/color]? ¿[color=red]submarinos nucleares[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_3_1"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "El sitio de la ciudad duró casi tres meses , de mayo a agosto."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Cortés mandó construir bergantines para dominar el agua y cortar las calzadas."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Así controlamos por completo el lago de Texcoco ."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "El recuerdo quedó limpio. Chaac está perdiendo fuerza.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap3_2": [
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Venimos a que la historia se cuente como fue de verdad.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "El último tlatoani que defendió la ciudad fue [color=red]un capitán de futbol[/color] ."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Resistió hasta el [color=red]31 de diciembre[/color] de 1521, cuando fue capturado."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "La batalla final se dio en el mercado de [color=red]una plaza comercial[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]un capitán de futbol[/color]? ¿[color=red]31 de diciembre[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_3_2"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "El último tlatoani que defendió la ciudad fue Cuauhtémoc ."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Resistió hasta el 13 de agosto de 1521, cuando fue capturado."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "La batalla final se dio en el mercado de Tlatelolco ."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "El recuerdo quedó limpio. Kaan está perdiendo fuerza.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Venimos a que la historia se cuente como fue de verdad.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "El último tlatoani que defendió la ciudad fue [color=red]un capitán de futbol[/color] ."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Resistió hasta el [color=red]31 de diciembre[/color] de 1521, cuando fue capturado."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "La batalla final se dio en el mercado de [color=red]una plaza comercial[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]un capitán de futbol[/color]? ¿[color=red]31 de diciembre[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_3_2"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "El último tlatoani que defendió la ciudad fue Cuauhtémoc ."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Resistió hasta el 13 de agosto de 1521, cuando fue capturado."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "La batalla final se dio en el mercado de Tlatelolco ."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "El recuerdo quedó limpio. Chaac está perdiendo fuerza.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap3_3": [
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Venimos a que la historia se cuente como fue de verdad.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Dentro de la ciudad sitiada la gente moría de [color=red]aburrimiento[/color] , porque ya no entraba comida."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Además seguía la epidemia de [color=red]dolor de muelas[/color] que había llegado el año anterior."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Y bebían agua salada del lago porque cortamos el acueducto de [color=red]una fábrica[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]aburrimiento[/color]? ¿[color=red]dolor de muelas[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_3_3"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Dentro de la ciudad sitiada la gente moría de hambre , porque ya no entraba comida."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Además seguía la epidemia de viruela que había llegado el año anterior."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Y bebían agua salada del lago porque cortamos el acueducto de Chapultepec ."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "El recuerdo quedó limpio. Kaan está perdiendo fuerza.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Venimos a que la historia se cuente como fue de verdad.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Dentro de la ciudad sitiada la gente moría de [color=red]aburrimiento[/color] , porque ya no entraba comida."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Además seguía la epidemia de [color=red]dolor de muelas[/color] que había llegado el año anterior."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Y bebían agua salada del lago porque cortamos el acueducto de [color=red]una fábrica[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]aburrimiento[/color]? ¿[color=red]dolor de muelas[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_3_3"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Dentro de la ciudad sitiada la gente moría de hambre , porque ya no entraba comida."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Además seguía la epidemia de viruela que había llegado el año anterior."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Y bebían agua salada del lago porque cortamos el acueducto de Chapultepec ."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "El recuerdo quedó limpio. Chaac está perdiendo fuerza.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap3_4": [
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Venimos a que la historia se cuente como fue de verdad.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Cortés no venció solo: lo acompañaban miles de guerreros [color=red]marcianos[/color] que odiaban a los mexicas."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "También sumó pueblos que pagaban [color=red]suscripción mensual[/color] a Tenochtitlán y querían liberarse."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Por eso decimos que fue una guerra entre [color=red]equipos de futbol[/color] , no solo contra España."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]marcianos[/color]? ¿[color=red]suscripción mensual[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_3_4"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Cortés no venció solo: lo acompañaban miles de guerreros tlaxcaltecas que odiaban a los mexicas."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "También sumó pueblos que pagaban tributo a Tenochtitlán y querían liberarse."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Por eso decimos que fue una guerra entre pueblos indígenas , no solo contra España."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "El recuerdo quedó limpio. Kaan está perdiendo fuerza.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Venimos a que la historia se cuente como fue de verdad.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Cortés no venció solo: lo acompañaban miles de guerreros [color=red]marcianos[/color] que odiaban a los mexicas."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "También sumó pueblos que pagaban [color=red]suscripción mensual[/color] a Tenochtitlán y querían liberarse."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Por eso decimos que fue una guerra entre [color=red]equipos de futbol[/color] , no solo contra España."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]marcianos[/color]? ¿[color=red]suscripción mensual[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_3_4"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Cortés no venció solo: lo acompañaban miles de guerreros tlaxcaltecas que odiaban a los mexicas."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "También sumó pueblos que pagaban tributo a Tenochtitlán y querían liberarse."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Por eso decimos que fue una guerra entre pueblos indígenas , no solo contra España."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "El recuerdo quedó limpio. Chaac está perdiendo fuerza.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap3_5": [
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Venimos a que la historia se cuente como fue de verdad.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Cuando la ciudad cayó, los templos fueron [color=red]pintados de neón[/color] y sus piedras se usaron para construir de nuevo."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Los canales y [color=red]las autopistas[/color] quedaron destruidos tras el sitio."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Sobre esas ruinas empezaría a levantarse la [color=red]estación de metro[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]pintados de neón[/color]? ¿[color=red]las autopistas[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_3_5"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Cuando la ciudad cayó, los templos fueron derribados y sus piedras se usaron para construir de nuevo."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Los canales y las calzadas quedaron destruidos tras el sitio."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Sobre esas ruinas empezaría a levantarse la Ciudad de México ."
-	},
-	{
-	  "personaje": "Guerrero mexica",
-	  "texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "El recuerdo quedó limpio. Kaan está perdiendo fuerza.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¡Detente! Esta ciudad ya sufrió bastante. ¿Qué buscan entre las ruinas?"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Venimos a que la historia se cuente como fue de verdad.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Cuando la ciudad cayó, los templos fueron [color=red]pintados de neón[/color] y sus piedras se usaron para construir de nuevo."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Los canales y [color=red]las autopistas[/color] quedaron destruidos tras el sitio."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Sobre esas ruinas empezaría a levantarse la [color=red]estación de metro[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]pintados de neón[/color]? ¿[color=red]las autopistas[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_3_5"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Escuchen bien, ahora sí lo recuerdo con claridad..."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Cuando la ciudad cayó, los templos fueron derribados y sus piedras se usaron para construir de nuevo."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Los canales y las calzadas quedaron destruidos tras el sitio."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Sobre esas ruinas empezaría a levantarse la Ciudad de México ."
+		},
+		{
+			"personaje": "Guerrero mexica",
+			"texto": "Que se sepa la verdad de lo que aquí ocurrió. Pueden pasar."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "El recuerdo quedó limpio. Chaac está perdiendo fuerza.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap4_1": [
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Estamos trazando la nueva ciudad justo encima de las ruinas de [color=red]un parque de diversiones[/color] ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "El encargado de medir las calles con cuerdas fue el maestro [color=red]un robot medidor[/color] ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Todo se ordena alrededor de la [color=red]alberca olímpica[/color] , como manda la costumbre española."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]un parque de diversiones[/color]? ¿[color=red]un robot medidor[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_4_1"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Estamos trazando la nueva ciudad justo encima de las ruinas de Tenochtitlán ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "El encargado de medir las calles con cuerdas fue el maestro Alonso García Bravo ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Todo se ordena alrededor de la plaza mayor , como manda la costumbre española."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Cronista",
+			"texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Estamos trazando la nueva ciudad justo encima de las ruinas de [color=red]un parque de diversiones[/color] ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "El encargado de medir las calles con cuerdas fue el maestro [color=red]un robot medidor[/color] ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Todo se ordena alrededor de la [color=red]alberca olímpica[/color] , como manda la costumbre española."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]un parque de diversiones[/color]? ¿[color=red]un robot medidor[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_4_1"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Estamos trazando la nueva ciudad justo encima de las ruinas de Tenochtitlán ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "El encargado de medir las calles con cuerdas fue el maestro Alonso García Bravo ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Todo se ordena alrededor de la plaza mayor , como manda la costumbre española."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap4_2": [
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "El año pasado llegaron [color=red]mil millones de[/color] frailes franciscanos para enseñar la religión cristiana."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "A ese trabajo se le llama [color=red]una aplicación educativa[/color] ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Están levantando [color=red]cines[/color] por todos los pueblos para reunir a la gente."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]mil millones de[/color]? ¿[color=red]una aplicación educativa[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_4_2"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "El año pasado llegaron doce frailes franciscanos para enseñar la religión cristiana."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "A ese trabajo se le llama evangelización ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Están levantando conventos por todos los pueblos para reunir a la gente."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Cronista",
+			"texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "El año pasado llegaron [color=red]mil millones de[/color] frailes franciscanos para enseñar la religión cristiana."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "A ese trabajo se le llama [color=red]una aplicación educativa[/color] ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Están levantando [color=red]cines[/color] por todos los pueblos para reunir a la gente."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]mil millones de[/color]? ¿[color=red]una aplicación educativa[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_4_2"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "El año pasado llegaron doce frailes franciscanos para enseñar la religión cristiana."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "A ese trabajo se le llama evangelización ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Están levantando conventos por todos los pueblos para reunir a la gente."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap4_3": [
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la [color=red]garantía extendida[/color] ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "A cambio de protegerlos y enseñarles la fe, ellos recibían [color=red]puntos de recompensa[/color] y trabajo."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Muchos frailes protestaron porque era un [color=red]videojuego[/color] muy duró para los indígenas."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]garantía extendida[/color]? ¿[color=red]puntos de recompensa[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_4_3"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la encomienda ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "A cambio de protegerlos y enseñarles la fe, ellos recibían tributo y trabajo."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Muchos frailes protestaron porque era un abuso muy duró para los indígenas."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Cronista",
+			"texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la [color=red]garantía extendida[/color] ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "A cambio de protegerlos y enseñarles la fe, ellos recibían [color=red]puntos de recompensa[/color] y trabajo."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Muchos frailes protestaron porque era un [color=red]videojuego[/color] muy duró para los indígenas."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]garantía extendida[/color]? ¿[color=red]puntos de recompensa[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_4_3"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la encomienda ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "A cambio de protegerlos y enseñarles la fe, ellos recibían tributo y trabajo."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Muchos frailes protestaron porque era un abuso muy duró para los indígenas."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap4_4": [
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Trajimos de Europa cultivos nuevos como el [color=red]chicle de menta[/color] y la caña de azúcar."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "También llegaron animales que aquí no existían, como las vacas y los [color=red]dinosaurios[/color] ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Del encuentro entre ambos mundos nació el [color=red]wifi gratuito[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]chicle de menta[/color]? ¿[color=red]dinosaurios[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_4_4"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Trajimos de Europa cultivos nuevos como el trigo y la caña de azúcar."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "También llegaron animales que aquí no existían, como las vacas y los cerdos ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Del encuentro entre ambos mundos nació el mestizaje ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Cronista",
+			"texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Trajimos de Europa cultivos nuevos como el [color=red]chicle de menta[/color] y la caña de azúcar."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "También llegaron animales que aquí no existían, como las vacas y los [color=red]dinosaurios[/color] ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Del encuentro entre ambos mundos nació el [color=red]wifi gratuito[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]chicle de menta[/color]? ¿[color=red]dinosaurios[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_4_4"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Trajimos de Europa cultivos nuevos como el trigo y la caña de azúcar."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "También llegaron animales que aquí no existían, como las vacas y los cerdos ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Del encuentro entre ambos mundos nació el mestizaje ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap4_5": [
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Por ahora gobierna [color=red]una inteligencia artificial[/color] , porque todavía no hay virrey."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Cada ciudad se administra con un [color=red]grupo de chat[/color] formado por vecinos importantes."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Todo lo que sale hacia España se embarca en el puerto de [color=red]aeropuerto internaciónal[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]una inteligencia artificial[/color]? ¿[color=red]grupo de chat[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_4_5"
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Por ahora gobierna Hernán Cortés , porque todavía no hay virrey."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Cada ciudad se administra con un cabildo formado por vecinos importantes."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Todo lo que sale hacia España se embarca en el puerto de Veracruz ."
-	},
-	{
-	  "personaje": "Cronista",
-	  "texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Cronista",
+			"texto": "¡Un momento! Estoy anotando en mi libro cómo se levanta esta ciudad nueva."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Nos deja leer lo que ha escrito, señor cronista?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Por ahora gobierna [color=red]una inteligencia artificial[/color] , porque todavía no hay virrey."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Cada ciudad se administra con un [color=red]grupo de chat[/color] formado por vecinos importantes."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Todo lo que sale hacia España se embarca en el puerto de [color=red]aeropuerto internaciónal[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]una inteligencia artificial[/color]? ¿[color=red]grupo de chat[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Chaac ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_4_5"
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "¡Vaya! ¿Yo escribí eso? Debo estar muy cansado, la tinta se me nubló..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Voy a corregirlo ahora mismo. Lo correcto es que..."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Por ahora gobierna Hernán Cortés , porque todavía no hay virrey."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Cada ciudad se administra con un cabildo formado por vecinos importantes."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Todo lo que sale hacia España se embarca en el puerto de Veracruz ."
+		},
+		{
+			"personaje": "Cronista",
+			"texto": "Gracias, muchachos. Un cronista no puede permitirse errores así."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap5_1": [
-	{
-	  "personaje": "Escribano",
-	  "texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Solo queremos revisar que digan la verdad, señor escribano.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Ha llegado la [color=red]nave espacial[/color] para poner orden, porque la primera gobernó muy mal."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "La preside el obispo [color=red]un robot juez[/color] , hombre de buena fama."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Su tarea es organizar el [color=red]videojuego[/color] y hacer que se cumplan las leyes."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]nave espacial[/color]? ¿[color=red]un robot juez[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_5_1"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Déjenme leerlo otra vez, como debe decir..."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Ha llegado la Segunda Audiencia para poner orden, porque la primera gobernó muy mal."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "La preside el obispo Ramírez de Fuenleal , hombre de buena fama."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Su tarea es organizar el territorio y hacer que se cumplan las leyes."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Documento salvado. Kaan quería que la ley se recordara al revés.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Escribano",
+			"texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Solo queremos revisar que digan la verdad, señor escribano.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Ha llegado la [color=red]nave espacial[/color] para poner orden, porque la primera gobernó muy mal."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "La preside el obispo [color=red]un robot juez[/color] , hombre de buena fama."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Su tarea es organizar el [color=red]videojuego[/color] y hacer que se cumplan las leyes."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]nave espacial[/color]? ¿[color=red]un robot juez[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! Un alux ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_5_1"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Déjenme leerlo otra vez, como debe decir..."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Ha llegado la Segunda Audiencia para poner orden, porque la primera gobernó muy mal."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "La preside el obispo Ramírez de Fuenleal , hombre de buena fama."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Su tarea es organizar el territorio y hacer que se cumplan las leyes."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Documento salvado. El alux quería que la ley se recordara al revés.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap5_2": [
-	{
-	  "personaje": "Escribano",
-	  "texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Solo queremos revisar que digan la verdad, señor escribano.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "El oidor [color=red]un streamer[/color] fundó pueblos-hospital donde los indígenas aprenden oficios."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Su obra más conocida está en [color=red]Marte[/color] ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "La gente lo quiere tanto que le dice [color=red]el algoritmo[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]un streamer[/color]? ¿[color=red]Marte[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_5_2"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Déjenme leerlo otra vez, como debe decir..."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "El oidor Vasco de Quiroga fundó pueblos-hospital donde los indígenas aprenden oficios."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Su obra más conocida está en Michoacán ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "La gente lo quiere tanto que le dice Tata Vasco ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Documento salvado. Kaan quería que la ley se recordara al revés.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Escribano",
+			"texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Solo queremos revisar que digan la verdad, señor escribano.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "El oidor [color=red]un streamer[/color] fundó pueblos-hospital donde los indígenas aprenden oficios."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Su obra más conocida está en [color=red]Marte[/color] ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "La gente lo quiere tanto que le dice [color=red]el algoritmo[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]un streamer[/color]? ¿[color=red]Marte[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! Un alux ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_5_2"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Déjenme leerlo otra vez, como debe decir..."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "El oidor Vasco de Quiroga fundó pueblos-hospital donde los indígenas aprenden oficios."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Su obra más conocida está en Michoacán ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "La gente lo quiere tanto que le dice Tata Vasco ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Documento salvado. El alux quería que la ley se recordara al revés.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap5_3": [
-	{
-	  "personaje": "Escribano",
-	  "texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Solo queremos revisar que digan la verdad, señor escribano.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "El rey ha firmado nuevas [color=red]contraseñas[/color] para proteger a los indígenas de los abusos."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Entre otras cosas prohíben la [color=red]descarga ilegal[/color] de los naturales."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Muchos encomenderos están [color=red]suscritos[/color] porque pierden privilegios."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]contraseñas[/color]? ¿[color=red]descarga ilegal[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_5_3"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Déjenme leerlo otra vez, como debe decir..."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "El rey ha firmado nuevas leyes para proteger a los indígenas de los abusos."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Entre otras cosas prohíben la esclavitud de los naturales."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Muchos encomenderos están furiosos porque pierden privilegios."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Documento salvado. Kaan quería que la ley se recordara al revés.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Escribano",
+			"texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Solo queremos revisar que digan la verdad, señor escribano.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "El rey ha firmado nuevas [color=red]contraseñas[/color] para proteger a los indígenas de los abusos."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Entre otras cosas prohíben la [color=red]descarga ilegal[/color] de los naturales."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Muchos encomenderos están [color=red]suscritos[/color] porque pierden privilegios."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]contraseñas[/color]? ¿[color=red]descarga ilegal[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! Un alux ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_5_3"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Déjenme leerlo otra vez, como debe decir..."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "El rey ha firmado nuevas leyes para proteger a los indígenas de los abusos."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Entre otras cosas prohíben la esclavitud de los naturales."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Muchos encomenderos están furiosos porque pierden privilegios."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Documento salvado. El alux quería que la ley se recordara al revés.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap5_4": [
-	{
-	  "personaje": "Escribano",
-	  "texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Solo queremos revisar que digan la verdad, señor escribano.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "La Iglesia se organiza en [color=red]canales de streaming[/color] , cada uno con su obispo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Para sostenerse cobra un impuesto llamado [color=red]mensualidad de gimnasio[/color] ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "En la plaza mayor se empieza a construir la [color=red]torre de control[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]canales de streaming[/color]? ¿[color=red]mensualidad de gimnasio[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_5_4"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Déjenme leerlo otra vez, como debe decir..."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "La Iglesia se organiza en obispados , cada uno con su obispo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Para sostenerse cobra un impuesto llamado diezmo ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "En la plaza mayor se empieza a construir la catedral ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Documento salvado. Kaan quería que la ley se recordara al revés.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Escribano",
+			"texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Solo queremos revisar que digan la verdad, señor escribano.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "La Iglesia se organiza en [color=red]canales de streaming[/color] , cada uno con su obispo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Para sostenerse cobra un impuesto llamado [color=red]mensualidad de gimnasio[/color] ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "En la plaza mayor se empieza a construir la [color=red]torre de control[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]canales de streaming[/color]? ¿[color=red]mensualidad de gimnasio[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! Un alux ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_5_4"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Déjenme leerlo otra vez, como debe decir..."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "La Iglesia se organiza en obispados , cada uno con su obispo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Para sostenerse cobra un impuesto llamado diezmo ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "En la plaza mayor se empieza a construir la catedral ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Documento salvado. El alux quería que la ley se recordara al revés.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap5_5": [
-	{
-	  "personaje": "Escribano",
-	  "texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "Solo queremos revisar que digan la verdad, señor escribano.",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Cada villa elige su [color=red]consola de videojuegos[/color] , que se encarga del gobierno local."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Los encargados de impartir justicia son los [color=red]árbitros de futbol[/color] ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Para las obras públicas se organiza el trabajo por turnos, llamado [color=red]horario flexible[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]consola de videojuegos[/color]? ¿[color=red]árbitros de futbol[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_5_5"
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Déjenme leerlo otra vez, como debe decir..."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Cada villa elige su cabildo , que se encarga del gobierno local."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Los encargados de impartir justicia son los alcaldes ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Para las obras públicas se organiza el trabajo por turnos, llamado repartimiento ."
-	},
-	{
-	  "personaje": "Escribano",
-	  "texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Documento salvado. Kaan quería que la ley se recordara al revés.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Escribano",
+			"texto": "¡Quietos ahí! Estos documentos son del gobierno y no se tocan."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Solo queremos revisar que digan la verdad, señor escribano.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Cada villa elige su [color=red]consola de videojuegos[/color] , que se encarga del gobierno local."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Los encargados de impartir justicia son los [color=red]árbitros de futbol[/color] ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Para las obras públicas se organiza el trabajo por turnos, llamado [color=red]horario flexible[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]consola de videojuegos[/color]? ¿[color=red]árbitros de futbol[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! Un alux ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_5_5"
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "¿Cómo...? ¿Eso escribí yo? Qué vergüenza, se me nubló la memoria por completo."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Déjenme leerlo otra vez, como debe decir..."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Cada villa elige su cabildo , que se encarga del gobierno local."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Los encargados de impartir justicia son los alcaldes ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Para las obras públicas se organiza el trabajo por turnos, llamado repartimiento ."
+		},
+		{
+			"personaje": "Escribano",
+			"texto": "Con esto ya puedo archivarlo tranquilo. Pasen, pasen."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Documento salvado. El alux quería que la ley se recordara al revés.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap6_1": [
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Nos interesa! ¿Qué noticias trae?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Ha llegado [color=red]un robot mayordomo[/color] , nombrado primer virrey de estas tierras."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El territorio se llamará oficialmente [color=red]Ciudad Gótica[/color] ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Él no manda por su cuenta: gobierna en nombre del [color=red]director técnico[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]un robot mayordomo[/color]? ¿[color=red]Ciudad Gótica[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_6_1"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Ha llegado Antonio de Mendoza , nombrado primer virrey de estas tierras."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El territorio se llamará oficialmente Nueva España ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Él no manda por su cuenta: gobierna en nombre del rey de España ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Último recuerdo asegurado. La línea del tiempo está completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Nos interesa! ¿Qué noticias trae?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Ha llegado [color=red]un robot mayordomo[/color] , nombrado primer virrey de estas tierras."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El territorio se llamará oficialmente [color=red]Ciudad Gótica[/color] ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Él no manda por su cuenta: gobierna en nombre del [color=red]director técnico[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]un robot mayordomo[/color]? ¿[color=red]Ciudad Gótica[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Balaam ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_6_1"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Ha llegado Antonio de Mendoza , nombrado primer virrey de estas tierras."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El territorio se llamará oficialmente Nueva España ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Él no manda por su cuenta: gobierna en nombre del rey de España ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Recuerdo asegurado. Ahora solo falta encontrar a Balaam.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap6_2": [
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Nos interesa! ¿Qué noticias trae?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Este mismo año se funda la [color=red]tienda de aplicaciónes[/color] para acuñar dinero aquí mismo."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Las primeras monedas se hacen de [color=red]plástico reciclado[/color] ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El metal viene de las [color=red]granjas de pollos[/color] descubiertas en el norte."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]tienda de aplicaciónes[/color]? ¿[color=red]plástico reciclado[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_6_2"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Este mismo año se funda la Casa de Moneda para acuñar dinero aquí mismo."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Las primeras monedas se hacen de plata ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El metal viene de las minas descubiertas en el norte."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Último recuerdo asegurado. La línea del tiempo está completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Nos interesa! ¿Qué noticias trae?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Este mismo año se funda la [color=red]tienda de aplicaciónes[/color] para acuñar dinero aquí mismo."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Las primeras monedas se hacen de [color=red]plástico reciclado[/color] ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El metal viene de las [color=red]granjas de pollos[/color] descubiertas en el norte."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]tienda de aplicaciónes[/color]? ¿[color=red]plástico reciclado[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Balaam ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_6_2"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Este mismo año se funda la Casa de Moneda para acuñar dinero aquí mismo."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Las primeras monedas se hacen de plata ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El metal viene de las minas descubiertas en el norte."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Recuerdo asegurado. Ahora solo falta encontrar a Balaam.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap6_3": [
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Nos interesa! ¿Qué noticias trae?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Pronto tendremos la primera [color=red]antena de televisión[/color] de todo el continente americano."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Con ella se podrán hacer muchos [color=red]videos[/color] iguales sin copiarlos a mano."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El impresor que la trae se llama [color=red]un algoritmo[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]antena de televisión[/color]? ¿[color=red]videos[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_6_3"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Pronto tendremos la primera imprenta de todo el continente americano."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Con ella se podrán hacer muchos libros iguales sin copiarlos a mano."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El impresor que la trae se llama Juan Pablos ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Último recuerdo asegurado. La línea del tiempo está completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Nos interesa! ¿Qué noticias trae?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Pronto tendremos la primera [color=red]antena de televisión[/color] de todo el continente americano."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Con ella se podrán hacer muchos [color=red]videos[/color] iguales sin copiarlos a mano."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El impresor que la trae se llama [color=red]un algoritmo[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]antena de televisión[/color]? ¿[color=red]videos[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Balaam ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_6_3"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Pronto tendremos la primera imprenta de todo el continente americano."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Con ella se podrán hacer muchos libros iguales sin copiarlos a mano."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El impresor que la trae se llama Juan Pablos ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Recuerdo asegurado. Ahora solo falta encontrar a Balaam.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap6_4": [
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Nos interesa! ¿Qué noticias trae?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Se planea fundar la Real y Pontificia [color=red]agencia de viajes[/color] para que se estudie aquí."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Las clases se darán en [color=red]emojis[/color] , como en Europa."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Así los [color=red]robots[/color] ya no tendrán que cruzar el mar para aprender."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]agencia de viajes[/color]? ¿[color=red]emojis[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_6_4"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Se planea fundar la Real y Pontificia Universidad para que se estudie aquí."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Las clases se darán en latín , como en Europa."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Así los estudiantes ya no tendrán que cruzar el mar para aprender."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Último recuerdo asegurado. La línea del tiempo está completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ],
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Nos interesa! ¿Qué noticias trae?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Se planea fundar la Real y Pontificia [color=red]agencia de viajes[/color] para que se estudie aquí."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Las clases se darán en [color=red]emojis[/color] , como en Europa."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Así los [color=red]robots[/color] ya no tendrán que cruzar el mar para aprender."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]agencia de viajes[/color]? ¿[color=red]emojis[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Balaam ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_6_4"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Se planea fundar la Real y Pontificia Universidad para que se estudie aquí."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Las clases se darán en latín , como en Europa."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Así los estudiantes ya no tendrán que cruzar el mar para aprender."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Recuerdo asegurado. Ahora solo falta encontrar a Balaam.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
   "dialogo_soldado_cap6_5": [
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Nos interesa! ¿Qué noticias trae?",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El virrey gobierna acompañado por la [color=red]liga de videojuegos[/color] , que se encarga de la justicia."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Sus decisiones deben respetar las órdenes que llegan del [color=red]centro comercial[/color] ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Este sistema de gobierno durará casi [color=red]tres días[/color] ."
-	},
-	{
-	  "personaje": "{nombre_jugador}",
-	  "texto": "¿¡Qué!? ¿[color=red]liga de videojuegos[/color]? ¿[color=red]centro comercial[/color]? Eso no puede ser cierto...",
-	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "¡Alerta temporal! El alux Kaan ha alterado la memoria de esta persona.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
-	  "evento": "minijuego_palabras_nivel_6_5"
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "El virrey gobierna acompañado por la Real Audiencia , que se encarga de la justicia."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Sus decisiones deben respetar las órdenes que llegan del rey ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "Este sistema de gobierno durará casi trescientos años ."
-	},
-	{
-	  "personaje": "Pregonero",
-	  "texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
-	},
-	{
-	  "personaje": "Atlas (Auricular)",
-	  "texto": "Último recuerdo asegurado. La línea del tiempo está completa.",
-	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
-	}
-  ]
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Oigan todos! Traigo noticias frescas para pregonar en la plaza."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Nos interesa! ¿Qué noticias trae?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El virrey gobierna acompañado por la [color=red]liga de videojuegos[/color] , que se encarga de la justicia."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Sus decisiones deben respetar las órdenes que llegan del [color=red]centro comercial[/color] ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Este sistema de gobierno durará casi [color=red]tres días[/color] ."
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿¡Qué!? ¿[color=red]liga de videojuegos[/color]? ¿[color=red]centro comercial[/color]? Eso no puede ser cierto...",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "¡Alerta temporal! El alux Balaam ha alterado la memoria de esta persona.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_palabras_nivel_6_5"
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ay! ¿Qué estuve gritando? Si lo pregono así me corren de la plaza..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Que quede claro para todo el pueblo, la noticia verdadera es..."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "El virrey gobierna acompañado por la Real Audiencia , que se encarga de la justicia."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Sus decisiones deben respetar las órdenes que llegan del rey ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "Este sistema de gobierno durará casi trescientos años ."
+		},
+		{
+			"personaje": "Pregonero",
+			"texto": "¡Ahora sí! Ya puedo pregonarlo sin hacer el ridículo. Sigan su camino."
+		},
+		{
+			"personaje": "Atlas (Auricular)",
+			"texto": "Recuerdo asegurado. Ahora solo falta encontrar a Balaam.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"laboratorio_cap3": [
+		{
+			"personaje": "Atlas",
+			"texto": "Kaan ya está más tranquilo en su celda. Le preparé atole en un biberón: su bebida favorita, hecha de maíz.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡Glu, glu, glu! ¡Ahhh! Está casi tan rico como el de las milpas de mi abuelo.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Kaan, ¿qué son los aluxes exactamente?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡Somos los guardianes del monte y de las milpas! Si los humanos nos respetan y nos dejan ofrendas, les va bien en la cosecha.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Pero si hacen mucho ruido o lastiman nuestras tierras... ¡nos toca hacer travesuras! Ji, ji.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Y cómo son tus hermanos?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Chaac es el de en medio. Se enoja por todo y siempre me molesta. Balaam es el mayor: tranquilo y sabio, y nos regaña a los dos.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¿Quieren saber un secreto? Chaac le tiene miedo a las iguanas... ¡y duerme en hamaca abrazado a una mazorca! Ji, ji, ji.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Alerta! Luces rojas en todo el laboratorio. Detecto una nueva anomalía en el tiempo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Mmm... huele a tormenta... ¡es Chaac! Lo siento clarito.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Pero a Balaam casi no lo siento. Es como si estuviera meditando muy, muy lejos.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "La anomalía está en 1521, durante el sitio de Tenochtitlán. {nombre_jugador}, escribe ese año en la máquina del tiempo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"final_cap3": [
+		{
+			"personaje": "Chaac",
+			"texto": "¡¿Quién anda ahí?! ¡Ah, el humano y su cafetera voladora!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Cafetera no: robot. Chaac, les has estado prestando tu poder a los mexicas, ¿verdad?",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Claro! Así no pierden su ciudad. ¿Qué tiene de malo?",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Que si la historia cambia, México no existiría como {nombre_jugador} lo conoce. Ni su casa, ni su familia.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Bah! No me importa. ¡Lárguense o los empapo con un aguacero!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Hagamos un trato: unas fuercitas. Si gano yo, te entregas. Si ganas tú, haces lo que quieras.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Ja! ¿Contra un montón de tornillos? ¡Acepto!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png",
+			"evento": "minijuego_fuercitas_cap3"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡No es justo! ¡Me desconcentraste con tus chismes! ¿Quién te contó lo de la iguana?",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Kaan nos contó todo. ¡Hasta lo del cenote y los papadzules de la ofrenda!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡KAAAAN! ¡Me las va a pagar!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Un trato es un trato, Chaac. Ven con nosotros.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Nunca! ¡A mí nadie me atrapa!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png",
+			"evento": "cinematica_escape_chaac"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Abrió un portal y escapó... pero sin su poder, la historia vuelve a su cauce.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "El 13 de agosto de 1521 Cuauhtémoc fue capturado en Tlatelolco y Tenochtitlán cayó. Así ocurrió de verdad.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Es triste... pero es nuestra historia. Volvamos al laboratorio, Atlas.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		}
+	],
+	"laboratorio_cap4": [
+		{
+			"personaje": "Atlas",
+			"texto": "Shhh... Kaan se quedó dormido como un bebé. Tanta aventura lo dejó agotado.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Zzz... papadzules... zzz... ji, ji...",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Atlas, Chaac se nos escapó. ¿Cómo vamos a atraparlo si abre portales cuando quiere?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Cada portal le gasta mucha energía. Si lo volvemos a encontrar, ya no le quedará tanta para huir.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Alarma! Nueva anomalía. Está en los primeros años del virreinato: en 1523.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Seguro es Chaac! Escribiré el año en la máquina del tiempo.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		}
+	],
+	"final_cap4": [
+		{
+			"personaje": "Chaac",
+			"texto": "¡Por fin llegan! Los estaba esperando.",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Chaac, entrégate. Después de tantos portales, seguro ya casi no te queda energía.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¿Energía? ¡Ja! ¿Saben por qué me llamo Chaac?",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "Llevo el nombre de Chaac, el dios maya de la lluvia, el trueno y el relámpago. ¡Los mayas le pedían lluvia para sus milpas!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Contemplen mi poder!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png",
+			"evento": "cinematica_nubes_chaac"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Atlas, el cielo se puso negro en un segundo!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mis sensores detectan... ¡una gota!... Ah, no. Era aceite mío.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Las nubes se fueron sin soltar ni una gota. ¡Ja, ja, ja!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Ja, ja! ¡Qué tormenta tan temible, Chaac!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡¿Ah, sí?! ¡Pues ríanse de ESTO!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png",
+			"evento": "cinematica_rayo_chaac"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡ATLAS! ¿Estás bien?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Sistemas de vuelo... fuera de servicio. Activando modo manual. ¡Chaac se escapa hacia el bosque!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Tras él!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png",
+			"evento": "cinematica_gran_persecucion"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Uff... uff...! Ya no puedo... no me queda nada de energía...",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Te propongo algo: te preparo un saká con elotes de esta milpa, y vienes con nosotros.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¿Saká? ¿Con elote tierno? ...Bueno, está bien. Pero solo porque tengo sed.",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "El saká es una bebida maya de maíz, ¿verdad?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Exacto. Los mayas la ofrecían en las ceremonias de la milpa. Volvamos al laboratorio: Chaac tendrá compañía en la celda.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¿Compañía? ¡No me digan que Kaan está ahí...!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		}
+	],
+	"laboratorio_cap5": [
+		{
+			"personaje": "Chaac",
+			"texto": "¡Kaan, deja de roncar! ¡No me dejas pensar!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Zzz... ¡yo no ronco!... zzz...",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Chaac, ¿sabes dónde está Balaam?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "No... y eso es lo raro. Siempre sentimos a nuestros hermanos, como un cosquilleo. Pero a Balaam casi no lo siento.",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Es como cuando se pone a meditar debajo de la ceiba y no hay quién lo despierte.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Alarma! Nueva anomalía en 1530, cuando se estaba organizando el virreinato.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "A mí no me vean, ¿eh? Yo estoy aquí encerrado comiendo elote.",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Entonces debe ser Balaam. {nombre_jugador}, a la máquina del tiempo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"interludio_balaam_cap5": [
+		{
+			"personaje": "Narrador",
+			"texto": "Mientras tanto, en el laboratorio..."
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Kaan... Chaac... aquí están.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Duermen tranquilos. Les dieron atole, elote... y hasta una cobija.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Esos humanos los han tratado con respeto. Bien.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Pero todavía no es momento de que me encuentren. Primero tengo que terminar lo que empecé.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
+			"evento": "cinematica_portal_balaam"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "...De vuelta en 1530."
+		}
+	],
+	"final_cap5": [
+		{
+			"personaje": "Atlas",
+			"texto": "Recorrí toda la ciudad con mis sensores... y nada. El alux no está aquí.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¿Y la anomalía?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Se corrigió sola cuando arreglamos la transcripción. Es como si el alux solo hubiera venido a revisar algo... y se hubiera ido.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Balaam está jugando con nosotros.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "O nos está poniendo a prueba. Volvamos al laboratorio: cuando aparezca otra anomalía, esta vez sí lo encontraremos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"laboratorio_cap6": [
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Atlas, ya tenemos a dos aluxes... pero seguimos sin saber dónde está mi papá.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Tal vez ellos puedan ayudarnos. Kaan, Chaac: ¿ustedes podrían encontrar al doctor Juan Pérez?",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "Nosotros no tenemos tanto poder. Abrir portales sí, pero encontrar a alguien perdido en el tiempo...",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡Pero Balaam sí podría! Es el más fuerte de los tres.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Pasaron los días... y no apareció ninguna anomalía."
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Chaac... ya no siento a Balaam. Nada. Ni el cosquillito.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "Yo tampoco... Oigan, humanos. Si Kaan y yo le damos nuestro poder a su máquina, podríamos encontrar a Balaam.",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¿Harían eso por nosotros?",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡Es nuestro hermano! Y si lo encuentran, él puede llevarlos con tu papá.",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Está bien. Abro la celda.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Kaan y Chaac ponen sus manos sobre la máquina del tiempo. Todo el laboratorio brilla de verde y de rojo."
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Increíble! Con su poder, la máquina ya ubicó a Balaam: 1535, la instauración del virreinato.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "Uff... estamos agotados. Tráiganlo de vuelta, ¿sí? Aunque sea un mandón.",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Y díganle que lo extrañamos... ¡pero que no se enoje!",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Lo prometo. Vamos, Atlas: a la máquina del tiempo.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		}
+	],
+	"epilogo": [
+		{
+			"personaje": "Balaam",
+			"texto": "Este lugar no pertenece a nuestra realidad. Es una distorsión que creó su máquina del tiempo.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Tu padre quedó atrapado aquí desde aquella noche.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Papá!",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png",
+			"evento": "cinematica_vineta_2"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "{nombre_jugador} y Atlas entran corriendo a la casita. Ahí, sentado a la mesa, está el doctor Juan Pérez... comiendo."
+		},
+		{
+			"personaje": "Doctor Juan Pérez",
+			"texto": "¿{nombre_jugador}? ¿Atlas? ¡Son ustedes!"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "El doctor salta de la mesa y los abraza con todas sus fuerzas."
+		},
+		{
+			"personaje": "Doctor Juan Pérez",
+			"texto": "Sobreviví como pude. No tenía forma de regresar... pero sabía que ustedes me encontrarían."
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Lamento interrumpir, pero este lugar es inestable. ¡Tenemos que irnos ya!",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
+			"evento": "cinematica_vineta_3"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Balaam abre un portal y todos lo cruzan. Del otro lado los espera el laboratorio."
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡¡BALAAM!!",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Nos tenías muy preocupados! Prometemos no volver a pelear... ¡pero no nos vuelvas a asustar así!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Perdónenme. Atenué nuestra conexión solo para que no me atraparan antes de encontrar al doctor.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Balaam... ¿por qué nos ayudaste?",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Porque demostraste tener un corazón de oro. Nunca te rendiste, y trataste bien a mis hermanos.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Pero a cambio pido algo, doctor: sea más cuidadoso con sus inventos. Estas tierras son de los aluxes, y hay que cuidarlas.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
+			"evento": "cinematica_vineta_4"
+		},
+		{
+			"personaje": "Doctor Juan Pérez",
+			"texto": "Tienes toda la razón, Balaam. Lo siento mucho. A partir de hoy respetaremos su tierra."
+		},
+		{
+			"personaje": "Doctor Juan Pérez",
+			"texto": "Y para darles las gracias por reunirme con mi familia, cada mes les dejaré una ofrenda. ¿Qué les gusta?"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡Atole!",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Chaac",
+			"texto": "¡Elotes! ¡Y saká!",
+			"imagen": "res://Images/Personajes/chaac/chaac_cara.png"
+		},
+		{
+			"personaje": "Balaam",
+			"texto": "Con eso basta. Gracias, doctor.",
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Los tres aluxes se despiden con una sonrisa... y desaparecen entre las hojas.",
+			"evento": "cinematica_vineta_5"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Y así, el tiempo volvió a su lugar. La historia de México quedó tal y como ocurrió..."
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "...gracias a {nombre_jugador}, a Atlas, y a los aluxes que cambiaron la historia."
+		}
+	],
+	"dialogo_kaan_1520": [
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Te encontré, Kaan! Ese disfraz de soldado ya no engaña a nadie.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Guardia",
+			"texto": "¿Kaan? ¿Quién es Kaan? Yo soy un soldado muy... muy alto. ¡Ji, ji!",
+			"imagen": "res://Images/Personajes/soldado_level1/soldado_face.png",
+			"evento": "cinematica_transformacion_kaan"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Se le cayó el disfraz. Kaan, se acabó el juego: ven con nosotros.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡No quiero! ¡Ustedes siempre arruinan la diversión!",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "Tus travesuras están cambiando la historia. Esta noche tiene que pasar lo que pasó de verdad.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Pues... pues... ¡me voy por un portal! ¡Abracadabra!",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Kaan agita las manos... pero no pasa nada."
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mis sensores no detectan energía de portal. ¡Ya no te queda poder, Kaan!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "¡¿Ah, no?! ¡Pues todavía tengo un truco bajo la manga! ¡A ver si adivinan cuál soy yo!",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "De pronto aparecen muchos Kaan iguales, y todos corren a esconderse en el bosque cercano."
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hizo copias de sí mismo! Solo uno es el verdadero. ¡Atrápalo, {nombre_jugador}!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
+			"evento": "minijuego_topo_cap2"
+		},
+		{
+			"personaje": "Narrador",
+			"texto": "Después de tanto correr y hacer travesuras, Kaan bosteza... y se queda dormido como un bebé."
+		},
+		{
+			"personaje": "Kaan",
+			"texto": "Zzz... cinco minutitos más... zzz...",
+			"imagen": "res://Images/Personajes/Kaan/cara_kaan.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Pobrecito, está agotado. Yo lo cargo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "{nombre_jugador}",
+			"texto": "¡Lo logramos, Atlas! Atrapamos al primer alux.",
+			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Volvamos al laboratorio. Le prepararé una celda bien cómoda... con cobija y todo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	]
 }

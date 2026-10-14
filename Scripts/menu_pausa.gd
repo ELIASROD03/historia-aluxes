@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+const PANEL_CONFIGURACION = preload("res://Scenes/PanelConfiguracion.tscn")
+
 @onready var panel_pausa = $PanelPausa
 @onready var btn_pausa = $BtnPausa
 
@@ -45,6 +47,15 @@ func alternar_pausa():
 
 func _on_btn_reanudar_pressed():
 	alternar_pausa()
+
+func _on_btn_configuracion_pressed():
+	var panel = PANEL_CONFIGURACION.instantiate()
+	# A media partida no se ofrece borrar: el siguiente guardado recrearía la
+	# partida en curso.
+	panel.permitir_borrar_partidas = false
+	panel_pausa.hide()
+	panel.cerrado.connect(panel_pausa.show)
+	add_child(panel)
 
 func _on_btn_ir_menu_pressed():
 	alternar_pausa()

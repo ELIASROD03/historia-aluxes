@@ -3292,7 +3292,7 @@ tiempo_visible = 4.0
 requiere_interaccion = true
 
 [node name="Player" parent="." unique_id=1370197270 instance=ExtResource("9_kprco")]
-position = Vector2(32, 200)
+position = Vector2(1048, 176)
 
 [node name="Atlas" parent="." unique_id=751094602 instance=ExtResource("atlas_scene")]
 position = Vector2(72, 200)

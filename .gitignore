@@ -9,3 +9,6 @@
 
 # Guia del proyecto para Claude Code, no forma parte del juego
 CLAUDE.md
+
+# Documento de diseño, no se versiona
+*.pdf
