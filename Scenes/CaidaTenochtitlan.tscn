@@ -1,17 +1,54 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bn2go0ry6i0pc"]
 
-[ext_resource type="Script" path="res://Scripts/capitulo_manager.gd" id="1_r"]
-[ext_resource type="Script" path="res://Scripts/greybox/bloque.gd" id="2_r"]
-[ext_resource type="Script" path="res://Scripts/greybox/npc_provisional.gd" id="3_r"]
-[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_level1/SoldadoNpc.png" id="4_r"]
-[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_level1/guerreroMexica1.png" id="5_r"]
-[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_level1/guerreroMexica2.png" id="6_r"]
-[ext_resource type="Texture2D" path="res://Images/Personajes/chaac/chaac.png" id="7_r"]
-[ext_resource type="PackedScene" path="res://Scenes/Atlas.tscn" id="8_r"]
-[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="9_r"]
-[ext_resource type="Script" path="res://Scripts/greybox/cinematica_provisional.gd" id="10_r"]
-[ext_resource type="PackedScene" path="res://Scenes/Cuadro_Dialogo.tscn" id="11_r"]
-[ext_resource type="PackedScene" path="res://Scenes/MenuPausa.tscn" id="12_r"]
+[ext_resource type="Script" uid="uid://cijembagd3h8l" path="res://Scripts/capitulo_manager.gd" id="1_r"]
+[ext_resource type="Script" uid="uid://d367gmuflaqex" path="res://Scripts/greybox/bloque.gd" id="2_r"]
+[ext_resource type="Script" uid="uid://diphet22srwww" path="res://Scripts/greybox/npc_provisional.gd" id="3_r"]
+[ext_resource type="Texture2D" uid="uid://cuqq1hwr3vx16" path="res://Images/Personajes/Npc_level1/SoldadoNpc.png" id="4_r"]
+[ext_resource type="Texture2D" uid="uid://dppw1n8rvjktd" path="res://Images/Personajes/Npc_level1/guerreroMexica1.png" id="5_r"]
+[ext_resource type="Texture2D" uid="uid://chx3a00vtwccq" path="res://Images/Personajes/Npc_level1/guerreroMexica2.png" id="6_r"]
+[ext_resource type="Texture2D" uid="uid://bybksp7k01odj" path="res://Images/Personajes/chaac/chaac.png" id="7_r"]
+[ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="8_r"]
+[ext_resource type="PackedScene" uid="uid://bpy6xif8venyl" path="res://Scenes/Player.tscn" id="9_r"]
+[ext_resource type="Script" uid="uid://cohbp7r0ebf1u" path="res://Scripts/greybox/cinematica_provisional.gd" id="10_r"]
+[ext_resource type="PackedScene" uid="uid://bsvba3ikr32pw" path="res://Scenes/Cuadro_Dialogo.tscn" id="11_r"]
+[ext_resource type="PackedScene" uid="uid://d2eo8g0grgdmm" path="res://Scenes/MenuPausa.tscn" id="12_r"]
+[ext_resource type="Texture2D" uid="uid://bi8g8ctjyauf" path="res://Images/Personajes/Npc_cap3/guerrero_tlaxcalteca.png" id="13_r"]
+[ext_resource type="Texture2D" uid="uid://by8t3lcdqdmpl" path="res://Images/Personajes/Npc_cap3/anciano_mexica.png" id="14_r"]
+[ext_resource type="Texture2D" uid="uid://dvll0ocpymagb" path="res://Images/Personajes/Npc_cap3/mujer_mexica.png" id="15_r"]
+[ext_resource type="Texture2D" uid="uid://bb3ajvu5r76y" path="res://Images/Escenarios/cap3/campamento.png" id="16_r"]
+[ext_resource type="Texture2D" uid="uid://dprqtrcy52lxj" path="res://Images/Escenarios/cap3/bergantin.png" id="17_r"]
+[ext_resource type="Texture2D" uid="uid://dqnmd8ans486r" path="res://Images/Escenarios/cap3/ruinas1.png" id="18_r"]
+[ext_resource type="Texture2D" uid="uid://b8tf4ey6n38i2" path="res://Images/Escenarios/cap3/ruinas_humo.png" id="19_r"]
+[ext_resource type="Texture2D" uid="uid://by1rclfrse0i8" path="res://Images/Escenarios/cap3/mercado.png" id="20_r"]
+[ext_resource type="Texture2D" uid="uid://blodyj875wrnn" path="res://Images/Escenarios/cap3/templo.png" id="21_r"]
+[ext_resource type="Texture2D" uid="uid://c7i36l26mfuah" path="res://Images/Escenarios/cap3/barricada.png" id="22_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/suelo_tierra.png" id="23_r"]
+[ext_resource type="Texture2D" uid="uid://dt01cnvoepi23" path="res://Images/Escenarios/cap3/calzada.png" id="24_r"]
+[ext_resource type="Texture2D" uid="uid://dgkkc66xcln2d" path="res://Images/Fondos/untitled(3).png" id="25_r"]
+[ext_resource type="PackedScene" uid="uid://clyohxuathose" path="res://Scenes/WaterRepeater.tscn" id="26_r"]
+[ext_resource type="Texture2D" uid="uid://blr04abfslml0" path="res://Images/Tilesets/GandalfHardcore Background layers_layer 1.png" id="27_r"]
+[ext_resource type="Texture2D" uid="uid://bur5wbuvd5tjj" path="res://Images/Tilesets/GandalfHardcore Background layers_layer 2.png" id="28_r"]
+[ext_resource type="Texture2D" uid="uid://dw2d22if4dss6" path="res://Images/Tilesets/GandalfHardcore Background layers_layer 3.png" id="29_r"]
+[ext_resource type="Texture2D" uid="uid://dcg07185a81gn" path="res://Images/Tilesets/Tree1.png" id="30_r"]
+[ext_resource type="Texture2D" uid="uid://7jy53t83yehp" path="res://Images/Tilesets/Tall Grass.png" id="31_r"]
+[ext_resource type="Texture2D" uid="uid://dai0dcbva7tii" path="res://Images/Tilesets/objetos_level1.png" id="32_r"]
+[ext_resource type="Texture2D" uid="uid://b2f3ra2jm614d" path="res://Images/Tilesets/Decor.png" id="33_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/anim_fogata.png" id="34_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/anim_bandera.png" id="35_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/anim_garza.png" id="36_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/anim_humo.png" id="37_r"]
+[ext_resource type="Texture2D" uid="uid://3ifsf146sa4k" path="res://Images/Personajes/Npc_level1/canoa.png" id="38_r"]
+[ext_resource type="Texture2D" uid="uid://c1cy72ixm2rgx" path="res://Images/Personajes/Npc_level1/hombre_canoa_spritesheet.png" id="39_r"]
+[ext_resource type="Shader" uid="uid://cxohuav5vfw0e" path="res://Shaders/balanceo_viento.gdshader" id="40_r"]
+[ext_resource type="Script" uid="uid://bdtun8rl8foys" path="res://Scripts/vaiven.gd" id="41_r"]
+[ext_resource type="Script" uid="uid://duri671rphb05" path="res://Scripts/respirador.gd" id="42_r"]
+
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/torre_vigia.png" id="43_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/comun/adoratorio.png" id="44_r"]
+[sub_resource type="ShaderMaterial" id="Viento"]
+shader = ExtResource("40_r")
+shader_parameter/fuerza = 2.0
+shader_parameter/velocidad = 1.5
 
 [sub_resource type="RectangleShape2D" id="Piso"]
 size = Vector2(2800, 40)
@@ -19,145 +56,525 @@ size = Vector2(2800, 40)
 [sub_resource type="RectangleShape2D" id="Pared"]
 size = Vector2(20, 400)
 
-[node name="CaidaTenochtitlan" type="Node2D"]
+[node name="CaidaTenochtitlan" type="Node2D" unique_id=861467915]
 script = ExtResource("1_r")
 numero_capitulo = 3
 
-[node name="Cielo" type="ColorRect" parent="."]
-offset_right = 2800
-offset_bottom = 360.0
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=656354271]
+
+[node name="Cielo" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1560186906]
+motion_scale = Vector2(0, 0)
+
+[node name="Color" type="ColorRect" parent="ParallaxBackground/Cielo" unique_id=1171303808]
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 1100.0
+offset_bottom = 700.0
 mouse_filter = 2
-color = Color(0.55, 0.5, 0.48, 1)
+color = Color(0.47, 0.62, 0.69, 1)
 
-[node name="Fondo" type="Node2D" parent="."]
+[node name="Volcanes" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1597957224]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(656, 0)
 
-[node name="CampamentoEspañolTiendas" type="Node2D" parent="Fondo"]
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Volcanes" unique_id=1284811807]
+position = Vector2(0, 116)
+texture = ExtResource("25_r")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 72, 656, 115)
+
+[node name="ArbolesLejanos" type="ParallaxLayer" parent="ParallaxBackground" unique_id=333016350]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/ArbolesLejanos" unique_id=917401121]
+position = Vector2(0, 138)
+scale = Vector2(1, 0.46)
+texture = ExtResource("29_r")
+centered = false
+
+[node name="ArbolesMedios" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1689562817]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/ArbolesMedios" unique_id=396837425]
+position = Vector2(0, 150)
+scale = Vector2(1, 0.454)
+texture = ExtResource("28_r")
+centered = false
+
+[node name="ArbolesCercanos" type="ParallaxLayer" parent="ParallaxBackground" unique_id=762796624]
+motion_scale = Vector2(0.45, 1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/ArbolesCercanos" unique_id=335383403]
+position = Vector2(0, 125)
+scale = Vector2(1, 0.76)
+texture = ExtResource("27_r")
+centered = false
+
+[node name="Fondo" type="Node2D" parent="." unique_id=361016432]
+
+[node name="Arbol1" type="Sprite2D" parent="Fondo" unique_id=1716234157]
+material = SubResource("Viento")
+position = Vector2(40, 226)
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("30_r")
+offset = Vector2(0, -104)
+
+[node name="Arbol2" type="Sprite2D" parent="Fondo" unique_id=160360258]
+material = SubResource("Viento")
+position = Vector2(1185, 226)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("30_r")
+offset = Vector2(0, -104)
+
+[node name="Arbol3" type="Sprite2D" parent="Fondo" unique_id=1557266039]
+material = SubResource("Viento")
+position = Vector2(1900, 226)
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("30_r")
+offset = Vector2(0, -104)
+
+[node name="Arbol4" type="Sprite2D" parent="Fondo" unique_id=734486298]
+material = SubResource("Viento")
+position = Vector2(2330, 226)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("30_r")
+offset = Vector2(0, -104)
+
+[node name="Arbol5" type="Sprite2D" parent="Fondo" unique_id=977564386]
+material = SubResource("Viento")
+position = Vector2(2760, 226)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("30_r")
+offset = Vector2(0, -104)
+
+[node name="LagoAlFondo" parent="Fondo" unique_id=784616578 instance=ExtResource("26_r")]
+position = Vector2(506, 198)
+repeat_count = 4
+tile_width = 160.0
+
+[node name="CampamentoEspanol" type="Sprite2D" parent="Fondo" unique_id=1211303870]
 position = Vector2(300, 224)
-script = ExtResource("2_r")
-texto = "CAMPAMENTO\nESPAÑOL\n(tiendas)"
-tamano = Vector2(170, 70)
-color = Color(0.6, 0.55, 0.45, 1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_r")
+offset = Vector2(0, -44)
 
-[node name="Bergantin1" type="Node2D" parent="Fondo"]
-position = Vector2(640, 232)
-script = ExtResource("2_r")
-texto = "BERGANTÍN"
-tamano = Vector2(110, 46)
-color = Color(0.4, 0.3, 0.22, 1)
+[node name="Bergantin1" type="Sprite2D" parent="Fondo" unique_id=1251252005]
+position = Vector2(640, 214)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("17_r")
+offset = Vector2(0, -52)
 
-[node name="Bergantin2" type="Node2D" parent="Fondo"]
-position = Vector2(1010, 232)
-script = ExtResource("2_r")
-texto = "BERGANTÍN"
-tamano = Vector2(110, 46)
-color = Color(0.4, 0.3, 0.22, 1)
+[node name="Bergantin2" type="Sprite2D" parent="Fondo" unique_id=815636321]
+position = Vector2(1010, 214)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("17_r")
+offset = Vector2(0, -52)
+flip_h = true
 
-[node name="Ruinas1" type="Node2D" parent="Fondo"]
-position = Vector2(1290, 224)
-script = ExtResource("2_r")
-texto = "CASAS EN RUINAS"
-tamano = Vector2(150, 90)
-color = Color(0.5, 0.45, 0.42, 1)
+[node name="Ruinas1" type="Sprite2D" parent="Fondo" unique_id=1740395166]
+position = Vector2(1310, 224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("18_r")
+offset = Vector2(0, -44.5)
 
-[node name="Ruinas2" type="Node2D" parent="Fondo"]
+[node name="Ruinas2" type="Sprite2D" parent="Fondo" unique_id=1577329464]
 position = Vector2(1760, 224)
-script = ExtResource("2_r")
-texto = "CASAS EN RUINAS\n(humo)"
-tamano = Vector2(150, 110)
-color = Color(0.5, 0.45, 0.42, 1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_r")
+offset = Vector2(0, -56.5)
 
-[node name="MercadoDeTlatelolcoVacío" type="Node2D" parent="Fondo"]
+[node name="MercadoTlatelolco" type="Sprite2D" parent="Fondo" unique_id=415764746]
 position = Vector2(2060, 224)
-script = ExtResource("2_r")
-texto = "MERCADO DE TLATELOLCO\n(vacío)"
-tamano = Vector2(200, 60)
-color = Color(0.62, 0.5, 0.35, 1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_r")
+offset = Vector2(0, -40)
 
-[node name="TemploDeTlatelolcoDañado" type="Node2D" parent="Fondo"]
+[node name="TemploTlatelolco" type="Sprite2D" parent="Fondo" unique_id=315601817]
 position = Vector2(2520, 224)
-script = ExtResource("2_r")
-texto = "TEMPLO DE TLATELOLCO\n(dañado)"
-tamano = Vector2(260, 190)
-color = Color(0.58, 0.5, 0.44, 1)
-tamano_letra = 12
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_r")
+offset = Vector2(0, -56.5)
 
-[node name="Zona1Llegada" type="Node2D" parent="Fondo"]
+[node name="TorreVigia" type="Sprite2D" parent="Fondo"]
+position = Vector2(85, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("43_r")
+offset = Vector2(0, -61)
+
+[node name="Adoratorio" type="Sprite2D" parent="Fondo"]
+position = Vector2(2270, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("44_r")
+offset = Vector2(0, -38.5)
+
+[node name="Zona1Llegada" type="Node2D" parent="Fondo" unique_id=1030139152]
 position = Vector2(250, 72)
 script = ExtResource("2_r")
 texto = "1 · LLEGADA"
 tamano = Vector2(150, 20)
 color = Color(0.15, 0.15, 0.15, 0.55)
 
-[node name="Zona2Calzada" type="Node2D" parent="Fondo"]
+[node name="Zona2Calzada" type="Node2D" parent="Fondo" unique_id=1082423705]
 position = Vector2(830, 72)
 script = ExtResource("2_r")
 texto = "2 · CALZADA Y BERGANTINES"
 tamano = Vector2(200, 20)
 color = Color(0.15, 0.15, 0.15, 0.55)
 
-[node name="Zona3Barricadas" type="Node2D" parent="Fondo"]
+[node name="Zona3Barricadas" type="Node2D" parent="Fondo" unique_id=1441007369]
 position = Vector2(1520, 72)
 script = ExtResource("2_r")
 texto = "3 · BARRICADAS MEXICAS"
 tamano = Vector2(190, 20)
 color = Color(0.15, 0.15, 0.15, 0.55)
 
-[node name="Zona4Tlatelolco" type="Node2D" parent="Fondo"]
+[node name="Zona4Tlatelolco" type="Node2D" parent="Fondo" unique_id=857053661]
 position = Vector2(2350, 72)
 script = ExtResource("2_r")
 texto = "4 · TLATELOLCO"
 tamano = Vector2(160, 20)
 color = Color(0.15, 0.15, 0.15, 0.55)
 
-[node name="Suelo" type="Node2D" parent="."]
+[node name="Suelo" type="Node2D" parent="." unique_id=1508116525]
 
-[node name="Tierra" type="Node2D" parent="Suelo"]
-position = Vector2(1400, 360)
-script = ExtResource("2_r")
-texto = ""
-tamano = Vector2(2800, 136)
-color = Color(0.45, 0.36, 0.28, 1)
+[node name="AguaFondo" type="ColorRect" parent="Suelo" unique_id=1154101480]
+offset_left = 510.0
+offset_top = 270.0
+offset_right = 1150.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0.12, 0.145, 0.13, 1)
 
-[node name="Lago" type="Node2D" parent="Suelo"]
-position = Vector2(830, 360)
-script = ExtResource("2_r")
-texto = "LAGO DE TEXCOCO"
-tamano = Vector2(640, 136)
-color = Color(0.25, 0.42, 0.55, 1)
+[node name="Lago" parent="Suelo" unique_id=1176039020 instance=ExtResource("26_r")]
+position = Vector2(506, 246)
+repeat_count = 4
+tile_width = 160.0
 
-[node name="Calzada" type="Node2D" parent="Suelo"]
-position = Vector2(830, 240)
-script = ExtResource("2_r")
-texto = "CALZADA"
-tamano = Vector2(640, 16)
-color = Color(0.6, 0.58, 0.52, 1)
-tamano_letra = 8
+[node name="TierraIzquierda" type="Sprite2D" parent="Suelo" unique_id=1816331690]
+texture_repeat = 2
+position = Vector2(0, 224)
+texture = ExtResource("23_r")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 510, 136)
 
-[node name="Barricada" type="Node2D" parent="Suelo"]
-position = Vector2(1520, 224)
-script = ExtResource("2_r")
-texto = "BARRICADA"
-tamano = Vector2(60, 34)
-color = Color(0.4, 0.33, 0.25, 1)
-tamano_letra = 8
+[node name="TierraDerecha" type="Sprite2D" parent="Suelo" unique_id=700106352]
+texture_repeat = 2
+position = Vector2(1150, 224)
+texture = ExtResource("23_r")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1650, 136)
 
-[node name="Colisiones" type="StaticBody2D" parent="."]
+[node name="Calzada" type="Sprite2D" parent="Suelo" unique_id=1842409600]
+texture_repeat = 2
+position = Vector2(510, 220)
+texture = ExtResource("24_r")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 32)
 
-[node name="Piso" type="CollisionShape2D" parent="Colisiones"]
+[node name="Barricada" type="Sprite2D" parent="Suelo" unique_id=1515846117]
+position = Vector2(1520, 226)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("22_r")
+offset = Vector2(0, -31.5)
+
+[node name="Decoracion" type="Node2D" parent="." unique_id=2027400955]
+
+[node name="Lenos1" type="Sprite2D" parent="Decoracion" unique_id=2062872080]
+position = Vector2(165, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -10.5)
+region_enabled = true
+region_rect = Rect2(201, 75, 47, 21)
+
+[node name="Cajas1" type="Sprite2D" parent="Decoracion" unique_id=944583091]
+position = Vector2(215, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -16)
+region_enabled = true
+region_rect = Rect2(34, 0, 27, 32)
+
+[node name="Barriles1" type="Sprite2D" parent="Decoracion" unique_id=1386443977]
+position = Vector2(405, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -9)
+region_enabled = true
+region_rect = Rect2(98, 14, 29, 18)
+
+[node name="Tules1" type="Sprite2D" parent="Decoracion" unique_id=809867028]
+position = Vector2(497, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -26.5)
+region_enabled = true
+region_rect = Rect2(288, 139, 64, 53)
+
+[node name="Tules2" type="Sprite2D" parent="Decoracion" unique_id=1513566212]
+position = Vector2(1163, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -26.5)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(288, 139, 64, 53)
+
+[node name="Arbusto1" type="Sprite2D" parent="Decoracion" unique_id=216141900]
+position = Vector2(1400, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -12)
+region_enabled = true
+region_rect = Rect2(3, 424, 57, 24)
+
+[node name="Rocas1" type="Sprite2D" parent="Decoracion" unique_id=1502878025]
+position = Vector2(1440, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -9.5)
+region_enabled = true
+region_rect = Rect2(36, 237, 52, 19)
+
+[node name="Vasija1" type="Sprite2D" parent="Decoracion" unique_id=448556196]
+position = Vector2(1830, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -15.5)
+region_enabled = true
+region_rect = Rect2(2, 129, 28, 31)
+
+[node name="Vasija31" type="Sprite2D" parent="Decoracion" unique_id=1811984989]
+position = Vector2(1848, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -15.5)
+region_enabled = true
+region_rect = Rect2(35, 161, 26, 31)
+
+[node name="Canasta1" type="Sprite2D" parent="Decoracion" unique_id=1464695451]
+position = Vector2(1975, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -13)
+region_enabled = true
+region_rect = Rect2(100, 134, 24, 26)
+
+[node name="Vasija21" type="Sprite2D" parent="Decoracion" unique_id=2072559820]
+position = Vector2(2000, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -14.5)
+region_enabled = true
+region_rect = Rect2(484, 130, 24, 29)
+
+[node name="Canasta_maiz1" type="Sprite2D" parent="Decoracion" unique_id=773199458]
+position = Vector2(2150, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -13)
+region_enabled = true
+region_rect = Rect2(130, 166, 28, 26)
+
+[node name="Canasta21" type="Sprite2D" parent="Decoracion" unique_id=1815414288]
+position = Vector2(2172, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -14.5)
+region_enabled = true
+region_rect = Rect2(165, 162, 22, 29)
+
+[node name="Maguey1" type="Sprite2D" parent="Decoracion" unique_id=1571352114]
+position = Vector2(2230, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(417, 130, 30, 30)
+
+[node name="Maguey31" type="Sprite2D" parent="Decoracion" unique_id=214743084]
+position = Vector2(2300, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(225, 162, 30, 30)
+
+[node name="Rocas_gr1" type="Sprite2D" parent="Decoracion" unique_id=1984625025]
+position = Vector2(2420, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -20)
+region_enabled = true
+region_rect = Rect2(4, 280, 88, 40)
+
+[node name="Rocas2" type="Sprite2D" parent="Decoracion" unique_id=1777278853]
+position = Vector2(2650, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -9.5)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(36, 237, 52, 19)
+
+[node name="Maguey21" type="Sprite2D" parent="Decoracion" unique_id=536614134]
+position = Vector2(2700, 225)
+texture = ExtResource("32_r")
+offset = Vector2(0, -14.5)
+region_enabled = true
+region_rect = Rect2(1, 162, 30, 29)
+
+[node name="Arbusto21" type="Sprite2D" parent="Decoracion" unique_id=2051564069]
+position = Vector2(2790, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_r")
+offset = Vector2(0, -8.5)
+region_enabled = true
+region_rect = Rect2(64, 431, 32, 17)
+
+[node name="Pasto1" type="Sprite2D" parent="Decoracion" unique_id=912608422]
+material = SubResource("Viento")
+position = Vector2(470, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31_r")
+offset = Vector2(0, -16)
+
+[node name="Pasto2" type="Sprite2D" parent="Decoracion" unique_id=166179874]
+material = SubResource("Viento")
+position = Vector2(1230, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31_r")
+offset = Vector2(0, -16)
+flip_h = true
+
+[node name="Pasto3" type="Sprite2D" parent="Decoracion" unique_id=1663170657]
+material = SubResource("Viento")
+position = Vector2(1600, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31_r")
+offset = Vector2(0, -16)
+
+[node name="Pasto4" type="Sprite2D" parent="Decoracion" unique_id=789683239]
+material = SubResource("Viento")
+position = Vector2(1950, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31_r")
+offset = Vector2(0, -16)
+flip_h = true
+
+[node name="Pasto5" type="Sprite2D" parent="Decoracion" unique_id=2028182301]
+material = SubResource("Viento")
+position = Vector2(2440, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31_r")
+offset = Vector2(0, -16)
+
+[node name="Pasto6" type="Sprite2D" parent="Decoracion" unique_id=811343417]
+material = SubResource("Viento")
+position = Vector2(2620, 225)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31_r")
+offset = Vector2(0, -16)
+flip_h = true
+
+[node name="Bandera" type="Sprite2D" parent="Decoracion" unique_id=1250511113]
+position = Vector2(118, 225)
+texture = ExtResource("35_r")
+offset = Vector2(0, -48)
+hframes = 8
+script = ExtResource("42_r")
+fps = 6.0
+
+[node name="Fogata" type="Sprite2D" parent="Decoracion" unique_id=1847178499]
+position = Vector2(455, 236)
+texture = ExtResource("34_r")
+offset = Vector2(0, -24)
+hframes = 8
+script = ExtResource("42_r")
+fps = 10.0
+
+[node name="HumoRuinas" type="Sprite2D" parent="Decoracion" unique_id=529080855]
+position = Vector2(1340, 120)
+texture = ExtResource("37_r")
+offset = Vector2(0, -48)
+hframes = 8
+script = ExtResource("42_r")
+fps = 7.0
+
+[node name="HumoTemplo" type="Sprite2D" parent="Decoracion" unique_id=2146457388]
+position = Vector2(2522, 72)
+texture = ExtResource("37_r")
+offset = Vector2(0, -48)
+hframes = 8
+script = ExtResource("42_r")
+fps = 7.0
+
+[node name="Canoa" type="Node2D" parent="Decoracion" unique_id=37486051]
+position = Vector2(700, 181)
+script = ExtResource("41_r")
+x_min = 570.0
+x_max = 1090.0
+velocidad = 18.0
+flotar = 1.0
+
+[node name="Cuerpo" type="Node2D" parent="Decoracion/Canoa" unique_id=63423048]
+scale = Vector2(0.75, 0.75)
+
+[node name="Canoa" type="Sprite2D" parent="Decoracion/Canoa/Cuerpo" unique_id=914184831]
+position = Vector2(2, 26)
+texture = ExtResource("38_r")
+
+[node name="Remero" type="Sprite2D" parent="Decoracion/Canoa/Cuerpo" unique_id=1945174759]
+position = Vector2(2, 10)
+texture = ExtResource("39_r")
+hframes = 9
+script = ExtResource("42_r")
+fps = 10.0
+
+[node name="Garza1" type="Node2D" parent="Decoracion" unique_id=269383679]
+position = Vector2(600, 70)
+script = ExtResource("41_r")
+x_min = 450.0
+x_max = 1250.0
+velocidad = 30.0
+flotar = 4.0
+
+[node name="Sprite" type="Sprite2D" parent="Decoracion/Garza1" unique_id=1533355358]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("36_r")
+hframes = 6
+script = ExtResource("42_r")
+
+[node name="Garza2" type="Node2D" parent="Decoracion" unique_id=40063222]
+position = Vector2(1700, 95)
+script = ExtResource("41_r")
+x_min = 1300.0
+x_max = 2700.0
+velocidad = 22.0
+flotar = 4.0
+
+[node name="Sprite" type="Sprite2D" parent="Decoracion/Garza2" unique_id=1409742199]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("36_r")
+hframes = 6
+script = ExtResource("42_r")
+
+[node name="Colisiones" type="StaticBody2D" parent="." unique_id=1341827844]
+
+[node name="Piso" type="CollisionShape2D" parent="Colisiones" unique_id=1524768011]
 position = Vector2(1400, 244)
 shape = SubResource("Piso")
 
-[node name="ParedIzquierda" type="CollisionShape2D" parent="Colisiones"]
+[node name="ParedIzquierda" type="CollisionShape2D" parent="Colisiones" unique_id=1110281203]
 position = Vector2(-10, 180)
 shape = SubResource("Pared")
 
-[node name="ParedDerecha" type="CollisionShape2D" parent="Colisiones"]
+[node name="ParedDerecha" type="CollisionShape2D" parent="Colisiones" unique_id=1273269932]
 position = Vector2(2810, 180)
 shape = SubResource("Pared")
 
-[node name="Npcs" type="Node2D" parent="."]
+[node name="Npcs" type="Node2D" parent="." unique_id=1826461904]
 
-[node name="SoldadoBergantin" type="Node2D" parent="Npcs"]
+[node name="SoldadoBergantin" type="Node2D" parent="Npcs" unique_id=1846353645]
 position = Vector2(560, 224)
 script = ExtResource("3_r")
 nombre = "Soldado español"
@@ -165,10 +582,11 @@ textura = ExtResource("4_r")
 hframes = 9
 id_burbuja = "npc_bergantin_cap3"
 
-[node name="CronistaPalabras" type="Node2D" parent="Npcs"]
+[node name="CronistaPalabras" type="Node2D" parent="Npcs" unique_id=1102470813]
 position = Vector2(760, 224)
 script = ExtResource("3_r")
-nombre = "Guerrero mexica\n(Palabras impostoras)"
+nombre = "Guerrero mexica
+(Palabras impostoras)"
 textura = ExtResource("5_r")
 hframes = 3
 vframes = 3
@@ -177,21 +595,26 @@ requiere_interaccion = false
 un_solo_uso = true
 variantes_por_capitulo = true
 
-[node name="Tlaxcalteca" type="Node2D" parent="Npcs"]
+[node name="Tlaxcalteca" type="Node2D" parent="Npcs" unique_id=187283078]
 position = Vector2(1060, 224)
 script = ExtResource("3_r")
 nombre = "Guerrero tlaxcalteca"
-color_silueta = Color(0.7, 0.45, 0.2, 1)
+textura = ExtResource("13_r")
+hframes = 4
+fps = 5.0
+escala = 0.88
 id_burbuja = "npc_tlaxcalteca_cap3"
 
-[node name="MujerMexica" type="Node2D" parent="Npcs"]
+[node name="MujerMexica" type="Node2D" parent="Npcs" unique_id=1778417386]
 position = Vector2(1370, 224)
 script = ExtResource("3_r")
 nombre = "Mujer mexica"
-color_silueta = Color(0.55, 0.3, 0.45, 1)
+textura = ExtResource("15_r")
+hframes = 4
+fps = 5.0
 id_burbuja = "npc_mujer_cap3"
 
-[node name="DefensorBarricada1" type="Node2D" parent="Npcs"]
+[node name="DefensorBarricada1" type="Node2D" parent="Npcs" unique_id=2020082072]
 position = Vector2(1470, 224)
 script = ExtResource("3_r")
 nombre = ""
@@ -199,7 +622,7 @@ textura = ExtResource("5_r")
 hframes = 3
 vframes = 3
 
-[node name="GuerreroPista" type="Node2D" parent="Npcs"]
+[node name="GuerreroPista" type="Node2D" parent="Npcs" unique_id=1817767615]
 position = Vector2(1580, 224)
 script = ExtResource("3_r")
 nombre = "Guerrero mexica"
@@ -208,7 +631,7 @@ hframes = 3
 vframes = 3
 id_burbuja = "npc_guerrero_cap3"
 
-[node name="DefensorBarricada2" type="Node2D" parent="Npcs"]
+[node name="DefensorBarricada2" type="Node2D" parent="Npcs" unique_id=1233312707]
 position = Vector2(1660, 224)
 script = ExtResource("3_r")
 nombre = ""
@@ -217,14 +640,17 @@ hframes = 3
 vframes = 3
 voltear = true
 
-[node name="Anciano" type="Node2D" parent="Npcs"]
+[node name="Anciano" type="Node2D" parent="Npcs" unique_id=169952379]
 position = Vector2(2000, 224)
 script = ExtResource("3_r")
 nombre = "Anciano mexica"
-color_silueta = Color(0.6, 0.6, 0.6, 1)
+textura = ExtResource("14_r")
+hframes = 4
+fps = 5.0
+escala = 0.78
 id_burbuja = "npc_anciano_cap3"
 
-[node name="Chaac" type="Node2D" parent="Npcs"]
+[node name="Chaac" type="Node2D" parent="Npcs" unique_id=974665189]
 position = Vector2(2560, 224)
 script = ExtResource("3_r")
 nombre = "Chaac (escondido)"
@@ -235,27 +661,28 @@ id_dialogo = "final_cap3"
 texto_interaccion = "Investigar"
 un_solo_uso = true
 
-[node name="Atlas" parent="." instance=ExtResource("8_r")]
+[node name="Atlas" parent="." unique_id=1699929733 instance=ExtResource("8_r")]
 position = Vector2(72, 200)
 
-[node name="Player" parent="." instance=ExtResource("9_r")]
+[node name="Player" parent="." unique_id=848016526 instance=ExtResource("9_r")]
 position = Vector2(128, 190)
 
-[node name="CinematicaProvisional" type="Node" parent="."]
+[node name="CinematicaProvisional" type="Node" parent="." unique_id=2112185181]
 script = ExtResource("10_r")
 textos = {
-"cinematica_escape_chaac": "Chaac, furioso, abre un portal rojo entre truenos y desaparece.\nSin su poder, los guerreros mexicas pierden la fuerza extra."
+"cinematica_escape_chaac": "Chaac, furioso, abre un portal rojo entre truenos y desaparece.
+Sin su poder, los guerreros mexicas pierden la fuerza extra."
 }
 
-[node name="interfaz" type="CanvasLayer" parent="."]
+[node name="interfaz" type="CanvasLayer" parent="." unique_id=700906438]
 
-[node name="CuadroDialogo" parent="interfaz" instance=ExtResource("11_r")]
+[node name="CuadroDialogo" parent="interfaz" unique_id=219224199 instance=ExtResource("11_r")]
 position = Vector2(216, 232)
 
-[node name="LimitesCamara" type="ReferenceRect" parent="."]
+[node name="LimitesCamara" type="ReferenceRect" parent="." unique_id=220115174]
 offset_top = 8.0
-offset_right = 2800
+offset_right = 2800.0
 offset_bottom = 352.0
 mouse_filter = 2
 
-[node name="MenuPausa" parent="." instance=ExtResource("12_r")]
+[node name="MenuPausa" parent="." unique_id=452372835 instance=ExtResource("12_r")]

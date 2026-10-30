@@ -23,8 +23,8 @@
   5. GDD: 3 vidas, mejoras de Atlas, hechizos del alux, velocidad creciente, 90 s, tras 3 derrotas
      jugar como Atlas con vidas infinitas.
 - [ ] **Topo Alux (cap 2)**: el GDD pide que, tras 3 derrotas seguidas, se pueda jugar como Atlas
-  (apunta solo a los aluxes reales). No está hecho. Además, el sprite de Kaan disfrazado se queda
-  parado en el nivel después de que "huye al bosque" (el capítulo termina enseguida, apenas se nota).
+  (apunta solo a los aluxes reales). No está hecho. (Lo de Kaan parado ya se arregló: ahora corre al
+  bosque con sus dobles —`cinematica_kaan_bosque`— y tras Topo Alux aparece dormido —`cinematica_kaan_dormido`.)
 - [ ] **Memorama no maneja la victoria**: al juntar las parejas solo hace un `print`
   (`memorama_manager.gd`, ~línea 99).
 - [ ] **Rompecabezas del nivel 5 sin imágenes** (opcional). Ya está preparado: copiar
@@ -35,25 +35,41 @@
 
 ## 3. Arte y recursos (pasar del greybox al juego real)
 
+### Capítulo 2 (Noche Triste)
+- [x] `Tenoch1520.tscn` rehecho: ya no es el cap 1 de noche. Fondo nocturno con luna, calzada de Tacuba con el
+  canal cortado y puente roto, canoas mexicas, oro tirado, antorchas con luz (`Scripts/luz_parpadeo.gd`), linterna
+  del jugador (`PointLight2D` hijo de `Player` solo en esta escena), ahuehuete con Cortés y el bosque donde huye
+  Kaan. Se quitaron Moctezuma (ya había muerto), el encuentro Cortés-Moctezuma del cap 1 y el tianguis.
+  Respaldo de la versión anterior en git.
+
 ### Escenarios de los capítulos 3 a 6
 Cada `Bloque` (rectángulo con nombre, nodos `Fondo` y `Suelo`) marca algo que hay que dibujar.
 Reemplazarlo por el Sprite2D real en la misma posición y borrar el bloque.
-- [ ] Cap 3 `CaidaTenochtitlan`: campamento español, lago de Texcoco + calzada, 2 bergantines,
-  casas en ruinas, barricada, mercado de Tlatelolco, templo de Tlatelolco dañado.
-- [ ] Cap 4 `PrimerosAniosVirreinato`: ruinas del Templo Mayor, casas en construcción (andamios),
-  piedras del templo, traza con cuerdas, primera iglesia de adobe, casas de Cortés, tianguis, milpa, bosque.
-- [ ] Cap 5 `ReformasOrganizacion`: calle trazada, Casa de la Audiencia, catedral en obra, cabildo
-  indígena, escuela de San José de los Naturales, tianguis, salida de la ciudad.
-- [ ] Cap 6 `InstauracionVirreinato`: calle adornada, arco de bienvenida, caballo del virrey,
-  catedral primitiva, Casas Reales, Casa de Moneda, ceiba.
+- [x] Cap 3 `CaidaTenochtitlan`: arte de PixelLab en `Images/Escenarios/cap3/` (campamento, bergantín,
+  ruinas, mercado, templo, barricada, calzada), agua animada (`WaterRepeater`), volcanes y 3 capas de
+  árboles en parallax, árboles/pasto con viento (`Shaders/balanceo_viento.gdshader`), objetos de
+  `objetos_level1`/`Decor`, fogata, humo y bandera animados, garzas y canoa que van y vienen (`Scripts/vaiven.gd`).
+  Detalle: la imagen de volcanes (`Fondos/untitled(3).png`) no es continua y se nota la unión al repetirse.
+- Para los caps 4-6: fondo lejano de UNA imagen de 640x360 (o un poco más) con parallax muy leve como
+  en `Tenoch.tscn`, más capas de árboles, árboles, objetos y cosas animadas como en el cap 3.
+- [x] Cap 4 `PrimerosAniosVirreinato`: arte en `Images/Escenarios/cap4/` (fondo del valle 640x360, ruinas del
+  Templo Mayor, 2 obras con andamios, piedras, iglesia de adobe, casas de Cortés, milpa, traza), tianguis con los
+  puestos de `objetos_level1`, bosque de `Tree1`, gallinas, cerdo, garzas, fogata, humo y banderas.
+  Escala como en el cap 1: edificios y `Decor` al 1.5x, NPCs ~60 px.
+- [x] Cap 5 `ReformasOrganizacion`: arte en `Images/Escenarios/cap5/` (fondo de la ciudad 688x384, casas de piedra,
+  Casa de la Audiencia, catedral en obra, cabildo indígena, escuela de San José, salida), tianguis con puestos de
+  `objetos_level1`, xoloitzcuintle, gallinas, garzas, fogata y banderas.
+- [x] Cap 6 `InstauracionVirreinato`: arte en `Images/Escenarios/cap6/` (fondo de tarde 688x384, calle adornada,
+  arco de bienvenida, caballo del virrey animado, catedral primitiva, Casas Reales, Casa de Moneda, ceiba),
+  banderines y banderas ondeando, xoloitzcuintle, gallinas, garzas y fogata.
 - [ ] Quitar los letreros de zona ("1 · LLEGADA"…) y los postes amarillos de las zonas invisibles
   (nodo `Marca`) cuando ya no hagan falta.
 
 ### Personajes sin sprite (hoy son siluetas de color)
-- [ ] Cap 3: guerrero tlaxcalteca, mujer mexica, anciano mexica.
-- [ ] Cap 4: Alonso García Bravo (alarife), cronista, fray Pedro de Gante.
-- [ ] Cap 5: oidor, escribano, fray Juan de Zumárraga, alumnos (niños).
-- [ ] Cap 6: pregonero, Antonio de Mendoza (virrey), Vasco de Quiroga, niña.
+- [x] Cap 3: guerrero tlaxcalteca, mujer mexica, anciano mexica (`Images/Personajes/Npc_cap3/`, idle de 4 cuadros).
+- [x] Cap 4: Alonso García Bravo (alarife), cronista, fray Pedro de Gante (`Images/Personajes/Npc_cap4/`).
+- [x] Cap 5: oidor, escribano (animación escribiendo), fray Juan de Zumárraga, alumnos (`Images/Personajes/Npc_cap5/`).
+- [x] Cap 6: pregonero (animación pregonando), Antonio de Mendoza, Vasco de Quiroga, niña (`Images/Personajes/Npc_cap6/`).
 - [ ] Varios NPC reutilizan sprites del cap 1 (guerreros, soldados, mercaderes, Moctezuma como
   "noble indígena", el capitán de capa roja como Hernán Cortés): cambiarlos si se quiere variedad.
 - [ ] **Retrato del jugador** (lo agrega el usuario): todos los diálogos, el selector de respuestas

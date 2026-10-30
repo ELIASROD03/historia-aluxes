@@ -14,6 +14,20 @@ var cuadro_dialogo: DialogoManager
 @export_group("Nombres de Eventos (JSON)")
 @export var evento_transformacion: String = "cinematica_transformacion_kaan"
 @export var evento_escape: String = "cinematica_escape_kaan"
+@export var evento_bosque: String = "cinematica_kaan_bosque"
+@export var evento_dormido: String = "cinematica_kaan_dormido"
+
+@export_group("Huida al bosque (cap 2)")
+## Cuánto corre Kaan (y sus dobles) hacia la derecha antes de perderse entre los árboles.
+@export var distancia_bosque: float = 220.0
+@export var numero_dobles: int = 3
+## Sprite de Kaan dormido que aparece al ganar Topo Alux.
+@export var tex_dormido: Texture2D
+## Dónde aparece dormido, respecto a donde estaba antes de huir (el sprite dormido
+## tiene aire abajo, por eso baja un poco).
+@export var ajuste_dormido: Vector2 = Vector2(40, 14)
+
+var _pos_antes_de_huir: Vector2
 
 var tex_portal = preload("res://Images/Fondos/portal.png")
 var script_respirador = preload("res://Scripts/respirador.gd")
@@ -35,6 +49,10 @@ func _on_evento_cinematica(evento: String):
 		ejecutar_transformacion()
 	elif evento == evento_escape:
 		ejecutar_escape()
+	elif evento == evento_bosque:
+		ejecutar_huida_bosque()
+	elif evento == evento_dormido:
+		ejecutar_dormido()
 
 func ejecutar_transformacion():
 	# 1. Si se perdió la referencia al sprite, intentar buscarlo en la escena automáticamente
@@ -169,3 +187,105 @@ func ejecutar_escape():
 	# Reanudar diálogo
 	if cuadro_dialogo:
 		cuadro_dialogo.continuar_cinematica()
+
+## Cap 2: Kaan hace dobles de sí mismo y todos corren a esconderse en el bosque.
+## Al terminar, Kaan queda oculto (antes se quedaba parado en el nivel).
+func ejecutar_huida_bosque():
+	if sprite_kaan == null:
+		var nodo = get_tree().current_scene.find_child("Kaan*", true, false)
+		if nodo is Sprite2D:
+			sprite_kaan = nodo
+		else:
+			if cuadro_dialogo: cuadro_dialogo.continuar_cinematica()
+			return
+
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
+	_pos_antes_de_huir = sprite_kaan.position
+
+	_poner_textura(sprite_kaan, tex_walking)
+	sprite_kaan.flip_h = invertir_direccion_caminar
+
+	# Los dobles salen de Kaan con un destello verde y corren con él
+	var corredores: Array[Sprite2D] = [sprite_kaan]
+	for i in range(numero_dobles):
+		# Sprite nuevo y no duplicate(): Kaan tiene de hijo su zona de diálogo y no debe copiarse
+		var doble := Sprite2D.new()
+		doble.texture = sprite_kaan.texture
+		doble.hframes = sprite_kaan.hframes
+		doble.vframes = sprite_kaan.vframes
+		doble.flip_h = sprite_kaan.flip_h
+		doble.scale = sprite_kaan.scale
+		doble.position = sprite_kaan.position + Vector2(randf_range(-30, 30), 0)
+		doble.modulate.a = 0.0
+		doble.process_mode = Node.PROCESS_MODE_ALWAYS
+		sprite_kaan.get_parent().add_child(doble)
+		doble.set_script(script_respirador)
+		doble._ready()
+		var t_aparece = get_tree().create_tween()
+		t_aparece.bind_node(doble)
+		t_aparece.tween_property(doble, "modulate:a", 1.0, 0.3)
+		corredores.append(doble)
+	await get_tree().create_timer(0.5).timeout
+
+	var ultimo: Tween
+	for i in range(corredores.size()):
+		var c := corredores[i]
+		var t = get_tree().create_tween()
+		t.bind_node(c)
+		var destino := c.position + Vector2(distancia_bosque + i * 25, 0)
+		t.tween_property(c, "position", destino, 1.4 + i * 0.15)
+		t.parallel().tween_property(c, "modulate:a", 0.0, 0.5).set_delay(1.0 + i * 0.15)
+		ultimo = t
+	await ultimo.finished
+
+	for i in range(1, corredores.size()):
+		corredores[i].queue_free()
+	sprite_kaan.visible = false
+
+	if cuadro_dialogo:
+		cuadro_dialogo.continuar_cinematica()
+
+## Cap 2: después de Topo Alux, Kaan aparece dormido junto al bosque con "Zzz".
+func ejecutar_dormido():
+	if sprite_kaan == null or tex_dormido == null:
+		if cuadro_dialogo: cuadro_dialogo.continuar_cinematica()
+		return
+
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
+
+	_poner_textura(sprite_kaan, tex_dormido)
+	sprite_kaan.position = _pos_antes_de_huir + ajuste_dormido
+	sprite_kaan.flip_h = false
+	sprite_kaan.modulate.a = 0.0
+	sprite_kaan.visible = true
+	var t = get_tree().create_tween()
+	t.bind_node(sprite_kaan)
+	t.tween_property(sprite_kaan, "modulate:a", 1.0, 0.6)
+
+	# Las "Z" suben en bucle mientras siga en la escena
+	var zzz := Label.new()
+	zzz.text = "Zzz"
+	zzz.add_theme_font_size_override("font_size", 10)
+	zzz.add_theme_color_override("font_outline_color", Color.BLACK)
+	zzz.add_theme_constant_override("outline_size", 3)
+	zzz.position = Vector2(4, -30)
+	sprite_kaan.add_child(zzz)
+	var tz = get_tree().create_tween().set_loops()
+	tz.bind_node(zzz)
+	tz.tween_property(zzz, "position:y", -44.0, 1.2)
+	tz.parallel().tween_property(zzz, "modulate:a", 0.0, 1.2)
+	tz.tween_callback(func(): zzz.position.y = -30.0; zzz.modulate.a = 1.0)
+
+	await t.finished
+	if cuadro_dialogo:
+		cuadro_dialogo.continuar_cinematica()
+
+func _poner_textura(sprite: Sprite2D, tex: Texture2D) -> void:
+	sprite.texture = tex
+	sprite.hframes = 1
+	sprite.vframes = 1
+	sprite.frame = 0
+	if sprite.has_method("_ready"):
+		sprite._ready()
+	if sprite.has_method("reset_timer"):
+		sprite.reset_timer()

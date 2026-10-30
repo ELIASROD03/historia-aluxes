@@ -3205,7 +3205,8 @@
 		},
 		{
 			"personaje": "Narrador",
-			"texto": "De pronto aparecen muchos Kaan iguales, y todos corren a esconderse en el bosque cercano."
+			"texto": "De pronto aparecen muchos Kaan iguales, y todos corren a esconderse en el bosque cercano.",
+			"evento": "cinematica_kaan_bosque"
 		},
 		{
 			"personaje": "Atlas",
@@ -3215,7 +3216,8 @@
 		},
 		{
 			"personaje": "Narrador",
-			"texto": "Después de tanto correr y hacer travesuras, Kaan bosteza... y se queda dormido como un bebé."
+			"texto": "Después de tanto correr y hacer travesuras, Kaan bosteza... y se queda dormido como un bebé.",
+			"evento": "cinematica_kaan_dormido"
 		},
 		{
 			"personaje": "Kaan",

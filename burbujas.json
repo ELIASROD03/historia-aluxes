@@ -2,7 +2,7 @@
   "merch1_saludo": "¡Cacao fresco! ¡Recién traído del sur!",
   "merch2_oferta": "¡Acércate, forastero! Las mejores pieles de Tenochtitlán.",
   "pista_alux_1": "¡Qué raro! Un guardia muy pequeño me quitó mi fruta y salió corriendo hacia el muelle de las canoas.",
-  "pista_alux_2": "Ten cuidado adelante. Ese soldado bajito se está riendo a carcajadas escondido entre las canoas.",
+  "pista_alux_2": "Ten cuidado adelante. Junto al bosque hay un soldado bajito que se ríe a carcajadas entre los demás.",
   "npc_bergantin_cap3": {
 	"frases": [
 	  "¿Ves esos barcos en el lago? Se llaman bergantines. Los armamos en Texcoco y los botamos al lago.",
@@ -599,6 +599,87 @@
 		"texto": "¡Adiós!",
 		"contesta": [
           "¡Adiós!"
+		]
+	  }
+	]
+  },
+  "npc_guerrero_cap2": {
+	"frases": [
+	  "¡Los teules huyen por la calzada de Tacuba!",
+	  "¡Que nadie cruce los canales! Quitamos los puentes para que no escapen."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Por qué pelean esta noche?",
+		"contesta": [
+		  "Mataron a nuestra gente en la fiesta del Templo Mayor.",
+          "Ahora nuestro nuevo tlatoani, Cuitláhuac, nos guía."
+		]
+	  },
+	  {
+		"texto": "Cuídate mucho.",
+		"contesta": [
+          "¡Tú también, extranjero! La noche está llena de flechas."
+		]
+	  }
+	]
+  },
+  "npc_mujer_alarma_cap2": {
+	"frases": [
+	  "Yo fui por agua al canal y vi a los teules saliendo a escondidas.",
+	  "¡Grité para avisar a todos! Por eso empezó la batalla."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Cómo los descubriste?",
+		"contesta": [
+          "Llovía y era muy de noche, pero escuché los cascos de los caballos sobre la calzada."
+		]
+	  },
+	  {
+		"texto": "¡Fuiste muy valiente!",
+		"contesta": [
+          "Sólo quería proteger mi ciudad."
+		]
+	  }
+	]
+  },
+  "npc_soldado_oro_cap2": {
+	"frases": [
+	  "¡Este oro pesa demasiado! Si me caigo al canal, me hundo.",
+	  "Muchos compañeros cargaron tanto tesoro que no pudieron nadar..."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Por qué no lo dejas?",
+		"contesta": [
+          "Crucé el mar entero por este oro... pero quizá tengas razón."
+		]
+	  },
+	  {
+		"texto": "Mejor me voy.",
+		"contesta": [
+          "¡Corre! Aquí no estás seguro."
+		]
+	  }
+	]
+  },
+  "npc_cortes_cap2": {
+	"frases": [
+	  "Perdimos a más de la mitad de mis hombres y casi todo el tesoro...",
+	  "Me sentaré un momento bajo este ahuehuete."
+	],
+	"respuestas": [
+	  {
+		"texto": "¿Por qué le dicen la Noche Triste?",
+		"contesta": [
+          "Porque esta noche lloré por todos los que perdimos al huir de Tenochtitlán."
+		]
+	  },
+	  {
+		"texto": "¿Qué hará ahora?",
+		"contesta": [
+          "Iremos con nuestros aliados de Tlaxcala a recuperar fuerzas. Volveremos."
 		]
 	  }
 	]
