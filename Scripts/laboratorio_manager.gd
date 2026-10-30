@@ -19,6 +19,9 @@ func _ready() -> void:
 	var cuadro_dialogo = find_child("CuadroDialogo", true, false)
 	if cuadro_dialogo and cuadro_dialogo.has_method("iniciar_dialogo"):
 		var id_dialogo := str(Global.capitulo_actual().get("dialogo_laboratorio", ""))
+		# Con la historia terminada no hay capitulo siguiente: Atlas explica el viaje libre.
+		if Global.juego_terminado():
+			id_dialogo = "laboratorio_viaje_libre"
 		if id_dialogo != "" and not Global.eventos_completados.get(id_dialogo, false):
 			cuadro_dialogo.iniciar_dialogo(id_dialogo)
 			Global.eventos_completados[id_dialogo] = true

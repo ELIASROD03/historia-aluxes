@@ -469,7 +469,12 @@ func _crear_boton_nivel(clave: String, titulo: String, total_imagenes: int) -> B
 	boton.clip_text = true          # que un titulo largo no deforme la rejilla
 	boton.custom_minimum_size = Vector2(250, 34)
 	_estilo_de_boton(boton, 12)
-	if total_imagenes <= 0:
+	if not LibroProgreso.esta_desbloqueado("rompecabezas_" + clave):
+		# Todavía no llega a ese capítulo en la historia (Libro de Historia)
+		boton.text = "%s (bloqueado)" % titulo
+		boton.disabled = true
+		boton.modulate.a = 0.55
+	elif total_imagenes <= 0:
 		# Nivel declarado en el JSON pero todavia sin imagenes en su carpeta. Se deja
 		# a la vista para que se sepa que viene, pero sin poder entrar (no se conecta
 		# 'pressed': un boton disabled tampoco lo emitiria).

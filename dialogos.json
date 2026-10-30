@@ -12,12 +12,12 @@
 	},
 	{
 	  "personaje": "Atlas",
-	  "texto": "Exacto. Mis lecturas indican que la brecha temporal se abrió hacia 1520, directo a la Noche Triste. Tenemos que seguirlo antes de que cambie la historia.",
+	  "texto": "Exacto. Mis lecturas dicen que se abrió un hoyo en el tiempo hacia 1520, justo en la Noche Triste. Tenemos que seguirlo antes de que cambie la historia.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 	},
 	{
 	  "personaje": "{nombre_jugador}",
-	  "texto": "¡Entendido! Configuraré el portal, estoy listo.",
+	  "texto": "¡Entendido! Vamos a la máquina del tiempo.",
 	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
 	}
   ],
@@ -25,6 +25,35 @@
 	{
 	  "personaje": "Atlas",
 	  "texto": "{nombre_jugador}, ese año es incorrecto. Los registros indican que debemos viajar al año {anio_objetivo}.",
+	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+	}
+  ],
+  "laboratorio_viaje_libre": [
+	{
+	  "personaje": "Atlas",
+	  "texto": "¡{nombre_jugador}! Gracias a ti la historia volvió a su lugar y los tres aluxes están a salvo.",
+	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+	},
+	{
+	  "personaje": "Atlas",
+	  "texto": "Ahora la máquina del tiempo es toda tuya: puedes volver a cualquier año que ya visitamos.",
+	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+	},
+	{
+	  "personaje": "Atlas",
+	  "texto": "1519, 1520, 1521, 1523, 1530 o 1535. Teclea el año en la máquina y viajamos cuando quieras.",
+	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+	},
+	{
+	  "personaje": "{nombre_jugador}",
+	  "texto": "¡Genial! Hay gente con la que todavía quiero platicar.",
+	  "imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+	}
+  ],
+  "error_maquina_libre": [
+	{
+	  "personaje": "Atlas",
+	  "texto": "Ese año no está en mis registros, {nombre_jugador}. Podemos viajar a 1519, 1520, 1521, 1523, 1530 o 1535.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 	}
   ],
@@ -896,7 +925,7 @@
 	},
 	{
 	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 	  "evento": "minijuego_palabras_nivel_2_1"
 	},
@@ -969,7 +998,7 @@
 	},
 	{
 	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 	  "evento": "minijuego_palabras_nivel_2_2"
 	},
@@ -1042,7 +1071,7 @@
 	},
 	{
 	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 	  "evento": "minijuego_palabras_nivel_2_3"
 	},
@@ -1120,7 +1149,7 @@
 	},
 	{
 	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 	  "evento": "minijuego_palabras_nivel_2_4"
 	},
@@ -1198,7 +1227,7 @@
 	},
 	{
 	  "personaje": "Atlas (Auricular)",
-	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+	  "texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 	  "imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 	  "evento": "minijuego_palabras_nivel_2_5"
 	},
@@ -1272,13 +1301,13 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_3_1"
 		},
 		{
 			"personaje": "Guerrero mexica",
-			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije tantas tonterías?"
 		},
 		{
 			"personaje": "Guerrero mexica",
@@ -1340,13 +1369,13 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_3_2"
 		},
 		{
 			"personaje": "Guerrero mexica",
-			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije tantas tonterías?"
 		},
 		{
 			"personaje": "Guerrero mexica",
@@ -1408,13 +1437,13 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_3_3"
 		},
 		{
 			"personaje": "Guerrero mexica",
-			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije tantas tonterías?"
 		},
 		{
 			"personaje": "Guerrero mexica",
@@ -1476,13 +1505,13 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_3_4"
 		},
 		{
 			"personaje": "Guerrero mexica",
-			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije tantas tonterías?"
 		},
 		{
 			"personaje": "Guerrero mexica",
@@ -1544,13 +1573,13 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_3_5"
 		},
 		{
 			"personaje": "Guerrero mexica",
-			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije semejantes disparates?"
+			"texto": "¿Qué...? Me duele la cabeza. ¿Por qué dije tantas tonterías?"
 		},
 		{
 			"personaje": "Guerrero mexica",
@@ -1612,7 +1641,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_4_1"
 		},
@@ -1642,7 +1671,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"texto": "Corregido. Si ese libro tenía mentiras, la gente del futuro se las habría creído.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 		}
 	],
@@ -1680,7 +1709,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_4_2"
 		},
@@ -1710,7 +1739,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"texto": "Corregido. Si ese libro tenía mentiras, la gente del futuro se las habría creído.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 		}
 	],
@@ -1734,7 +1763,7 @@
 		},
 		{
 			"personaje": "Cronista",
-			"texto": "Muchos frailes protestaron porque era un [color=red]videojuego[/color] muy duró para los indígenas."
+			"texto": "Muchos frailes protestaron porque era un [color=red]videojuego[/color] muy duro para los indígenas."
 		},
 		{
 			"personaje": "{nombre_jugador}",
@@ -1748,7 +1777,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_4_3"
 		},
@@ -1770,7 +1799,7 @@
 		},
 		{
 			"personaje": "Cronista",
-			"texto": "Muchos frailes protestaron porque era un abuso muy duró para los indígenas."
+			"texto": "Muchos frailes protestaron porque era un abuso muy duro para los indígenas."
 		},
 		{
 			"personaje": "Cronista",
@@ -1778,7 +1807,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"texto": "Corregido. Si ese libro tenía mentiras, la gente del futuro se las habría creído.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 		}
 	],
@@ -1816,7 +1845,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_4_4"
 		},
@@ -1846,7 +1875,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"texto": "Corregido. Si ese libro tenía mentiras, la gente del futuro se las habría creído.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 		}
 	],
@@ -1870,7 +1899,7 @@
 		},
 		{
 			"personaje": "Cronista",
-			"texto": "Todo lo que sale hacia España se embarca en el puerto de [color=red]aeropuerto internaciónal[/color] ."
+			"texto": "Todo lo que sale hacia España se embarca en el puerto de [color=red]aeropuerto internacional[/color] ."
 		},
 		{
 			"personaje": "{nombre_jugador}",
@@ -1884,7 +1913,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_4_5"
 		},
@@ -1914,7 +1943,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Corregido. Si ese libro guardaba mentiras, el futuro las creería.",
+			"texto": "Corregido. Si ese libro tenía mentiras, la gente del futuro se las habría creído.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 		}
 	],
@@ -1952,7 +1981,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_5_1"
 		},
@@ -2020,7 +2049,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_5_2"
 		},
@@ -2070,7 +2099,7 @@
 		},
 		{
 			"personaje": "Escribano",
-			"texto": "Entre otras cosas prohíben la [color=red]descarga ilegal[/color] de los naturales."
+			"texto": "Entre otras cosas prohíben la [color=red]descarga ilegal[/color] de los indígenas."
 		},
 		{
 			"personaje": "Escribano",
@@ -2088,7 +2117,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_5_3"
 		},
@@ -2106,7 +2135,7 @@
 		},
 		{
 			"personaje": "Escribano",
-			"texto": "Entre otras cosas prohíben la esclavitud de los naturales."
+			"texto": "Entre otras cosas prohíben la esclavitud de los indígenas."
 		},
 		{
 			"personaje": "Escribano",
@@ -2156,7 +2185,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_5_4"
 		},
@@ -2206,7 +2235,7 @@
 		},
 		{
 			"personaje": "Escribano",
-			"texto": "Los encargados de impartir justicia son los [color=red]árbitros de futbol[/color] ."
+			"texto": "Los encargados de hacer justicia son los [color=red]árbitros de futbol[/color] ."
 		},
 		{
 			"personaje": "Escribano",
@@ -2224,7 +2253,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_5_5"
 		},
@@ -2242,7 +2271,7 @@
 		},
 		{
 			"personaje": "Escribano",
-			"texto": "Los encargados de impartir justicia son los alcaldes ."
+			"texto": "Los encargados de hacer justicia son los alcaldes ."
 		},
 		{
 			"personaje": "Escribano",
@@ -2292,7 +2321,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_6_1"
 		},
@@ -2338,7 +2367,7 @@
 		},
 		{
 			"personaje": "Pregonero",
-			"texto": "Este mismo año se funda la [color=red]tienda de aplicaciónes[/color] para acuñar dinero aquí mismo."
+			"texto": "Este mismo año se funda la [color=red]tienda de aplicaciones[/color] para acuñar dinero aquí mismo."
 		},
 		{
 			"personaje": "Pregonero",
@@ -2350,7 +2379,7 @@
 		},
 		{
 			"personaje": "{nombre_jugador}",
-			"texto": "¿¡Qué!? ¿[color=red]tienda de aplicaciónes[/color]? ¿[color=red]plástico reciclado[/color]? Eso no puede ser cierto...",
+			"texto": "¿¡Qué!? ¿[color=red]tienda de aplicaciones[/color]? ¿[color=red]plástico reciclado[/color]? Eso no puede ser cierto...",
 			"imagen": "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
 		},
 		{
@@ -2360,7 +2389,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_6_2"
 		},
@@ -2428,7 +2457,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_6_3"
 		},
@@ -2496,7 +2525,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_6_4"
 		},
@@ -2564,7 +2593,7 @@
 		},
 		{
 			"personaje": "Atlas (Auricular)",
-			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por los conceptos históricos reales.",
+			"texto": "Es hora de usar el Detector de la Verdad. Escanea el texto, encuentra las tres palabras impostoras y cámbialas por las palabras correctas de la historia.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png",
 			"evento": "minijuego_palabras_nivel_6_5"
 		},
@@ -2916,7 +2945,8 @@
 	"interludio_balaam_cap5": [
 		{
 			"personaje": "Narrador",
-			"texto": "Mientras tanto, en el laboratorio..."
+			"texto": "Mientras tanto, en el laboratorio...",
+			"evento": "cinematica_portal_balaam"
 		},
 		{
 			"personaje": "Balaam",
@@ -2936,8 +2966,7 @@
 		{
 			"personaje": "Balaam",
 			"texto": "Pero todavía no es momento de que me encuentren. Primero tengo que terminar lo que empecé.",
-			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
-			"evento": "cinematica_portal_balaam"
+			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
 		},
 		{
 			"personaje": "Narrador",
@@ -3023,7 +3052,8 @@
 		},
 		{
 			"personaje": "Narrador",
-			"texto": "Kaan y Chaac ponen sus manos sobre la máquina del tiempo. Todo el laboratorio brilla de verde y de rojo."
+			"texto": "Kaan y Chaac ponen sus manos sobre la máquina del tiempo. Todo el laboratorio brilla de verde y de rojo.",
+			"evento": "cinematica_poder_maquina"
 		},
 		{
 			"personaje": "Atlas",
@@ -3049,7 +3079,7 @@
 	"epilogo": [
 		{
 			"personaje": "Balaam",
-			"texto": "Este lugar no pertenece a nuestra realidad. Es una distorsión que creó su máquina del tiempo.",
+			"texto": "Este lugar no es de verdad: lo creó su máquina del tiempo. Es como un sueño perdido fuera del tiempo.",
 			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
 		},
 		{
@@ -3069,7 +3099,8 @@
 		},
 		{
 			"personaje": "Doctor Juan Pérez",
-			"texto": "¿{nombre_jugador}? ¿Atlas? ¡Son ustedes!"
+			"texto": "¿{nombre_jugador}? ¿Atlas? ¡Son ustedes!",
+			"imagen": "res://Images/Personajes/doctor/doctor_cara.png"
 		},
 		{
 			"personaje": "Narrador",
@@ -3077,11 +3108,12 @@
 		},
 		{
 			"personaje": "Doctor Juan Pérez",
-			"texto": "Sobreviví como pude. No tenía forma de regresar... pero sabía que ustedes me encontrarían."
+			"texto": "Sobreviví como pude. No tenía forma de regresar... pero sabía que ustedes me encontrarían.",
+			"imagen": "res://Images/Personajes/doctor/doctor_cara.png"
 		},
 		{
 			"personaje": "Balaam",
-			"texto": "Lamento interrumpir, pero este lugar es inestable. ¡Tenemos que irnos ya!",
+			"texto": "Perdón por interrumpir, pero este lugar se está deshaciendo. ¡Tenemos que irnos ya!",
 			"imagen": "res://Images/Personajes/balaam/balaam_cara.png",
 			"evento": "cinematica_vineta_3"
 		},
@@ -3101,7 +3133,7 @@
 		},
 		{
 			"personaje": "Balaam",
-			"texto": "Perdónenme. Atenué nuestra conexión solo para que no me atraparan antes de encontrar al doctor.",
+			"texto": "Perdónenme. Apagué un poquito el cosquilleo que nos une, para que no me atraparan antes de encontrar al doctor.",
 			"imagen": "res://Images/Personajes/balaam/balaam_cara.png"
 		},
 		{
@@ -3122,11 +3154,13 @@
 		},
 		{
 			"personaje": "Doctor Juan Pérez",
-			"texto": "Tienes toda la razón, Balaam. Lo siento mucho. A partir de hoy respetaremos su tierra."
+			"texto": "Tienes toda la razón, Balaam. Lo siento mucho. A partir de hoy respetaremos su tierra.",
+			"imagen": "res://Images/Personajes/doctor/doctor_cara.png"
 		},
 		{
 			"personaje": "Doctor Juan Pérez",
-			"texto": "Y para darles las gracias por reunirme con mi familia, cada mes les dejaré una ofrenda. ¿Qué les gusta?"
+			"texto": "Y para darles las gracias por reunirme con mi familia, cada mes les dejaré una ofrenda. ¿Qué les gusta?",
+			"imagen": "res://Images/Personajes/doctor/doctor_cara.png"
 		},
 		{
 			"personaje": "Kaan",
@@ -3237,6 +3271,217 @@
 		{
 			"personaje": "Atlas",
 			"texto": "Volvamos al laboratorio. Le prepararé una celda bien cómoda... con cobija y todo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_sin_partida": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola! Soy Atlas, el robot más inteligente de México.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Todavía no nos conocemos... pero muy pronto viviremos una gran aventura por la historia.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Unos aluxes, duendecillos mayas muy traviesos, se escaparon y están cambiando lo que pasó hace 500 años.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Toca \"Nueva partida\" para empezar. ¡Te espero en el laboratorio!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_cap1": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola de nuevo, {nombre_jugador}! Te cuento cómo vamos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Tu papá, el doctor Juan Pérez, desapareció en el tiempo. En su laboratorio me encontraste a mí y a su máquina del tiempo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mis sensores detectaron que un alux está haciendo travesuras en la historia.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: teclea 1519 en la máquina del tiempo para viajar a Tenochtitlan.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Habla con la gente de la ciudad. Si ves a un soldado muy bajito que se ríe solo... ¡sospecha!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_cap2": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola de nuevo, {nombre_jugador}! Te cuento cómo vamos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "En 1519 descubrimos al alux Kaan disfrazado de soldado... pero escapó por un portal.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: teclea 1520 en la máquina del tiempo. Kaan se fue a la Noche Triste.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Sigue disfrazado de soldado. Y si hace dobles de sí mismo, ¡fíjate bien cuál es el verdadero Kaan!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_cap3": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola de nuevo, {nombre_jugador}! Te cuento cómo vamos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Atrapamos a Kaan en la Noche Triste! Ahora descansa en la zona de resguardo del laboratorio.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Puedes verlo desde la computadora del laboratorio. Le encanta el atole.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Pero hay otro alux suelto: Chaac, su hermano. Le está prestando su fuerza a los guerreros.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: teclea 1521 en la máquina del tiempo y busca a Chaac cerca del templo de Tlatelolco.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Si te reta a unas fuercitas, ¡toca muy rápido! Y dicen que los chismes lo distraen.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_cap4": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola de nuevo, {nombre_jugador}! Te cuento cómo vamos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "En 1521 le ganamos las fuercitas a Chaac... pero no cumplió el trato y escapó por un portal.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Cada portal le gasta mucha energía, así que ya no le debe quedar tanta.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: teclea 1523 en la máquina del tiempo. Chaac anda jugando con las nubes.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Búscalo cerca de la milpa, a la orilla del bosque. ¡Y dicen que no resiste un buen elote!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_cap5": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola de nuevo, {nombre_jugador}! Te cuento cómo vamos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "¡Ya tenemos a Kaan y a Chaac! Los dos están en la zona de resguardo... comiendo elote.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Solo falta el hermano mayor: Balaam, el más tranquilo y sabio de los tres.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: teclea 1530 en la máquina del tiempo.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Balaam es muy difícil de encontrar. Habla con todos y repara la historia con el Detector de la Verdad.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_cap6": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola de nuevo, {nombre_jugador}! Te cuento cómo vamos.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "En 1530 Balaam solo vino a revisar algo y desapareció sin dejar rastro.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Kaan y Chaac ya casi no lo sienten. Ellos creen que Balaam podría ayudarnos a encontrar a tu papá.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: teclea 1535 en la máquina del tiempo, el año en que llegó el primer virrey.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Balaam es el más fuerte de los tres. Prepárate: ¡tal vez tengamos que perseguirlo volando!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		}
+	],
+	"atlas_menu_fin": [
+		{
+			"personaje": "Atlas",
+			"texto": "¡Hola, {nombre_jugador}! ¡Qué gusto verte!",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Lo lograste: atrapamos a los tres aluxes, encontramos a tu papá y la historia volvió a su lugar.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Ahora Kaan, Chaac y Balaam viven tranquilos en su casita del bosque.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Mi consejo: puedes volver a cualquier año que visitamos. Teclea 1519, 1520, 1521, 1523, 1530 o 1535 en la máquina.",
+			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
+		},
+		{
+			"personaje": "Atlas",
+			"texto": "Y en el Libro de Historia puedes repasar los capítulos y jugar los minijuegos que desbloqueaste.",
 			"imagen": "res://Images/Personajes/Atlas/atlas_cara.png"
 		}
 	]

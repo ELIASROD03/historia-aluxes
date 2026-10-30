@@ -45,6 +45,7 @@
 [ext_resource type="Shader" uid="uid://cxohuav5vfw0e" path="res://Shaders/balanceo_viento.gdshader" id="45_n"]
 [ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="atlas_scene"]
 [ext_resource type="PackedScene" uid="uid://de4fvgv7nirdq" path="res://Scenes/NpcMexica.tscn" id="npc_mexica_scene"]
+[ext_resource type="PackedScene" path="res://Scenes/HierbasFrente.tscn" id="hierbas_frente"]
 
 [sub_resource type="ShaderMaterial" id="Viento"]
 shader = ExtResource("45_n")
@@ -197,7 +198,7 @@ texture = ExtResource("20_n")
 offset = Vector2(0, -56.5)
 
 [node name="Ahuehuete" type="Sprite2D" parent="Fondo" unique_id=1039268084]
-position = Vector2(2330, 226)
+position = Vector2(2330, 238)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("21_n")
 offset = Vector2(0, -63.5)
@@ -788,3 +789,6 @@ offset_bottom = 352.0
 color = Color(0.2, 0.24, 0.42, 1)
 
 [editable path="NpcMexica"]
+
+[node name="HierbasFrente" parent="." instance=ExtResource("hierbas_frente")]
+modulate = Color(0.3, 0.35, 0.55, 1)

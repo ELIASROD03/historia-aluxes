@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="atlas_scene"]
 [ext_resource type="PackedScene" path="res://Scenes/Interactable.tscn" id="interactable_scene"]
 
+[ext_resource type="Script" path="res://Scripts/greybox/cinematica_provisional.gd" id="21_cp"]
+[ext_resource type="Script" path="res://Scripts/computadora_zona.gd" id="22_comp"]
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3tvfh"]
 texture = ExtResource("2_fb78l")
 0:0/0 = 0
@@ -373,11 +375,24 @@ position = Vector2(-8, 0)
 sprite_objetivo = NodePath("..")
 escena_destino = "res://Scenes/IU_Maquina.tscn"
 
+[node name="Computadora" type="Node2D" parent="."]
+position = Vector2(464, 200)
+script = ExtResource("22_comp")
+
+[node name="Interactable" parent="Computadora" instance=ExtResource("interactable_scene")]
+texto_interaccion = "Zona de resguardo"
+
 [node name="Atlas" parent="." unique_id=1162263323 instance=ExtResource("atlas_scene")]
 position = Vector2(424, 216)
 
 [node name="Player" parent="." unique_id=522066090 instance=ExtResource("1_nl5pa")]
 position = Vector2(80, 200)
+
+[node name="CinematicaProvisional" type="Node" parent="."]
+script = ExtResource("21_cp")
+imagenes = {
+"cinematica_poder_maquina": "res://Images/Cinematica/aluxes/poder_maquina.png"
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1347105678]
 

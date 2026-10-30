@@ -18,6 +18,11 @@ extends Node
 
 ## evento -> lo que se muestra mientras no esté hecha la cinemática.
 @export var textos: Dictionary = {}
+## evento -> ruta de una ilustración a pantalla completa (estilo cómic). Si existe,
+## se muestra con un fundido y un acercamiento lento en vez del letrero.
+## La ilustración se queda detrás del cuadro de diálogo mientras siguen las líneas
+## que la cuentan, y se desvanece cuando ese diálogo termina.
+@export var imagenes: Dictionary = {}
 ## Eventos que ya atiende otro script (no se tocan).
 @export var ignorar: PackedStringArray = []
 @export var duracion: float = 3.0
@@ -33,6 +38,10 @@ func _ready() -> void:
 
 func _on_evento_cinematica(evento: String) -> void:
 	if evento in ignorar:
+		return
+	var ruta_imagen := str(imagenes.get(evento, ""))
+	if ruta_imagen != "" and ResourceLoader.exists(ruta_imagen):
+		_mostrar_ilustracion(load(ruta_imagen))
 		return
 	var texto: String = textos.get(evento, evento.trim_prefix("cinematica_").replace("_", " "))
 
@@ -65,3 +74,44 @@ func _on_evento_cinematica(evento: String) -> void:
 	capa.queue_free()
 	if _cuadro_dialogo:
 		_cuadro_dialogo.continuar_cinematica()
+
+
+## Ilustración a pantalla completa: aparece con fundido, se acerca despacio
+## (efecto "cámara de documental") y el diálogo sigue encima de ella. Se va con
+## el fin del diálogo que la lanzó.
+func _mostrar_ilustracion(textura: Texture2D) -> void:
+	var capa := CanvasLayer.new()
+	# Misma capa que la interfaz y antes en el árbol: queda DEBAJO del cuadro de diálogo.
+	capa.layer = 1
+	var negro := ColorRect.new()
+	negro.color = Color.BLACK
+	negro.set_anchors_preset(Control.PRESET_FULL_RECT)
+	negro.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	capa.add_child(negro)
+	var imagen := TextureRect.new()
+	imagen.texture = textura
+	imagen.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	imagen.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	imagen.size = Vector2(640, 360)
+	imagen.pivot_offset = Vector2(320, 180)
+	imagen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	imagen.modulate.a = 0.0
+	negro.add_child(imagen)
+	add_child(capa)
+	move_child(capa, 0)
+
+	negro.modulate.a = 0.0
+	var tween := create_tween()
+	tween.tween_property(negro, "modulate:a", 1.0, 0.3)
+	tween.tween_property(imagen, "modulate:a", 1.0, 0.6)
+	await tween.finished
+	var acercamiento := create_tween()
+	acercamiento.tween_property(imagen, "scale", Vector2(1.08, 1.08), 20.0)
+	if _cuadro_dialogo:
+		_cuadro_dialogo.continuar_cinematica()
+		await _cuadro_dialogo.dialogo_terminado
+	acercamiento.kill()
+	var salida := create_tween()
+	salida.tween_property(negro, "modulate:a", 0.0, 0.6)
+	await salida.finished
+	capa.queue_free()

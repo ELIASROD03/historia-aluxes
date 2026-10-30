@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/zona_aluxes.gd" id="1_script"]
+
+[node name="ZonaAluxes" type="CanvasLayer"]
+layer = 50
+script = ExtResource("1_script")

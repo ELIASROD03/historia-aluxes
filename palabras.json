@@ -660,7 +660,7 @@
 			"img": ""
 		  },
 		  {
-			"texto": "globos aerostaticos",
+			"texto": "globos aerostáticos",
 			"img": ""
 		  },
 		  {
@@ -955,7 +955,7 @@
 			"img": ""
 		  },
 		  {
-			"texto": "Cristobal Colón",
+			"texto": "Cristóbal Colón",
 			"img": ""
 		  },
 		  {
@@ -1044,7 +1044,7 @@
 	}
   },
   "nivel_4_3": {
-	"historia": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la {zona_1}.\n\nA cambio de protegerlos y enseñarles la fe, ellos recibían {zona_2} y trabajo.\n\nMuchos frailes protestaron porque era un {zona_3} muy duró para los indígenas.",
+	"historia": "A los conquistadores se les entregaron pueblos indígenas bajo el sistema de la {zona_1}.\n\nA cambio de protegerlos y enseñarles la fe, ellos recibían {zona_2} y trabajo.\n\nMuchos frailes protestaron porque era un {zona_3} muy duro para los indígenas.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "garantía extendida",
@@ -1201,7 +1201,7 @@
 		]
 	  },
 	  "zona_3": {
-		"texto_original": "aeropuerto internaciónal",
+		"texto_original": "aeropuerto internacional",
 		"correcta": "Veracruz",
 		"opciones": [
 		  {
@@ -1339,7 +1339,7 @@
 	}
   },
   "nivel_5_3": {
-	"historia": "El rey ha firmado nuevas {zona_1} para proteger a los indígenas de los abusos.\n\nEntre otras cosas prohíben la {zona_2} de los naturales.\n\nMuchos encomenderos están {zona_3} porque pierden privilegios.",
+	"historia": "El rey ha firmado nuevas {zona_1} para proteger a los indígenas de los abusos.\n\nEntre otras cosas prohíben la {zona_2} de los indígenas.\n\nMuchos encomenderos están {zona_3} porque pierden privilegios.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "contraseñas",
@@ -1457,7 +1457,7 @@
 	}
   },
   "nivel_5_5": {
-	"historia": "Cada villa elige su {zona_1}, que se encarga del gobierno local.\n\nLos encargados de impartir justicia son los {zona_2}.\n\nPara las obras públicas se organiza el trabajo por turnos, llamado {zona_3}.",
+	"historia": "Cada villa elige su {zona_1}, que se encarga del gobierno local.\n\nLos encargados de hacer justicia son los {zona_2}.\n\nPara las obras públicas se organiza el trabajo por turnos, llamado {zona_3}.",
 	"zonas": {
 	  "zona_1": {
 		"texto_original": "consola de videojuegos",
@@ -1578,7 +1578,7 @@
 	"historia": "Este mismo año se funda la {zona_1} para acuñar dinero aquí mismo.\n\nLas primeras monedas se hacen de {zona_2}.\n\nEl metal viene de las {zona_3} descubiertas en el norte.",
 	"zonas": {
 	  "zona_1": {
-		"texto_original": "tienda de aplicaciónes",
+		"texto_original": "tienda de aplicaciones",
 		"correcta": "Casa de Moneda",
 		"opciones": [
 		  {

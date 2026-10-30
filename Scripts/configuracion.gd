@@ -22,6 +22,10 @@ var pantalla_completa := false
 var modo_tactil: int = ModoTactil.AUTOMATICO
 var tamano_tactil := 1.3
 var opacidad_tactil := 0.75
+## Para mostrar el juego sin pasarlo: todo el Libro de Historia abierto, botón
+## "Saltar" en los minijuegos de la historia y la máquina del tiempo acepta el año
+## de cualquier capítulo. Se activa en el panel de Configuración.
+var modo_desarrollador := false
 
 func _ready() -> void:
 	_asegurar_buses()
@@ -48,6 +52,10 @@ func set_volumen(clave: String, valor: float) -> void:
 func set_pantalla_completa(activa: bool) -> void:
 	pantalla_completa = activa
 	_aplicar_pantalla()
+
+func set_modo_desarrollador(activo: bool) -> void:
+	modo_desarrollador = activo
+	cambiada.emit()
 
 func set_controles(modo: int, tamano: float, opacidad: float) -> void:
 	# En móvil ocultarlos dejaría al jugador sin forma de moverse.
@@ -96,6 +104,7 @@ func cargar() -> bool:
 	for clave in volumen:
 		volumen[clave] = clampf(float(cfg.get_value("audio", clave, volumen[clave])), 0.0, 1.0)
 	pantalla_completa = bool(cfg.get_value("pantalla", "completa", pantalla_completa))
+	modo_desarrollador = bool(cfg.get_value("desarrollo", "activo", false))
 	set_controles(
 		int(cfg.get_value("controles", "modo", modo_tactil)),
 		float(cfg.get_value("controles", "tamano", tamano_tactil)),
@@ -110,4 +119,5 @@ func guardar() -> void:
 	cfg.set_value("controles", "modo", modo_tactil)
 	cfg.set_value("controles", "tamano", tamano_tactil)
 	cfg.set_value("controles", "opacidad", opacidad_tactil)
+	cfg.set_value("desarrollo", "activo", modo_desarrollador)
 	cfg.save(RUTA)

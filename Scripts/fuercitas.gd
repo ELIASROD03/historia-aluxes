@@ -52,6 +52,9 @@ var modo_libre: bool = false
 	"¡Chaac duerme con la luz prendida por miedo a la X'tabay!",
 ]
 
+const TEX_FONDO := preload("res://Images/Fondos/fuercitas/fondo.png")
+const TEX_MESA := preload("res://Images/Fondos/fuercitas/mesa.png")
+const TEX_MANOS := preload("res://Images/Fondos/fuercitas/manos.png")
 const COLOR_ATLAS := Color(0.35, 0.85, 1.0)
 const COLOR_CHAAC := Color(1.0, 0.35, 0.25)
 const ESCENA_MENU := "res://Scenes/MenuPrincipal.tscn"
@@ -85,6 +88,7 @@ var _chismes_pendientes: Array = []
 
 func _ready() -> void:
 	modo_libre = (get_parent() == get_tree().root)
+	_poner_fondo_ilustrado()
 	brazos.draw.connect(_dibujar_brazos)
 	barra.draw.connect(_dibujar_barra)
 	btn_chisme.pressed.connect(_contar_chisme)
@@ -257,21 +261,53 @@ func _salir() -> void:
 ## `posicion`: hacia la derecha va ganando Atlas (le dobla el brazo a Chaac).
 func _dibujar_brazos() -> void:
 	var tam := brazos.size
-	var mesa := Rect2(0, tam.y - 26, tam.x, 26)
-	brazos.draw_rect(mesa, Color(0.45, 0.3, 0.18))
-	brazos.draw_rect(Rect2(0, tam.y - 26, tam.x, 5), Color(0.6, 0.42, 0.26))
+	# La mesa de piedra ocupa todo el ancho; los codos se apoyan en su cara de arriba.
+	var alto_mesa := TEX_MESA.get_height() * tam.x / TEX_MESA.get_width()
+	var tablero := tam.y - alto_mesa + 6.0
+	brazos.draw_texture_rect(TEX_MESA, Rect2(0, tam.y - alto_mesa, tam.x, alto_mesa), false)
 
-	var codo_atlas := Vector2(tam.x * 0.3, tam.y - 26)
-	var codo_chaac := Vector2(tam.x * 0.7, tam.y - 26)
+	var codo_atlas := Vector2(tam.x * 0.3, tablero)
+	var codo_chaac := Vector2(tam.x * 0.7, tablero)
 	var angulo := posicion * deg_to_rad(55.0)
-	var largo := tam.x * 0.24
-	var manos := Vector2(tam.x / 2.0, tam.y - 26 - largo) \
+	var largo := tam.x * 0.19
+	var manos := Vector2(tam.x / 2.0, tablero - largo) \
 		+ Vector2(sin(angulo), 1.0 - cos(angulo)) * largo
-	brazos.draw_line(codo_atlas, manos, Color(0.9, 0.93, 0.97), 14.0)
-	brazos.draw_line(codo_chaac, manos, Color(0.62, 0.4, 0.25), 14.0)
-	brazos.draw_circle(manos, 11.0, Color(0.85, 0.75, 0.6))
+	_dibujar_antebrazo(codo_atlas, manos, Color(0.9, 0.93, 0.97), Color(0.16, 0.27, 0.5))
+	_dibujar_antebrazo(codo_chaac, manos, Color(0.62, 0.4, 0.25), Color(0.24, 0.13, 0.08))
 	if desconcentrado > 0.0:
-		brazos.draw_arc(manos, 18.0, 0.0, TAU, 24, Color(1, 0.9, 0.3, 0.8), 2.0)
+		brazos.draw_arc(manos, 24.0, 0.0, TAU, 32, Color(1, 0.9, 0.3, 0.8), 2.0)
+	# Las manos entrelazadas giran con el brazo de quien va ganando
+	brazos.draw_set_transform(manos, angulo, Vector2(1.5, 1.5))
+	brazos.draw_texture(TEX_MANOS, -TEX_MANOS.get_size() / 2.0)
+	brazos.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+
+## Antebrazo con contorno oscuro, al estilo del pixel art del juego.
+func _dibujar_antebrazo(codo: Vector2, mano: Vector2, color: Color, contorno: Color) -> void:
+	brazos.draw_line(codo, mano, contorno, 18.0)
+	brazos.draw_line(codo, mano, color, 12.0)
+	brazos.draw_circle(codo, 9.0, contorno)
+	brazos.draw_circle(codo, 6.0, color)
+
+
+## Tlatelolco en tormenta, casi vacío para no competir con el juego, con un velo para que los
+## textos se lean bien encima.
+func _poner_fondo_ilustrado() -> void:
+	var fondo_liso: Control = $Fondo
+	var ilustracion := TextureRect.new()
+	ilustracion.texture = TEX_FONDO
+	ilustracion.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	ilustracion.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	ilustracion.set_anchors_preset(Control.PRESET_FULL_RECT)
+	ilustracion.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var velo := ColorRect.new()
+	velo.color = Color(0, 0, 0, 0.15)
+	velo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	velo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(ilustracion)
+	add_child(velo)
+	move_child(ilustracion, fondo_liso.get_index() + 1)
+	move_child(velo, ilustracion.get_index() + 1)
 
 
 ## Barra de ventaja: se llena desde el centro hacia el lado de quien va ganando

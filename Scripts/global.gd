@@ -102,6 +102,37 @@ func anio_del_capitulo_actual() -> String:
 	var cap := capitulo_actual()
 	return str(cap.get("anio", "0000")) if not cap.is_empty() else "0000"
 
+## Ruta que usan los dialogos para "el retrato del jugador". DialogoManager la
+## cambia por la del personaje elegido (cada uno tiene retrato.png en su carpeta).
+const RETRATO_JUGADOR_GENERICO := "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
+
+func ruta_retrato_jugador() -> String:
+	return ruta_spritesheet.get_base_dir().path_join("retrato.png")
+
+## true cuando ya se vio el epilogo. Desde ahi la maquina deja viajar libremente
+## a cualquier capitulo (no hay capitulo 7 al que avanzar).
+func juego_terminado() -> bool:
+	return eventos_completados.get("juego_terminado", false) or progreso_historia > total_capitulos()
+
+## Numero del capitulo cuyo año es `anio`, o 0 si ninguno coincide.
+func capitulo_por_anio(anio: String) -> int:
+	for cap in capitulos:
+		if typeof(cap) == TYPE_DICTIONARY and str(cap.get("anio", "")) == anio:
+			return int(cap.get("numero", 0))
+	return 0
+
+## Viaje libre a un capitulo ya terminado. Reinicia su contenido de una sola vez
+## (dialogo de entrada y zonas "<id>_capN" de zona_dialogo.gd) para poder jugarlo
+## completo otra vez; terminar_capitulo() no avanza el progreso al rejugar.
+func preparar_visita(numero: int) -> bool:
+	var cap := obtener_capitulo(numero)
+	eventos_completados.erase(str(cap.get("dialogo_inicio", "")))
+	var sufijo := "_cap%d" % numero
+	for clave in eventos_completados.keys():
+		if str(clave).ends_with(sufijo):
+			eventos_completados.erase(clave)
+	return preparar_entrada_capitulo(numero)
+
 # --- SISTEMA DE GUARDADO ---
 var escena_actual: String = "res://Scenes/Laboratorio.tscn"
 var posicion_x: float = 0.0

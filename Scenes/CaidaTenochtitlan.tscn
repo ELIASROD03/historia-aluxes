@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://bn2go0ry6i0pc"]
 
 [ext_resource type="Script" uid="uid://cijembagd3h8l" path="res://Scripts/capitulo_manager.gd" id="1_r"]
-[ext_resource type="Script" uid="uid://d367gmuflaqex" path="res://Scripts/greybox/bloque.gd" id="2_r"]
 [ext_resource type="Script" uid="uid://diphet22srwww" path="res://Scripts/greybox/npc_provisional.gd" id="3_r"]
-[ext_resource type="Texture2D" uid="uid://cuqq1hwr3vx16" path="res://Images/Personajes/Npc_level1/SoldadoNpc.png" id="4_r"]
-[ext_resource type="Texture2D" uid="uid://dppw1n8rvjktd" path="res://Images/Personajes/Npc_level1/guerreroMexica1.png" id="5_r"]
-[ext_resource type="Texture2D" uid="uid://chx3a00vtwccq" path="res://Images/Personajes/Npc_level1/guerreroMexica2.png" id="6_r"]
-[ext_resource type="Texture2D" uid="uid://bybksp7k01odj" path="res://Images/Personajes/chaac/chaac.png" id="7_r"]
 [ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="8_r"]
 [ext_resource type="PackedScene" uid="uid://bpy6xif8venyl" path="res://Scenes/Player.tscn" id="9_r"]
 [ext_resource type="Script" uid="uid://cohbp7r0ebf1u" path="res://Scripts/greybox/cinematica_provisional.gd" id="10_r"]
@@ -24,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c7i36l26mfuah" path="res://Images/Escenarios/cap3/barricada.png" id="22_r"]
 [ext_resource type="Texture2D" path="res://Images/Escenarios/comun/suelo_tierra.png" id="23_r"]
 [ext_resource type="Texture2D" uid="uid://dt01cnvoepi23" path="res://Images/Escenarios/cap3/calzada.png" id="24_r"]
-[ext_resource type="Texture2D" uid="uid://dgkkc66xcln2d" path="res://Images/Fondos/untitled(3).png" id="25_r"]
+[ext_resource type="Texture2D" path="res://Images/Escenarios/cap3/volcanes_espejo.png" id="volcanes_espejo"]
 [ext_resource type="PackedScene" uid="uid://clyohxuathose" path="res://Scenes/WaterRepeater.tscn" id="26_r"]
 [ext_resource type="Texture2D" uid="uid://blr04abfslml0" path="res://Images/Tilesets/GandalfHardcore Background layers_layer 1.png" id="27_r"]
 [ext_resource type="Texture2D" uid="uid://bur5wbuvd5tjj" path="res://Images/Tilesets/GandalfHardcore Background layers_layer 2.png" id="28_r"]
@@ -45,6 +40,14 @@
 
 [ext_resource type="Texture2D" path="res://Images/Escenarios/comun/torre_vigia.png" id="43_r"]
 [ext_resource type="Texture2D" path="res://Images/Escenarios/comun/adoratorio.png" id="44_r"]
+[ext_resource type="Script" path="res://Scripts/cinematicas_aluxes.gd" id="45_c"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/chaac/chaac_respirando.png" id="46_resp"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap3/ballestero.png" id="npc_ballestero"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap3/guerrero_veterano.png" id="npc_guerrero_veterano"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap3/defensor_lanza.png" id="npc_defensor_lanza"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap3/guerrero_aguila.png" id="npc_guerrero_aguila"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap3/defensor_arquero.png" id="npc_defensor_arquero"]
+[ext_resource type="PackedScene" path="res://Scenes/HierbasFrente.tscn" id="hierbas_frente"]
 [sub_resource type="ShaderMaterial" id="Viento"]
 shader = ExtResource("40_r")
 shader_parameter/fuerza = 2.0
@@ -75,14 +78,12 @@ color = Color(0.47, 0.62, 0.69, 1)
 
 [node name="Volcanes" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1597957224]
 motion_scale = Vector2(0.1, 1)
-motion_mirroring = Vector2(656, 0)
+motion_mirroring = Vector2(1312, 0)
 
 [node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Volcanes" unique_id=1284811807]
 position = Vector2(0, 116)
-texture = ExtResource("25_r")
+texture = ExtResource("volcanes_espejo")
 centered = false
-region_enabled = true
-region_rect = Rect2(0, 72, 656, 115)
 
 [node name="ArbolesLejanos" type="ParallaxLayer" parent="ParallaxBackground" unique_id=333016350]
 motion_scale = Vector2(0.2, 1)
@@ -210,34 +211,6 @@ position = Vector2(2270, 225)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("44_r")
 offset = Vector2(0, -38.5)
-
-[node name="Zona1Llegada" type="Node2D" parent="Fondo" unique_id=1030139152]
-position = Vector2(250, 72)
-script = ExtResource("2_r")
-texto = "1 · LLEGADA"
-tamano = Vector2(150, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona2Calzada" type="Node2D" parent="Fondo" unique_id=1082423705]
-position = Vector2(830, 72)
-script = ExtResource("2_r")
-texto = "2 · CALZADA Y BERGANTINES"
-tamano = Vector2(200, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona3Barricadas" type="Node2D" parent="Fondo" unique_id=1441007369]
-position = Vector2(1520, 72)
-script = ExtResource("2_r")
-texto = "3 · BARRICADAS MEXICAS"
-tamano = Vector2(190, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona4Tlatelolco" type="Node2D" parent="Fondo" unique_id=857053661]
-position = Vector2(2350, 72)
-script = ExtResource("2_r")
-texto = "4 · TLATELOLCO"
-tamano = Vector2(160, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
 
 [node name="Suelo" type="Node2D" parent="." unique_id=1508116525]
 
@@ -578,8 +551,10 @@ shape = SubResource("Pared")
 position = Vector2(560, 224)
 script = ExtResource("3_r")
 nombre = "Soldado español"
-textura = ExtResource("4_r")
-hframes = 9
+textura = ExtResource("npc_ballestero")
+hframes = 4
+fps = 5.0
+escala = 0.78
 id_burbuja = "npc_bergantin_cap3"
 
 [node name="CronistaPalabras" type="Node2D" parent="Npcs" unique_id=1102470813]
@@ -587,9 +562,10 @@ position = Vector2(760, 224)
 script = ExtResource("3_r")
 nombre = "Guerrero mexica
 (Palabras impostoras)"
-textura = ExtResource("5_r")
-hframes = 3
-vframes = 3
+textura = ExtResource("npc_guerrero_veterano")
+hframes = 4
+fps = 5.0
+escala = 0.78
 id_dialogo = "dialogo_soldado"
 requiere_interaccion = false
 un_solo_uso = true
@@ -618,26 +594,29 @@ id_burbuja = "npc_mujer_cap3"
 position = Vector2(1470, 224)
 script = ExtResource("3_r")
 nombre = ""
-textura = ExtResource("5_r")
-hframes = 3
-vframes = 3
+textura = ExtResource("npc_defensor_lanza")
+hframes = 4
+fps = 5.0
+escala = 0.78
 
 [node name="GuerreroPista" type="Node2D" parent="Npcs" unique_id=1817767615]
 position = Vector2(1580, 224)
 script = ExtResource("3_r")
 nombre = "Guerrero mexica"
-textura = ExtResource("6_r")
-hframes = 3
-vframes = 3
+textura = ExtResource("npc_guerrero_aguila")
+hframes = 4
+fps = 5.0
+escala = 0.78
 id_burbuja = "npc_guerrero_cap3"
 
 [node name="DefensorBarricada2" type="Node2D" parent="Npcs" unique_id=1233312707]
 position = Vector2(1660, 224)
 script = ExtResource("3_r")
 nombre = ""
-textura = ExtResource("5_r")
-hframes = 3
-vframes = 3
+textura = ExtResource("npc_defensor_arquero")
+hframes = 4
+fps = 5.0
+escala = 0.78
 voltear = true
 
 [node name="Anciano" type="Node2D" parent="Npcs" unique_id=169952379]
@@ -654,8 +633,10 @@ id_burbuja = "npc_anciano_cap3"
 position = Vector2(2560, 224)
 script = ExtResource("3_r")
 nombre = "Chaac (escondido)"
-textura = ExtResource("7_r")
-escala = 0.73
+textura = ExtResource("46_resp")
+hframes = 4
+fps = 5.0
+escala = 0.625
 resplandor = Color(1, 0.15, 0.1, 0.35)
 id_dialogo = "final_cap3"
 texto_interaccion = "Investigar"
@@ -669,10 +650,13 @@ position = Vector2(128, 190)
 
 [node name="CinematicaProvisional" type="Node" parent="." unique_id=2112185181]
 script = ExtResource("10_r")
-textos = {
-"cinematica_escape_chaac": "Chaac, furioso, abre un portal rojo entre truenos y desaparece.
-Sin su poder, los guerreros mexicas pierden la fuerza extra."
-}
+textos = {}
+ignorar = PackedStringArray("cinematica_escape_chaac")
+
+[node name="CinematicasAluxes" type="Node2D" parent="." node_paths=PackedStringArray("alux", "atlas")]
+script = ExtResource("45_c")
+alux = NodePath("../Npcs/Chaac")
+atlas = NodePath("../Atlas")
 
 [node name="interfaz" type="CanvasLayer" parent="." unique_id=700906438]
 
@@ -686,3 +670,6 @@ offset_bottom = 352.0
 mouse_filter = 2
 
 [node name="MenuPausa" parent="." unique_id=452372835 instance=ExtResource("12_r")]
+
+[node name="HierbasFrente" parent="." instance=ExtResource("hierbas_frente")]
+modulate = Color(0.8, 0.75, 0.6, 1)

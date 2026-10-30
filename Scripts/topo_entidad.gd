@@ -2,6 +2,10 @@ extends Area2D
 
 signal topo_aplastado(es_kaan: bool)
 
+## Estallido del golpe (7 cuadros) que queda donde estaba el alux.
+const TEX_SPLASH := preload("res://Images/Fondos/topo/splash.png")
+const CUADROS_SPLASH := 7
+
 var es_kaan: bool = true
 var subiendo: bool = true
 
@@ -68,7 +72,8 @@ func recibir_golpe():
 	
 	# Emitir señal al manager
 	topo_aplastado.emit(es_kaan)
-	
+	_mostrar_splash()
+
 	# -- Efecto Visual de Golpe (Godot 4 Tweens) --
 	# 1. Aplastar el sprite en Y, ensancharlo en X y cambiar a rojo/blanco
 	var tween = create_tween().set_parallel(true)
@@ -92,3 +97,17 @@ func desaparecer():
 	tween.tween_property(self, "scale", Vector2(0.5, 0.5), 0.2)
 	tween.tween_property(self, "modulate:a", 0.0, 0.2)
 	tween.chain().tween_callback(queue_free)
+
+
+func _mostrar_splash() -> void:
+	# Hermano y no hijo: el topo se aplasta y se borra enseguida, el splash no.
+	var splash := Sprite2D.new()
+	splash.texture = TEX_SPLASH
+	splash.hframes = CUADROS_SPLASH
+	splash.position = position
+	splash.z_index = 10
+	get_parent().add_child(splash)
+	var t := splash.create_tween()
+	t.tween_property(splash, "frame", CUADROS_SPLASH - 1, 0.42)
+	t.parallel().tween_property(splash, "modulate:a", 0.0, 0.2).set_delay(0.3)
+	t.tween_callback(splash.queue_free)

@@ -50,9 +50,6 @@ func _on_btn_reanudar_pressed():
 
 func _on_btn_configuracion_pressed():
 	var panel = PANEL_CONFIGURACION.instantiate()
-	# A media partida no se ofrece borrar: el siguiente guardado recrearía la
-	# partida en curso.
-	panel.permitir_borrar_partidas = false
 	panel_pausa.hide()
 	panel.cerrado.connect(panel_pausa.show)
 	add_child(panel)

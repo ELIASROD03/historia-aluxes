@@ -66,6 +66,11 @@ func _on_dialogo_terminado(id_dialogo: String) -> void:
 ## que terminarlo sin pasar por el dialogo final.
 func terminar_capitulo() -> void:
 	Global.eventos_completados["capitulo_%d_completado" % numero_capitulo] = true
+	LibroProgreso.desbloquear("capitulo_%d" % numero_capitulo)
+
+	# Se mira ANTES de avanzar: al terminar el último capítulo el progreso pasa
+	# del total y juego_terminado() ya daría true, saltándose el epílogo.
+	var rejugando := Global.juego_terminado()
 
 	# Solo avanza si el jugador venia justo en este capitulo: asi rejugarlo no
 	# adelanta la historia de mas.
@@ -75,6 +80,10 @@ func terminar_capitulo() -> void:
 	# Normalmente se regresa al laboratorio; el último capítulo lleva al epílogo
 	# ("escena_al_terminar" en capitulos.json).
 	var destino := str(datos_capitulo.get("escena_al_terminar", Global.ESCENA_LABORATORIO))
+	# Rejugando con la historia ya terminada siempre se vuelve al laboratorio
+	# (el epilogo no se repite al revisitar el capitulo 6).
+	if rejugando:
+		destino = Global.ESCENA_LABORATORIO
 	if not ResourceLoader.exists(destino):
 		push_error("escena_al_terminar del capitulo %d no existe: '%s'." % [numero_capitulo, destino])
 		destino = Global.ESCENA_LABORATORIO

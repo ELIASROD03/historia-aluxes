@@ -1,6 +1,7 @@
 extends Control
 
 const PANEL_CONFIGURACION = preload("res://Scenes/PanelConfiguracion.tscn")
+const CUADRO_DIALOGO = preload("res://Scenes/Cuadro_Dialogo.tscn")
 
 # 1. Creamos referencias a los contenedores y al texto gigante
 @onready var VBox_Sub_Comenzar = $VBox_Sub_Comenzar
@@ -36,6 +37,11 @@ func _ready() -> void:
 	var btn_continuar = VBox_menu_laboratorio.get_node_or_null("Continuar_btn")
 	if btn_continuar:
 		btn_continuar.pressed.connect(_on_continuar_pressed)
+
+	# Conectar el botón de Hablar con Atlas
+	var btn_atlas = VBox_menu_laboratorio.get_node_or_null("Talk_atlas_btn")
+	if btn_atlas:
+		btn_atlas.pressed.connect(_on_hablar_con_atlas_pressed)
 
 
 # --- FUNCIONES DE ANIMACIÓN (ESTILO PERSONA 5) ---
@@ -106,8 +112,11 @@ func _on_salir_btn_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_memorama_conceptual_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Juegos/Atlas-Bird/Escenas/main-atlasbird.tscn")
+## Del submenú de "Iniciar" (Laboratorio / Libro de historia) al menú principal.
+func _on_volver_inicio_btn_pressed() -> void:
+	VBox_Sub_Comenzar.hide()
+	VBox_menu_laboratorio.hide()
+	VBox_Principal.show()
 
 func _on_nueva_partida_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/CreacionPersonaje.tscn")
@@ -124,3 +133,47 @@ func _on_volver_btn_pressed() -> void:
 	
 	#_animar_vibracion(VBox_Sub_Comenzar)
 	#_animar_entrada_texto("Comenzar")
+
+
+# --- HABLAR CON ATLAS ---
+# GDD p. 29: "permite obtener consejos y resúmenes de la historia hasta el
+# momento". Atlas resume la aventura de la partida más avanzada y aconseja qué
+# hacer después (dialogos.json: atlas_menu_sin_partida, atlas_menu_cap<N>,
+# atlas_menu_fin).
+
+func _on_hablar_con_atlas_pressed() -> void:
+	var partida := _partida_mas_avanzada()
+	var id_dialogo := "atlas_menu_sin_partida"
+	var nombre_antes := Global.nombre_jugador
+	if not partida.is_empty():
+		Global.nombre_jugador = str(partida["nombre"])
+		var progreso := int(partida["progreso"])
+		if progreso > Global.total_capitulos():
+			id_dialogo = "atlas_menu_fin"
+		else:
+			id_dialogo = "atlas_menu_cap%d" % progreso
+
+	# Velo para que los clics que avanzan el diálogo no toquen los botones de abajo
+	var capa := CanvasLayer.new()
+	capa.layer = 10
+	var velo := ColorRect.new()
+	velo.color = Color(0, 0, 0, 0.45)
+	velo.size = get_viewport_rect().size  # bajo un CanvasLayer las anclas no tienen a quién seguir
+	capa.add_child(velo)
+	var cuadro = CUADRO_DIALOGO.instantiate()
+	cuadro.position = Vector2(216, 240)  # donde va en el laboratorio
+	capa.add_child(cuadro)
+	add_child(capa)
+	cuadro.dialogo_terminado.connect(func(_id):
+		Global.nombre_jugador = nombre_antes
+		capa.queue_free())
+	cuadro.iniciar_dialogo(id_dialogo)
+
+
+## La partida con más capítulos avanzados (y, si empatan, la más jugada).
+func _partida_mas_avanzada() -> Dictionary:
+	var mejor := {}
+	for p in Global.obtener_partidas():
+		if mejor.is_empty() or int(p["progreso"]) > int(mejor["progreso"]) 				or (int(p["progreso"]) == int(mejor["progreso"]) and float(p["tiempo"]) > float(mejor["tiempo"])):
+			mejor = p
+	return mejor

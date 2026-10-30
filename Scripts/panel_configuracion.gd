@@ -5,9 +5,12 @@ extends Control
 
 signal cerrado
 
-## Ponlo en false si lo abres a media partida: borrar la partida en curso y
-## seguir jugando la volvería a crear en el siguiente guardado.
-@export var permitir_borrar_partidas := true
+## La sección "Desarrollador" se esconde hasta tocar el título "Configuración"
+## TOQUES_PARA_REVELAR veces (para que los niños no la activen por accidente).
+## Ponlo en false para que se vea siempre; para quitar el truco del todo, borra
+## esta variable, _on_titulo_input() y la línea que la usa en _ready().
+@export var revelar_con_toques := true
+const TOQUES_PARA_REVELAR := 5
 
 # El tamaño "normal" de los botones táctiles se muestra como 100 %.
 const TAMANO_NORMAL := 1.3
@@ -23,11 +26,10 @@ const TAMANO_NORMAL := 1.3
 @onready var valor_tamano: Label = %ValorTamano
 @onready var slider_opacidad: HSlider = %SliderOpacidad
 @onready var valor_opacidad: Label = %ValorOpacidad
-@onready var seccion_partidas: Control = %SeccionPartidas
-@onready var btn_borrar: Button = %BtnBorrar
-@onready var lbl_partidas: Label = %LblPartidas
-@onready var confirmacion: Control = %Confirmacion
-@onready var lbl_confirmacion: Label = %LblConfirmacion
+@onready var seccion_desarrollador: Control = %SeccionDesarrollador
+@onready var chk_desarrollador: CheckButton = %ChkDesarrollador
+
+var _toques_titulo := 0
 
 func _ready() -> void:
 	# Los valores se ponen ANTES de conectar las señales, para no escribir de vuelta
@@ -57,21 +59,22 @@ func _ready() -> void:
 	slider_tamano.value_changed.connect(_on_controles_cambiados.unbind(1))
 	slider_opacidad.value_changed.connect(_on_controles_cambiados.unbind(1))
 
-	seccion_partidas.visible = permitir_borrar_partidas
-	btn_borrar.pressed.connect(_pedir_confirmacion)
-	%BtnCancelar.pressed.connect(confirmacion.hide)
-	%BtnConfirmar.pressed.connect(_borrar_partidas)
+	chk_desarrollador.button_pressed = Configuracion.modo_desarrollador
+	chk_desarrollador.toggled.connect(Configuracion.set_modo_desarrollador)
+	# Si ya está activo se ve siempre, para poder apagarlo.
+	seccion_desarrollador.visible = not revelar_con_toques or Configuracion.modo_desarrollador
+	var titulo: Label = $Marco/VBox/Titulo
+	titulo.mouse_filter = Control.MOUSE_FILTER_STOP
+	titulo.gui_input.connect(_on_titulo_input)
+
 	%BtnVolver.pressed.connect(cerrar)
-	confirmacion.hide()
-	_actualizar_partidas()
+	_poner_iconos()
+	_estilo_desplegable()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
-		if confirmacion.visible:
-			confirmacion.hide()
-		else:
-			cerrar()
+		cerrar()
 
 func cerrar() -> void:
 	Configuracion.guardar()
@@ -101,24 +104,69 @@ func _actualizar_textos_controles() -> void:
 	slider_tamano.editable = not ocultos
 	slider_opacidad.editable = not ocultos
 
-# --- Partidas guardadas ---
+# --- Apariencia ---
 
-func _actualizar_partidas() -> void:
-	var total := Global.obtener_partidas().size()
-	match total:
-		0: lbl_partidas.text = "No hay partidas guardadas."
-		1: lbl_partidas.text = "1 partida guardada."
-		_: lbl_partidas.text = "%d partidas guardadas." % total
-	btn_borrar.disabled = total == 0
+## Un ícono pixel art a la izquierda del título de cada sección.
+func _poner_iconos() -> void:
+	var iconos := {
+		"Marco/VBox/Columnas/ColIzquierda/TituloSonido": "bocina",
+		"Marco/VBox/Columnas/ColIzquierda/SeccionPantalla/TituloPantalla": "pantalla",
+		"Marco/VBox/Columnas/ColDerecha/TituloControles": "mano",
+		"Marco/VBox/Columnas/ColDerecha/SeccionDesarrollador/TituloDesarrollador": "engrane",
+	}
+	for ruta in iconos:
+		var titulo: Label = get_node(ruta)
+		var padre := titulo.get_parent()
+		var fila := HBoxContainer.new()
+		fila.add_theme_constant_override("separation", 5)
+		padre.add_child(fila)
+		padre.move_child(fila, titulo.get_index())
+		var icono := TextureRect.new()
+		icono.texture = load("res://assets/configuracion/icono_%s.png" % iconos[ruta])
+		icono.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		icono.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		fila.add_child(icono)
+		titulo.reparent(fila)
 
-func _pedir_confirmacion() -> void:
-	var total := Global.obtener_partidas().size()
-	var cuales := "la partida guardada" if total == 1 else "las %d partidas guardadas" % total
-	lbl_confirmacion.text = "¿Borrar %s?\nEsto no se puede deshacer." % cuales
-	confirmacion.show()
 
-func _borrar_partidas() -> void:
-	for partida in Global.obtener_partidas():
-		Global.eliminar_partida(partida["slot"])
-	confirmacion.hide()
-	_actualizar_partidas()
+## La lista que se abre en "Mostrar": madera oscura con letras de pergamino.
+func _estilo_desplegable() -> void:
+	var lista := opt_modo.get_popup()
+	var fondo := StyleBoxFlat.new()
+	fondo.bg_color = Color(0.243, 0.153, 0.137)
+	fondo.border_color = Color(0.85, 0.62, 0.18)
+	fondo.set_border_width_all(1)
+	fondo.set_corner_radius_all(3)
+	fondo.set_content_margin_all(4)
+	lista.add_theme_stylebox_override("panel", fondo)
+	var resaltado := StyleBoxFlat.new()
+	resaltado.bg_color = Color(0.85, 0.62, 0.18, 0.35)
+	resaltado.set_corner_radius_all(2)
+	lista.add_theme_stylebox_override("hover", resaltado)
+	lista.add_theme_color_override("font_color", Color(0.93, 0.86, 0.7))
+	lista.add_theme_color_override("font_hover_color", Color.WHITE)
+	lista.add_theme_font_override("font", preload("res://fonts/Amaranth-Bold.ttf"))
+
+
+# --- Desarrollador ---
+
+## Toques (o clics) en el título: al llegar a TOQUES_PARA_REVELAR aparece la sección.
+## Solo se cuenta el clic: en celular Godot convierte cada toque en clic, y contar
+## también el toque lo duplicaría.
+func _on_titulo_input(event: InputEvent) -> void:
+	var toque: bool = event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT
+	if not toque or seccion_desarrollador.visible:
+		return
+	_toques_titulo += 1
+	var titulo: Label = $Marco/VBox/Titulo
+	# Cada toque se nota: el título salta y dice cuántos faltan
+	titulo.pivot_offset = titulo.size / 2.0
+	var t := create_tween()
+	t.tween_property(titulo, "scale", Vector2(1.08, 1.08), 0.06)
+	t.tween_property(titulo, "scale", Vector2.ONE, 0.08)
+	var faltan := TOQUES_PARA_REVELAR - _toques_titulo
+	if faltan > 0:
+		titulo.text = "Configuración  (%d)" % faltan
+	else:
+		titulo.text = "Configuración"
+		seccion_desarrollador.show()

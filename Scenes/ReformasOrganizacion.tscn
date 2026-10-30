@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://bq3tq4fvrfr1o"]
 
 [ext_resource type="Script" uid="uid://cijembagd3h8l" path="res://Scripts/capitulo_manager.gd" id="1_r"]
-[ext_resource type="Script" uid="uid://d367gmuflaqex" path="res://Scripts/greybox/bloque.gd" id="2_r"]
 [ext_resource type="Script" uid="uid://diphet22srwww" path="res://Scripts/greybox/npc_provisional.gd" id="3_r"]
-[ext_resource type="Texture2D" uid="uid://cup41aw4eky0p" path="res://Images/Personajes/Npc_level1/soladoNpc2.png" id="4_r"]
-[ext_resource type="Texture2D" uid="uid://b7r67nt36edjm" path="res://Images/Personajes/Npc_level1/merch1.png" id="5_r"]
-[ext_resource type="Texture2D" uid="uid://ctwaj4umq6d64" path="res://Images/Personajes/Npc_level1/Npc_interaccion/mexica2Coking.png" id="6_r"]
-[ext_resource type="Texture2D" uid="uid://xl0pjf8sudgx" path="res://Images/Personajes/Npc_level1/merch2.png" id="7_r"]
 [ext_resource type="Script" uid="uid://bsnkp5g42hs63" path="res://Scripts/zona_dialogo.gd" id="8_r"]
 [ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="9_r"]
 [ext_resource type="PackedScene" uid="uid://bpy6xif8venyl" path="res://Scenes/Player.tscn" id="10_r"]
@@ -43,6 +38,11 @@
 [ext_resource type="Texture2D" uid="uid://b700ta83067vo" path="res://Images/Personajes/Npc_cap5/alumno.png" id="41_r"]
 [ext_resource type="Texture2D" uid="uid://k27v6cbxwbhe" path="res://Images/Escenarios/comun/casa_balcon.png" id="42_r"]
 [ext_resource type="Texture2D" uid="uid://c7yqhfl54o5u1" path="res://Images/Escenarios/comun/casa_sencilla.png" id="43_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap5/vecino_espanol.png" id="npc_vecino_espanol"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap5/gobernador_indigena.png" id="npc_gobernador_indigena"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap5/comprador.png" id="npc_comprador"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap5/vendedora.png" id="npc_vendedora"]
+[ext_resource type="PackedScene" path="res://Scenes/HierbasFrente.tscn" id="hierbas_frente"]
 
 [sub_resource type="ShaderMaterial" id="Viento"]
 shader = ExtResource("14_r")
@@ -209,34 +209,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("43_r")
 offset = Vector2(0, -32.5)
 flip_h = true
-
-[node name="Zona1Llegada" type="Node2D" parent="Fondo" unique_id=1533929271]
-position = Vector2(220, 72)
-script = ExtResource("2_r")
-texto = "1 · LLEGADA"
-tamano = Vector2(150, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona2Audiencia" type="Node2D" parent="Fondo" unique_id=1089619511]
-position = Vector2(800, 72)
-script = ExtResource("2_r")
-texto = "2 · CASA DE LA AUDIENCIA"
-tamano = Vector2(210, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona3Cabildo" type="Node2D" parent="Fondo" unique_id=530398664]
-position = Vector2(1600, 72)
-script = ExtResource("2_r")
-texto = "3 · CABILDO INDÍGENA Y ESCUELA"
-tamano = Vector2(240, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona4Tianguis" type="Node2D" parent="Fondo" unique_id=527285269]
-position = Vector2(2400, 72)
-script = ExtResource("2_r")
-texto = "4 · TIANGUIS Y SALIDA"
-tamano = Vector2(190, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
 
 [node name="Suelo" type="Node2D" parent="." unique_id=1916122311]
 
@@ -546,8 +518,10 @@ id_burbuja = "npc_zumarraga_cap5"
 position = Vector2(1260, 224)
 script = ExtResource("3_r")
 nombre = "Vecino español"
-textura = ExtResource("4_r")
-hframes = 9
+textura = ExtResource("npc_vecino_espanol")
+hframes = 4
+fps = 5.0
+escala = 0.78
 voltear = true
 id_burbuja = "npc_vecino_cap5"
 
@@ -555,9 +529,10 @@ id_burbuja = "npc_vecino_cap5"
 position = Vector2(1560, 224)
 script = ExtResource("3_r")
 nombre = "Gobernador indígena"
-textura = ExtResource("5_r")
-hframes = 3
-vframes = 3
+textura = ExtResource("npc_gobernador_indigena")
+hframes = 4
+fps = 5.0
+escala = 0.78
 id_burbuja = "npc_gobernador_cap5"
 
 [node name="Alumno" type="Node2D" parent="Npcs" unique_id=320399583]
@@ -584,17 +559,20 @@ voltear = true
 position = Vector2(2290, 224)
 script = ExtResource("3_r")
 nombre = "Vendedora del tianguis"
-textura = ExtResource("6_r")
-hframes = 9
+textura = ExtResource("npc_vendedora")
+hframes = 4
+fps = 5.0
+escala = 0.76
 id_burbuja = "npc_vendedora_cap5"
 
 [node name="Comprador" type="Node2D" parent="Npcs" unique_id=746201719]
 position = Vector2(2400, 224)
 script = ExtResource("3_r")
 nombre = ""
-textura = ExtResource("7_r")
-hframes = 3
-vframes = 3
+textura = ExtResource("npc_comprador")
+hframes = 4
+fps = 5.0
+escala = 0.76
 voltear = true
 
 [node name="ZonaInterludioBalaam" type="Area2D" parent="." unique_id=2121873509]
@@ -605,17 +583,6 @@ id_dialogo = "interludio_balaam_cap5"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInterludioBalaam" unique_id=589389467]
 shape = SubResource("ZonaZonaInterludioBalaam")
 
-[node name="Marca" type="Node2D" parent="ZonaInterludioBalaam" unique_id=233989667]
-position = Vector2(0, 100)
-script = ExtResource("2_r")
-texto = "INTERLUDIO:
-Balaam en el
-laboratorio"
-tamano = Vector2(80, 150)
-color = Color(0.9, 0.8, 0.2, 0.25)
-color_texto = Color(1, 1, 0.8, 0.9)
-tamano_letra = 7
-
 [node name="ZonaFinalCap5" type="Area2D" parent="." unique_id=1991968358]
 position = Vector2(2620, 124)
 script = ExtResource("8_r")
@@ -623,16 +590,6 @@ id_dialogo = "final_cap5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaFinalCap5" unique_id=1980616220]
 shape = SubResource("ZonaZonaFinalCap5")
-
-[node name="Marca" type="Node2D" parent="ZonaFinalCap5" unique_id=2007529255]
-position = Vector2(0, 100)
-script = ExtResource("2_r")
-texto = "FINAL DEL
-CAPÍTULO"
-tamano = Vector2(80, 150)
-color = Color(0.9, 0.8, 0.2, 0.25)
-color_texto = Color(1, 1, 0.8, 0.9)
-tamano_letra = 7
 
 [node name="Atlas" parent="." unique_id=1313110882 instance=ExtResource("9_r")]
 position = Vector2(72, 200)
@@ -642,8 +599,9 @@ position = Vector2(128, 190)
 
 [node name="CinematicaProvisional" type="Node" parent="." unique_id=618048058]
 script = ExtResource("11_r")
-textos = {
-"cinematica_portal_balaam": "Balaam acaricia la cabeza de sus hermanos dormidos, abre un portal azul y desaparece."
+textos = {}
+imagenes = {
+"cinematica_portal_balaam": "res://Images/Cinematica/aluxes/balaam_celda.png"
 }
 
 [node name="interfaz" type="CanvasLayer" parent="." unique_id=1932088542]
@@ -658,3 +616,6 @@ offset_bottom = 352.0
 mouse_filter = 2
 
 [node name="MenuPausa" parent="." unique_id=1955394258 instance=ExtResource("13_r")]
+
+[node name="HierbasFrente" parent="." instance=ExtResource("hierbas_frente")]
+modulate = Color(0.85, 0.85, 0.85, 1)

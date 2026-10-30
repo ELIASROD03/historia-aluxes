@@ -50,6 +50,23 @@ const ScriptTopo = preload("res://Scripts/topo_entidad.gd")
 ## LimitesCamara del nivel de abajo, si hubo que soltarle el mouse (ver _ready).
 var _limites_nivel: Control = null
 
+# ── Martillo ─────────────────────────────────────────────────────────────────
+## En computadora reemplaza al cursor (se esconde el del sistema y el martillo lo
+## sigue); en celular aparece donde se toca, golpea y se desvanece. Se dibuja como
+## sprite y no con set_custom_mouse_cursor para que escale igual que el pixel art.
+const TEX_MARTILLO := preload("res://Images/Fondos/topo/martillo.png")
+## Puntos dentro de martillo.png: punta del mango (eje del golpe) y centro de la cabeza.
+const MARTILLO_MANGO := Vector2(44, 47)
+const MARTILLO_CABEZA := Vector2(18, 17)
+## Cuánto gira hacia abajo al golpear (radianes).
+const MARTILLO_GIRO := -0.9
+
+var _capa_martillo: CanvasLayer
+## Nodo cuyo origen es la punta del mango: rotarlo baja la cabeza como un golpe.
+var _brazo_martillo: Node2D
+var _tween_martillo: Tween
+var _tactil := OS.has_feature("mobile")
+
 
 func _ready():
 	modo_libre = (get_parent() == get_tree().root)
@@ -63,6 +80,8 @@ func _ready():
 			_limites_nivel = limites
 			_limites_nivel.set_meta("mouse_filter_original", limites.mouse_filter)
 			_limites_nivel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	_crear_martillo()
 
 	# El orden importa: antes los agujeros y el timer se creaban DESPUÉS de la
 	# rama que llama a _iniciar_juego(), así que si no había cuadro de diálogo
@@ -113,6 +132,57 @@ func _ready():
 func _exit_tree() -> void:
 	if is_instance_valid(_limites_nivel):
 		_limites_nivel.mouse_filter = _limites_nivel.get_meta("mouse_filter_original")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
+func _crear_martillo() -> void:
+	_capa_martillo = CanvasLayer.new()
+	_capa_martillo.layer = 100
+	add_child(_capa_martillo)
+	_brazo_martillo = Node2D.new()
+	_capa_martillo.add_child(_brazo_martillo)
+	var sprite := Sprite2D.new()
+	sprite.texture = TEX_MARTILLO
+	sprite.centered = false
+	sprite.position = -MARTILLO_MANGO
+	_brazo_martillo.add_child(sprite)
+	if _tactil:
+		_brazo_martillo.hide()
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		_mover_martillo(get_viewport().get_mouse_position())
+
+
+## Deja la cabeza del martillo justo sobre `punto` (ahí cae el golpe).
+func _mover_martillo(punto: Vector2) -> void:
+	_brazo_martillo.position = punto + (MARTILLO_MANGO - MARTILLO_CABEZA)
+
+
+func _input(event: InputEvent) -> void:
+	# Solo se anima: el golpe al alux lo detecta cada topo con su _input_event.
+	if _tactil:
+		if event is InputEventScreenTouch and event.pressed:
+			_mover_martillo(event.position)
+			_golpe_martillo()
+	elif event is InputEventMouseMotion:
+		_mover_martillo(event.position)
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		_golpe_martillo()
+
+
+func _golpe_martillo() -> void:
+	if _tween_martillo:
+		_tween_martillo.kill()
+	_brazo_martillo.rotation = 0.0
+	_brazo_martillo.modulate.a = 1.0
+	_brazo_martillo.show()
+	_tween_martillo = create_tween()
+	_tween_martillo.tween_property(_brazo_martillo, "rotation", MARTILLO_GIRO, 0.07).set_ease(Tween.EASE_IN)
+	_tween_martillo.tween_property(_brazo_martillo, "rotation", 0.0, 0.12).set_ease(Tween.EASE_OUT)
+	if _tactil:
+		# En celular no hay cursor: el martillo se va después del golpe.
+		_tween_martillo.tween_property(_brazo_martillo, "modulate:a", 0.0, 0.25).set_delay(0.1)
+		_tween_martillo.tween_callback(_brazo_martillo.hide)
 
 
 ## Los agujeros se ponen en la escena (nodo "Agujeros"); si faltan, se inventan

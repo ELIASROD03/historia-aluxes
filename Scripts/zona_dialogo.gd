@@ -92,13 +92,27 @@ func _clave_evento() -> String:
 	return "%s_cap%d" % [id_dialogo, _capitulo_del_nivel()]
 
 
+## Variante 1..variantes al azar, pero primero las que el jugador aún no tiene en
+## el Libro de Historia: así al rejugar capítulos va completando la colección de
+## Palabras Impostoras (dialogo_soldado_cap<N>_<v> lanza palabras_nivel_<N>_<v>).
+func _variante_a_lanzar() -> int:
+	var cap := _capitulo_del_nivel()
+	var nuevas: Array = []
+	for v in range(1, variantes + 1):
+		if not LibroProgreso.esta_desbloqueado("palabras_nivel_%d_%d" % [cap, v]):
+			nuevas.append(v)
+	if nuevas.is_empty():
+		return (randi() % variantes) + 1
+	return nuevas.pick_random()
+
+
 func lanzar_dialogo() -> void:
 	var cuadro_dialogo = get_tree().current_scene.find_child("CuadroDialogo", true, false)
 	
 	if cuadro_dialogo and cuadro_dialogo.has_method("iniciar_dialogo") and not cuadro_dialogo.visible:
 		var dialogo_a_lanzar = id_dialogo
 		if variantes_por_capitulo or id_dialogo == ID_VARIANTES:
-			dialogo_a_lanzar = "%s_cap%d_%d" % [id_dialogo, _capitulo_del_nivel(), (randi() % variantes) + 1]
+			dialogo_a_lanzar = "%s_cap%d_%d" % [id_dialogo, _capitulo_del_nivel(), _variante_a_lanzar()]
 
 		cuadro_dialogo.iniciar_dialogo(dialogo_a_lanzar)
 		

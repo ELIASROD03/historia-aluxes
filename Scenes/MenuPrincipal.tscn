@@ -224,7 +224,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
 theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
 text = "Libro de historia"
 
-[node name="Memorama_conceptual_btn" type="Button" parent="VBox_Sub_Comenzar" unique_id=1106281717]
+[node name="Volver_inicio_btn" type="Button" parent="VBox_Sub_Comenzar" unique_id=1106281717]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.243137, 0.152941, 0.137255, 1)
 theme_override_fonts/font = ExtResource("3_vtrnu")
@@ -233,7 +233,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_vtrnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pressed")
 theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
 theme_override_styles/focus = SubResource("StyleBoxTexture_hover")
-text = "Flappy Atlas"
+text = "Volver"
 
 [node name="VBox_menu_laboratorio" type="VBoxContainer" parent="." unique_id=2065933421]
 visible = false
@@ -301,5 +301,5 @@ text = "Volver"
 [connection signal="pressed" from="VBox_Principal/Salir_btn" to="." method="_on_salir_btn_pressed"]
 [connection signal="pressed" from="VBox_Sub_Comenzar/Lab_btn" to="." method="_on_lab_btn_pressed"]
 [connection signal="pressed" from="VBox_Sub_Comenzar/Book_History_btn" to="." method="_on_book_history_btn_pressed"]
-[connection signal="pressed" from="VBox_Sub_Comenzar/Memorama_conceptual_btn" to="." method="_on_memorama_conceptual_btn_pressed"]
+[connection signal="pressed" from="VBox_Sub_Comenzar/Volver_inicio_btn" to="." method="_on_volver_inicio_btn_pressed"]
 [connection signal="pressed" from="VBox_menu_laboratorio/Volver_btn" to="." method="_on_volver_btn_pressed"]

@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://cskhqf1fqfbck"]
 
 [ext_resource type="Script" uid="uid://cijembagd3h8l" path="res://Scripts/capitulo_manager.gd" id="1_r"]
-[ext_resource type="Script" uid="uid://d367gmuflaqex" path="res://Scripts/greybox/bloque.gd" id="2_r"]
 [ext_resource type="Script" uid="uid://diphet22srwww" path="res://Scripts/greybox/npc_provisional.gd" id="3_r"]
-[ext_resource type="Texture2D" uid="uid://b7r67nt36edjm" path="res://Images/Personajes/Npc_level1/merch1.png" id="4_r"]
-[ext_resource type="Texture2D" uid="uid://d214egdh3frpd" path="res://Images/Personajes/Npc_level1/Npc_interaccion/Mexica1.png" id="5_r"]
-[ext_resource type="Texture2D" uid="uid://utjy3xt451qf" path="res://Images/Personajes/soldado_level1/breathing_soldado.png" id="6_r"]
-[ext_resource type="Texture2D" uid="uid://cup41aw4eky0p" path="res://Images/Personajes/Npc_level1/soladoNpc2.png" id="7_r"]
-[ext_resource type="Texture2D" uid="uid://bcpxlruqx8awy" path="res://Images/Personajes/Npc_level1/Npc_interaccion/mexica2_idle.png" id="8_r"]
-[ext_resource type="Texture2D" uid="uid://xl0pjf8sudgx" path="res://Images/Personajes/Npc_level1/merch2.png" id="9_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap4/trabajador.png" id="4_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap4/tameme.png" id="5_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap4/hernan_cortes.png" id="6_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap4/soldado.png" id="7_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap4/mujer_tianguis.png" id="8_r"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/Npc_cap4/vendedor.png" id="9_r"]
 [ext_resource type="Texture2D" uid="uid://bybksp7k01odj" path="res://Images/Personajes/chaac/chaac.png" id="10_r"]
 [ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="11_r"]
 [ext_resource type="PackedScene" uid="uid://bpy6xif8venyl" path="res://Scenes/Player.tscn" id="12_r"]
@@ -49,6 +48,9 @@
 [ext_resource type="Texture2D" path="res://Images/Escenarios/comun/anim_cerdo.png" id="46_r"]
 [ext_resource type="Texture2D" path="res://Images/Escenarios/comun/casa_indigena.png" id="47_r"]
 [ext_resource type="Texture2D" path="res://Images/Escenarios/comun/casa_sencilla.png" id="48_r"]
+[ext_resource type="Script" path="res://Scripts/cinematicas_aluxes.gd" id="49_c"]
+[ext_resource type="Texture2D" path="res://Images/Personajes/chaac/chaac_respirando.png" id="50_resp"]
+[ext_resource type="PackedScene" path="res://Scenes/HierbasFrente.tscn" id="hierbas_frente"]
 [sub_resource type="RectangleShape2D" id="Piso"]
 size = Vector2(3000, 40)
 
@@ -250,41 +252,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("48_r")
 offset = Vector2(0, -32.5)
 flip_h = true
-
-[node name="Zona1Llegada" type="Node2D" parent="Fondo" unique_id=938360632]
-position = Vector2(230, 72)
-script = ExtResource("2_r")
-texto = "1 · LLEGADA"
-tamano = Vector2(150, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona2Obras" type="Node2D" parent="Fondo" unique_id=1317317617]
-position = Vector2(850, 72)
-script = ExtResource("2_r")
-texto = "2 · OBRAS SOBRE LAS RUINAS"
-tamano = Vector2(220, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona3Frailes" type="Node2D" parent="Fondo" unique_id=963416884]
-position = Vector2(1470, 72)
-script = ExtResource("2_r")
-texto = "3 · LOS FRAILES"
-tamano = Vector2(160, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona4Plaza" type="Node2D" parent="Fondo" unique_id=1708209899]
-position = Vector2(2050, 72)
-script = ExtResource("2_r")
-texto = "4 · PLAZA MAYOR"
-tamano = Vector2(170, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
-
-[node name="Zona5Milpa" type="Node2D" parent="Fondo" unique_id=391134317]
-position = Vector2(2700, 72)
-script = ExtResource("2_r")
-texto = "5 · MILPA Y BOSQUE"
-tamano = Vector2(180, 20)
-color = Color(0.15, 0.15, 0.15, 0.55)
 
 [node name="Suelo" type="Node2D" parent="."]
 
@@ -609,8 +576,9 @@ position = Vector2(720, 224)
 script = ExtResource("3_r")
 nombre = "Trabajador indígena"
 textura = ExtResource("4_r")
-hframes = 3
-vframes = 3
+hframes = 4
+fps = 5.0
+escala = 0.78
 id_burbuja = "npc_trabajador_cap4"
 
 [node name="TrabajadorCargando" type="Node2D" parent="Npcs" unique_id=1585583328]
@@ -618,7 +586,9 @@ position = Vector2(880, 224)
 script = ExtResource("3_r")
 nombre = ""
 textura = ExtResource("5_r")
-hframes = 9
+hframes = 4
+fps = 5.0
+escala = 0.78
 voltear = true
 
 [node name="Alarife" type="Node2D" parent="Npcs" unique_id=1907356703]
@@ -661,7 +631,9 @@ position = Vector2(1990, 224)
 script = ExtResource("3_r")
 nombre = "Hernán Cortés"
 textura = ExtResource("6_r")
-hframes = 6
+hframes = 4
+fps = 5.0
+escala = 0.8
 id_burbuja = "npc_cortes_cap4"
 
 [node name="SoldadoPista" type="Node2D" parent="Npcs" unique_id=634740312]
@@ -669,7 +641,9 @@ position = Vector2(2060, 224)
 script = ExtResource("3_r")
 nombre = "Soldado español"
 textura = ExtResource("7_r")
-hframes = 9
+hframes = 4
+fps = 5.0
+escala = 0.78
 voltear = true
 id_burbuja = "npc_soldado_cap4"
 
@@ -678,7 +652,9 @@ position = Vector2(2200, 224)
 script = ExtResource("3_r")
 nombre = "Mujer del tianguis"
 textura = ExtResource("8_r")
-hframes = 9
+hframes = 4
+fps = 5.0
+escala = 0.76
 id_burbuja = "npc_tianguis_cap4"
 
 [node name="Vendedor" type="Node2D" parent="Npcs" unique_id=862529509]
@@ -686,16 +662,19 @@ position = Vector2(2290, 224)
 script = ExtResource("3_r")
 nombre = ""
 textura = ExtResource("9_r")
-hframes = 3
-vframes = 3
+hframes = 4
+fps = 5.0
+escala = 0.78
 voltear = true
 
 [node name="Chaac" type="Node2D" parent="Npcs" unique_id=506367179]
 position = Vector2(2640, 224)
 script = ExtResource("3_r")
 nombre = "Chaac"
-textura = ExtResource("10_r")
-escala = 0.73
+textura = ExtResource("50_resp")
+hframes = 4
+fps = 5.0
+escala = 0.625
 resplandor = Color(1, 0.15, 0.1, 0.35)
 id_dialogo = "final_cap4"
 un_solo_uso = true
@@ -704,7 +683,7 @@ un_solo_uso = true
 position = Vector2(72, 200)
 
 [node name="Player" parent="." unique_id=306660716 instance=ExtResource("12_r")]
-position = Vector2(2544, 192)
+position = Vector2(128, 190)
 
 [node name="CinematicaProvisional" type="Node" parent="." unique_id=1851668419]
 script = ExtResource("13_r")
@@ -712,12 +691,14 @@ textos = {
 "cinematica_gran_persecucion": "[ MINIJUEGO PENDIENTE ]
 
 LA GRAN PERSECUCIÓN
-Atlas en modo manual y el jugador persiguen a Chaac por el bosque, esquivando obstáculos.",
-"cinematica_nubes_chaac": "Chaac levanta los brazos: el cielo se nubla en un instante y retumban truenos...
-...pero no cae ni una gota, y las nubes se deshacen.",
-"cinematica_rayo_chaac": "Un solo relámpago cae sobre Atlas y lo manda a volar por los aires.
-Chaac aprovecha y corre hacia el bosque."
+Atlas en modo manual y el jugador persiguen a Chaac por el bosque, esquivando obstáculos."
 }
+ignorar = PackedStringArray("cinematica_nubes_chaac", "cinematica_rayo_chaac")
+
+[node name="CinematicasAluxes" type="Node2D" parent="." node_paths=PackedStringArray("alux", "atlas")]
+script = ExtResource("49_c")
+alux = NodePath("../Npcs/Chaac")
+atlas = NodePath("../Atlas")
 
 [node name="interfaz" type="CanvasLayer" parent="." unique_id=1426098231]
 
@@ -731,3 +712,6 @@ offset_bottom = 352.0
 mouse_filter = 2
 
 [node name="MenuPausa" parent="." unique_id=1713671708 instance=ExtResource("15_r")]
+
+[node name="HierbasFrente" parent="." instance=ExtResource("hierbas_frente")]
+modulate = Color(0.85, 0.85, 0.8, 1)

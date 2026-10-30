@@ -14,8 +14,6 @@ extends CanvasLayer
 
 signal elegido(indice: int)
 
-## Mismo retrato que usan las líneas del jugador en dialogos.json.
-const RETRATO_JUGADOR := "res://Images/Personajes/Personajes_Principales/Personaje1/personaje.png"
 const PREFIJO_FOCO := "» "
 
 @onready var nombre_label: Label = $Caja/nombre_label
@@ -29,8 +27,9 @@ var _textos: Array = []
 func _ready() -> void:
 	boton_modelo.hide()
 	nombre_label.text = Global.nombre_jugador
-	if ResourceLoader.exists(RETRATO_JUGADOR):
-		retrato.texture = load(RETRATO_JUGADOR)
+	var ruta_retrato := Global.ruta_retrato_jugador()
+	if ResourceLoader.exists(ruta_retrato):
+		retrato.texture = load(ruta_retrato)
 
 
 ## Muestra las opciones y devuelve el índice de la elegida. Mientras tanto el

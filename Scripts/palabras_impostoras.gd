@@ -87,11 +87,19 @@ func _mostrar_capitulos() -> void:
 	for hijo in grid_capitulos.get_children():
 		hijo.queue_free()
 
+	# Solo se juegan los textos que el jugador ya encontró en la historia (Libro de Historia)
+	var encontrados := 0
+	var total := 0
 	for numero in _capitulos_disponibles():
 		var cap: Dictionary = Global.obtener_capitulo(numero)
 		var titulo: String = str(cap.get("subtitulo", "Capítulo %d" % numero)) if not cap.is_empty() \
 			else "Capítulo %d" % numero
-		grid_capitulos.add_child(_crear_boton_capitulo(numero, titulo))
+		var textos := _textos_del_capitulo(numero)
+		var abiertos := _textos_desbloqueados(numero).size()
+		encontrados += abiertos
+		total += textos.size()
+		grid_capitulos.add_child(_crear_boton_capitulo(numero, titulo, abiertos, textos.size()))
+	$PanelCapitulos/LabelAyuda.text = "Textos encontrados: %d/%d. Habla con el soldado de cada capítulo para encontrar más." % [encontrados, total]
 
 	panel_capitulos.show()
 
@@ -131,9 +139,15 @@ func _textos_del_capitulo(numero: int) -> Array:
 	return lista
 
 
-func _crear_boton_capitulo(numero: int, titulo: String) -> Button:
+## Los textos de un capítulo que ya salieron en la historia ("palabras_nivel_<cap>_<n>" en LibroProgreso).
+func _textos_desbloqueados(numero: int) -> Array:
+	return _textos_del_capitulo(numero).filter(
+		func(clave): return LibroProgreso.esta_desbloqueado("palabras_" + str(clave)))
+
+
+func _crear_boton_capitulo(numero: int, titulo: String, abiertos: int, total: int) -> Button:
 	var boton := Button.new()
-	boton.text = "%d. %s" % [numero, titulo]
+	boton.text = "%d. %s   %d/%d" % [numero, titulo, abiertos, total]
 	boton.clip_text = true
 	boton.custom_minimum_size = Vector2(250, 34)
 	boton.add_theme_font_override("font", font_normal)
@@ -142,14 +156,19 @@ func _crear_boton_capitulo(numero: int, titulo: String) -> Button:
 	var estilo := btn_volver_libro.get_theme_stylebox("normal")
 	for estado in ["normal", "hover", "pressed", "disabled"]:
 		boton.add_theme_stylebox_override(estado, estilo)
-	boton.pressed.connect(_elegir_capitulo.bind(numero))
+	if abiertos == 0:
+		# Aún no encontró ningún texto de este capítulo: se ve, pero apagado
+		boton.disabled = true
+		boton.modulate = Color(0.6, 0.6, 0.6)
+	else:
+		boton.pressed.connect(_elegir_capitulo.bind(numero))
 	return boton
 
 
-## Al elegir capítulo se sortea uno de sus textos, que es justo lo que se pidió:
-## que el jugador no sepa cuál le va a tocar.
+## Al elegir capítulo se sortea uno de sus textos ya encontrados, que es justo lo
+## que se pidió: que el jugador no sepa cuál le va a tocar.
 func _elegir_capitulo(numero: int) -> void:
-	var textos := _textos_del_capitulo(numero)
+	var textos := _textos_desbloqueados(numero)
 	if textos.is_empty():
 		push_error("El capítulo %d no tiene textos en palabras.json." % numero)
 		return

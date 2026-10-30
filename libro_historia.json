@@ -1,0 +1,114 @@
+{
+	"_instrucciones": {
+		"que_es": "Contenido del Libro de Historia (Scenes/LibroHistoria.tscn). Se puede editar sin abrir Godot.",
+		"minijuegos": "'clave' es lo que se desbloquea en LibroProgreso (el evento del diálogo sin 'minijuego_'). 'siempre': true = sin candado. 'contador' muestra cuántos niveles tiene desbloqueados: 'palabras' o 'rompecabezas'.",
+		"capitulos": "Se desbloquean al terminar el capítulo. 'sprite' es la hoja del personaje tal como sale en el nivel; si sus cuadros no son cuadrados, poner 'hframes' y 'vframes'.",
+		"borrador": "Los resúmenes y descripciones son un BORRADOR para revisar (tono, datos y largo)."
+	},
+	"minijuegos": [
+		{
+			"id": "palabras",
+			"nombre": "Palabras Impostoras",
+			"escena": "res://Scenes/PalabrasImpostoras.tscn",
+			"contador": "palabras",
+			"descripcion": "Los aluxes cambiaron algunas palabras de la historia. Usa el Detector de la Verdad para encontrar las tres palabras impostoras de cada texto y cámbialas por las correctas.",
+			"como_desbloquear": "Habla con el soldado de cada capítulo. Cada capítulo tiene 5 textos distintos: vuelve a viajar a ese año para conseguirlos todos."
+		},
+		{
+			"id": "rompecabezas",
+			"nombre": "Rompecabezas",
+			"escena": "res://Scenes/Rompecabezas.tscn",
+			"contador": "rompecabezas",
+			"descripcion": "Arma imágenes de cada época para reparar los datos de la máquina del tiempo.",
+			"como_desbloquear": "Se desbloquea un nivel al llegar a cada capítulo."
+		},
+		{
+			"id": "topo",
+			"nombre": "Topo Alux",
+			"escena": "res://Scenes/Topo_Alux.tscn",
+			"clave": "topo_cap2",
+			"descripcion": "Kaan se esconde entre sus dobles. Atrapa al verdadero Kaan antes de que se acabe el tiempo... ¡sin pegarle a los señuelos!",
+			"como_desbloquear": "Juega el capítulo 2: La Noche Triste."
+		},
+		{
+			"id": "atlasbird",
+			"nombre": "Atlas-Bird",
+			"escena": "res://Scenes/Juegos/Atlas-Bird/Escenas/main-atlasbird.tscn",
+			"clave": "atlasbird_final",
+			"descripcion": "Vuela con Atlas entre los obstáculos para alcanzar a Balaam. Junta corazones, escudos y turbos, ¡y cuidado con sus trucos!",
+			"como_desbloquear": "Llega al final del capítulo 6."
+		},
+		{
+			"id": "memorama",
+			"nombre": "Memorama",
+			"escena": "res://Scenes/Memorama.tscn",
+			"siempre": true,
+			"descripcion": "Voltea las tarjetas y encuentra las parejas: cada palabra va con lo que significa.",
+			"como_desbloquear": ""
+		}
+	],
+	"capitulos": {
+		"1": {
+			"resumen": "En 1519, Hernán Cortés llegó a las costas del Golfo de México con barcos, soldados y caballos. Con ayuda de Malintzin, una joven que hablaba náhuatl y maya y le servía de intérprete, avanzó hasta Tenochtitlan. La capital mexica estaba construida sobre un lago: tenía calzadas, canales, chinampas y un enorme mercado. El 8 de noviembre de 1519, el tlatoani Moctezuma recibió a Cortés en la ciudad.",
+			"personajes": [
+				{"nombre": "Moctezuma Xocoyotzin", "sprite": "res://Images/Personajes/Npc_level1/Moctezuma.png", "descripcion": "Tlatoani (gobernante) de los mexicas. Recibió a Cortés en Tenochtitlan y lo hospedó en el palacio de su padre."},
+				{"nombre": "Hernán Cortés", "sprite": "res://Images/Personajes/soldado_level1/breathing_soldado.png", "descripcion": "Capitán español que dirigió la expedición. Buscaba riquezas y tierras para el rey de España."},
+				{"nombre": "Guerrero mexica", "sprite": "res://Images/Personajes/Npc_level1/guerreroMexica1.png", "hframes": 3, "vframes": 3, "descripcion": "Los guerreros cuidaban la ciudad. Los más valientes llegaban a ser guerreros águila o jaguar."},
+				{"nombre": "Comerciante", "sprite": "res://Images/Personajes/Npc_level1/merch1.png", "hframes": 3, "vframes": 3, "descripcion": "En el tianguis se vendía de todo: maíz, cacao, plumas, pieles y telas. El cacao también se usaba como dinero."}
+			]
+		},
+		"2": {
+			"resumen": "En 1520 la paz se rompió. Durante una fiesta en el Templo Mayor, los soldados de Pedro de Alvarado atacaron a los mexicas, y la ciudad se levantó contra los españoles. Moctezuma murió y Cuitláhuac fue el nuevo tlatoani. En la noche del 30 de junio, los españoles intentaron huir en silencio por la calzada de Tacuba, pero una mujer dio la alarma. Los mexicas habían quitado los puentes y muchos soldados se ahogaron por cargar demasiado oro. Se cuenta que Cortés lloró bajo un ahuehuete: por eso se le llama la Noche Triste.",
+			"personajes": [
+				{"nombre": "Hernán Cortés", "sprite": "res://Images/Personajes/soldado_level1/breathing_soldado.png", "descripcion": "Perdió a más de la mitad de sus hombres y casi todo el tesoro al escapar de la ciudad."},
+				{"nombre": "Guerrero águila", "sprite": "res://Images/Personajes/Npc_cap2/guerrero_antorcha.png", "descripcion": "Los guerreros mexicas atacaron desde canoas y cortaron los puentes de las calzadas."},
+				{"nombre": "Mujer que dio la alarma", "sprite": "res://Images/Personajes/Npc_cap3/mujer_mexica.png", "descripcion": "Según las crónicas, una mujer que iba por agua vio a los españoles escapar y gritó para avisar a todos."},
+				{"nombre": "Soldado que huye con oro", "sprite": "res://Images/Personajes/Npc_cap2/soldado_oro.png", "descripcion": "Muchos soldados cargaron tanto oro que no pudieron nadar al caer a los canales."}
+			]
+		},
+		"3": {
+			"resumen": "En 1521, Cortés regresó para sitiar Tenochtitlan. Lo acompañaban miles de guerreros indígenas aliados, sobre todo de Tlaxcala, y trece bergantines que navegaban por el lago. Antes había llegado la viruela, una enfermedad nueva que mató a mucha gente, entre ellos a Cuitláhuac. El joven Cuauhtémoc, el último tlatoani, dirigió la defensa. Sin agua dulce ni comida, los mexicas resistieron casi tres meses hasta que, el 13 de agosto de 1521, cayó Tlatelolco.",
+			"personajes": [
+				{"nombre": "Guerrero tlaxcalteca", "sprite": "res://Images/Personajes/Npc_cap3/guerrero_tlaxcalteca.png", "descripcion": "Tlaxcala era enemiga de los mexicas. Sus guerreros fueron los aliados más importantes de los españoles."},
+				{"nombre": "Ballestero del bergantín", "sprite": "res://Images/Personajes/Npc_cap3/ballestero.png", "descripcion": "Los bergantines se armaron en Texcoco y cortaron el paso a las canoas que llevaban comida a la ciudad."},
+				{"nombre": "Mujer mexica", "sprite": "res://Images/Personajes/Npc_cap3/mujer_mexica.png", "descripcion": "Las mujeres también resistieron el sitio, sin agua dulce porque se rompió el acueducto de Chapultepec."},
+				{"nombre": "Anciano mexica", "sprite": "res://Images/Personajes/Npc_cap3/anciano_mexica.png", "descripcion": "Recuerda a Cuauhtémoc, el último tlatoani, que defendió la ciudad hasta el final."}
+			]
+		},
+		"4": {
+			"resumen": "Después de la conquista, sobre las ruinas de Tenochtitlan se empezó a construir la Ciudad de México. El rey nombró a Cortés gobernador de la Nueva España. El alarife Alonso García Bravo trazó calles rectas alrededor de una gran plaza, y muchos indígenas trabajaron cargando las piedras de los antiguos templos. En 1523 llegaron los primeros frailes franciscanos, como Pedro de Gante, que aprendió náhuatl para enseñar. Con los españoles llegaron también el trigo, los cerdos, las gallinas y los caballos.",
+			"personajes": [
+				{"nombre": "Hernán Cortés", "sprite": "res://Images/Personajes/Npc_cap4/hernan_cortes.png", "descripcion": "Gobernador y capitán general de la Nueva España. Repartió tierras y pueblos entre sus hombres con la encomienda."},
+				{"nombre": "Alonso García Bravo", "sprite": "res://Images/Personajes/Npc_cap4/alarife.png", "descripcion": "Alarife (constructor) que trazó las calles de la nueva ciudad en forma de cuadrícula."},
+				{"nombre": "Fray Pedro de Gante", "sprite": "res://Images/Personajes/Npc_cap4/fray.png", "descripcion": "Fraile franciscano que llegó en 1523. Fundó escuelas y enseñó en náhuatl."},
+				{"nombre": "Trabajador indígena", "sprite": "res://Images/Personajes/Npc_cap4/trabajador.png", "descripcion": "Por la encomienda, los pueblos indígenas debían dar tributo y trabajo a los españoles."}
+			]
+		},
+		"5": {
+			"resumen": "Hacia 1530 la Nueva España necesitaba orden. La Primera Audiencia, encabezada por Nuño de Guzmán, cometió muchos abusos contra los indígenas, así que el rey mandó una Segunda Audiencia de jueces para corregirlos. Fray Juan de Zumárraga, primer obispo de México, fue nombrado protector de los indios, y en 1530 el rey prohibió esclavizar a los indígenas. Los pueblos indígenas tenían su propio cabildo, y en la escuela de San José de los Naturales los niños aprendían a leer, escribir y muchos oficios.",
+			"personajes": [
+				{"nombre": "Fray Juan de Zumárraga", "sprite": "res://Images/Personajes/Npc_cap5/zumarraga.png", "descripcion": "Primer obispo de México y protector de los indios. Denunció los abusos de la Primera Audiencia."},
+				{"nombre": "Oidor de la Segunda Audiencia", "sprite": "res://Images/Personajes/Npc_cap5/oidor.png", "descripcion": "Los oidores eran jueces enviados por el rey para gobernar y hacer justicia."},
+				{"nombre": "Gobernador indígena", "sprite": "res://Images/Personajes/Npc_cap5/gobernador_indigena.png", "descripcion": "Los pueblos indígenas elegían gobernador y alcaldes. Lleva la vara de mando, símbolo de autoridad."},
+				{"nombre": "Alumno de San José", "sprite": "res://Images/Personajes/Npc_cap5/alumno.png", "descripcion": "En la escuela de fray Pedro de Gante se enseñaba a leer, escribir, carpintería, pintura y canto."}
+			]
+		},
+		"6": {
+			"resumen": "En 1535 el rey decidió que la Nueva España tendría un virrey: alguien que gobernara en su nombre. El primero fue Antonio de Mendoza, que llegó desde Veracruz y fue recibido con fiestas en cada pueblo. Ese mismo año se fundó la Casa de Moneda de México, la primera de América, donde se hicieron monedas de plata. Vasco de Quiroga, oidor de la Audiencia, fundó pueblos-hospital donde los indígenas vivían, trabajaban y se cuidaban juntos. Así comenzó el virreinato, que duró casi 300 años.",
+			"personajes": [
+				{"nombre": "Antonio de Mendoza", "sprite": "res://Images/Personajes/Npc_cap6/virrey.png", "descripcion": "Primer virrey de la Nueva España (1535-1550). Organizó el gobierno y fundó la Casa de Moneda."},
+				{"nombre": "Vasco de Quiroga", "sprite": "res://Images/Personajes/Npc_cap6/quiroga.png", "descripcion": "Oidor y después obispo de Michoacán. Fundó el pueblo-hospital de Santa Fe."},
+				{"nombre": "Noble indígena", "sprite": "res://Images/Personajes/Npc_cap6/noble_indigena.png", "descripcion": "Muchos señores indígenas siguieron gobernando sus pueblos bajo las leyes del virreinato."},
+				{"nombre": "Acuñador de moneda", "sprite": "res://Images/Personajes/Npc_cap6/acunador.png", "descripcion": "En la Casa de Moneda se hacían a mano las monedas de plata, ¡las primeras de América!"}
+			]
+		}
+	},
+	"aluxes": {
+		"1": {"nombre": "Kaan", "sprite": "res://Images/Personajes/Kaan/Kaan_Idle.png", "descripcion": "El alux más travieso. Se disfrazó de soldado para cambiar la historia."},
+		"2": {"nombre": "Kaan", "sprite": "res://Images/Personajes/Kaan/Kaan_Idle.png", "descripcion": "Escapó a 1520 y se escondió entre sus dobles. Al final lo atraparon... ¡dormido!"},
+		"3": {"nombre": "Chaac", "sprite": "res://Images/Personajes/chaac/chaac_respirando.png", "descripcion": "El alux de la lluvia y los truenos. Les dio fuerza de más a los guerreros."},
+		"4": {"nombre": "Chaac", "sprite": "res://Images/Personajes/chaac/chaac_respirando.png", "descripcion": "Jugaba con las nubes en la milpa: ¡truenos sin lluvia!"},
+		"5": {"nombre": "Balaam", "sprite": "res://Images/Personajes/balaam/balaam_respirando.png", "descripcion": "El alux más fuerte, hermano mayor de Kaan y Chaac. Viaja por portales."},
+		"6": {"nombre": "Balaam", "sprite": "res://Images/Personajes/balaam/balaam_respirando.png", "descripcion": "Se escondió en 1535 para buscar al doctor Juan Pérez."}
+	}
+}

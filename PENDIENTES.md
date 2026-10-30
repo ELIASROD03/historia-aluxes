@@ -2,14 +2,14 @@
 
 > Lista única de lo que falta. Al terminar algo, bórralo de aquí (y si dejó una decisión o trampa
 > que valga la pena recordar, anótala en `resumen_cambios.md`).
-> Última revisión: 14 de octubre de 2026.
+> Última revisión: 30 de octubre de 2026.
 
 ## 1. Rompen el flujo del juego (lo más urgente)
 
-- [ ] **Después del FIN no hay a dónde ir.** Al terminar el epílogo `progreso_historia` queda en 7
-  (no hay capítulo 7): si el jugador da "Continuar", aparece en el laboratorio sin nada que hacer y la
-  máquina pide el año "0000". Decidir qué pasa con una partida terminada (¿créditos? ¿rejugar
-  capítulos desde el Libro? ¿bloquear "Continuar"?). Ya se marca `eventos_completados["juego_terminado"]`.
+- [x] **Después del FIN: viaje libre.** Al terminar el epílogo se guarda la partida en el laboratorio; el panel
+  final ofrece "Seguir viajando por la historia". Con `Global.juego_terminado()` la máquina acepta el año de
+  cualquier capítulo (`Global.preparar_visita()` reinicia su contenido de una sola vez), Atlas lo explica en
+  `laboratorio_viaje_libre` y al terminar un capítulo revisitado se vuelve al laboratorio sin tocar el progreso.
 
 ## 2. Minijuegos
 
@@ -22,16 +22,26 @@
   4. Seguir el contrato: `nivel_a_cargar` + señal `juego_completado` + patrón `modo_libre`.
   5. GDD: 3 vidas, mejoras de Atlas, hechizos del alux, velocidad creciente, 90 s, tras 3 derrotas
      jugar como Atlas con vidas infinitas.
+- [x] **Topo Alux: martillo y splash.** En computadora el cursor es un martillo (`Images/Fondos/topo/martillo.png`)
+  que golpea al hacer clic; en celular aparece donde se toca. Al acertar sale un estallido animado (`splash.png`).
 - [ ] **Topo Alux (cap 2)**: el GDD pide que, tras 3 derrotas seguidas, se pueda jugar como Atlas
   (apunta solo a los aluxes reales). No está hecho. (Lo de Kaan parado ya se arregló: ahora corre al
   bosque con sus dobles —`cinematica_kaan_bosque`— y tras Topo Alux aparece dormido —`cinematica_kaan_dormido`.)
-- [ ] **Memorama no maneja la victoria**: al juntar las parejas solo hace un `print`
-  (`memorama_manager.gd`, ~línea 99).
+- [x] **Memorama**: al ganar muestra "¡Ganaste!" con "Jugar otra vez"; ya cumple el contrato de minijuegos
+  (`juego_completado`), por si se quiere lanzar desde un diálogo.
 - [ ] **Rompecabezas del nivel 5 sin imágenes** (opcional). Ya está preparado: copiar
   `niv5_1.jpg`, `niv5_2.jpg`… (900x600) a `Images/img-rompecabezas/nivel5/` y abrir Godot una vez.
   Mientras no haya, el diálogo lo salta solo. El nivel 6 solo tiene 1 imagen (los demás tienen 3).
 - [ ] **Fuercitas**: probar el equilibrio con niños reales (exports en el inspector de
   `Scenes/Fuercitas.tscn`). Cambiar o agregar chismes ahí mismo (grupo *Chismes*).
+
+## 2b. Libro de Historia
+- [x] Enciclopedia con desbloqueos por dispositivo (`LibroProgreso`, `user://libro.cfg`): minijuegos con candado
+  hasta conocerlos (Memorama siempre abierto, Fuercitas fuera), contador de Palabras Impostoras (N/30) y de
+  Rompecabezas (N/6), capítulos grises con candado que al completarse muestran resumen y personajes con su sprite.
+- [ ] **Revisar los textos del libro** (`libro_historia.json`): resúmenes, descripciones de personajes y de
+  minijuegos son borradores.
+- [ ] Topo Alux y Atlas-Bird desde el libro: confirmar que se juegan bien en modo libre de principio a fin.
 
 ## 3. Arte y recursos (pasar del greybox al juego real)
 
@@ -49,7 +59,7 @@ Reemplazarlo por el Sprite2D real en la misma posición y borrar el bloque.
   ruinas, mercado, templo, barricada, calzada), agua animada (`WaterRepeater`), volcanes y 3 capas de
   árboles en parallax, árboles/pasto con viento (`Shaders/balanceo_viento.gdshader`), objetos de
   `objetos_level1`/`Decor`, fogata, humo y bandera animados, garzas y canoa que van y vienen (`Scripts/vaiven.gd`).
-  Detalle: la imagen de volcanes (`Fondos/untitled(3).png`) no es continua y se nota la unión al repetirse.
+  Los volcanes usan `Escenarios/cap3/volcanes_espejo.png` (recorte + su espejo) para que no se note la unión.
 - Para los caps 4-6: fondo lejano de UNA imagen de 640x360 (o un poco más) con parallax muy leve como
   en `Tenoch.tscn`, más capas de árboles, árboles, objetos y cosas animadas como en el cap 3.
 - [x] Cap 4 `PrimerosAniosVirreinato`: arte en `Images/Escenarios/cap4/` (fondo del valle 640x360, ruinas del
@@ -62,39 +72,50 @@ Reemplazarlo por el Sprite2D real en la misma posición y borrar el bloque.
 - [x] Cap 6 `InstauracionVirreinato`: arte en `Images/Escenarios/cap6/` (fondo de tarde 688x384, calle adornada,
   arco de bienvenida, caballo del virrey animado, catedral primitiva, Casas Reales, Casa de Moneda, ceiba),
   banderines y banderas ondeando, xoloitzcuintle, gallinas, garzas y fogata.
-- [ ] Quitar los letreros de zona ("1 · LLEGADA"…) y los postes amarillos de las zonas invisibles
-  (nodo `Marca`) cuando ya no hagan falta.
+- [x] **Hierbas en primer plano** en los 6 niveles (`Scenes/HierbasFrente.tscn`): `Parallax2D` con `scroll_scale` 1.3
+  (se mueve más rápido que el jugador), textura de 640x360 repetida en espejo (`Images/Escenarios/comun/
+  hierbas_frente.png`; la original está en `hierbas_frente_640.png`) y viento con `Shaders/hierbas_frente.gdshader`.
+  Cada nivel le da su tono con `modulate` (noche azul en el cap 2, tarde cálida en el cap 6). Altura: `position.y`
+  del nodo `Hierbas` (hoy 50; más grande = más abajo).
+- [x] Se quitaron los letreros de zona ("1 · LLEGADA"…) y los postes `Marca` de los caps 3-6.
 
 ### Personajes sin sprite (hoy son siluetas de color)
 - [x] Cap 3: guerrero tlaxcalteca, mujer mexica, anciano mexica (`Images/Personajes/Npc_cap3/`, idle de 4 cuadros).
 - [x] Cap 4: Alonso García Bravo (alarife), cronista, fray Pedro de Gante (`Images/Personajes/Npc_cap4/`).
 - [x] Cap 5: oidor, escribano (animación escribiendo), fray Juan de Zumárraga, alumnos (`Images/Personajes/Npc_cap5/`).
 - [x] Cap 6: pregonero (animación pregonando), Antonio de Mendoza, Vasco de Quiroga, niña (`Images/Personajes/Npc_cap6/`).
-- [ ] Varios NPC reutilizan sprites del cap 1 (guerreros, soldados, mercaderes, Moctezuma como
-  "noble indígena", el capitán de capa roja como Hernán Cortés): cambiarlos si se quiere variedad.
-- [ ] **Retrato del jugador** (lo agrega el usuario): todos los diálogos, el selector de respuestas
-  y el epílogo apuntan a `Personajes_Principales/Personaje1/personaje.png`, que no existe.
-- [ ] **Cara del Doctor Juan Pérez** para el cuadro de diálogo (solo hay su sprite de cuerpo).
-- [ ] **Kaan y Chaac en la celda** de `Laboratorio.tscn`: los diálogos del laboratorio de los caps
-  3-6 hablan con ellos (Kaan desde el cap 3, Chaac desde el 5, ninguno después del 6).
-- [ ] Tamaños: Chaac quedó igual que Kaan en Tenoch (47 px); Balaam en 50 px (el GDD dice que es el
-  más alto). Los aluxes miden más que el protagonista (43 px): el GDD dice que son bajitos.
+- [x] **NPC propios por capítulo** (en vez de los sprites del cap 1). PixelLab v3, 80 px, vista lateral, respirar
+  en SE (4 cuadros), `escala` ~0.78 para medir ~60 px. ~3 generaciones cada uno.
+  - [x] Cap 4: Hernán Cortés (gobernador, sin armadura), trabajador, tameme cargando piedra, alabardero,
+    mujer del tianguis, vendedor de maíz (`Images/Personajes/Npc_cap4/`).
+  - [x] Cap 3: ballestero del bergantín, guerrero veterano (Palabras Impostoras), guerrero águila, defensor con
+    lanza y defensor arquero (`Npc_cap3/`).
+  - [x] Cap 5: vecino español, gobernador indígena con vara de mando, vendedora de tortillas, comprador (`Npc_cap5/`).
+  - [x] Cap 6: escolta del virrey, público con guirnalda, noble indígena (ya no es Moctezuma), acuñador (`Npc_cap6/`).
+  Ya ningún NPC de los caps 3-6 usa sprites del cap 1.
+- [x] **Retrato del jugador**: cada personaje tiene `retrato.png` en su carpeta. Los diálogos siguen usando la ruta
+  genérica `Personaje1/personaje.png` (`Global.RETRATO_JUGADOR_GENERICO`) y `DialogoManager`, el selector de
+  respuestas y el epílogo la cambian por la del personaje elegido (`Global.ruta_retrato_jugador()`).
+- [x] **Cara del Doctor Juan Pérez** (`Images/Personajes/doctor/doctor_cara.png`), en diálogos y epílogo.
+- [x] **Kaan y Chaac en la "zona de resguardo"** (en vez de una celda con rejas): una dimensión de bolsillo
+  tipo "zona fantasma" que se ve desde la computadora del laboratorio (nodo `Computadora`,
+  `Scripts/computadora_zona.gd` → `Scenes/ZonaAluxes.tscn`, arte en `Images/Fondos/zona_aluxes/`). Kaan en
+  los caps 3-4, Kaan y Chaac en los 5-6, vacía al terminar el juego. Los diálogos siguen diciendo "celda".
+- [x] **Fondo de Fuercitas** más sencillo (cielo de tormenta y la pirámide a lo lejos). El anterior quedó en
+  `Images/Fondos/fuercitas/fondo_anterior.png`.
+- [x] Tamaños: los aluxes miden ~40 px, un poco menos que el jugador (44 px). Chaac y Balaam con `escala` 0.625;
+  Kaan se encoge a 0.85 al quitarse el disfraz (`escala_alux` en `cinematica_kaan.gd`; el disfraz de soldado
+  sigue a tamaño humano).
 
-### Cinemáticas pendientes (hoy salen como letrero "[ CINEMÁTICA PENDIENTE ]")
-Al hacer una real: quitar su entrada de `textos` del nodo `CinematicaProvisional` de la escena.
-- [ ] Cap 3: `cinematica_escape_chaac` (portal rojo entre truenos).
-- [ ] Cap 4: `cinematica_nubes_chaac` (el cielo se nubla y no llueve), `cinematica_rayo_chaac`
-  (el rayo manda a volar a Atlas).
-- [ ] Cap 5: `cinematica_portal_balaam` (Balaam visita la celda y se va).
-- [ ] Cap 6: `cinematica_huida_balaam` (sale volando por portales), `cinematica_bosque_casita`
-  (llegan al bosque con la casita).
-- [ ] Laboratorio antes del cap 6: Kaan y Chaac le dan su poder a la máquina (hoy es una línea del
-  Narrador en `laboratorio_cap6`, porque `Laboratorio.tscn` no atiende cinemáticas; para hacerla de
-  verdad hay que agregarle un manejador de `evento_cinematica`).
-
-### Epílogo (`Scenes/Epilogo.tscn`)
-- [ ] Las 5 viñetas del cómic. Cada una describe en pantalla qué dibujar. Al tenerlas, poner la ruta
-  en `"imagen"` de cada viñeta en `Scripts/epilogo.gd`.
+### Cinemáticas y epílogo
+- [x] Cinemáticas de los aluxes. Animadas en el nivel (`Scripts/cinematicas_aluxes.gd`, nodo `CinematicasAluxes`):
+  escape de Chaac por un portal rojo entre rayos (cap 3), nubes de tormenta que se van sin llover y el rayo que
+  manda a volar a Atlas (cap 4), Balaam escapando por sus portales (cap 6). Ilustradas a pantalla completa detrás
+  del diálogo (`imagenes` de `CinematicaProvisional`, en `Images/Cinematica/aluxes/`): Balaam en la celda (cap 5),
+  la casita del bosque (cap 6) y Kaan y Chaac dándole su poder a la máquina (`laboratorio_cap6`, evento
+  `cinematica_poder_maquina`; el laboratorio ahora tiene su `CinematicaProvisional`).
+- [x] Las 5 viñetas del epílogo (`Images/Cinematica/epilogo/`, la 1 reusa la casita), a pantalla completa. El
+  jugador sale de espaldas porque puede ser cualquiera de los 6 personajes.
 
 ### Audio
 - [ ] No hay música ni efectos (solo el golpe de Topo Alux). Los canales `Musica` y `Efectos` ya
@@ -102,6 +123,9 @@ Al hacer una real: quitar su entrada de `textos` del nodo `CinematicaProvisional
   `bus = "Musica"` o `"Efectos"`. El GDD sugiere pistas concretas (págs. 24-25).
 
 ## 4. Configuración y accesibilidad
+
+- [x] Panel rehecho con arte de PixelLab (`assets/configuracion/`): marco de madera, barras de jade, interruptores,
+  íconos por sección. Se quitó "Borrar todas" (las partidas se borran una por una en Cargar partida).
 
 - [ ] **Velocidad del texto** (lenta / normal / instantánea): requiere efecto máquina de escribir en
   `dialogo_manager.gd`.
@@ -123,17 +147,16 @@ Al hacer una real: quitar su entrada de `textos` del nodo `CinematicaProvisional
 ## 6. Ideas para después
 
 - [ ] Conversaciones con más de un nivel (una respuesta que lleve a otra pregunta).
-- [ ] Atajo de prueba para saltar a cualquier capítulo (para revisar el laboratorio y los diálogos
-  de cada capítulo sin jugar todo).
+- [x] **Modo desarrollador** (Configuración → tocar 5 veces el título "Configuración"): libro completo sin tocar
+  `libro.cfg`, botón "Saltar minijuego >>" en los minijuegos de la historia y la máquina del tiempo acepta el
+  año de cualquier capítulo. Para que la sección se vea siempre: `revelar_con_toques = false` en
+  `panel_configuracion.gd`.
 - [ ] GDD, menús: botón de regresar arriba a la izquierda y configuración/ayuda arriba a la derecha
   en todos los menús; sonido de risa de alux al pulsar botones.
 
 ## 7. Limpieza
 
-- [ ] **Nada de esta sesión está en commit** (configuración, guardado, greybox caps 3-6, Fuercitas,
-  burbujas con respuestas, epílogo). Hacer commit al revisar.
-- [ ] `Scenes/Tenoch.tscn` y `Scenes/MenuPrincipal.tscn` tienen cambios mínimos que no vienen de esta
-  sesión (probablemente el editor los re-guardó): revisarlos antes del commit.
+- [ ] **Sin commit**: viaje libre después del FIN, martillo/splash de Topo Alux, victoria del Memorama,
+  cinemáticas de los aluxes, viñetas del epílogo, retratos del jugador y del doctor (desde `187635b`).
 - [ ] `Saves/partidas.json` ya no se usa (las partidas viven en `user://partidas.json`; se migró
   desde el editor). Se puede borrar.
-- [ ] Decidir si el `GDD ... .pdf` va al repositorio o se ignora.

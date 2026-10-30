@@ -17,7 +17,13 @@ func _ready():
 	# El año y el nivel destino salen de capitulos.json (ver Global). Antes esto
 	# era un match escrito a mano que solo cubria los capitulos 1 y 2.
 	var cap := Global.capitulo_actual()
-	if cap.is_empty():
+	# Historia terminada: se acepta el año de cualquier capitulo. En modo
+	# desarrollador también, pero el año del capitulo en curso sigue siendo el
+	# "correcto" (avanza la historia), así que no se borra.
+	if Global.juego_terminado():
+		anio_objetivo = ""
+		escena_destino = ""
+	elif cap.is_empty():
 		push_warning("No hay capitulo %d en capitulos.json." % Global.progreso_historia)
 		anio_objetivo = "0000"
 		escena_destino = ""
@@ -91,7 +97,13 @@ func _on_abajo_4_pressed():
 func _on_confirmar_pressed():
 	# Unimos los 4 dígitos en un solo texto (ej. "1" + "5" + "1" + "2" -> "1512")
 	var anio_ingresado = str(digitos[0]) + str(digitos[1]) + str(digitos[2]) + str(digitos[3])
-	
+
+	# En modo desarrollador el año de su capítulo sigue el camino normal (avanza
+	# la historia); cualquier otro año se visita como en el viaje libre.
+	if _viaje_libre() and not (Configuracion.modo_desarrollador and anio_ingresado == str(Global.capitulo_actual().get("anio", ""))):
+		_viajar_libre(anio_ingresado)
+		return
+
 	if anio_ingresado == anio_objetivo:
 		print("¡Código Correcto! Viajando al año: ", anio_objetivo)
 
@@ -110,3 +122,17 @@ func _on_confirmar_pressed():
 		var cuadro = get_node_or_null("CuadroDialogo")
 		if cuadro and cuadro.has_method("iniciar_dialogo") and not cuadro.visible:
 			cuadro.iniciar_dialogo("error_maquina")
+
+func _viaje_libre() -> bool:
+	return Global.juego_terminado() or Configuracion.modo_desarrollador
+
+
+## Con la historia terminada se puede volver a cualquier capitulo tecleando su año.
+func _viajar_libre(anio_ingresado: String) -> void:
+	var numero := Global.capitulo_por_anio(anio_ingresado)
+	if numero > 0 and Global.preparar_visita(numero):
+		SceneTransition.change_scene(Global.ESCENA_TRANSICION)
+		return
+	var cuadro = get_node_or_null("CuadroDialogo")
+	if cuadro and cuadro.has_method("iniciar_dialogo") and not cuadro.visible:
+		cuadro.iniciar_dialogo("error_maquina_libre")

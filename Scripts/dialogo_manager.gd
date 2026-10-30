@@ -101,8 +101,10 @@ func _mostrar_linea_actual():
 			nombre_label.text = personaje_nombre
 		
 		var ruta_img = linea.get("imagen", "")
-		# Eliminamos la sobreescritura automática para que respete lo que pusiste en el JSON
-			
+		# El jugador puede ser cualquiera de los 6 personajes: su retrato sale del elegido.
+		if ruta_img == Global.RETRATO_JUGADOR_GENERICO:
+			ruta_img = Global.ruta_retrato_jugador()
+
 		if retrato_sprite:
 			if ruta_img != "" and ResourceLoader.exists(ruta_img):
 				retrato_sprite.texture = load(ruta_img)
@@ -134,6 +136,8 @@ func avanzar_dialogo():
 				# _on_minijuego_terminado ya muestra la linea siguiente.
 				indice_dialogo += 1
 				if _lanzar_minijuego(MINIJUEGOS[prefijo], evento.replace(prefijo, "")):
+					# Ya lo conoció: queda disponible en el Libro de Historia
+					LibroProgreso.desbloquear(evento.trim_prefix("minijuego_"))
 					return
 				# No se pudo abrir: seguimos el dialogo en vez de trabar el juego
 				_mostrar_linea_actual()
@@ -163,8 +167,34 @@ func _lanzar_minijuego(ruta_escena: String, nivel: String) -> bool:
 	var canvas = CanvasLayer.new() # Anadir a un canvas layer para que quede encima
 	canvas.layer = 100
 	canvas.add_child(escena)
+	if Configuracion.modo_desarrollador:
+		canvas.add_child(_boton_saltar_minijuego(escena))
 	get_tree().current_scene.add_child(canvas)
 	return true
+
+
+## Modo desarrollador: el minijuego cuenta como ganado y la historia sigue.
+func _boton_saltar_minijuego(escena: Node) -> Button:
+	var boton := Button.new()
+	boton.text = "Saltar minijuego >>"
+	boton.focus_mode = Control.FOCUS_NONE
+	boton.add_theme_font_override("font", preload("res://fonts/Amaranth-Bold.ttf"))
+	boton.add_theme_font_size_override("font_size", 11)
+	var estilo := StyleBoxFlat.new()
+	estilo.bg_color = Color(0.243, 0.153, 0.137, 0.9)
+	estilo.border_color = Color(0.85, 0.62, 0.18)
+	estilo.set_border_width_all(1)
+	estilo.set_corner_radius_all(4)
+	estilo.set_content_margin_all(4)
+	for estado in ["normal", "hover", "pressed"]:
+		boton.add_theme_stylebox_override(estado, estilo)
+	boton.add_theme_color_override("font_color", Color(0.93, 0.86, 0.7))
+	boton.position = Vector2(6, 330)  # abajo a la izquierda (pantalla de 640x360)
+	boton.pressed.connect(func():
+		# Algunos minijuegos esconden el cursor (Palabras Impostoras)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		_on_minijuego_terminado(escena))
+	return boton
 
 func _on_minijuego_terminado(escena_instancia):
 	if escena_instancia:

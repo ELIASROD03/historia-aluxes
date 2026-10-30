@@ -41,6 +41,7 @@
 [ext_resource type="Script" uid="uid://cdlbp8n35b36u" path="res://Scripts/cinematica_kaan.gd" id="41_elk3r"]
 [ext_resource type="PackedScene" uid="uid://dxgnhflqchde5" path="res://Scenes/Atlas.tscn" id="atlas_scene"]
 [ext_resource type="PackedScene" uid="uid://de4fvgv7nirdq" path="res://Scenes/NpcMexica.tscn" id="npc_mexica_scene"]
+[ext_resource type="PackedScene" path="res://Scenes/HierbasFrente.tscn" id="hierbas_frente"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kprco"]
 texture = ExtResource("8_gcwde")
@@ -3477,6 +3478,9 @@ shape = SubResource("RectangleShape2D_pnxni")
 script = ExtResource("41_elk3r")
 sprite_kaan = NodePath("../KaanDisfraz")
 escala_portal = 1.5
+
+[node name="HierbasFrente" parent="." instance=ExtResource("hierbas_frente")]
+modulate = Color(0.85, 0.85, 0.85, 1)
 
 [connection signal="body_entered" from="ZonaCanoas" to="GeneradorCanoas" method="_on_area_2d_body_entered"]
 

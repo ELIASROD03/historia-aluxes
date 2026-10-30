@@ -6,6 +6,14 @@ var cuadro_dialogo: DialogoManager
 @export var offset_portal: Vector2 = Vector2(80, 0) # Distancia a la que aparece el portal
 @export var invertir_direccion_caminar: bool = true # Activar si Kaan camina de reversa (Moonwalk)
 @export var escala_portal: float = 1.0 # Qué tan grande se hará el portal al aparecer
+## Tamaño de Kaan sin disfraz: es un alux, un poco más bajito que el jugador (~40 px).
+## El disfraz de soldado se queda a tamaño humano.
+@export var escala_alux: float = 0.85
+
+# El piso queda 24 px bajo el centro del sprite (Kaan en y=200, piso en y=224) y
+# en Kaan_Idle los pies están 23 px bajo el centro del cuadro de 64 px.
+const PISO_BAJO_CENTRO := 24.0
+const PIES_KAAN := 23.0
 
 @export_group("Texturas del Personaje")
 @export var tex_idle: Texture2D = preload("res://Images/Personajes/Kaan/Kaan_Idle.png")
@@ -97,7 +105,8 @@ func ejecutar_transformacion():
 		sprite_kaan.hframes = 1
 		sprite_kaan.vframes = 1
 		sprite_kaan.frame = 0
-	
+	_encoger_kaan()
+
 	# Forzar al script respirador a recalcular los frames
 	if sprite_kaan.has_method("_ready"):
 		sprite_kaan._ready()
@@ -279,6 +288,14 @@ func ejecutar_dormido():
 	await t.finished
 	if cuadro_dialogo:
 		cuadro_dialogo.continuar_cinematica()
+
+## Al quitarse el disfraz Kaan pasa a su tamaño de alux, con los pies sobre el
+## piso (si solo se encoge, queda flotando).
+func _encoger_kaan() -> void:
+	if sprite_kaan.scale.x != 1.0:
+		return
+	sprite_kaan.scale = Vector2.ONE * escala_alux
+	sprite_kaan.position.y += PISO_BAJO_CENTRO - PIES_KAAN * escala_alux
 
 func _poner_textura(sprite: Sprite2D, tex: Texture2D) -> void:
 	sprite.texture = tex
